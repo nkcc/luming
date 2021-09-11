@@ -1,0 +1,173 @@
+// app global css in SCSS form
+@import 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap';
+
+@mixin read-more {
+        color: $white;
+        font-size:  20px;
+        font-family: "Calibri";
+        text-decoration: none;
+        transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
+}
+
+body {
+    font-family: 'Noto Serif SC';
+    font-size: 12px;
+}
+
+h1 {
+    font-weight: 700;
+}
+h2, h3 , h4, h5 {
+    font-weight: 500;
+}
+
+.home-background {
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-image: url("../assets/lb.jpg");
+    background-position: center center;
+    background-size: cover;
+
+    .lm-introduction {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: linear-gradient(45deg, #12121247 0%, #0000008c 100%);
+        .lm-text-title {
+            font-weight: 600;
+            font-size: 50px;
+            color: $secondary;
+            letter-spacing: 30px;
+            margin-bottom: 20px;
+        }
+        .lm-text-second-title {
+            font-size: 35px;
+            font-family: "Calibri";
+            // font-weight: 600;
+            color: $secondary;
+            letter-spacing: 25px;
+        }
+        p {
+            color: $secondary;
+            font-size: 20px;
+            letter-spacing: 4px;
+        }
+    }
+}
+
+
+
+.lm-services {
+    width: 100%;
+    .bar {
+        height: $services-bar-height;
+        width: 100%;
+        background-color: $primary;
+    }
+    
+    .bar-secondary {
+        height: $services-bar-height;
+        width: 100%;
+        background-color: $secondary;
+    }
+    
+    .media {
+        .img {
+            height: 225px;
+        }
+        .introduction {
+            margin: 14px 0 14px 50px;
+            .heading {
+                font-weight: 600;
+                color: $white;
+                font-size: 45px;
+                line-height: 50px;
+            }
+            .sub-title {
+                color: $white;
+                font-family: "Calibri";
+                font-size: 18px;
+            }
+            p  {
+                margin-top:4px ;
+                color: $white;
+                font-size: 20px;
+                // letter-spacing: 1px;
+            }
+            a {
+                @include read-more;
+            }
+        }
+
+    }
+    
+    .bg-primary {
+        a {
+            &:hover {
+                color:$secondary;
+            }
+        }
+    }
+    
+    .bg-secondary {
+        a {
+            &:hover {
+                color:$primary;
+            }
+        }
+    }
+}
+
+.lm-points {
+    width: 100%;
+    background-color: $points-bg;
+    .lm-points-background {
+        background-color: $points-bg;
+        background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
+        .row {
+            height: 100%;
+            width: 100%;
+            .header {
+                color:  $secondary;
+                font-size: 75px;
+                font-weight: 700;
+            }
+            
+            .content {
+                margin-top: 20px;
+                .title {
+                    color: $white;
+                    font-size: 40px;
+                    font-weight: 700;
+                }
+                .discription {
+                    margin-top: 20px;
+                    width: 350px;
+                    color:$white;
+                    font-size: 20px;
+                }
+            }
+            
+            .footer {
+                color: $tertiary;
+                font-size: 20px;
+                display: flex;
+                align-items: center;
+                .dot {
+                    margin-right: 8px;
+                }
+            }
+            
+            .left {
+                padding-top: 195px;
+            }
+        }
+        
+        a {
+            @include read-more;
+        }
+    }
+}
