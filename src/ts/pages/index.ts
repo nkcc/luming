@@ -55,8 +55,8 @@ const cultureData = ref([{
 ]);
 
 const offerData = ref < OfferData[] > ([{
-    title: 'Open',
-    name: '',
+    title: '',
+    name: 'america1',
     list: [{
         title: '哈佛大学',
         description: '简称“哈佛”，享誉世界的私立研究型大学，著名的常春藤盟校成员……',
@@ -75,20 +75,20 @@ const offerData = ref < OfferData[] > ([{
     ],
   },
   {
-    title: 'Open',
-    name: '',
+    title: '',
+    name: 'america2',
     list: [{
-        title: '香港大学',
+        title: '约翰霍普金斯大学',
         description: '简称“哈佛”，享誉世界的私立研究型大学，著名的常春藤盟校成员……',
         imgLink: require('../../assets/school-logo/HKUST.png'),
       },
       {
-        title: '约翰霍普金斯大学',
+        title: '麻省理工学院',
         description: '创立于1876年，是一所世界顶级的著名私立大学，美国第一所研究型大学……',
         imgLink: require('../../assets/lb.jpg'),
       },
       {
-        title: '宾夕法尼亚大学',
+        title: '苏黎世联邦理工学院',
         description: '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
         imgLink: require('../../assets/harvard_school.jpg'),
       },
