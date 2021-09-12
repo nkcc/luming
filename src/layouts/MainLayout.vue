@@ -2,18 +2,20 @@
   <q-layout view="hHh lpR fFf">
 
     <q-header>
-        <mian-header></mian-header>
+        <main-header></main-header>
     </q-header>
 
     <q-page-container>
       <router-view />
     </q-page-container>
 
+    <main-footer></main-footer>
   </q-layout>
 </template>
 
 <script lang="ts">
-import MianHeader from './components/MainHeader.vue'
+import MainHeader from './components/MainHeader.vue'
+import MainFooter from './components/MainFooter.vue'
 
 const linksList = [
   {
@@ -66,7 +68,8 @@ export default defineComponent({
   name: 'MainLayout',
 
   components: {
-      MianHeader
+      MainHeader,
+      MainFooter,
   },
 
   setup () {

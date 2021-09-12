@@ -229,7 +229,7 @@
 
         <div class="prof-intro" v-for="(v, k) in professorData" :key="k">
             <div :class="['q-pa-xl row justify-center', k % 2 == 0 ? '' : 'reverse']">
-                <div class="col-lg-2 col-3 col-md-3 col-sm-12 avatar align-items-center ">
+                <div class="col-lg-2 col-3 col-md-3 col-sm-12 avatar align-items-center">
                     <q-img class="img" :src="v.imgLink"></q-img>
                 </div>
                 <div class="col-7 col-lg-4 col-md-9 col-sm-12 content">
@@ -243,17 +243,45 @@
                         </div>
                     </div>
                     <div class="footer">
-                        <a href="">
-                            READ MORE >
-                        </a>
+                        <a href=""> READ MORE > </a>
                     </div>
                 </div>
             </div>
         </div>
     </setion>
     <section class="lm-contact">
-        <q-parallax src="https://cdn.quasar.dev/img/parallax2.jpg">
-            <h1 class="text-white">Basic</h1>
+        <q-parallax src="https://cdn.quasar.dev/img/parallax2.jpg" height="600">
+            <div class="green-background">
+                <div class="row justify-center">
+                    <div class="col-lg-8 col-md-10 q-pa-md q-ma-md">
+                        <h1 class="text-secondary">联系我们</h1>
+                        <div class="information text-white text-weight-bold">
+                            本科硕士精准直录，实现最高学府留学梦
+                        </div>
+                        <div class="form">
+                            <q-input input-style="color: #cd932f" color="secondary" label-color="white" v-model="text" label="姓名">
+                                <template v-slot:prepend>
+                                    <q-icon color="secondary" name="person" />
+                                </template>
+                            </q-input>
+                            <q-input input-style="color: #cd932f" color="secondary" label-color="white" v-model="text" label="电话">
+                                <template v-slot:prepend>
+                                    <q-icon color="secondary" name="phone" />
+                                </template>
+                            </q-input>
+                            <q-input color="secondary" label-color="white" input-style="color: #cd932f" v-model="text" label="微信">
+                                <template v-slot:prepend>
+                                    <q-icon color="secondary" name="wechat" />
+                                </template>
+                            </q-input>
+                            <q-btn class="submit" outline type="submit" style="color: goldenrod">
+                                <q-icon class="dot" name="fiber_manual_record"></q-icon>
+                                SUBMIT >
+                            </q-btn>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </q-parallax>
     </section>
 </q-page>

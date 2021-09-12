@@ -1,0 +1,20 @@
+@import './quasar.variables.scss';
+.page-footer {
+    color: $secondary;
+    background-color: $dark-green;
+    padding-top: 40px;
+    
+    .information {
+        padding-bottom: 40px;
+        .item-list {
+            .item {
+                list-style-type: none;
+                a {
+                    text-decoration: none;
+                    color:$secondary;
+                }
+            }
+        }
+    }
+
+}
