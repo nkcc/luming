@@ -1,5 +1,7 @@
 // app global css in SCSS form
-@import 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap';
+@import 'https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.min.css';
+
 
 @mixin read-more {
         color: $white;
@@ -15,10 +17,21 @@ body {
 }
 
 h1 {
-    font-weight: 700;
+    font-weight: 900;
+    font-size: 70px;
 }
 h2, h3 , h4, h5 {
     font-weight: 500;
+}
+
+.lm-dark-background {
+    background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
+}
+
+.footer {
+    a {
+        @include read-more;
+    }
 }
 
 .home-background {
@@ -234,7 +247,9 @@ h2, h3 , h4, h5 {
 }
 
 .lm-offers {
+    background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
     margin-top: 80px;
+    padding-bottom: 80px;
     .caption {
         color: $white;
         text-align: center;
@@ -242,6 +257,10 @@ h2, h3 , h4, h5 {
         font-weight: 700;
         padding-top: 80px;
         padding-bottom: 50px;
+    }
+    
+    .lm-points-background {
+        background: transparent;
     }
     
     .area {
@@ -303,6 +322,192 @@ h2, h3 , h4, h5 {
                     .footer {
                         margin-top: 30px;
                     }
+                }
+            }
+        }
+    }
+}
+
+.lm-case {
+    width: 100%;
+    .case-item {
+        background-color: $gray;
+        padding: 60px;
+        &.reverse {
+            background-color: $white;
+            .content {
+                padding-right: 100px;
+            }
+            
+            .img-container {
+                .img {
+                    box-shadow: 20px 20px $primary;
+                }
+            }
+        }
+        .img-container {
+            .img {
+                box-shadow: 20px 20px $secondary;
+                height: 480px;
+                width: 600px;
+            }
+
+            padding-right: 100px;
+            padding-bottom: 40px;
+        }
+        
+        .content {
+            padding-left:  20px;
+            padding-bottom: 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            .header {
+                .title {
+                    font-size: 30px;
+                    font-weight: 700;
+                }
+                
+                .rank {
+                    font-size: 30px;
+                    font-weight: 700;
+                }
+            }
+            
+            .body {
+                margin-top: 60px;
+                font-size: 18px;
+                font-weight:  700;
+                .name {
+                    font-size: 30px;
+                }
+                
+                .info {
+                    .label {
+                        margin-right: 20px;
+                    }
+                }
+            }
+            
+            .footer {
+                display: flex;
+                align-items: center;
+                color: $secondary;
+                font-size: 20px;
+                margin-top: 20px;
+                .dot {
+                    margin-right: 8px;
+                }
+                a {
+                    color: $dark;
+                    &:hover {
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.lm-team {
+    height: 900px;
+    width: 100%;
+    .header {
+        color: $white;
+        font-size: 80px;
+        width: 100%;
+        text-align: center;
+        padding: 50px;
+    }
+    
+    .team-container {
+        padding: 0 4px;
+        
+        .team-card {
+            background-color: transparent;
+            padding: 0 4px;
+            .bar, .bar-secondary {
+                height: 16px;
+            }
+            
+            .img {
+                height: 320px;
+            }
+            
+            .content {
+                background-color: $white;
+                padding:0 40px 20px;
+                .name {
+                    font-size: 30px;
+                    padding: 20px 0;
+                }
+                
+                .description {
+                    font-size: 15px;
+                }
+            }
+            
+            .footer {
+                background-color: $white;
+                padding: 0 40px 30px;
+                a {
+                    color: $dark;
+                    &:hover {
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.lm-professor {
+    width: 100%;
+    .prof-intro {
+        height: 500px;
+        background: $gray;
+        
+        .row {
+            height: 100%;
+            padding: 80px 0;
+        }
+        
+        .reverse {
+            background: $white;
+        }
+        .avatar {
+            display: flex;
+            align-items: center;
+            .img {
+                height: 280px;
+                width: 280px;
+                border-radius: 50%;
+                border: 15px solid $secondary;
+            }
+        }
+        
+        .content {
+            padding-left: 40px;
+            .header {
+                font-size: 30px;
+                font-family: 'Calibri';
+            }
+            
+            .body {
+                margin-top: 20px;
+                font-size: 20px;
+                
+                .description {
+                    margin-top: 20px;
+                }
+            }
+            
+            .footer {
+                margin-top: 20px;
+                a {
+                    @include read-more;
+                    color: $secondary;
                 }
             }
         }

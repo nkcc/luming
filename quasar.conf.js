@@ -31,6 +31,7 @@ module.exports = configure(function (ctx) {
     boot: [
     //   'i18n',
       'axios',
+      'components',
     ],
 
     // https://v2.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -97,7 +98,7 @@ module.exports = configure(function (ctx) {
       // (like functional components as one of the examples),
       // you can manually specify Quasar components/directives to be available everywhere:
       //
-      // components: [],
+    //   components: [],
       // directives: [],
 
       // Quasar plugins
