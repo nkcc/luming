@@ -60,6 +60,9 @@
       </div>
     </section>
     <section class="lm-points">
+      <template v-for="(v, k) in carouselData" :key="k"
+        >carousel{{ k }}
+      </template>
       <q-carousel
         v-model="slide"
         transition-prev="scale"
@@ -71,6 +74,8 @@
         padding
         arrows
         class="lm-points-background"
+        keep-alive
+        :keep-alive-include="'carousel0, carousel1, carousel2, carousel3'"
       >
         >
         <template v-slot:navigation-icon="{ active, onClick }">
@@ -93,14 +98,17 @@
         </template>
 
         <template v-for="(v, k) in carouselData" :key="k">
-          <q-carousel-slide name="style" class="column no-wrap flex-center">
+          <q-carousel-slide
+            :name="'carousel' + k"
+            class="column no-wrap flex-center"
+          >
             <div class="row">
-              <div class="col col-sm-12 offset-sm-0 col-md-5 offset-1 left">
+              <div class="col col-sm-12 offset-sm-1 col-md-5 offset-1 left">
                 <div class="header">{{ v.title }}</div>
                 <div class="content">
                   <div class="title">{{ v.subTitle }}</div>
                   <p class="discription">
-                    {{ v.discription }}
+                    {{ v.description }}
                   </p>
                 </div>
                 <div class="footer">
@@ -108,7 +116,7 @@
                   <a href="">READ MORE ></a>
                 </div>
               </div>
-              <div class="col col-sm-12 offset-sm-0 col-md-5 offset-1 right">
+              <div class="col col-sm-12 offset-sm-1 col-md-5 offset-1 right">
                 <q-img class="points-img" :src="v.imgLink"></q-img>
               </div>
             </div>
@@ -133,7 +141,7 @@ export default defineComponent({
         subTitle: '来自海外',
         description:
           '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
-        imgLink:  require('../assets/oxford.jpeg'),
+        imgLink: require('../assets/oxford.jpeg'),
       },
       {
         name: '',
@@ -141,7 +149,7 @@ export default defineComponent({
         subTitle: '来自海外',
         description:
           '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
-        imgLink: '~/assets/course-3.jpg',
+        imgLink: require('../assets/lb.jpg'),
       },
       {
         name: '',
@@ -149,7 +157,7 @@ export default defineComponent({
         subTitle: '来自海外',
         description:
           '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
-        imgLink: '~/assets/course-3.jpg',
+        imgLink: require('../assets/harvard_school.jpg'),
       },
       {
         name: '',
@@ -157,7 +165,7 @@ export default defineComponent({
         subTitle: '来自海外',
         description:
           '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
-        imgLink: '~/assets/course-3.jpg',
+        imgLink: require('../assets/bg.jpg'),
       },
     ]);
     const meta = ref<Meta>({
@@ -175,7 +183,7 @@ export default defineComponent({
         { value: 'outline', label: 'outline' },
         { value: 'push', label: 'push' },
       ],
-      slide: ref('style'),
+      slide: ref('carousel0'),
       slideActive: ref(
         'background:#cc932e;width: 100px;border-radius: 0;padding:0;'
       ),

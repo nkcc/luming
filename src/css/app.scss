@@ -178,6 +178,9 @@ h2, h3 , h4, h5 {
         
         a {
             @include read-more;
+            &:hover {
+                color:$secondary;
+            }
         }
     }
 }
