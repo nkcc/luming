@@ -125,6 +125,7 @@ h2, h3 , h4, h5 {
     width: 100%;
     background-color: $points-bg;
     .lm-points-background {
+        height: auto;
         background-color: $points-bg;
         background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
         .row {
@@ -162,7 +163,16 @@ h2, h3 , h4, h5 {
             }
             
             .left {
-                padding-top: 195px;
+                padding: 200px 0;
+            }
+            
+            .right {
+                padding: 200px 0;
+                .points-img {
+                    width: 460px;
+                    height: 340px;
+                    box-shadow: 20px 20px $secondary;
+                }
             }
         }
         

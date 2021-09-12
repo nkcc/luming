@@ -70,99 +70,94 @@
         navigation
         padding
         arrows
-        height="865px"
-        class="lm-points-background">
+        class="lm-points-background"
       >
+        >
         <template v-slot:navigation-icon="{ active, onClick }">
           <q-btn
             v-if="active"
-            size="lg"
-            icon="horizontal_rule"
+            size="3px"
             flat
             dense
             @click="onClick"
-            style="color:#cc932e"
+            :style="slideActive"
           />
           <q-btn
             v-else
-            size="lg"
-            icon="horizontal_rule"
-            color="white"
+            size="3px"
             flat
             dense
+            :style="slideDefault"
             @click="onClick"
           />
         </template>
 
-        <q-carousel-slide name="style" class="column no-wrap flex-center">
+        <template v-for="(v, k) in carouselData" :key="k">
+          <q-carousel-slide name="style" class="column no-wrap flex-center">
             <div class="row">
-                <div class="col col-sm-12 left">
-                    <div class="header">为什么选择鹿名</div>
-                    <div class="content">
-                        <div class="title">来自海外</div>
-                        <p class="discription">
-                            鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……
-                        </p>
-                    </div>
-                    <div class="footer">
-                        <q-icon class="dot " name="fiber_manual_record"></q-icon>
-                        <a href="">READ MORE ></a>
-                    </div>
+              <div class="col col-sm-12 offset-sm-0 col-md-5 offset-1 left">
+                <div class="header">{{ v.title }}</div>
+                <div class="content">
+                  <div class="title">{{ v.subTitle }}</div>
+                  <p class="discription">
+                    {{ v.discription }}
+                  </p>
                 </div>
-                <div class="col col-sm-12 right"></div>
+                <div class="footer">
+                  <q-icon class="dot" name="fiber_manual_record"></q-icon>
+                  <a href="">READ MORE ></a>
+                </div>
+              </div>
+              <div class="col col-sm-12 offset-sm-0 col-md-5 offset-1 right">
+                <q-img class="points-img" :src="v.imgLink"></q-img>
+              </div>
             </div>
-        </q-carousel-slide>
-        <q-carousel-slide name="tv" class="column no-wrap flex-center">
-          <q-icon name="live_tv" size="56px" />
-          <div class="q-mt-md text-center">
-            {{ lorem }}
-          </div>
-        </q-carousel-slide>
-        <q-carousel-slide name="layers" class="column no-wrap flex-center">
-          <q-icon name="layers" size="56px" />
-          <div class="q-mt-md text-center">
-            {{ lorem }}
-          </div>
-        </q-carousel-slide>
-        <q-carousel-slide name="map" class="column no-wrap flex-center">
-          <q-icon name="terrain" size="56px" />
-          <div class="q-mt-md text-center">
-            {{ lorem }}
-          </div>
-        </q-carousel-slide>
+          </q-carousel-slide>
+        </template>
       </q-carousel>
     </section>
   </q-page>
 </template>
 
 <script lang="ts">
-import { Todo, Meta } from 'components/models';
+import { CarouselData, Meta } from 'components/models';
 import { defineComponent, ref } from 'vue';
-import { matHorizontalRule } from '@quasar/extras/material-icons'
 
 export default defineComponent({
   name: 'PageIndex',
   setup() {
-    const todos = ref<Todo[]>([
+    const carouselData = ref<CarouselData[]>([
       {
-        id: 1,
-        content: 'ct1',
+        name: '',
+        title: '为什么选择鹿名',
+        subTitle: '来自海外',
+        description:
+          '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
+        imgLink:  require('../assets/oxford.jpeg'),
       },
       {
-        id: 2,
-        content: 'ct2',
+        name: '',
+        title: '为什么选择鹿名',
+        subTitle: '来自海外',
+        description:
+          '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
+        imgLink: '~/assets/course-3.jpg',
       },
       {
-        id: 3,
-        content: 'ct3',
+        name: '',
+        title: '为什么选择鹿名',
+        subTitle: '来自海外',
+        description:
+          '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
+        imgLink: '~/assets/course-3.jpg',
       },
       {
-        id: 4,
-        content: 'ct4',
-      },
-      {
-        id: 5,
-        content: 'ct5',
+        name: '',
+        title: '为什么选择鹿名',
+        subTitle: '来自海外',
+        description:
+          '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
+        imgLink: '~/assets/course-3.jpg',
       },
     ]);
     const meta = ref<Meta>({
@@ -170,7 +165,7 @@ export default defineComponent({
     });
 
     return {
-      todos,
+      carouselData,
       meta,
       controlType: ref('flat'),
       controlTypeOptions: [
@@ -181,9 +176,15 @@ export default defineComponent({
         { value: 'push', label: 'push' },
       ],
       slide: ref('style'),
+      slideActive: ref(
+        'background:#cc932e;width: 100px;border-radius: 0;padding:0;'
+      ),
+      slideDefault: ref(
+        'background:#26322b;width: 100px;border-radius: 0;padding:0;'
+      ),
       lorem:
         'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo.',
     };
-  }
+  },
 });
 </script>
