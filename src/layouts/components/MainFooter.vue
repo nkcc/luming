@@ -1,27 +1,48 @@
 <template>
-
 <div class="page-footer">
-    <div class="row align-center information">
-        <div class="col-3">
+    <div class="row justify-center information">
+        <div class="col-3 left">
             <ul class="item-list">
                 <li class="item" v-for="(v, key) in navList" :key="key">
                     <a href="" class="title">{{v.title}}</a>
-                    <div class="description"></div>
+                    <div class="description  text-weight-thin">{{v.description}}</div>
                 </li>
             </ul>
         </div>
-        <div class="col-6">
-            <q-img src="~assets/logo_center.svg"></q-img>
+        <div class="col-3 center">
+            <q-img class="logo-center" initial-ratio="1" src="~assets/logo_center.svg"></q-img>
         </div>
-        <div class="col-3">
+        <div class="col-3 right">
             <ul class="item-list">
                 <li class="item" v-for="(v, key) in navListRight" :key="key">
                     <a href="" class="title">{{v.title}}</a>
-                    <div class="description"></div>
+                    <div class="description text-weight-thin"> {{v.description}}</div>
                 </li>
             </ul>
         </div>
+        <div class="col-9 copyright">
+            <div class="copyright-left text-weight-bolder">@2021 The President and Fellows of Maxfuture</div>
+            <div class="copyright-right">
+                <span class="name text-weight-bolder">
+                    Wechat
+                </span>
+                <span class="name text-weight-bolder">
+                    Facebook
+                </span>
+                <span class="name text-weight-bolder">
+                    Twitter
+                </span>
+
+                <span class="name text-weight-bolder">
+                    Instagram
+                </span>
+                <span class="name text-weight-bolder">
+                    Weibo
+                </span>
+            </div>
+        </div>
     </div>
+
     <div class="lm-top-bar"></div>
 </div>
 </template>
@@ -39,16 +60,19 @@ export default defineComponent({
                 id: 1,
                 title: '首页',
                 link: '',
+                description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
             },
             {
                 id: 2,
                 title: '关于鹿鸣',
                 link: '',
+                description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
             },
             {
                 id: 3,
                 title: '鹿鸣留学',
                 link: '',
+                description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
             }
         ]);
 
@@ -56,16 +80,19 @@ export default defineComponent({
                 id: 4,
                 title: '鹿鸣案例',
                 link: '',
+                description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
             },
             {
                 id: 5,
                 title: '鹿鸣亮点',
                 link: '',
+                description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
             },
             {
                 id: 6,
                 title: '联系我们',
                 link: '',
+                description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
             },
         ])
 
