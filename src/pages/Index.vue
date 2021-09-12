@@ -172,10 +172,10 @@
           'justify-center',
           k % 2 !== 0 ? 'reverse' : '',
         ]" v-for="(v, k) in caseData" :key="k">
-            <div class="img-container col col-md-12 col-sm-12 col-lg-6 col-xl-4">
+            <div class="img-container col col-md-6 col-sm-12 col-lg-6 col-xl-4">
                 <q-img class="img" :src="v.imgLink"></q-img>
             </div>
-            <div class="col-md-12 col-sm-12 col-lg-6 col-xl-4 justify-center">
+            <div class="col-md-6 col-sm-12 col-lg-6 col-xl-4 justify-center">
                 <div class="content">
                     <div class="header">
                         <div class="title">

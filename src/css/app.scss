@@ -386,10 +386,10 @@ h5 {
     }
 
     .img-container {
+        display: flex;
+        align-items: center;
       .img {
         box-shadow: 20px 20px $secondary;
-        height: 480px;
-        width: 600px;
       }
 
       padding-right: 100px;
