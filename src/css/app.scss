@@ -58,20 +58,24 @@ h2, h3 , h4, h5 {
     }
 }
 
+.bar {
+    width: 100%;
+    background-color: $primary;
+}
 
+.bar-secondary {
+    width: 100%;
+    background-color: $secondary;
+}
 
 .lm-services {
     width: 100%;
     .bar {
         height: $services-bar-height;
-        width: 100%;
-        background-color: $primary;
     }
     
     .bar-secondary {
         height: $services-bar-height;
-        width: 100%;
-        background-color: $secondary;
     }
     
     .media {
@@ -121,7 +125,7 @@ h2, h3 , h4, h5 {
     }
 }
 
-.lm-points {
+.lm-points,  .lm-offers {
     width: 100%;
     background-color: $points-bg;
     .lm-points-background {
@@ -180,6 +184,126 @@ h2, h3 , h4, h5 {
             @include read-more;
             &:hover {
                 color:$secondary;
+            }
+        }
+    }
+}
+
+.lm-culture {
+    padding: 0 2px;
+    .culture-item {
+        padding: 0 2px;
+    }
+
+    .caption {
+        padding: 42px;
+        font-size: 65px;
+        font-family: "Helvetica";
+        letter-spacing: 50px;
+        text-align: center;
+    }
+    
+    .culture-img {
+        height: 300px;
+    }
+    .content {
+        padding: 30px 30px 10px;
+        p {
+            font-size: 18px;
+        }
+        .footer {
+            a {
+                @include read-more;
+                color: #000;
+                &:hover {
+                    color: $secondary;
+                }
+            }
+        }
+    }
+    
+    .bar {
+        height: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .bar-secondary {
+        height: 12px;
+        margin-bottom: 10px;
+    }
+}
+
+.lm-offers {
+    margin-top: 80px;
+    .caption {
+        color: $white;
+        text-align: center;
+        font-size: 70px;
+        font-weight: 700;
+        padding-top: 80px;
+        padding-bottom: 50px;
+    }
+    
+    .area {
+        display: flex;
+        justify-content: center;
+        .label {
+            padding: 5px 20px;
+            margin: 0 20px;
+            font-size: 30px;
+            font-weight: 700;
+            color: $secondary;
+            text-align: center;
+            list-style-type: none;
+            transition: all 1s ease;
+            &.active {
+                color: $white;
+                background-color: $secondary;
+            }
+        }
+    }
+    .lm-points-background .row {
+        .left, .right {
+            &.offer {
+                padding: 0;
+            }
+        }
+        
+        .offer-list {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            
+            .offer-item {
+                height: 180px;
+                display: flex;
+                border-right: 3px solid $secondary;
+                margin-right: 50px;
+                align-items: center;
+                .school-logo {
+                    .img {
+                        height: 160px;
+                        width: 160px;
+                        background: $white;
+                    }
+                }
+                
+                .school-desc {
+                    color: $white;
+                    width: 100%;
+                    padding: 10px 30px;
+                    .title {
+                        font-size: 20px;
+                    }
+                    .description {
+                        margin-top: 10px;
+                        width: 200px;
+                    }
+
+                    .footer {
+                        margin-top: 30px;
+                    }
+                }
             }
         }
     }

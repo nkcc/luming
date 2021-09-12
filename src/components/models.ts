@@ -14,4 +14,10 @@ export interface CarouselData {
     description: string;
     imgLink: string;
  }
+ 
+ export interface OfferData {
+    title: string;
+    name: string,
+    list: {title: string, imgLink: string, description: string}[];
+ }
 
