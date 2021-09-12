@@ -386,8 +386,9 @@ h5 {
     }
 
     .img-container {
-        display: flex;
-        align-items: center;
+      display: flex;
+      align-items: center;
+
       .img {
         box-shadow: 20px 20px $secondary;
       }
@@ -516,9 +517,14 @@ h5 {
 .lm-professor {
   width: 100%;
 
+
+
   .prof-intro {
-    height: 500px;
     background: $gray;
+
+    &.reverse {
+      background-color: $white;
+    }
 
     .row {
       height: 100%;
@@ -534,7 +540,6 @@ h5 {
       align-items: center;
 
       .img {
-        height: 280px;
         width: 280px;
         border-radius: 50%;
         border: 15px solid $secondary;
@@ -542,8 +547,6 @@ h5 {
     }
 
     .content {
-      padding-left: 40px;
-
       .header {
         font-size: 30px;
         font-family: 'Calibri';
@@ -584,17 +587,18 @@ h5 {
     .q-field--standard .q-field__control:before {
       border-bottom: 1px solid rgba(255, 255, 255, 0.24);
     }
-    
+
     .submit {
-        margin-top: 20px;
-        .dot {
-            color: $tertiary;
-            margin-right: 4px;
-        }
-        
-        &:hover {
-            color:$secondary;
-        }
+      margin-top: 20px;
+
+      .dot {
+        color: $tertiary;
+        margin-right: 4px;
+      }
+
+      &:hover {
+        color: $secondary;
+      }
     }
   }
 }
@@ -603,5 +607,5 @@ h5 {
   background: #14281ad1;
   width: 100%;
   height: 100%;
-//   height: 500px;
+  //   height: 500px;
 }

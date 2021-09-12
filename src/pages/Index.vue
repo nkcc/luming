@@ -227,11 +227,12 @@
     <setion class="lm-professor">
         <h1 class="header text-weight-bold text-center">教授孵育计划</h1>
 
-        <div class="prof-intro" v-for="(v, k) in professorData" :key="k">
-            <div :class="['q-pa-xl row justify-center', k % 2 == 0 ? '' : 'reverse']">
+        <div class="prof-intro q-pa-xl q-pa-md" :class="k % 2 == 0 ? '' : 'reverse'" v-for="(v, k) in professorData" :key="k">
+            <div :class="[' row justify-center', k % 2 == 0 ? '' : 'reverse']">
                 <div class="col-lg-2 col-3 col-md-3 col-sm-12 avatar align-items-center">
                     <q-img class="img" :src="v.imgLink"></q-img>
                 </div>
+                <div class="col-lg-1"></div>
                 <div class="col-7 col-lg-4 col-md-9 col-sm-12 content">
                     <div class="header text-weight-bolder">{{ v.name }}</div>
                     <div class="body">
