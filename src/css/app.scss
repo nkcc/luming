@@ -63,11 +63,12 @@ h5 {
     }
 
     .lm-text-second-title {
-      font-size: 35px;
-      font-family: "Calibri";
-      // font-weight: 600;
-      color: $secondary;
-      letter-spacing: 25px;
+      margin-bottom: 20px;
+
+      .logo-title {
+        width: 500px;
+        height: 35px;
+      }
     }
 
     p {
@@ -100,9 +101,9 @@ h5 {
   }
 
   .media {
-    .img {
-      height: 225px;
-    }
+    // .img {
+    // //   height: 225px;
+    // }
 
     .introduction {
       margin: 14px 0 14px 50px;
@@ -160,12 +161,12 @@ h5 {
     height: auto;
     background-color: $points-bg;
     background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
-    
+
     .lm-scroll {
-        width: 100%;
-        height: 212px;
-        overflow: hidden;
-        margin-top: 50px;
+      width: 100%;
+      height: 212px;
+      overflow: hidden;
+      margin-top: 50px;
     }
 
     .row {

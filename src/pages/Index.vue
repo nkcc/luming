@@ -5,7 +5,7 @@
         <div class="lm-introduction animate__animated animate__fadeIn">
             <div class="lm-text-title text-center">鹿 名 国 际 教 育</div>
             <div class="lm-text-second-title">
-                <q-img src="/"></q-img>
+                <q-img class="logo-title" src="logo_letter.svg" fit="contain"></q-img>
             </div>
             <p class="text-center">让世界名校， 不再高不可攀</p>
         </div>
@@ -19,7 +19,7 @@
           ">
                 <div class="bar-secondary"></div>
                 <div class="media">
-                    <q-img class="img" src="/course-1.jpg"></q-img>
+                    <q-img class="img" src="/course-1.jpg" :ratio="1337/901"></q-img>
                     <div class="introduction">
                         <div class="sub-title">MAXFUTURE PRODUCTS</div>
                         <div class="heading">青云计划</div>
@@ -31,7 +31,7 @@
             <div class="col-md-3 col-sm-6 col-xs-12 bg-primary">
                 <div class="bar"></div>
                 <div class="media">
-                    <q-img class="img" src="/course-2.jpg"></q-img>
+                    <q-img class="img" src="/course-2.jpg" :ratio="1337/901"></q-img>
                     <div class="introduction">
                         <div class="sub-title">MAXFUTURE PRODUCTS</div>
                         <div class="heading">青云计划</div>
@@ -43,7 +43,7 @@
             <div class="col-md-3 col-sm-6 col-xs-12 bg-secondary">
                 <div class="bar-secondary"></div>
                 <div class="media">
-                    <q-img class="img" src="/course-3.jpg"></q-img>
+                    <q-img class="img" src="/course-3.jpg" :ratio="1337/901"></q-img>
                     <div class="introduction">
                         <div class="sub-title">MAXFUTURE PRODUCTS</div>
                         <div class="heading">青云计划</div>
@@ -55,7 +55,7 @@
             <div class="col-md-3 col-sm-6 col-xs-12 bg-primary">
                 <div class="bar"></div>
                 <div class="media">
-                    <q-img class="img" src="/course-4.jpg"></q-img>
+                    <q-img class="img" src="/course-4.jpg" :ratio="1337/901"></q-img>
                     <div class="introduction">
                         <div class="sub-title">MAXFUTURE PRODUCTS</div>
                         <div class="heading">青云计划</div>
@@ -226,7 +226,7 @@
             </div>
         </div>
     </section>
-    <setion class="lm-professor">
+    <section class="lm-professor">
         <h1 class="header text-weight-bold text-center">教授孵育计划</h1>
 
         <div class="prof-intro q-pa-xl q-pa-md" :class="k % 2 == 0 ? '' : 'reverse'" v-for="(v, k) in professorData" :key="k">
@@ -251,9 +251,9 @@
                 </div>
             </div>
         </div>
-    </setion>
+    </section>
     <section class="lm-contact">
-        <q-parallax src="https://www.stanford.edu/wp-content/uploads/2021/07/20210527_Stanford_OvalDJI_0037-DG-2048x1108.jpg" :height="600">
+        <q-parallax src="bg.jpg" :height="600">
             <div class="green-background">
                 <div class="row justify-center">
                     <div class="col-lg-8 col-md-10 q-pa-md q-ma-md">
@@ -262,17 +262,17 @@
                             本科硕士精准直录，实现最高学府留学梦
                         </div>
                         <div class="form">
-                            <q-input input-style="color: #cd932f" color="secondary" label-color="white" v-model="text" label="姓名">
+                            <q-input input-style="color: #cd932f" color="secondary" label-color="white" v-model="form.name" label="姓名">
                                 <template v-slot:prepend>
                                     <q-icon color="secondary" name="person" />
                                 </template>
                             </q-input>
-                            <q-input input-style="color: #cd932f" color="secondary" label-color="white" v-model="text" label="电话">
+                            <q-input input-style="color: #cd932f" color="secondary" label-color="white" v-model="form.phone" label="电话">
                                 <template v-slot:prepend>
                                     <q-icon color="secondary" name="phone" />
                                 </template>
                             </q-input>
-                            <q-input color="secondary" label-color="white" input-style="color: #cd932f" v-model="text" label="微信">
+                            <q-input color="secondary" label-color="white" input-style="color: #cd932f" v-model="form.wechat" label="微信">
                                 <template v-slot:prepend>
                                     <q-icon color="secondary" name="wechat" />
                                 </template>

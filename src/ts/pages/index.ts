@@ -252,5 +252,9 @@ export default {
   slideDefault: ref(
     'background:#26322b;width: 100px;border-radius: 0;padding:0;'
   ),
-  lorem: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo.',
+  form: ref({
+      name: '',
+      phone: '',
+      wecaht: '',
+  })
 };

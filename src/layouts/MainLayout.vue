@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh lpR fFf">
 
-    <q-header>
+    <q-header :reveal="true">
         <main-header></main-header>
     </q-header>
 

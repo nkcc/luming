@@ -1,11 +1,12 @@
 <template>
   <div class="lm-top-bar"></div>
-  <div class="lm-header">
-    <nav class="navbar">
-      <img class="header-logo"
+  <div class="lm-header q-px-md">
+    <nav class="navbar row items-center">
+        <q-btn flat round dense color="secondary" icon="menu" class="toggle lt-md col-sm-1 col-xs-1" />
+      <img class="header-logo col-sm-10 col-xs-10 col-md-3"
            src="/logo.svg"
            alt="" />
-      <ul class="navbar-nav">
+      <ul class="navbar-nav gt-sm col-md-6">
         <li v-for="(list, key) in navList"
             :key="key"
             class="nav-item">
@@ -13,7 +14,7 @@
              class="nav-link">{{list.title}}</a>
         </li>
       </ul>
-      <div class="right">
+      <div class="right col-xs-1 col-sm-1 col-md-3 row justify-center">
         <q-btn style="color:#cd932f"
                flat
                icon="search" />
@@ -36,22 +37,22 @@ export default defineComponent({
       },
       {
         id: 2,
-        title: '关于鹿鸣',
+        title: '关于鹿名',
         link: '',
       },
       {
         id: 3,
-        title: '鹿鸣留学',
+        title: '鹿名留学',
         link: '',
       },
       {
         id: 4,
-        title: '鹿鸣案例',
+        title: '鹿名案例',
         link: '',
       },
       {
         id: 5,
-        title: '鹿鸣亮点',
+        title: '鹿名亮点',
         link: '',
       },
       {
