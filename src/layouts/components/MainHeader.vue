@@ -3,7 +3,7 @@
   <div class="lm-header">
     <nav class="navbar">
       <img class="header-logo"
-           src="~/assets/logo.svg"
+           src="/logo.svg"
            alt="" />
       <ul class="navbar-nav">
         <li v-for="(list, key) in navList"

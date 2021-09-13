@@ -10,7 +10,7 @@
             </ul>
         </div>
         <div class="col-3 center">
-            <q-img class="logo-center" initial-ratio="1" src="~assets/logo_center.svg"></q-img>
+            <q-img class="logo-center" initial-ratio="1" src="/logo_center.svg"></q-img>
         </div>
         <div class="col-3 right">
             <ul class="item-list">

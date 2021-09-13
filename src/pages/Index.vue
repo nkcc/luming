@@ -3,8 +3,10 @@
 <q-page class="row items-center justify-evenly">
     <section class="home-background">
         <div class="lm-introduction animate__animated animate__fadeIn">
-            <div class="lm-text-title">鹿 名 国 际 教 育</div>
-            <div class="lm-text-second-title">MAXFUTURE</div>
+            <div class="lm-text-title text-center">鹿 名 国 际 教 育</div>
+            <div class="lm-text-second-title">
+                <q-img src="/"></q-img>
+            </div>
             <p class="text-center">让世界名校， 不再高不可攀</p>
         </div>
     </section>
@@ -17,7 +19,7 @@
           ">
                 <div class="bar-secondary"></div>
                 <div class="media">
-                    <q-img class="img" src="~/assets/course-1.jpg"></q-img>
+                    <q-img class="img" src="/course-1.jpg"></q-img>
                     <div class="introduction">
                         <div class="sub-title">MAXFUTURE PRODUCTS</div>
                         <div class="heading">青云计划</div>
@@ -29,7 +31,7 @@
             <div class="col-md-3 col-sm-6 col-xs-12 bg-primary">
                 <div class="bar"></div>
                 <div class="media">
-                    <q-img class="img" src="~/assets/course-2.jpg"></q-img>
+                    <q-img class="img" src="/course-2.jpg"></q-img>
                     <div class="introduction">
                         <div class="sub-title">MAXFUTURE PRODUCTS</div>
                         <div class="heading">青云计划</div>
@@ -41,7 +43,7 @@
             <div class="col-md-3 col-sm-6 col-xs-12 bg-secondary">
                 <div class="bar-secondary"></div>
                 <div class="media">
-                    <q-img class="img" src="~/assets/course-3.jpg"></q-img>
+                    <q-img class="img" src="/course-3.jpg"></q-img>
                     <div class="introduction">
                         <div class="sub-title">MAXFUTURE PRODUCTS</div>
                         <div class="heading">青云计划</div>
@@ -53,7 +55,7 @@
             <div class="col-md-3 col-sm-6 col-xs-12 bg-primary">
                 <div class="bar"></div>
                 <div class="media">
-                    <q-img class="img" src="~/assets/course-4.jpg"></q-img>
+                    <q-img class="img" src="/course-4.jpg"></q-img>
                     <div class="introduction">
                         <div class="sub-title">MAXFUTURE PRODUCTS</div>
                         <div class="heading">青云计划</div>
