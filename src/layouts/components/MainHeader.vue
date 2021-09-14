@@ -58,7 +58,7 @@ export default defineComponent({
             },
             {
                 id: 6,
-                title: '联系我们',
+                title: '联系鹿名',
                 link: '',
             },
         ]);

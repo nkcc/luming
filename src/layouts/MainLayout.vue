@@ -9,7 +9,7 @@
       <router-view />
     </q-page-container>
     <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
-      <q-btn fab icon="keyboard_arrow_up" color="primary" />
+      <q-btn class="page-scroller-btn" padding="10px 10px" icon="keyboard_arrow_up" color="secondary" />
     </q-page-scroller>
     <main-footer></main-footer>
   </q-layout>
@@ -87,11 +87,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style lang="scss">
-.lm-top-bar {
-    width: 100%;
-    height: 10px;
-    background-color: $secondary;
-}
-</style>

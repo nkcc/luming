@@ -2,18 +2,20 @@
 
 .lm-top-bar {
   background-color: $secondary;
-  height: 8px;
+  height: 100vh/2227 * 13;
 }
 
 .lm-header {
   padding: 12px;
 
-  nav {
+  .navbar {
+
     .toggle {
       // margin-left: 20px;
     }
 
     .navbar-nav {
+      padding-left: 0;
       display: flex;
       justify-content: space-evenly;
 
@@ -36,21 +38,22 @@
   .header-logo {
     height: 50px;
   }
-  
+
   .left {
-      display: flex;
-      .lm-margin {
-        width: 20px;
-      }
+    display: flex;
+
+    .lm-margin {
+      width: 20px;
+    }
   }
 
   .right {
     display: flex;
     justify-content: flex-end;
-    
+
     .lm-margin {
-        width: 10px;
-      }
+      width: 10px;
+    }
 
     .search {
       color: $secondary;
