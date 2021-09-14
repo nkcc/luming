@@ -40,7 +40,7 @@ h5 {
 
 .home-background {
   width: 100%;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 113px);
   background-image: url("/lb.jpg");
   background-position: center center;
   background-size: cover;
@@ -52,14 +52,14 @@ h5 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(45deg, #12121247 0%, #0000008c 100%);
+    background: rgba(0,0,0,0.6);
 
     .lm-text-title {
       font-weight: 600;
       font-size: 50px;
       color: $secondary;
       letter-spacing: 30px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .lm-text-second-title {

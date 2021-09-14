@@ -1,43 +1,59 @@
 @import './quasar.variables.scss';
+
 .lm-top-bar {
-    background-color: $secondary;
-    height: 8px;
+  background-color: $secondary;
+  height: 8px;
 }
 
 .lm-header {
-    padding: 12px;
+  padding: 12px;
 
-    nav {
-        .toggle {
-            // margin-left: 20px;
-        }
-        .navbar-nav {
-            display: flex;
-            justify-content: space-evenly;
-            
-            .nav-item {
-                list-style-type: none;
-                // margin-right: 30px;
-
-                a {
-                    color: $secondary;
-                    text-decoration: none;
-                    font-size: 15px;
-                    letter-spacing: 4px;
-                }
-            }
-            
-
-        }
+  nav {
+    .toggle {
+      // margin-left: 20px;
     }
+
+    .navbar-nav {
+      display: flex;
+      justify-content: space-evenly;
+
+      .nav-item {
+        list-style-type: none;
+        // margin-right: 30px;
+
+        a {
+          color: $secondary;
+          text-decoration: none;
+          font-size: 15px;
+          letter-spacing: 4px;
+        }
+      }
+
+
+    }
+  }
+
+  .header-logo {
+    height: 50px;
+  }
+  
+  .left {
+      display: flex;
+      .lm-margin {
+        width: 20px;
+      }
+  }
+
+  .right {
+    display: flex;
+    justify-content: flex-end;
     
-    .header-logo {
-        height: 50px;
+    .lm-margin {
+        width: 10px;
+      }
+
+    .search {
+      color: $secondary;
     }
-    
-    .right {        
-        .search {
-            color: $secondary;
-        }
-    }
+  }
 }
