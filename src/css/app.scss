@@ -40,7 +40,7 @@ h5 {
 
 .home-background {
   width: 100%;
-  height: calc(100vh - 113px);
+  height: calc(100vh - 110px);
   background-image: url("/lb.jpg");
   background-position: center center;
   background-size: cover;
@@ -52,7 +52,7 @@ h5 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.4);
 
     .lm-text-title {
       font-weight: 600;

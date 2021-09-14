@@ -8,58 +8,24 @@
                 <q-img class="logo-title" src="logo_letter.svg" fit="contain"></q-img>
             </div>
             <p class="text-center">让世界名校， 不再高不可攀</p>
+
+            <div class="show-more">
+                <q-icon size="30px" name="keyboard_double_arrow_up" color="secondary"></q-icon>
+            </div>
         </div>
     </section>
     <section class="lm-services">
         <div class="row">
             <div class="
             col-md-3 col-sm-6 col-xs-12
-  
             animate__animated animate__animated
-          " v-for="(v, k) in servicesData" :key="k" :class="k % 2 == 0 ? 'bg-secondary' : 'bg-primary'">
-                <div class="bar-secondary"></div>
+          " v-for="(v, k) in servicesData" :key="k" :class="getClassType(k, 'bg-secondary', 'bg-primary')">
+                <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
                 <div class="media">
                     <q-img class="img" :src="v.img" :ratio="1337/901"></q-img>
                     <div class="introduction">
-                        <div class="sub-title">MAXFUTURE PRODUCTS</div>
                         <div class="heading">{{v.title}}</div>
                         <p>{{v.description}}</p>
-                        <a href="">READ MORE ></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 bg-primary">
-                <div class="bar"></div>
-                <div class="media">
-                    <q-img class="img" src="" :ratio="1337/901"></q-img>
-                    <div class="introduction">
-                        <div class="sub-title">MAXFUTURE PRODUCTS</div>
-                        <div class="heading">青云计划</div>
-                        <p>单所申请世界名校精准直录</p>
-                        <a href="">READ MORE ></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 bg-secondary">
-                <div class="bar-secondary"></div>
-                <div class="media">
-                    <q-img class="img" src="" :ratio="1337/901"></q-img>
-                    <div class="introduction">
-                        <div class="sub-title">MAXFUTURE PRODUCTS</div>
-                        <div class="heading">青云计划</div>
-                        <p>单所申请世界名校精准直录</p>
-                        <a href="">READ MORE ></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 bg-primary">
-                <div class="bar"></div>
-                <div class="media">
-                    <q-img class="img" src="" :ratio="1337/901"></q-img>
-                    <div class="introduction">
-                        <div class="sub-title">MAXFUTURE PRODUCTS</div>
-                        <div class="heading">青云计划</div>
-                        <p>单所申请世界名校精准直录</p>
                         <a href="">READ MORE ></a>
                     </div>
                 </div>
@@ -102,7 +68,7 @@
         <div class="caption">MAXFUTURE</div>
         <div class="row">
             <div class="col col-sm-6 col-xs-12 col-md-3 culture-item" v-for="(v, k) in cultureData" :key="k">
-                <div :class="k % 2 == 0 ? 'bar-secondary' : 'bar'"></div>
+                <div :class="getClassType(k,'bar-secondary', 'bar')"></div>
                 <q-img class="culture-img" :src="v.imgLink"></q-img>
                 <div class="content">
                     <p>{{ v.description }}</p>
@@ -111,7 +77,7 @@
                         <a href=""> READ MORE ></a>
                     </div>
                 </div>
-                <div :class="k % 2 == 0 ? 'bar-secondary' : 'bar'"></div>
+                <div :class="getClassType(k,'bar-secondary', 'bar')"></div>
             </div>
         </div>
     </section>
@@ -144,7 +110,7 @@
 
             <template v-for="(v, k) in offerData" :key="k">
                 <q-carousel-slide :name="'offer' + k" class="column no-wrap flex-center">
-                    <q-scroll-area class="lm-scroll" :bar-style="{background: 'white'}" >
+                    <q-scroll-area class="lm-scroll" :bar-style="{background: 'white'}">
                         <ul class="offer-list row fit justify-start items-center q-gutter-xs q-col-gutter no-wrap">
                             <li class="offer-item" v-for="(sv, sk) in v.list" :key="sk">
                                 <div class="school-logo">
@@ -229,8 +195,8 @@
     <section class="lm-professor">
         <h1 class="header text-weight-bold text-center">教授孵育计划</h1>
 
-        <div class="prof-intro q-pa-xl q-pa-md" :class="k % 2 == 0 ? '' : 'reverse'" v-for="(v, k) in professorData" :key="k">
-            <div :class="[' row justify-center', k % 2 == 0 ? '' : 'reverse']">
+        <div class="prof-intro q-pa-xl q-pa-md" :class="getClassType(k,'', 'reverse')" v-for="(v, k) in professorData" :key="k">
+            <div :class="[' row justify-center',getClassType(k,'', 'reverse')]">
                 <div class="col-lg-2 col-3 col-md-3 col-sm-12 avatar align-items-center">
                     <q-img class="img" :src="v.imgLink"></q-img>
                 </div>
@@ -301,13 +267,14 @@ export default defineComponent({
     setup() {
         return data;
     },
-    computed: {
-        getComputedStyle
-    },
     methods: {
         visibilityChanged() {
             console.log(123);
         },
+
+        getClassType(k: number, firstClass: string, secondClass: string) {
+            return k % 2 == 0 ? firstClass : secondClass;
+        }
     },
 });
 </script>
