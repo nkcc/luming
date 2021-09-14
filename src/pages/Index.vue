@@ -155,7 +155,9 @@
           k % 2 !== 0 ? 'reverse' : '',
         ]" v-for="(v, k) in caseData" :key="k">
             <div class="img-container col col-md-6 col-sm-12 col-lg-6 col-xl-4">
-                <q-responsive :ratio="899/716">                <q-img class="img" :src="v.imgLink"></q-img></q-responsive>
+                <q-responsive :ratio="899/716">
+                    <q-img class="img" :src="v.imgLink"></q-img>
+                </q-responsive>
 
             </div>
             <div class="col-md-6 col-sm-12 col-lg-6 col-xl-4 content-container">
@@ -195,15 +197,19 @@
         <div class="team-container row">
             <div class="team-card col-sm-6 col-md-6 col-lg-3" v-for="(v, k) in teamData" :key="k">
                 <div :class="k % 2 !== 0 ? 'bar' : 'bar-secondary'"></div>
-                <q-img class="img" :src="v.imgLink"></q-img>
+
+                <q-responsive :ratio="505/396">
+                    <q-img class="img" :src="v.imgLink"></q-img>
+                </q-responsive>
+
                 <div class="content">
                     <div class="name text-weight-bolder">{{ v.name }}</div>
                     <p class="description">{{ v.description }}</p>
+                    <div class="footer">
+                        <a href=""> 了解更多 ></a>
+                    </div>
                 </div>
 
-                <div class="footer">
-                    <a href=""> 了解更多 ></a>
-                </div>
             </div>
         </div>
     </section>
@@ -290,7 +296,7 @@ export default defineComponent({
         getClassType(k: number, firstClass: string, secondClass: string) {
             return k % 2 == 0 ? firstClass : secondClass;
         },
-        
+
         changeSlideOfferType(type: string) {
             this.slideOffer = type;
         }
