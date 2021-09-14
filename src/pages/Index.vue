@@ -14,16 +14,16 @@
         <div class="row">
             <div class="
             col-md-3 col-sm-6 col-xs-12
-            bg-secondary
+  
             animate__animated animate__animated
-          ">
+          " v-for="(v, k) in servicesData" :key="k" :class="k % 2 == 0 ? 'bg-secondary' : 'bg-primary'">
                 <div class="bar-secondary"></div>
                 <div class="media">
-                    <q-img class="img" src="/course-1.jpg" :ratio="1337/901"></q-img>
+                    <q-img class="img" :src="v.img" :ratio="1337/901"></q-img>
                     <div class="introduction">
                         <div class="sub-title">MAXFUTURE PRODUCTS</div>
-                        <div class="heading">青云计划</div>
-                        <p>单所申请世界名校精准直录</p>
+                        <div class="heading">{{v.title}}</div>
+                        <p>{{v.description}}</p>
                         <a href="">READ MORE ></a>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
             <div class="col-md-3 col-sm-6 col-xs-12 bg-primary">
                 <div class="bar"></div>
                 <div class="media">
-                    <q-img class="img" src="/course-2.jpg" :ratio="1337/901"></q-img>
+                    <q-img class="img" src="" :ratio="1337/901"></q-img>
                     <div class="introduction">
                         <div class="sub-title">MAXFUTURE PRODUCTS</div>
                         <div class="heading">青云计划</div>
@@ -43,7 +43,7 @@
             <div class="col-md-3 col-sm-6 col-xs-12 bg-secondary">
                 <div class="bar-secondary"></div>
                 <div class="media">
-                    <q-img class="img" src="/course-3.jpg" :ratio="1337/901"></q-img>
+                    <q-img class="img" src="" :ratio="1337/901"></q-img>
                     <div class="introduction">
                         <div class="sub-title">MAXFUTURE PRODUCTS</div>
                         <div class="heading">青云计划</div>
@@ -55,7 +55,7 @@
             <div class="col-md-3 col-sm-6 col-xs-12 bg-primary">
                 <div class="bar"></div>
                 <div class="media">
-                    <q-img class="img" src="/course-4.jpg" :ratio="1337/901"></q-img>
+                    <q-img class="img" src="" :ratio="1337/901"></q-img>
                     <div class="introduction">
                         <div class="sub-title">MAXFUTURE PRODUCTS</div>
                         <div class="heading">青云计划</div>
@@ -300,6 +300,9 @@ export default defineComponent({
     name: 'PageIndex',
     setup() {
         return data;
+    },
+    computed: {
+        getComputedStyle
     },
     methods: {
         visibilityChanged() {

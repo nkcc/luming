@@ -8,7 +8,9 @@
     <q-page-container>
       <router-view />
     </q-page-container>
-
+    <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
+      <q-btn fab icon="keyboard_arrow_up" color="primary" />
+    </q-page-scroller>
     <main-footer></main-footer>
   </q-layout>
 </template>
