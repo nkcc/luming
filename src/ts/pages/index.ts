@@ -37,7 +37,7 @@ const carouselData = ref<CarouselData[]>([
   {
     name: '',
     title: '为什么选择鹿名',
-    subTitle: '来自海外',
+    subTitle: '实力强大',
     description:
       '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
     imgLink: '/lb.jpg',
@@ -45,7 +45,7 @@ const carouselData = ref<CarouselData[]>([
   {
     name: '',
     title: '为什么选择鹿名',
-    subTitle: '来自海外',
+    subTitle: '保障结果',
     description:
       '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
     imgLink: '/harvard_school.jpg',
@@ -53,7 +53,7 @@ const carouselData = ref<CarouselData[]>([
   {
     name: '',
     title: '为什么选择鹿名',
-    subTitle: '来自海外',
+    subTitle: '硕果累累',
     description:
       '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
     imgLink: '/bg.jpg',
@@ -85,7 +85,7 @@ const cultureData = ref([
 const offerData = ref<OfferData[]>([
   {
     title: '',
-    name: 'america1',
+    name: 'america',
     list: [
       {
         title: '哈佛大学',
@@ -109,7 +109,7 @@ const offerData = ref<OfferData[]>([
   },
   {
     title: '',
-    name: 'america2',
+    name: 'england',
     list: [
       {
         title: '约翰霍普金斯大学',
@@ -133,7 +133,7 @@ const offerData = ref<OfferData[]>([
   },
   {
     title: 'Open',
-    name: '',
+    name: 'austrilia',
     list: [
       {
         title: '哈佛大学',
@@ -157,7 +157,32 @@ const offerData = ref<OfferData[]>([
   },
   {
     title: 'Open',
-    name: '',
+    name: 'singapore',
+    list: [
+      {
+        title: '哈佛大学',
+        description:
+          '简称“哈佛”，享誉世界的私立研究型大学，著名的常春藤盟校成员……',
+        imgLink: '/oxford.jpeg',
+      },
+      {
+        title: '约翰霍普金斯大学',
+        description:
+          '创立于1876年，是一所世界顶级的著名私立大学，美国第一所研究型大学……',
+        imgLink: '/lb.jpg',
+      },
+      {
+        title: '宾夕法尼亚大学',
+        description:
+          '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
+        imgLink: '/harvard_school.jpg',
+      },
+    ],
+  },
+  
+  {
+    title: 'Open',
+    name: 'hongkong',
     list: [
       {
         title: '哈佛大学',
@@ -180,6 +205,29 @@ const offerData = ref<OfferData[]>([
     ],
   },
 ]);
+
+const offerType = ref([
+    {
+        title: '美国藤校',
+        type: 'america',
+    },
+    {
+        title: '英国前五',
+        type: 'england',
+    },
+    {
+        title: '澳洲八大',
+        type: 'austrilia',
+    },
+    {
+        title: '新加坡名校',
+        type: 'singapore',
+    },
+    {
+        title: '香港名校',
+        type: 'hongkong',
+    }
+])
 
 const caseData = ref([
   {
@@ -306,13 +354,14 @@ export default {
   teamData,
   professorData,
   slide: ref('carousel0'),
-  slideOffer: ref('offer0'),
+  slideOffer: ref('america'),
   slideActive: ref(
     'background:#cc932e;width: 100px;border-radius: 0;padding:0;'
   ),
   slideDefault: ref(
     'background:#26322b;width: 100px;border-radius: 0;padding:0;'
   ),
+  offerType,
   form: ref({
     name: '',
     phone: '',

@@ -176,16 +176,17 @@ section {
 .lm-points {
   background-color: $white;
   height: 100vw * 1268 / 2227;
-  
+
   .points-contianer {
     width: 100%;
-}
+    height: 70%;
+  }
 }
 
 .lm-points,
 .lm-offers {
   width: 100%;
-  padding: 150px 0;
+  padding: 50px 0;
   background-color: $points-bg;
   background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
 
@@ -258,7 +259,7 @@ section {
 }
 
 .lm-culture {
-  padding:0 6px 80px;
+  padding: 0 6px 80px;
   background-color: $white;
 
   .caption {
@@ -267,14 +268,16 @@ section {
     font-family: "Helvetica";
     letter-spacing: 50px;
     text-align: center;
+
     .logo-letter {
-        height: 65px;
-        width: 600px;
-        .q-img__image {
-            path {
-                fill: $dark;
-            }
+      height: 65px;
+      width: 600px;
+
+      .q-img__image {
+        path {
+          fill: $dark;
         }
+      }
 
     }
   }
@@ -316,10 +319,10 @@ section {
 .lm-offers {
   background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
   height: 100vw / 2227 * 1293;
-  
-  
+
+
   .offer-container {
-      width: 100%;
+    width: 100%;
   }
 
   .caption {
@@ -348,10 +351,15 @@ section {
       text-align: center;
       list-style-type: none;
       transition: all 1s ease;
+      cursor: pointer;
 
       &.active {
         color: $white;
         background-color: $secondary;
+      }
+      &:hover {
+        color: $white;
+        background-color: $secondary; 
       }
     }
   }
@@ -390,18 +398,24 @@ section {
           color: $white;
           width: 100%;
           padding: 10px 30px;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          height: 100%;
 
           .title {
             font-size: 20px;
           }
 
           .description {
-            margin-top: 10px;
+            margin-top: 20px;
             width: 200px;
+            height: 100%;
           }
 
           .footer {
-            margin-top: 30px;
+            margin-top: 20px;
+            margin-left: -5px;
           }
         }
       }
