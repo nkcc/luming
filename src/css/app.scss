@@ -177,9 +177,9 @@ section {
   background-color: $white;
   height: 100vw * 1268 / 2227;
 
-  .points-contianer {
+  .points-container {
     width: 100%;
-    height: 70%;
+    height: 80%;
   }
 }
 
@@ -357,9 +357,10 @@ section {
         color: $white;
         background-color: $secondary;
       }
+
       &:hover {
         color: $white;
-        background-color: $secondary; 
+        background-color: $secondary;
       }
     }
   }
@@ -380,7 +381,7 @@ section {
       .offer-item {
         height: 180px;
         display: flex;
-        border-right: 3px solid $secondary;
+        border-right: 5px solid $secondary;
         margin: 10px 0;
         padding-left: 40px;
         margin-right: 50px;
@@ -429,6 +430,7 @@ section {
   .case-item {
     background-color: $gray;
     padding: 60px;
+    height: 100vw / 2227 * 914;
 
     &.reverse {
       background-color: $white;
@@ -445,15 +447,16 @@ section {
     }
 
     .img-container {
-      display: flex;
-      align-items: center;
-
       .img {
         box-shadow: 20px 20px $secondary;
       }
 
-      padding-right: 100px;
       padding-bottom: 40px;
+    }
+
+    .content-container {
+      height: 100%;
+     padding : 30px 0;
     }
 
     .content {
@@ -463,6 +466,7 @@ section {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
+      height: 100%;
 
       .header {
         .title {
@@ -498,6 +502,7 @@ section {
         color: $secondary;
         font-size: 20px;
         margin-top: 20px;
+        margin-left: -5px;
 
         .dot {
           margin-right: 8px;
@@ -512,6 +517,8 @@ section {
         }
       }
     }
+
+
   }
 }
 

@@ -32,7 +32,7 @@
             </div>
         </div>
     </section>
-    <section class="lm-points">
+    <section class="lm-points row items-center">
         <div class="points-container">
             <q-carousel v-model="slide" transition-prev="scale" transition-next="scale" swipeable animated control-color="secondary" navigation padding arrows class="lm-points-background" keep-alive :keep-alive-include="'carousel0, carousel1, carousel2, carousel3'">
                 >
@@ -150,12 +150,15 @@
           'case-item',
           'row',
           'justify-center',
+          'items-center',
+          'q-gutter-xl',
           k % 2 !== 0 ? 'reverse' : '',
         ]" v-for="(v, k) in caseData" :key="k">
             <div class="img-container col col-md-6 col-sm-12 col-lg-6 col-xl-4">
-                <q-img class="img" :src="v.imgLink"></q-img>
+                <q-responsive :ratio="899/716">                <q-img class="img" :src="v.imgLink"></q-img></q-responsive>
+
             </div>
-            <div class="col-md-6 col-sm-12 col-lg-6 col-xl-4 justify-center">
+            <div class="col-md-6 col-sm-12 col-lg-6 col-xl-4 content-container">
                 <div class="content">
                     <div class="header">
                         <div class="title">
