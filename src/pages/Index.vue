@@ -128,7 +128,7 @@
                                     </div>
                                     <div class="school-desc">
                                         <div class="title">{{ sv.title }}</div>
-                                        <div class="description">
+                                        <div class="description ellipsis-3-lines">
                                             {{ sv.description }}
                                         </div>
                                         <div class="footer">
@@ -154,13 +154,13 @@
           'q-gutter-xl',
           k % 2 !== 0 ? 'reverse' : '',
         ]" v-for="(v, k) in caseData" :key="k">
-            <div class="img-container col col-md-6 col-sm-12 col-lg-6 col-xl-4">
+            <div class="img-container col-md-5 col-sm-12 col-lg-5 col-xl-4">
                 <q-responsive :ratio="899/716">
                     <q-img class="img" :src="v.imgLink"></q-img>
                 </q-responsive>
 
             </div>
-            <div class="col-md-6 col-sm-12 col-lg-6 col-xl-4 content-container">
+            <div class="col-md-5 col-sm-12 col-lg-5 col-xl-4 content-container">
                 <div class="content">
                     <div class="header">
                         <div class="title">
