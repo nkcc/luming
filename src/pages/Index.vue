@@ -104,7 +104,7 @@
         <div class="offer-container">
             <div class="row">
                 <div class="col-12">
-                    <div class="caption">鹿名国际 录取院校</div>
+                    <h1 class="text-center text-white text-weight-bold header-title">鹿名国际 录取院校</h1>
                     <ul class="area">
                         <li :class="['label', slideOffer == v.type ? 'active' : '']" v-for="(v, k) in offerType" :key="k" @click="changeSlideOfferType(v.type)">
                             {{ v.title }}
@@ -159,15 +159,14 @@
           'row',
           'justify-center',
           'items-center',
-          'q-gutter-sm',
           k % 2 !== 0 ? 'reverse' : '',
         ]" v-for="(v, k) in caseData" :key="k">
-            <div class="img-container col-md-5 col-sm-12 col-lg-5 col-xl-4">
+            <div class="img-container col-md-6 col-sm-12 col-lg-6 col-xl-5">
                 <q-responsive :ratio="899 / 716" class="shadow-up-10">
                     <q-img class="img" :src="v.imgLink" fit="contain"></q-img>
                 </q-responsive>
             </div>
-            <div class="col-md-5 col-sm-12 col-lg-5 col-xl-4 content-container">
+            <div class="col-md-6 col-sm-12 col-lg-6 col-xl-5 content-container">
                 <q-responsive :ratio="899 / 716">
                     <div class="content">
                         <div class="header">
@@ -202,7 +201,7 @@
         </div>
     </section>
     <section class="lm-team lm-dark-background">
-        <div class="header text-weight-bold">鹿名团队</div>
+        <h1 class=" header-title text-white text-center text-weight-bold">鹿名团队</h1>
         <div class="team-container row">
             <div class="team-card col-sm-6 col-md-6 col-lg-3" v-for="(v, k) in teamData" :key="k">
                 <div :class="k % 2 !== 0 ? 'bar' : 'bar-secondary'"></div>
@@ -224,13 +223,15 @@
     <section class="lm-professor">
         <h1 class="header text-weight-bold text-center">教授孵育计划</h1>
 
-        <div class="prof-intro q-pa-xl q-pa-md" :class="getClassType(k, '', 'reverse')" v-for="(v, k) in professorData" :key="k">
-            <div :class="[' row justify-center', getClassType(k, '', 'reverse')]">
+        <div class="prof-intro" :class="getClassType(k, '', 'reverse')" v-for="(v, k) in professorData" :key="k">
+            <div :class="['row justify-center items-center', getClassType(k, '', 'reverse')]">
                 <div class="col-lg-2 col-3 col-md-3 col-sm-12 avatar align-items-center">
-                    <q-img class="img" :src="v.imgLink"></q-img>
+                    <q-responsive :ratio="1">
+                        <q-img class="img" :src="v.imgLink"></q-img>
+                    </q-responsive>
+
                 </div>
-                <div class="col-lg-1"></div>
-                <div class="col-7 col-lg-4 col-md-9 col-sm-12 content">
+                <div class="col-7 col-lg-6 col-md-9 col-sm-12 content">
                     <div class="header text-weight-bolder">{{ v.name }}</div>
                     <div class="body">
                         <div class="title" v-for="(vv, kk) in v.title" :key="kk">
@@ -248,14 +249,14 @@
         </div>
     </section>
     <section class="lm-contact">
-        <q-parallax src="bg.jpg" :height="600">
+        <q-parallax src="bg.jpg" :height="650">
             <div class="green-background">
                 <div class="row justify-center">
                     <div class="col-lg-8 col-md-10 q-pa-md q-ma-md">
-                        <h1 class="text-secondary">联系我们</h1>
-                        <div class="information text-white text-weight-bold">
+                        <h1 class="text-secondary title">联系我们</h1>
+                        <h4 class="text-white text-weight-bold">
                             本科硕士精准直录，实现最高学府留学梦
-                        </div>
+                        </h4>
                         <div class="form">
                             <q-input input-style="color: #cd932f" color="secondary" label-color="white" v-model="form.name" label="姓名">
                                 <template v-slot:prepend>
@@ -274,7 +275,7 @@
                             </q-input>
                             <q-btn class="submit" outline type="submit" style="color: goldenrod">
                                 <q-icon class="dot" name="fiber_manual_record"></q-icon>
-                                SUBMIT >
+                                了解更多
                             </q-btn>
                         </div>
                     </div>

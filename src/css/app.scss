@@ -190,6 +190,11 @@ section {
   background-color: $points-bg;
   background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
 
+  .header-title {
+    margin-top: 0;
+    margin-bottom: 100px;
+  }
+
   .lm-points-background {
     background-color: transparent;
     height: 100%;
@@ -457,7 +462,9 @@ section {
 
     .content-container {
       height: 100%;
-    //  padding : 30px 0;
+      padding: 40px;
+      position: relative;
+      bottom: -20px;
     }
 
     .content {
@@ -465,7 +472,7 @@ section {
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
+      justify-content: space-between;
       height: 100%;
 
       .header {
@@ -487,6 +494,7 @@ section {
 
         .name {
           font-size: 30px;
+          padding-bottom: 14px;
         }
 
         .info {
@@ -530,6 +538,11 @@ section {
   flex-direction: column;
   justify-content: center;
 
+  .header-title {
+    margin-top: 0;
+    margin-bottom: 100px;
+  }
+
   .header {
     color: $white;
     font-size: 80px;
@@ -539,11 +552,11 @@ section {
   }
 
   .team-container {
-    padding: 0 4px;
+    padding: 0 8px;
 
     .team-card {
       background-color: transparent;
-      padding: 0 4px;
+      padding: 0 8px;
 
       .bar,
       .bar-secondary {
@@ -591,10 +604,12 @@ section {
 .lm-professor {
   width: 100%;
 
-
-
   .prof-intro {
     background: $gray;
+    min-height: 100vw / 2227 * 771;
+    width: 100%;
+    display: flex;
+    align-items: center;
 
     &.reverse {
       background-color: $white;
@@ -602,25 +617,27 @@ section {
 
     .row {
       height: 100%;
-      padding: 80px 0;
+      width: 100%;
     }
 
     .reverse {
       background: $white;
+
+      .content {
+        padding: 0 60px 0 0;
+      }
     }
 
     .avatar {
-      display: flex;
-      align-items: center;
-
       .img {
-        width: 280px;
         border-radius: 50%;
         border: 15px solid $secondary;
       }
     }
 
     .content {
+      padding: 0 0 0 60px;
+
       .header {
         font-size: 30px;
         font-family: 'Calibri';
@@ -650,9 +667,14 @@ section {
 
 .lm-contact {
   width: 100%;
+//   min-height: 100vw / 2227 * 893;
 
   .information {
     font-size: 30px;
+  }
+  
+  .title {
+      font-size: 85px;
   }
 
   .form {
@@ -678,10 +700,9 @@ section {
 }
 
 .green-background {
-  background: #14281ad1;
+  background: #060c07d9;
   width: 100%;
   height: 100%;
-  //   height: 500px;
 }
 
 .page-scroller-btn {

@@ -4,8 +4,8 @@
         <div class="col-3 left">
             <ul class="item-list">
                 <li class="item" v-for="(v, key) in navList" :key="key">
-                    <a href="" class="title">{{v.title}}</a>
-                    <div class="description  text-weight-thin">{{v.description}}</div>
+                    <a href="" class="title text-weight-bold">{{v.title}}</a>
+                    <div class="description  text-weight-regular">{{v.description}}</div>
                 </li>
             </ul>
         </div>
@@ -20,7 +20,11 @@
                 </li>
             </ul>
         </div>
-        <div class="col-9 copyright">
+ 
+    </div>
+    
+    <div class="row justify-center items-center information">
+               <div class="col-9 copyright">
             <div class="copyright-left text-weight-bolder">@2021 The President and Fellows of Maxfuture</div>
             <div class="copyright-right">
                 <span class="name text-weight-bolder">
