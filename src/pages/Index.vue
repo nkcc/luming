@@ -9,7 +9,16 @@
             </div>
             <p class="text-center">让世界名校， 不再高不可攀</p>
         </div>
-        <div class="show-more justify-center row  animate__animated animate__slow animate__slideOutUp animate__repeat animate__infinite">
+        <div class="
+          show-more
+          justify-center
+          row
+          animate__animated
+          animate__slow
+          animate__slideOutUp
+          animate__repeat
+          animate__infinite
+        ">
             <q-icon class="" size="50px" name="keyboard_double_arrow_up" color="secondary"></q-icon>
         </div>
     </section>
@@ -40,14 +49,15 @@
                     <q-btn v-if="active" size="3px" flat dense @click="onClick" :style="slideActive" />
                     <q-btn v-else size="3px" flat dense :style="slideDefault" @click="onClick" />
                 </template>
-
                 <template v-for="(v, k) in carouselData" :key="k">
-                    <q-carousel-slide :name="'carousel' + k" class="column no-wrap ">
+                    <q-carousel-slide :name="'carousel' + k" class="column no-wrap">
                         <div class="row justify-center items-center">
                             <div class="col-xs-12 col-sm-12 col-md-5 left">
                                 <h2 class="text-secondary text-weight-bold">{{ v.title }}</h2>
                                 <div class="content">
-                                    <h3 class="text-white text-weight-bold">{{ v.subTitle }}</h3>
+                                    <h3 class="text-white text-weight-bold">
+                                        {{ v.subTitle }}
+                                    </h3>
                                     <p class="description">
                                         {{ v.description }}
                                     </p>
@@ -58,7 +68,7 @@
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-4 right">
-                                <q-responsive :ratio="692/511">
+                                <q-responsive :ratio="692 / 511">
                                     <q-img class="points-img" :src="v.imgLink"></q-img>
                                 </q-responsive>
                             </div>
@@ -67,7 +77,6 @@
                 </template>
             </q-carousel>
         </div>
-
     </section>
     <section class="lm-culture">
         <div class="caption">
@@ -76,7 +85,7 @@
         <div class="row q-col-gutter-sm">
             <div class="col col-sm-6 col-xs-12 col-md-3 culture-item" v-for="(v, k) in cultureData" :key="k">
                 <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
-                <q-responsive :ratio="542/511">
+                <q-responsive :ratio="542 / 511">
                     <q-img class="culture-img" :src="v.imgLink"></q-img>
                 </q-responsive>
 
@@ -98,7 +107,7 @@
                     <div class="caption">鹿名国际 录取院校</div>
                     <ul class="area">
                         <li :class="['label', slideOffer == v.type ? 'active' : '']" v-for="(v, k) in offerType" :key="k" @click="changeSlideOfferType(v.type)">
-                            {{ v.title}}
+                            {{ v.title }}
                         </li>
                     </ul>
                 </div>
@@ -114,14 +123,14 @@
                     <q-carousel-slide :name="v.name" class="column no-wrap flex-center">
                         <q-scroll-area class="lm-scroll" :bar-style="{ background: 'white' }">
                             <ul class="
-                                offer-list
-                                row
-                                fit
-                                justify-start
-                                items-center
-                                q-gutter-xs q-col-gutter
-                                no-wrap
-                                ">
+                    offer-list
+                    row
+                    fit
+                    justify-start
+                    items-center
+                    q-gutter-xs q-col-gutter
+                    no-wrap
+                  ">
                                 <li class="offer-item" v-for="(sv, sk) in v.list" :key="sk">
                                     <div class="school-logo">
                                         <q-img class="img" :src="sv.imgLink" fit="scale-down"></q-img>
@@ -143,7 +152,6 @@
                 </template>
             </q-carousel>
         </div>
-
     </section>
     <section class="lm-case">
         <div :class="[
@@ -151,44 +159,45 @@
           'row',
           'justify-center',
           'items-center',
-          'q-gutter-xl',
+          'q-gutter-sm',
           k % 2 !== 0 ? 'reverse' : '',
         ]" v-for="(v, k) in caseData" :key="k">
             <div class="img-container col-md-5 col-sm-12 col-lg-5 col-xl-4">
-                <q-responsive :ratio="899/716">
-                    <q-img class="img" :src="v.imgLink"></q-img>
+                <q-responsive :ratio="899 / 716" class="shadow-up-10">
+                    <q-img class="img" :src="v.imgLink" fit="contain"></q-img>
                 </q-responsive>
-
             </div>
             <div class="col-md-5 col-sm-12 col-lg-5 col-xl-4 content-container">
-                <div class="content">
-                    <div class="header">
-                        <div class="title">
-                            <span class="caption text-weight-bolder">录取院校：</span>
-                            <span class="value text-secondary">{{ v.name }}</span>
-                        </div>
-                        <div class="rank">
-                            <span class="caption text-weight-bolder">学校排名：</span>
-                            <span class="value text-weight-bolder">{{ v.rank }}</span>
-                        </div>
-                    </div>
-                    <div class="body">
-                        <div class="name text-weight-bolder">{{ v.student }}</div>
-                        <div class="title text-weight-bolder">背景分析：</div>
-                        <div class="background">
-                            <div class="info" v-for="(vv, kk) in v.info" :key="kk">
-                                <span class="label text-weight-bolder">
-                                    {{ vv.label }}:
-                                </span>
-                                <span class="value text-weight-light"> {{ vv.value }}</span>
+                <q-responsive :ratio="899 / 716">
+                    <div class="content">
+                        <div class="header">
+                            <div class="title">
+                                <span class="caption text-weight-bolder">录取院校：</span>
+                                <span class="value text-secondary">{{ v.name }}</span>
+                            </div>
+                            <div class="rank">
+                                <span class="caption text-weight-bolder">学校排名：</span>
+                                <span class="value text-weight-bolder">{{ v.rank }}</span>
                             </div>
                         </div>
+                        <div class="body">
+                            <div class="name text-weight-bolder">{{ v.student }}</div>
+                            <div class="title text-weight-bolder">背景分析：</div>
+                            <div class="background">
+                                <div class="info" v-for="(vv, kk) in v.info" :key="kk">
+                                    <span class="label text-weight-bolder">
+                                        {{ vv.label }}:
+                                    </span>
+                                    <span class="value text-weight-light"> {{ vv.value }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <q-icon class="dot" name="fiber_manual_record"></q-icon>
+                            <a href="">了解更多 ></a>
+                        </div>
                     </div>
-                    <div class="footer">
-                        <q-icon class="dot" name="fiber_manual_record"></q-icon>
-                        <a href="">了解更多 ></a>
-                    </div>
-                </div>
+                </q-responsive>
             </div>
         </div>
     </section>
@@ -198,7 +207,7 @@
             <div class="team-card col-sm-6 col-md-6 col-lg-3" v-for="(v, k) in teamData" :key="k">
                 <div :class="k % 2 !== 0 ? 'bar' : 'bar-secondary'"></div>
 
-                <q-responsive :ratio="505/396">
+                <q-responsive :ratio="505 / 396">
                     <q-img class="img" :src="v.imgLink"></q-img>
                 </q-responsive>
 
@@ -209,7 +218,6 @@
                         <a href=""> 了解更多 ></a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -299,7 +307,7 @@ export default defineComponent({
 
         changeSlideOfferType(type: string) {
             this.slideOffer = type;
-        }
+        },
     },
 });
 </script>

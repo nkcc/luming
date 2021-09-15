@@ -436,7 +436,8 @@ section {
       background-color: $white;
 
       .content {
-        padding-right: 100px;
+        // padding-right: 100px;
+        height: 100%;
       }
 
       .img-container {
@@ -451,17 +452,16 @@ section {
         box-shadow: 20px 20px $secondary;
       }
 
-      padding-bottom: 40px;
+      padding: 40px;
     }
 
     .content-container {
       height: 100%;
-     padding : 30px 0;
+    //  padding : 30px 0;
     }
 
     .content {
-      padding-left: 20px;
-      padding-bottom: 20px;
+      padding-left: 40px;
       height: 100%;
       display: flex;
       flex-direction: column;
