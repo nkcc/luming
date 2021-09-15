@@ -114,17 +114,17 @@
                     <q-carousel-slide :name="v.name" class="column no-wrap flex-center">
                         <q-scroll-area class="lm-scroll" :bar-style="{ background: 'white' }">
                             <ul class="
-                  offer-list
-                  row
-                  fit
-                  justify-start
-                  items-center
-                  q-gutter-xs q-col-gutter
-                  no-wrap
-                ">
+                                offer-list
+                                row
+                                fit
+                                justify-start
+                                items-center
+                                q-gutter-xs q-col-gutter
+                                no-wrap
+                                ">
                                 <li class="offer-item" v-for="(sv, sk) in v.list" :key="sk">
                                     <div class="school-logo">
-                                        <q-img class="img" :src="sv.imgLink"></q-img>
+                                        <q-img class="img" :src="sv.imgLink" fit="scale-down"></q-img>
                                     </div>
                                     <div class="school-desc">
                                         <div class="title">{{ sv.title }}</div>
@@ -133,7 +133,7 @@
                                         </div>
                                         <div class="footer">
                                             <q-icon class="dot" name="fiber_manual_record"></q-icon>
-                                            <a href="">了解更多 ></a>
+                                            <a :href="sv.link">了解更多 ></a>
                                         </div>
                                     </div>
                                 </li>
