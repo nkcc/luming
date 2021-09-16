@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 <template>
-<q-page class="row items-center justify-evenly">
+<q-page>
     <section class="home-background">
         <div class="lm-introduction animate__animated animate__fadeIn">
             <div class="lm-text-title text-center">鹿 名 国 际 教 育</div>
@@ -24,7 +24,7 @@
         </div>
     </section>
     <section class="lm-services">
-        <div class="row q-col-gutter-sm">
+        <div class="row q-col-gutter-sm container-lg">
             <div class="
             col-md-3 col-sm-6 col-xs-12
             animate__animated animate__animated
@@ -83,7 +83,7 @@
         <div class="caption">
             <q-img class="logo-letter" src="logo_letter_dark.svg" fit="contain"></q-img>
         </div>
-        <div class="row q-col-gutter-sm">
+        <div class="row q-col-gutter-sm container-lg">
             <div class="col col-sm-6 col-xs-12 col-md-3 culture-item" v-for="(v, k) in cultureData" :key="k">
                 <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
                 <q-responsive :ratio="542 / 511">
@@ -203,7 +203,7 @@
     </section>
     <section class="lm-team lm-dark-background">
         <h1 class=" header-title text-white text-center text-weight-bold">鹿名团队</h1>
-        <div class="team-container row">
+        <div class="team-container row container-lg">
             <div class="team-card col-sm-6 col-md-6 col-lg-3" v-for="(v, k) in teamData" :key="k">
                 <div :class="k % 2 !== 0 ? 'bar' : 'bar-secondary'"></div>
 
@@ -225,7 +225,7 @@
         <h1 class="header text-weight-bold text-center">教授孵育计划</h1>
 
         <div class="prof-intro" :class="getClassType(k, '', 'reverse')" v-for="(v, k) in professorData" :key="k">
-            <div :class="['row justify-center items-center', getClassType(k, '', 'reverse')]">
+            <div :class="['row justify-center items-center container-lg', getClassType(k, '', 'reverse')]">
                 <div class="col-lg-2 col-3 col-md-3 col-sm-12 avatar align-items-center">
                     <q-responsive :ratio="1">
                         <q-img class="img" :src="v.imgLink"></q-img>
