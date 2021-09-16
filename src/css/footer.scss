@@ -1,8 +1,15 @@
 @import './quasar.variables.scss';
 .page-footer {
+    position: relative;
     color: $secondary;
     background-color: $dark-green;
     padding: 40px 0 0;
+    
+    .back-to-top {
+        position: absolute;
+        right: 10px;
+        top: -22px;
+    }
     
     .information {
         padding-bottom: 40px;

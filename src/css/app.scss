@@ -51,7 +51,8 @@ section {
 $xs-breakpoint: 718px;
 $sm-breakpoint: 1024px;
 $md-breakpoint: 1439px;
-$lg-breakpoint: 1920px;
+$lg-breakpoint: 1600px;
+$xl-breakpoint: 1920px;
 
 .container,
 .container-sm,
@@ -64,6 +65,7 @@ $lg-breakpoint: 1920px;
 }
 
 @media (min-width: $xs-breakpoint) {
+
   .container,
   .container-sm {
     max-width: 540px;
@@ -71,6 +73,7 @@ $lg-breakpoint: 1920px;
 }
 
 @media (min-width: $sm-breakpoint) {
+
   .container,
   .container-sm,
   .container-md {
@@ -79,6 +82,7 @@ $lg-breakpoint: 1920px;
 }
 
 @media (min-width: $md-breakpoint) {
+
   .container,
   .container-sm,
   .container-md,
@@ -88,12 +92,24 @@ $lg-breakpoint: 1920px;
 }
 
 @media (min-width: $lg-breakpoint) {
+
   .container,
   .container-sm,
   .container-md,
   .container-lg,
   .container-xl {
     max-width: 1440px;
+  }
+}
+
+@media (min-width: $xl-breakpoint) {
+
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 1600px;
   }
 }
 
@@ -140,12 +156,21 @@ $lg-breakpoint: 1920px;
       letter-spacing: 4px;
     }
   }
+}
 
-  .show-more {
-    position: relative;
-    width: 100%;
-    bottom: 100px;
-  }
+.lm-scroll {
+    margin-top: calc(100vh - 150px);
+    background-color: transparent;
+    height: 50px;
+    .show-more {
+        position: relative;
+        width: 100%;
+        bottom: 20px;
+      }
+    
+      .up-scroll {
+        cursor: pointer;
+      }
 }
 
 .bar {
@@ -160,8 +185,7 @@ $lg-breakpoint: 1920px;
 
 .lm-services {
   width: 100%;
-  margin-top: calc(100vh - 100px);
-  background-color: $dark;
+  background-color: #000;
 
   .bar {
     height: $services-bar-height;
@@ -719,14 +743,14 @@ $lg-breakpoint: 1920px;
 
 .lm-contact {
   width: 100%;
-//   min-height: 100vw / 2227 * 893;
+  //   min-height: 100vw / 2227 * 893;
 
   .information {
     font-size: 30px;
   }
-  
+
   .title {
-      font-size: 85px;
+    font-size: 85px;
   }
 
   .form {
