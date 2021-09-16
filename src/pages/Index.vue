@@ -18,6 +18,7 @@
           animate__slideOutUp
           animate__repeat
           animate__infinite
+          animate__fadeOut
         ">
             <q-icon class="" size="50px" name="keyboard_double_arrow_up" color="secondary"></q-icon>
         </div>

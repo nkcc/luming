@@ -39,7 +39,7 @@ const carouselData = ref<CarouselData[]>([
         title: '为什么选择鹿名',
         subTitle: '实力强大',
         description:
-            '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
+            '拥有独家全球名校资源,包括美国TOP30、英国G5、加拿大、澳洲、香港、新加坡等世界级名校;与传统留学中介和咨询机构形成服务互补。',
         imgLink: '/lb.jpg',
     },
     {
@@ -47,7 +47,7 @@ const carouselData = ref<CarouselData[]>([
         title: '为什么选择鹿名',
         subTitle: '保障结果',
         description:
-            '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
+            '签约鹿名的学生有着9996+名校录取率,不录取全额退费,并且保证学员1009%顺利毕业。',
         imgLink: '/harvard_school.jpg',
     },
     {
@@ -55,7 +55,23 @@ const carouselData = ref<CarouselData[]>([
         title: '为什么选择鹿名',
         subTitle: '硕果累累',
         description:
-            '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
+            '8年来鹿名已帮助学员斩获600+顶级名校 offer ',
+        imgLink: '/bg.jpg',
+    },
+    {
+        name: '',
+        title: '为什么选择鹿名',
+        subTitle: '价格合理',
+        description:
+            '鹿名所有项目均自主研发,不存在中间商,能提供给客户最合理的价格。',
+        imgLink: '/bg.jpg',
+    },
+    {
+        name: '',
+        title: '为什么选择鹿名',
+        subTitle: '客户放心',
+        description:
+            '正规注册公司,实体办公场所,支持低订金面签合同,保障资金安全。',
         imgLink: '/bg.jpg',
     },
 ]);
