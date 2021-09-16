@@ -10,7 +10,7 @@
         <p class="text-center">让世界名校， 不再高不可攀</p>
       </div>
     </section>
-    <section class="lm-scroll">
+    <section class="lm-scroll-area">
       <div
         class="
           show-more
@@ -52,7 +52,7 @@
               class="introduction"
               :class="getClassType(k, 'bg-secondary', 'bg-primary')"
             >
-              <div class="heading">{{ v.title }}</div>
+              <h3 class="text-white text-weight-bold heading">{{ v.title }}</h3>
               <p>{{ v.description }}</p>
               <a href="">了解更多 ></a>
             </div>
