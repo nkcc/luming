@@ -257,12 +257,12 @@
         v-for="(v, k) in caseData"
         :key="k"
       >
-        <div class="img-container col-md-6 col-sm-12 col-lg-6 col-xl-5">
+        <div class="img-container col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5">
           <q-responsive :ratio="899 / 716" class="shadow-up-10">
             <q-img class="img" :src="v.imgLink" fit="contain"></q-img>
           </q-responsive>
         </div>
-        <div class="col-md-6 col-sm-12 col-lg-6 col-xl-5 content-container">
+        <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5 content-container">
           <q-responsive :ratio="899 / 716">
             <div class="content">
               <div class="header">
@@ -338,13 +338,13 @@
           ]"
         >
           <div
-            class="col-lg-2 col-3 col-md-3 col-sm-12 avatar align-items-center"
+            class="col-lg-2 col-3 col-md-3 col-sm-12 col-xs-8 avatar align-items-center"
           >
             <q-responsive :ratio="1">
               <q-img class="img" :src="v.imgLink"></q-img>
             </q-responsive>
           </div>
-          <div class="col-7 col-lg-6 col-md-9 col-sm-12 content">
+          <div class="col-7 col-lg-6 col-md-9 col-sm-12 col-xs-12 content">
             <div class="header text-weight-bolder">{{ v.name }}</div>
             <div class="body">
               <div class="title" v-for="(vv, kk) in v.title" :key="kk">

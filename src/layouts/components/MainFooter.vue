@@ -1,10 +1,10 @@
 <template>
 <div class="page-footer container-xl">
     <div class="back-to-top">
-        <q-btn class="page-scroller-btn" padding="10px 10px" icon="keyboard_arrow_up" color="secondary"  @click="scrollToTop"/>
+        <q-btn class="page-scroller-btn" padding="10px 10px" icon="keyboard_arrow_up" color="secondary" @click="scrollToTop" />
     </div>
     <div class="row justify-center information">
-        <div class="col-3 left">
+        <div class="col-3 col-md-3 left col-xs-12">
             <ul class="item-list">
                 <li class="item" v-for="(v, key) in navList" :key="key">
                     <a href="" class="title text-weight-bold">{{v.title}}</a>
@@ -12,10 +12,10 @@
                 </li>
             </ul>
         </div>
-        <div class="col-3 center">
+        <div class="col-3 col-md-3 center col-xs-12">
             <q-img class="logo-center" initial-ratio="1" src="/logo_center.svg"></q-img>
         </div>
-        <div class="col-3 right">
+        <div class="col-3 col-md-3 right col-xs-12">
             <ul class="item-list">
                 <li class="item" v-for="(v, key) in navListRight" :key="key">
                     <a href="" class="title">{{v.title}}</a>
@@ -23,11 +23,11 @@
                 </li>
             </ul>
         </div>
- 
+
     </div>
-    
+
     <div class="row justify-center items-center information">
-               <div class="col-9 copyright">
+        <div class="col-9 col-md-9 copyright row justify-center items-center">
             <div class="copyright-left text-weight-bolder">@2021 The President and Fellows of Maxfuture</div>
             <div class="copyright-right">
                 <span class="name text-weight-bolder">
