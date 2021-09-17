@@ -11,6 +11,8 @@
   transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
 }
 
+$vw : 100vw;
+
 html {
     font-size: 1vw;
 }
@@ -18,6 +20,7 @@ html {
 body {
   font-family: 'Noto Serif SC';
   font-size: 0.75rem;
+  background-color: $white;
 }
 
 h1 {
@@ -116,6 +119,11 @@ $xl-breakpoint: 1920px;
   .container-xl {
     max-width: 1600px;
   }
+  
+  html {
+    font-size: 16px;
+  }
+  $vw: 1600px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -124,16 +132,13 @@ $xl-breakpoint: 1920px;
    }
 }
 
-.home-background {
-  position: fixed;
-  top: 0;
-  left: 0;
+.lm-background {
+  position: relative;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 100px);
   background-image: url("/lb.jpg");
   background-position: center center;
   background-size: cover;
-  z-index: -1;
 
   .lm-introduction {
     height: 100%;
@@ -167,22 +172,23 @@ $xl-breakpoint: 1920px;
       letter-spacing: 4px;
     }
   }
+  
+  .show-more {
+    position: relative;
+    width: 100%;
+    bottom: 60px;
+  }
+
+  .up-scroll {
+    cursor: pointer;
+  }
 }
 
 .lm-scroll-area {
-    margin-top: calc(100vh - 150px);
     background-color: transparent;
     height: 50px;
     overflow: visible;
-    .show-more {
-        position: relative;
-        width: 100%;
-        bottom: 20px;
-      }
-    
-      .up-scroll {
-        cursor: pointer;
-      }
+
 }
 
 .bar {
@@ -260,11 +266,11 @@ $xl-breakpoint: 1920px;
 
 .lm-points {
   background-color: $white;
-  min-height: 100vw * 1268 / 2227;
+  min-height: 57rem;
 
   .points-container {
     width: 100%;
-    height: 100vw * 1268 / 2227 * 0.8;
+    height: 45.55rem;
   }
 }
 
@@ -355,7 +361,6 @@ $xl-breakpoint: 1920px;
   .caption {
     padding: 42px;
     font-size: 4.0625rem;
-    font-family: "Helvetica";
     letter-spacing: 50px;
     text-align: center;
 
@@ -408,7 +413,7 @@ $xl-breakpoint: 1920px;
 
 .lm-offers {
   background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
-  min-height: 100vw / 2227 * 1293;
+  min-height: 58.06rem;
 
 
   .offer-container {
@@ -520,7 +525,7 @@ $xl-breakpoint: 1920px;
   .case-item {
     background-color: $gray;
     padding: 60px;
-    min-height: 100vw / 2227 * 914;
+    min-height: 41.04rem;
 
     &.reverse {
       background-color: $white;
@@ -617,7 +622,7 @@ $xl-breakpoint: 1920px;
 
 .lm-team {
   width: 100%;
-  min-height: 100vw / 2227 * 1531;
+  min-height: 68.75rem;
   padding-bottom: 60px;
   display: flex;
   flex-direction: column;
@@ -654,7 +659,7 @@ $xl-breakpoint: 1920px;
 
       .content {
         background-color: $white;
-        height: 100vw / 4 * 0.65;
+        height: 16.25rem;
         padding: 0 40px 20px;
         display: flex;
         flex-direction: column;
@@ -691,7 +696,7 @@ $xl-breakpoint: 1920px;
 
   .prof-intro {
     background: $gray;
-    min-height: 100vw / 2227 * 771;
+    min-height: 34.621rem;
     width: 100%;
     display: flex;
     align-items: center;
@@ -725,7 +730,6 @@ $xl-breakpoint: 1920px;
 
       .header {
         font-size: 1.875rem;
-        font-family: 'Calibri';
       }
 
       .body {

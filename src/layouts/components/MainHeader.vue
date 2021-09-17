@@ -1,7 +1,7 @@
 <template>
 <div class="lm-top-bar"></div>
-<div class="lm-header q-px-md">
-    <nav class="navbar row items-center container-xl">
+<div class="lm-header q-px-md  container-xl">
+    <nav class="navbar row items-center">
         <q-btn flat round dense color="secondary" icon="menu" class="toggle lt-md col-sm-1 col-xs-1" />
 
         <div class=" col-sm-10 col-xs-10 col-md-3 left">

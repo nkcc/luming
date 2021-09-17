@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 <template>
   <q-page>
-    <section class="home-background">
+    <section class="lm-background container-xl">
       <div class="lm-introduction animate__animated animate__fadeIn">
         <div class="lm-text-title text-center">鹿 名 国 际 教 育</div>
         <div class="lm-text-second-title">
@@ -9,9 +9,7 @@
         </div>
         <p class="text-center">让世界名校， 不再高不可攀</p>
       </div>
-    </section>
-    <section class="lm-scroll-area">
-      <div
+            <div
         class="
           show-more
           justify-center
@@ -34,8 +32,8 @@
         />
       </div>
     </section>
-    <section class="lm-services">
-      <div class="row q-col-gutter-x-sm container-xl">
+    <section class="lm-services container-xl">
+      <div class="row q-col-gutter-x-sm ">
         <div
           class="
             col-md-3 col-sm-6 col-xs-12
@@ -60,7 +58,7 @@
         </div>
       </div>
     </section>
-    <section class="lm-points row items-center">
+    <section class="lm-points row items-center container-xl">
       <div class="points-container">
         <q-carousel
           v-model="slide"
@@ -154,7 +152,7 @@
         </div>
       </div>
     </section>
-    <section class="lm-offers row items-center">
+    <section class="lm-offers row items-center container-xl">
       <div class="offer-container">
         <div class="row">
           <div class="col-12">
@@ -247,7 +245,7 @@
         </q-carousel>
       </div>
     </section>
-    <section class="lm-case">
+    <section class="lm-case container-xl">
       <div
         :class="[
           'case-item',
@@ -298,7 +296,7 @@
         </div>
       </div>
     </section>
-    <section class="lm-team lm-dark-background">
+    <section class="lm-team lm-dark-background container-xl">
       <h1 class="header-title text-white text-center text-weight-bold">
         鹿名团队
       </h1>
@@ -324,7 +322,7 @@
         </div>
       </div>
     </section>
-    <section class="lm-professor">
+    <section class="lm-professor container-xl">
       <h1 class="header text-weight-bold text-center">教授孵育计划</h1>
 
       <div
@@ -335,7 +333,7 @@
       >
         <div
           :class="[
-            'row justify-center items-center container-xl',
+            'row justify-center items-center',
             getClassType(k, '', 'reverse'),
           ]"
         >
@@ -363,7 +361,7 @@
         </div>
       </div>
     </section>
-    <section class="lm-contact">
+    <section class="lm-contact container-xl">
       <q-parallax src="bg.jpg" :height="650">
         <div class="green-background">
           <div class="row justify-center">

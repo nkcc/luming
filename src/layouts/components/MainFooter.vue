@@ -1,5 +1,5 @@
 <template>
-<div class="page-footer">
+<div class="page-footer container-xl">
     <div class="back-to-top">
         <q-btn class="page-scroller-btn" padding="10px 10px" icon="keyboard_arrow_up" color="secondary"  @click="scrollToTop"/>
     </div>
