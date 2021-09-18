@@ -55,12 +55,12 @@ section {
 }
 
 // breakpoint variable, from https://quasar.dev/style/breakpoints
-// Except the xs one because I think 600px is too small
-$xs-breakpoint: 718px;
-$sm-breakpoint: 1024px;
-$md-breakpoint: 1439px;
-$lg-breakpoint: 1600px;
-$xl-breakpoint: 1920px;
+// Except the xs one because I think 37.5rem is too small
+$xs-breakpoint: 44.875rem;
+$sm-breakpoint: 64rem;
+$md-breakpoint: 89.9375rem;
+$lg-breakpoint: 100rem;
+$xl-breakpoint: 120rem;
 
 .container,
 .container-sm,
@@ -76,7 +76,7 @@ $xl-breakpoint: 1920px;
 
   .container,
   .container-sm {
-    max-width: 540px;
+    max-width: 33.75rem;
   }
 }
 
@@ -85,8 +85,10 @@ $xl-breakpoint: 1920px;
   .container,
   .container-sm,
   .container-md {
-    max-width: 920px;
+    max-width: 57.5rem;
   }
+  
+
 }
 
 @media (min-width: $md-breakpoint) {
@@ -95,7 +97,7 @@ $xl-breakpoint: 1920px;
   .container-sm,
   .container-md,
   .container-lg {
-    max-width: 1140px;
+    max-width: 71.25rem;
   }
 }
 
@@ -106,7 +108,7 @@ $xl-breakpoint: 1920px;
   .container-md,
   .container-lg,
   .container-xl {
-    max-width: 1440px;
+    max-width: 90rem;
   }
 }
 
@@ -117,25 +119,25 @@ $xl-breakpoint: 1920px;
   .container-md,
   .container-lg,
   .container-xl {
-    max-width: 1600px;
+    max-width: 100rem;
   }
   
   html {
-    font-size: 16px;
+    font-size: 1rem;
   }
-  $vw: 1600px;
+  $vw: 100rem;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 75rem) {
    html {
-        font-size: 12px;
+        font-size: .75rem;
    }
 }
 
 .lm-background {
   position: relative;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 6.25rem);
   background-image: url("/lb.jpg");
   background-position: center center;
   background-size: cover;
@@ -153,31 +155,31 @@ $xl-breakpoint: 1920px;
       font-weight: 600;
       font-size: 3.125rem;
       color: $secondary;
-      letter-spacing: 30px;
-      margin-bottom: 30px;
+      letter-spacing: 1.875rem;
+      margin-bottom: 1.875rem;
     }
 
     .lm-text-second-title {
-      margin-bottom: 20px;
+      margin-bottom: 1.25rem;
 
       .logo-title {
         width: 31.25rem;
         height: 2.1875rem;
-        max-width: calc(100vw - 20px);
+        max-width: calc(100vw - 1.25rem);
       }
     }
 
     p {
       color: $secondary;
       font-size: 1.25rem;
-      letter-spacing: 4px;
+      letter-spacing: .25rem;
     }
   }
   
   .show-more {
     position: relative;
     width: 100%;
-    bottom: 60px;
+    bottom: 3.75rem;
   }
 
   .up-scroll {
@@ -187,7 +189,7 @@ $xl-breakpoint: 1920px;
 
 .lm-scroll-area {
     background-color: transparent;
-    height: 50px;
+    height: 3.125rem;
     overflow: visible;
 
 }
@@ -217,7 +219,7 @@ $xl-breakpoint: 1920px;
   .service-container {
     .media {
       .introduction {
-        padding: 14px 50px;
+        padding: .875rem 3.125rem;
 
         // .heading {
         //     line-height: 0;
@@ -230,11 +232,11 @@ $xl-breakpoint: 1920px;
         }
 
         p {
-          margin-top: 4px;
+          margin-top: .25rem;
           color: $white;
           font-size: 1.1rem;
-          height: 60px;
-          // letter-spacing: 1px;
+          height: 3.75rem;
+          // letter-spacing: .0625rem;
         }
 
         a {
@@ -278,13 +280,13 @@ $xl-breakpoint: 1920px;
 .lm-points,
 .lm-offers {
   width: 100%;
-  padding: 50px 0;
+  padding: 3.125rem 0;
   background-color: $points-bg;
   background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
 
   .header-title {
     margin-top: 0;
-    margin-bottom: 100px;
+    margin-bottom: 6.25rem;
   }
 
   .lm-points-background {
@@ -296,7 +298,7 @@ $xl-breakpoint: 1920px;
       width: 100%;
       height: 13.25rem;
       overflow: hidden;
-      margin-top: 50px;
+      margin-top: 3.125rem;
     }
 
     .row {
@@ -310,7 +312,7 @@ $xl-breakpoint: 1920px;
       }
 
       .content {
-        margin-top: 20px;
+        margin-top: 1.25rem;
 
         .title {
           color: $white;
@@ -319,7 +321,7 @@ $xl-breakpoint: 1920px;
         }
 
         .description {
-          margin-top: 20px;
+          margin-top: 1.25rem;
           width: 21.875rem;
           color: $white;
           font-size: 1.25rem;
@@ -333,14 +335,14 @@ $xl-breakpoint: 1920px;
         align-items: center;
 
         .dot {
-          margin-right: 8px;
+          margin-right: .5rem;
         }
       }
 
       .right {
         .points-img {
           width: 100%;
-          box-shadow: 20px 20px $secondary;
+          box-shadow: 1.25rem 1.25rem $secondary;
         }
       }
     }
@@ -356,19 +358,19 @@ $xl-breakpoint: 1920px;
 }
 
 .lm-culture {
-  padding: 0 6px 80px;
+  padding: 0 .375rem 5rem;
   background-color: $white;
 
   .caption {
-    padding: 42px;
+    padding: 2.625rem;
     font-size: 4.0625rem;
-    letter-spacing: 50px;
+    letter-spacing: 3.125rem;
     text-align: center;
 
     .logo-letter {
       height: 4.0625rem;
       width: 37.5rem;
-      max-width: calc(100vw - 120px);
+      max-width: calc(100vw - 7.5rem);
 
       .q-img__image {
         path {
@@ -380,11 +382,11 @@ $xl-breakpoint: 1920px;
   }
 
   .culture-img {
-    // height: 300px;
+    // height: 18.75rem;
   }
 
   .content {
-    padding: 30px 30px 10px;
+    padding: 1.875rem 1.875rem .625rem;
 
     p {
       font-size: 1.125rem;
@@ -403,13 +405,13 @@ $xl-breakpoint: 1920px;
   }
 
   .bar {
-    height: 12px;
-    margin-bottom: 10px;
+    height: .75rem;
+    margin-bottom: .625rem;
   }
 
   .bar-secondary {
-    height: 12px;
-    margin-bottom: 10px;
+    height: .75rem;
+    margin-bottom: .625rem;
   }
 }
 
@@ -427,7 +429,7 @@ $xl-breakpoint: 1920px;
     text-align: center;
     font-size: 4.375rem;
     font-weight: 700;
-    padding-bottom: 50px;
+    padding-bottom: 3.125rem;
   }
 
   .lm-points-background {
@@ -437,12 +439,12 @@ $xl-breakpoint: 1920px;
 
   .area {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-        /* justify-content: center;*/
 
     .label {
-      padding: 5px 20px;
-      margin: 0 20px;
+      padding: .3125rem 1.25rem;
+      margin: 0 1.25rem;
       font-size: 1.875rem;
       font-weight: 700;
       color: $secondary;
@@ -479,10 +481,10 @@ $xl-breakpoint: 1920px;
       .offer-item {
         height: 11.25rem;
         display: flex;
-        border-right: 5px solid $secondary;
-        margin: 10px 0;
-        padding-left: 40px;
-        margin-right: 50px;
+        border-right: .3125rem solid $secondary;
+        margin: .625rem 0;
+        padding-left: 2.5rem;
+        margin-right: 3.125rem;
         align-items: center;
 
         .school-logo {
@@ -496,7 +498,7 @@ $xl-breakpoint: 1920px;
         .school-desc {
           color: $white;
           width: 100%;
-          padding: 10px 30px;
+          padding: .625rem 1.875rem;
           display: flex;
           justify-content: space-between;
           flex-direction: column;
@@ -507,14 +509,14 @@ $xl-breakpoint: 1920px;
           }
 
           .description {
-            margin-top: 22px;
+            margin-top: 1.375rem;
             width: 12.5rem;
             height: 100%;
           }
 
           .footer {
-            margin-top: 20px;
-            margin-left: -5px;
+            margin-top: 1.25rem;
+            margin-left: -0.3125rem;
           }
         }
       }
@@ -527,41 +529,41 @@ $xl-breakpoint: 1920px;
 
   .case-item {
     background-color: $gray;
-    padding: 60px;
+    padding: 3.75rem;
     min-height: 41.04rem;
 
     &.reverse {
       background-color: $white;
 
       .content {
-        // padding-right: 100px;
+        // padding-right: 6.25rem;
         height: 100%;
       }
 
       .img-container {
         .img {
-          box-shadow: 20px 20px $primary;
+          box-shadow: 1.25rem 1.25rem $primary;
         }
       }
     }
 
     .img-container {
       .img {
-        box-shadow: 20px 20px $secondary;
+        box-shadow: 1.25rem 1.25rem $secondary;
       }
 
-      padding: 40px;
+      padding: 2.5rem;
     }
 
     .content-container {
       height: 100%;
-      padding: 40px;
+      padding: 2.5rem;
       position: relative;
-      bottom: -20px;
+      bottom: -1.25rem;
     }
 
     .content {
-      padding-left: 40px;
+      padding-left: 2.5rem;
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -581,18 +583,18 @@ $xl-breakpoint: 1920px;
       }
 
       .body {
-        margin-top: 60px;
+        margin-top: 3.75rem;
         font-size: 1.125rem;
         font-weight: 700;
 
         .name {
           font-size: 1.875rem;
-          padding-bottom: 14px;
+          padding-bottom: .875rem;
         }
 
         .info {
           .label {
-            margin-right: 20px;
+            margin-right: 1.25rem;
           }
         }
       }
@@ -602,11 +604,11 @@ $xl-breakpoint: 1920px;
         align-items: center;
         color: $secondary;
         font-size: 1.25rem;
-        margin-top: 20px;
-        margin-left: -5px;
+        margin-top: 1.25rem;
+        margin-left: -0.3125rem;
 
         .dot {
-          margin-right: 8px;
+          margin-right: .5rem;
         }
 
         a {
@@ -626,14 +628,14 @@ $xl-breakpoint: 1920px;
 .lm-team {
   width: 100%;
   min-height: 68.75rem;
-  padding-bottom: 60px;
+  padding-bottom: 3.75rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   .header-title {
     margin-top: 0;
-    margin-bottom: 100px;
+    margin-bottom: 6.25rem;
   }
 
   .header {
@@ -641,36 +643,36 @@ $xl-breakpoint: 1920px;
     font-size: 5rem;
     width: 100%;
     text-align: center;
-    padding: 50px;
+    padding: 3.125rem;
   }
 
   .team-container {
-    padding: 0 8px;
+    padding: 0 .5rem;
 
     .team-card {
       background-color: transparent;
-      padding: 0 8px;
+      padding: 0 .5rem;
 
       .bar,
       .bar-secondary {
-        height: 16px;
+        height: 1rem;
       }
 
       .img {
-        // height: 320px;
+        // height: 20rem;
       }
 
       .content {
         background-color: $white;
         height: 16.25rem;
-        padding: 0 40px 20px;
+        padding: 0 2.5rem 1.25rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
         .name {
           font-size: 1.875rem;
-          padding: 20px 0;
+          padding: 1.25rem 0;
         }
 
         .description {
@@ -680,7 +682,7 @@ $xl-breakpoint: 1920px;
 
       .footer {
         background-color: $white;
-        // padding: 0 40px 30px;
+        // padding: 0 2.5rem 1.875rem;
 
         a {
           color: $dark;
@@ -717,36 +719,36 @@ $xl-breakpoint: 1920px;
       background: $white;
 
       .content {
-        padding: 0 60px 0 0;
+        padding: 0 3.75rem 0 0;
       }
     }
 
     .avatar {
       .img {
         border-radius: 50%;
-        border: 15px solid $secondary;
+        border: .9375rem solid $secondary;
       }
     }
 
     .content {
-      padding: 0 0 0 60px;
+      padding: 0 0 0 3.75rem;
 
       .header {
         font-size: 1.875rem;
       }
 
       .body {
-        margin-top: 20px;
+        margin-top: 1.25rem;
         font-size: 1.25rem;
 
         .description {
-          margin-top: 20px;
+          margin-top: 1.25rem;
           font-size: 0.875rem;
         }
       }
 
       .footer {
-        margin-top: 20px;
+        margin-top: 1.25rem;
 
         a {
           @include read-more;
@@ -770,18 +772,18 @@ $xl-breakpoint: 1920px;
   }
 
   .form {
-    max-width: 300px;
+    max-width: 18.75rem;
 
     .q-field--standard .q-field__control:before {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+      border-bottom: .0625rem solid rgba(255, 255, 255, 0.24);
     }
 
     .submit {
-      margin-top: 20px;
+      margin-top: 1.25rem;
 
       .dot {
         color: $tertiary;
-        margin-right: 4px;
+        margin-right: .25rem;
       }
 
       &:hover {
