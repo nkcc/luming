@@ -4,7 +4,7 @@
     <section class="lm-background container-xl">
       <div class="lm-introduction animate__animated animate__fadeIn">
         <div class="lm-text-title text-center">鹿 名 国 际 教 育</div>
-        <div class="lm-text-second-title">
+        <div class="lm-text-second-title ">
           <q-img class="logo-title" src="logo_letter.svg" fit="contain"></q-img>
         </div>
         <p class="text-center">让世界名校， 不再高不可攀</p>
@@ -157,7 +157,7 @@
     <section class="lm-offers row items-center container-xl">
       <div class="offer-container">
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 q-pa-xs-xs">
             <h1 class="text-center text-white text-weight-bold header-title">
               鹿名国际 录取院校
             </h1>
@@ -265,7 +265,6 @@
           </q-responsive>
         </div>
         <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5 content-container">
-          <q-responsive :ratio="899 / 716">
             <div class="content">
               <div class="header">
                 <div class="title">
@@ -294,7 +293,6 @@
                 <a href="">了解更多 ></a>
               </div>
             </div>
-          </q-responsive>
         </div>
       </div>
     </section>
@@ -324,7 +322,7 @@
         </div>
       </div>
     </section>
-    <section class="lm-professor container-xl">
+    <section class="lm-professor container-xl ">
       <h1 class="header text-weight-bold text-center">教授孵育计划</h1>
 
       <div
@@ -335,7 +333,7 @@
       >
         <div
           :class="[
-            'row justify-center items-center',
+            'row justify-center items-center q-pa-xs-md',
             getClassType(k, '', 'reverse'),
           ]"
         >

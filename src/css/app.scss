@@ -14,7 +14,7 @@
 $vw : 100vw;
 
 html {
-    font-size: 1vw;
+  font-size: 1vw;
 }
 
 body {
@@ -87,7 +87,7 @@ $xl-breakpoint: 120rem;
   .container-md {
     max-width: 57.5rem;
   }
-  
+
 
 }
 
@@ -121,17 +121,18 @@ $xl-breakpoint: 120rem;
   .container-xl {
     max-width: 100rem;
   }
-  
+
   html {
-    font-size: 1rem;
+    font-size: 16px;
   }
+
   $vw: 100rem;
 }
 
 @media screen and (max-width: 75rem) {
-   html {
-        font-size: .75rem;
-   }
+  html {
+    font-size: .75rem;
+  }
 }
 
 .lm-background {
@@ -175,7 +176,7 @@ $xl-breakpoint: 120rem;
       letter-spacing: .25rem;
     }
   }
-  
+
   .show-more {
     position: relative;
     width: 100%;
@@ -188,9 +189,9 @@ $xl-breakpoint: 120rem;
 }
 
 .lm-scroll-area {
-    background-color: transparent;
-    height: 3.125rem;
-    overflow: visible;
+  background-color: transparent;
+  height: 3.125rem;
+  overflow: visible;
 
 }
 
@@ -273,7 +274,6 @@ $xl-breakpoint: 120rem;
 
   .points-container {
     width: 100%;
-    min-height: 45.55rem;
   }
 }
 
@@ -531,6 +531,7 @@ $xl-breakpoint: 120rem;
     background-color: $gray;
     padding: 3.75rem;
     min-height: 41.04rem;
+    align-items: stretch;
 
     &.reverse {
       background-color: $white;
@@ -556,7 +557,6 @@ $xl-breakpoint: 120rem;
     }
 
     .content-container {
-      height: 100%;
       padding: 2.5rem;
       position: relative;
       bottom: -1.25rem;
@@ -801,4 +801,46 @@ $xl-breakpoint: 120rem;
 
 .page-scroller-btn {
   border-radius: initial;
+}
+
+.mobile {
+  .lm-offers  {
+    .area {
+      justify-content: flex-start;
+      .label {
+        margin-bottom: 6px;
+      }
+    }
+  }
+  .lm-case {
+    .case-item {
+      padding: 3.75rem 10px;
+      .content-container {
+        margin-top: 10px;
+        padding: 0;
+      }
+      
+     .img-container {
+        padding: 2.5rem;
+      }
+    }
+  }
+  
+  .lm-team {
+    padding-top: 6.25rem;
+    .header-title {
+      margin-top: auto;
+    }
+  }
+  
+  .lm-professor {
+    .prof-intro {
+      .avatar {
+        padding: 20px;
+      }
+      .content {
+        padding: 0;
+      }
+    }
+  }
 }
