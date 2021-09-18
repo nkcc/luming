@@ -436,10 +436,10 @@ export default {
     slide: ref('carousel0'),
     slideOffer: ref('america'),
     slideActive: ref(
-        'background:#cc932e;width: 100px;border-radius: 0;padding:0;'
+        'background:#cc932e;width: 6.25rem;max-width:6.25vw;border-radius: 0;padding:0;'
     ),
     slideDefault: ref(
-        'background:#26322b;width: 100px;border-radius: 0;padding:0;'
+        'background:#26322b;width: 6.25rem;max-width:6.25vw;border-radius: 0;padding:0;'
     ),
     offerType,
     form: ref({

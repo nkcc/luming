@@ -26,9 +26,9 @@
           class="up-scroll"
           src="up_arrow.svg"
           fit="contain"
-          height="50px"
-          width="200px"
-     
+          height="3.125rem"
+          width="12.5rem"
+
         />
       </div>
     </section>
@@ -96,7 +96,9 @@
           <template v-for="(v, k) in carouselData" :key="k">
             <q-carousel-slide :name="'carousel' + k" class="column no-wrap">
               <div class="row justify-center items-center">
-                <div class="col-xs-12 col-sm-12 col-md-5 left">
+                <div class="col-xs-12 col-sm-12 col-md-5 left q-py-xs-lg q-py-xs-lg
+
+">
                   <h2 class="text-secondary text-weight-bold">{{ v.title }}</h2>
                   <div class="content">
                     <h3 class="text-white text-weight-bold">
@@ -111,7 +113,7 @@
                     <a href="">了解更多 ></a>
                   </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-4 right">
+                <div class="col-xs-12 col-sm-12 col-md-4 right q-py-xs-lg q-py-sm-lg">
                   <q-responsive :ratio="692 / 511">
                     <q-img class="points-img" :src="v.imgLink"></q-img>
                   </q-responsive>

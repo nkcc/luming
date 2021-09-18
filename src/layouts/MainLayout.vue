@@ -5,7 +5,7 @@
         <main-header></main-header>
     </q-header>
 
-    <q-page-container>
+    <q-page-container :padding="true">
       <router-view />
     </q-page-container>
     <main-footer></main-footer>
