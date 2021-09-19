@@ -11,32 +11,36 @@
                     <img class="header-logo" src="logo.svg" alt="" />
                 </div>
 
-                <ul class="navbar-nav gt-sm col-md-6">
+                <ul class="navbar-nav col-md-6">
                     <li v-for="(list, key) in navList" :key="key" class="nav-item">
                         <a :href="list.link" class="nav-link">{{list.label}}</a>
                     </li>
                 </ul>
                 <div class="right col-xs-1 col-sm-1 col-md-3">
-                    <q-btn style="color:#cd932f" flat icon="search" />
+                    <q-btn flat icon="search" color="secondary" />
                     <div class="lm-margin"></div>
                 </div>
             </nav>
 
             <q-toolbar class="bg-primary text-secondary lm-head-drawer lt-md">
-                <q-btn flat round dense icon="menu" class="q-mr-sm col-xs-1 " @click="drawer = !drawer" />
+                <div class="q-mr-sm col-xs-1">
+                    <q-btn flat round dense icon="menu" class="" padding="xs" @click="drawer = !drawer" />
+                </div>
                 <div class="logo-container col-xs-auto col-10"><img src="logo.svg" class=""></div>
-                <q-btn flat round dense icon="search" class="col-xs-1" />
+
+                <div class="col-xs-1">
+                    <q-btn flat round dense icon="search" />
+                </div>
             </q-toolbar>
-            <q-drawer v-model="drawer" :breakpoint="500" class="bg-primary lt-md">
-                <div class="lm-top-bar"></div>
-                <div class="drawer-logo-container"><img src="logo.svg" class="drawer-logo"></div>
-                <q-separator color="secondary" inset class="" />
+            <q-drawer v-model="drawer" :breakpoint="100" :width="windowWidth" overlay class="bg-primary">
+
+                <q-separator color="secondary" />
                 <q-list class="q-mt-md">
                     <template v-for="(menuItem, index) in navList" :key="index">
 
                         <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple>
                             <q-item-section avatar>
-                                <q-icon :name="menuItem.icon" color="secondary"/>
+                                <q-icon :name="menuItem.icon" color="secondary" />
                             </q-item-section>
                             <q-item-section class="text-secondary">
                                 {{ menuItem.label }}
@@ -64,6 +68,7 @@ import {
 export default defineComponent({
     name: 'MainHeader',
     setup() {
+        const windowWidth = window.innerHeight;
         const navList = ref([{
                 id: 1,
                 label: '首页',
@@ -101,11 +106,12 @@ export default defineComponent({
                 icon: 'phone',
             },
         ]);
-        const drawer = ref(true);
+        const drawer = ref(false);
 
         return {
             navList,
-            drawer
+            drawer,
+            windowWidth,
         };
     },
 });
