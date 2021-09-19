@@ -13,7 +13,7 @@
             </ul>
         </div>
         <div class="col-3 col-md-3 center col-xs-12">
-            <q-img class="logo-center" initial-ratio="1" src="/logo_center.svg"></q-img>
+            <q-img class="logo-center" initial-ratio="1" src="logo_center.svg"></q-img>
         </div>
         <div class="col-3 col-md-3 right col-xs-12">
             <ul class="item-list">

@@ -36,6 +36,27 @@
     }
   }
 
+  .lm-head-drawer {
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 200px;
+      }
+    }
+  }
+
+  .drawer-logo-container {
+    padding: 8px;
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .drawer-logo{
+      width: 80%;
+    }
+  }
+
   .header-logo {
     height: 50px;
   }
