@@ -7,21 +7,25 @@ const servicesData = ref([
         title: '青云计划',
         img: 'course-1.jpg',
         description: '单所申请世界名校精准直录',
+        visible: false,
     },
     {
         title: '天梯计划',
         img: 'course-2.jpg',
         description: '低门槛宝保录取全球顶尖院校',
+        visible: false,
     },
     {
         title: '孵育计划',
         img: 'course-3.jpg',
         description: '美国名校教授培育保藤规划',
+        visible: false,
     },
     {
         title: '学业管家',
         img: 'course-4.jpg',
         description: '全托学业辅导确保顺利毕业',
+        visible: false,
     },
 ]);
 

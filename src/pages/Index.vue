@@ -29,15 +29,20 @@
             animate__animated animate__animated
             service-container
           " v-for="(v, k) in servicesData" :key="k">
+
                 <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
-                <div class="media">
-                    <q-img class="img" :src="v.img" :ratio="537 / 336"></q-img>
-                    <div class="introduction" :class="getClassType(k, 'bg-secondary', 'bg-primary')">
-                        <h3 class="text-white text-weight-bold heading">{{ v.title }}</h3>
-                        <p>{{ v.description }}</p>
-                        <a href="">了解更多 ></a>
-                    </div>
+
+                <div class="media" :data-id="k" v-intersection.once="onIntersection">
+                    <transition-group appear enter-active-class="animated animate__slideInUp">
+                        <q-img class="img" :src="v.img" :ratio="537 / 336" v-if="servicesData[k].visible"></q-img>
+                        <div class="introduction" :class="getClassType(k, 'bg-secondary', 'bg-primary')" v-if="servicesData[k].visible">
+                            <h3 class="text-white text-weight-bold heading">{{ v.title }}</h3>
+                            <p>{{ v.description }}</p>
+                            <a href="">了解更多 ></a>
+                        </div>
+                    </transition-group>
                 </div>
+
             </div>
         </div>
     </section>
@@ -321,6 +326,21 @@ export default defineComponent({
                 top: height,
                 behavior: 'smooth'
             })
+        },
+        onIntersection(entry: {
+            target: {
+                dataset: {
+                    id: string,
+                }
+            },
+            isIntersecting: boolean
+        }) {
+            const index = parseInt(entry.target.dataset.id, 10)
+
+            setTimeout(() => {
+                this.servicesData[index].visible = entry.isIntersecting;
+            }, 50 * (index + 1))
+
         }
     },
 });
