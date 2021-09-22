@@ -32,8 +32,8 @@
 
                 <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
 
-                <div class="media" :data-id="k" v-intersection.once="onIntersection">
-                    <transition-group appear enter-active-class="animated animate__slideInUp">
+                <div class="media" :data-id="k" v-intersection.once="onServiceIntersection">
+                    <transition-group appear enter-active-class="animated animate__fadeInUp">
                         <q-img class="img" :src="v.img" :ratio="537 / 336" v-if="servicesData[k].visible"></q-img>
                         <div class="introduction" :class="getClassType(k, 'bg-secondary', 'bg-primary')" v-if="servicesData[k].visible">
                             <h3 class="text-white text-weight-bold heading">{{ v.title }}</h3>
@@ -90,20 +90,25 @@
             <q-img class="logo-letter" src="logo_letter_dark.svg" fit="contain"></q-img>
         </div>
         <div class="row q-col-gutter-sm container-xl">
-            <div class="col col-sm-6 col-xs-12 col-md-3 culture-item" v-for="(v, k) in cultureData" :key="k">
-                <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
-                <q-responsive :ratio="542 / 511">
-                    <q-img class="culture-img" :src="v.imgLink"></q-img>
-                </q-responsive>
 
-                <div class="content">
-                    <p>{{ v.description }}</p>
+            <div class="col col-sm-6 col-xs-12 col-md-3 culture-item" v-for="(v, k) in cultureData" :key="k" :data-id="k" v-intersection.once="onCultureIntersection">
+                <transition appear :enter-active-class="cultureAnimation(k, cultureData.length)">
+                    <div class="animation-container" v-if="cultureData[k].visible">
+                        <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
+                        <q-responsive :ratio="542 / 511">
+                            <q-img class="culture-img" :src="v.imgLink"></q-img>
+                        </q-responsive>
 
-                    <div class="footer">
-                        <a href=""> 了解更多 ></a>
+                        <div class="content">
+                            <p>{{ v.description }}</p>
+
+                            <div class="footer">
+                                <a href=""> 了解更多 ></a>
+                            </div>
+                        </div>
+                        <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
                     </div>
-                </div>
-                <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
+                </transition>
             </div>
         </div>
     </section>
@@ -212,7 +217,7 @@
             鹿名团队
         </h1>
         <div class="team-container row container-xl">
-            <div class="team-card col-sm-6 col-md-6 col-lg-3" v-for="(v, k) in teamData" :key="k">
+            <div class="team-card col-sm-6 col-md-3 col-lg-3 col-xl-3" v-for="(v, k) in teamData" :key="k">
                 <div :class="k % 2 !== 0 ? 'bar' : 'bar-secondary'"></div>
 
                 <q-responsive :ratio="505 / 396">
@@ -237,8 +242,8 @@
             'row justify-center items-center q-pa-xs-md',
             getClassType(k, '', 'reverse'),
           ]">
-                <div class="col-lg-2 col-3 col-md-3 col-sm-12 col-xs-8 avatar align-items-center">
-                    <q-responsive :ratio="1">
+                <div class="col-lg-2 col-3 col-md-3 col-sm-3 col-xs-6 avatar align-items-center">
+                    <q-responsive :ratio="1" >
                         <q-img class="img" :src="v.imgLink"></q-img>
                     </q-responsive>
                 </div>
@@ -327,7 +332,7 @@ export default defineComponent({
                 behavior: 'smooth'
             })
         },
-        onIntersection(entry: {
+        onServiceIntersection(entry: {
             target: {
                 dataset: {
                     id: string,
@@ -339,8 +344,43 @@ export default defineComponent({
 
             setTimeout(() => {
                 this.servicesData[index].visible = entry.isIntersecting;
-            }, 50 * (index + 1))
+            }, 100 * index)
 
+        },
+        onCultureIntersection(entry: {
+            target: {
+                dataset: {
+                    id: string,
+                }
+            },
+            isIntersecting: boolean
+        }) {
+            const index = parseInt(entry.target.dataset.id, 10)
+
+            this.cultureData[index].visible = entry.isIntersecting;
+
+        },
+        onTeamIntersection(entry: {
+            target: {
+                dataset: {
+                    id: string,
+                }
+            },
+            isIntersecting: boolean
+        }) {
+            const index = parseInt(entry.target.dataset.id, 10)
+
+            setTimeout(() => {
+                this.teamData[index].visible = entry.isIntersecting;
+            }, 100 * index)
+
+        },
+        cultureAnimation(k: number, length: number) {
+          let className
+
+          className = k > length / 2 - 1 ? 'animated animate__fadeInRight' : 'animated animate__fadeInLeft'
+
+          return className;
         }
     },
 });

@@ -1,0 +1,102 @@
+@import './quasar.variables.scss';
+
+.lm-about {
+  .lm-about-culture {
+    position: relative;
+    top: -3.125rem;
+
+    &::before {
+      position: absolute;
+      content: ' ';
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      background: $secondary;
+      height: 60%;
+      z-index: -1;
+    }
+
+    .card-container {
+      background: #14281c;
+      padding: 100px 0;
+    }
+
+    .culture-card {
+      border-radius: 0;
+
+      .text-subtitle2 {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+
+.lm-about-history {
+  width: 100%;
+  margin: 2.5rem 0;
+
+  .left {
+    .lm-history_img {
+      height: 30rem;
+    }
+  }
+
+  .right {
+    padding: 2.5rem;
+
+    .lm-history_title {
+      margin-top: 1.25rem;
+    }
+  }
+}
+
+.lm-about-culture {
+  width: 100%;
+  padding: 1.25rem 0;
+  margin-top: 6.25rem;
+
+  .lm-about-culture_top {
+    .lm-about-culture_title {
+      margin-top: 20px;
+    }
+  }
+
+  .lm-about-culture_points {
+
+
+    .lm-about-culture_container {
+      position: relative;
+      padding: 20px;
+      display: flex;
+
+      .culture-name {
+        font-size: 2rem;
+        height: 10rem;
+        background: $secondary;
+        color: $white;
+        // opacity: 0.67;
+        border: 1px solid $secondary;
+        border-right: 0;
+        -webkit-writing-mode: vertical-lr;
+        -ms-writing-mode: tb-lr;
+        writing-mode: vertical-lr;
+      }
+
+      .culture-description {
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+        background: $primary;
+        color: $secondary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+      }
+    }
+
+  }
+
+  .lm-about-culture_img {}
+}
