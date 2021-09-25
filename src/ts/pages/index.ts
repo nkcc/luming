@@ -464,9 +464,4 @@ export default {
     'background:#26322b;width: 6.25rem;max-width:6.25vw;border-radius: 0;padding:0;'
   ),
   offerType,
-  form: ref({
-    name: '',
-    phone: '',
-    wechat: '',
-  }),
 };

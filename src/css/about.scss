@@ -18,7 +18,7 @@
 
     .card-container {
       background: #14281c;
-      padding: 100px 0;
+      padding: 6.25rem 0;
     }
 
     .culture-card {
@@ -58,7 +58,7 @@
 
   .lm-about-culture_top {
     .lm-about-culture_title {
-      margin-top: 20px;
+      margin-top: 1.25rem;
     }
   }
 
@@ -67,7 +67,7 @@
 
     .lm-about-culture_container {
       position: relative;
-      padding: 20px;
+      padding: 1.25rem;
       display: flex;
 
       .culture-name {
@@ -76,7 +76,7 @@
         background: $secondary;
         color: $white;
         // opacity: 0.67;
-        border: 1px solid $secondary;
+        border: .0625rem solid $secondary;
         border-right: 0;
         -webkit-writing-mode: vertical-lr;
         -ms-writing-mode: tb-lr;
@@ -86,9 +86,9 @@
       .culture-description {
         height: 100%;
         width: 100%;
-        padding: 20px;
+        padding: 1.25rem;
         background: $primary;
-        color: $secondary;
+        color: $quaternary;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -99,4 +99,96 @@
   }
 
   .lm-about-culture_img {}
+}
+
+.lm-bg-background {
+  background: #08100b;
+}
+
+.lm-light-dark-background {
+  background-color: #030604;
+  background: radial-gradient(closest-side circle, #0b150e 80%, #020503 1000%);
+
+  // background: repeating-radial-gradient(closest-side circle,
+  // #08100b,
+  // #080f0a 50%,
+  // #070e0a 30%,
+  // #070d09 20%,
+  // #060c08 10%,
+  // #050a07 10%,
+  // #020403 5%
+  // );
+}
+
+.lm-comes-introduction {
+  color: $quaternary;
+}
+
+
+.lm-culture-points {
+  .points-container {
+    height: 100%;
+
+    .title {
+      margin-top: 1.25rem;
+      width: 100%;
+      text-align: center;
+      font-size: 9rem;
+      height: 9rem;
+      line-height: 9rem;
+      color: $quaternary;
+    }
+
+    .description {
+      line-height: 1rem;
+      height: 1rem;
+    }
+  }
+
+  .points-img {
+    //  background: $quaternary;
+    //  padding: 1rem;
+    border: .1875rem solid $quaternary;
+  }
+
+  .points-border {
+    border: .1875rem solid $quaternary;
+  }
+}
+
+.lm-culture-team {
+  .team-container {
+    border-bottom: 1px solid $quaternary;
+
+    &.last {
+      border-bottom: none;
+    }
+
+    .team-avatar-p {
+      padding-right: 1rem;
+      padding-left: 5rem;
+    }
+
+    .team-avatar-p-r {
+      padding-right: 6rem;
+    }
+
+    .team-avatar {
+      box-shadow: 1rem 1rem $secondary;
+    }
+  }
+}
+
+.mobile {
+  .lm-culture-team {
+    .team-container {
+      .team-avatar-p-r {
+        padding: 1rem 1rem 1rem 0;
+      }
+
+      .team-avatar-p {
+        padding: 1rem 1rem 1rem 0;
+      }
+    }
+  }
 }

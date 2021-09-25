@@ -1,5 +1,5 @@
 <template>
-<q-layout view="hHh lpR fFf" class="lg:container lg:mx-auto shadow-md">
+<q-layout view="hHh lpR fFf" class="lg:container lg:mx-auto shadow-sm">
     <main-header></main-header>
     <q-page-container :padding="true">
         <router-view />

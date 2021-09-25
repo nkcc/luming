@@ -262,52 +262,22 @@
             </div>
         </div>
     </section>
-    <section class="lm-contact">
-        <q-parallax src="bg.jpg" :height="650">
-            <div class="green-background">
-                <div class="row justify-center">
-                    <div class="col-lg-8 col-md-10 q-pa-md q-ma-md">
-                        <h1 class="text-secondary title  py-12">联系我们</h1>
-                        <h4 class="text-white text-weight-bold pb-10 text-4xl">
-                            本科硕士精准直录，实现最高学府留学梦
-                        </h4>
-                        <div class="form">
-                            <q-input input-style="color: #cd932f" color="secondary" label-color="white" v-model="form.name" label="姓名">
-                                <template v-slot:prepend>
-                                    <q-icon color="secondary" name="person" />
-                                </template>
-                            </q-input>
-                            <q-input input-style="color: #cd932f" color="secondary" label-color="white" v-model="form.phone" label="电话">
-                                <template v-slot:prepend>
-                                    <q-icon color="secondary" name="phone" />
-                                </template>
-                            </q-input>
-                            <q-input color="secondary" label-color="white" input-style="color: #cd932f" v-model="form.wechat" label="微信">
-                                <template v-slot:prepend>
-                                    <q-icon color="secondary" name="wechat" />
-                                </template>
-                            </q-input>
-                            <q-btn class="submit" outline type="submit" style="color: goldenrod">
-                                <q-icon class="dot" name="fiber_manual_record"></q-icon>
-                                了解更多
-                            </q-btn>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </q-parallax>
-    </section>
+    <contact></contact>
 </q-page>
 </template>
 
 <script lang="ts">
 import data from '../ts/pages/index';
+import Contact from '../components/Contact.vue'
 import {
     defineComponent
 } from 'vue';
 
 export default defineComponent({
     name: 'PageIndex',
+    components: {
+      Contact
+    },
     setup() {
         return data;
     },

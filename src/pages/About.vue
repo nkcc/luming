@@ -1,69 +1,79 @@
 <template>
 <div class="lm-about">
-    <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
-        <div class="relative py-3 sm:max-w-xl sm:mx-auto">
-            <div class="absolute inset-0 bg-gradient-to-r from-cyan-100 to-sky-500 transform sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
-            <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
-                <div class="max-w-md mx-auto">
-                    <div>
-                        <img src="https://play.tailwindcss.com/img/logo.svg" class="h-7 sm:h-8" />
-                    </div>
-                    <div class="divide-y divide-gray-200">
-                        <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-                            <p>An advanced online playground for Tailwind CSS, including support for things like:</p>
-                            <ul class="list-disc space-y-2">
-                                <li class="flex items-start">
-                                    <span class="h-6 flex items-center sm:h-7">
-                                        <svg class="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    <p class="ml-2">
-                                        Customizing your
-                                        <code class="text-sm font-bold text-gray-900">tailwind.config.js</code> file
-                                    </p>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="h-6 flex items-center sm:h-7">
-                                        <svg class="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    <p class="ml-2">
-                                        Extracting classes with
-                                        <code class="text-sm font-bold text-gray-900">@apply</code>
-                                    </p>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="h-6 flex items-center sm:h-7">
-                                        <svg class="flex-shrink-0 h-5 w-5 text-cyan-500" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    <p class="ml-2">Code completion with instant preview</p>
-                                </li>
-                            </ul>
-                            <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
-                        </div>
-                        <div class="pt-6 text-base leading-6 font-bold sm:text-lg sm:leading-7">
-                            <p>Want to dig deeper into Tailwind?</p>
-                            <p>
-                                <a href="https://tailwindcss.com/docs" class="text-cyan-600 hover:text-cyan-700"> Read the docs &rarr; </a>
-                            </p>
-                        </div>
-                    </div>
+    <section class="lm-comes">
+        <div class="lm-light-dark-background">
+            <part-header name="鹿鸣来源" class=" "></part-header>
+            <div class="lm-comes-introduction w-full q-px-xs-md">
+                <div class="content w-full text-center pb-5" v-for="(v, k) in history" :key="k">
+                    <div class="title text-base text-weight-bold pb-1" v-for="(vv, kk) in v.title" :key="kk">{{ vv }}</div>
+                    <p class="description text-weight-light leading-5" v-for="(vd, kd) in v.content" :key="kd">
+                        {{ vd }}
+                    </p>
                 </div>
             </div>
+            <part-header name="鹿鸣文化" class=" "></part-header>
         </div>
-    </div>
+
+    </section>
+
+    <section class="lm-culture-points lm-light-dark-background">
+        <div class="row justify-center">
+            <div class="col-9 col-xs-12 col-md-9 row">
+                <template v-for="(v, k) in cultureData" :key="k">
+                    <div class="col-4 col-xs-12 col-md-4">
+                        <div class="points-img" :class="[k==0 ? 'border-b-0' : '', k==1 ? 'border-r-0' : '', k==2 ? 'border-l-0' : '' ]">
+                            <q-img :src="cultureImg[k].backgroundImage" fit="cover" :ratio="557/400"></q-img>
+                        </div>
+                    </div>
+                    <div class="col-4 col-xs-12 col-md-4">
+                        <q-responsive :ratio="557/400">
+                            <div class="points-container flex align-center">
+                                <div class="title text-weight-bolder">{{ v.title }}</div>
+                                <div class="description text-quaternary w-full  text-base text-weight-bolder text-center"> {{ v.description }}</div>
+                            </div>
+
+                        </q-responsive>
+                    </div>
+
+                </template>
+            </div>
+        </div>
+        <part-header name="鹿鸣团队" class=" "></part-header>
+        <div class="lm-culture-team row justify-center pb-14 ">
+            <div class="team-container col-9 col-xs-12 col-md-9 flex items-center pb-24 q-px-xs-md q-px-md-none" :class="[k !== 0 ? 'pt-24' :'', k === teamData.length - 1 ? 'last' : '']" v-for="(v, k) in teamData" :key="k">
+                <div class="row items-center" :class=" k % 2 === 0 ? '' : 'reverse'">
+                    <div class="col-7 col-xs-12 col-md-7">
+                        <div class="team-english-name text-quaternary text-6xl text-weight-bold pb-10">{{v.englishName }}</div>
+                        <div class="team-Chinese-name text-white text-3xl text-weight-bold pb-5"> {{ v.ChineseName }}</div>
+                        <p class="text-white text-xs pb-2 leading-5" v-for="(vv, kk) in v.description" :key="kk">
+                            {{ vv }}
+                        </p>
+                    </div>
+                    <div class="col-5 col-xs-12 col-md-5" :class=" k % 2 === 0 ? 'team-avatar-p' : 'team-avatar-p-r'">
+                        <q-responsive :ratio="611/643">
+                            <q-img class="team-avatar" :src="v.avatarUrl"></q-img>
+                        </q-responsive>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <contact></contact>
 </div>
 </template>
 
 <script>
 import setupData from '../ts/pages/about'
+import PartHeader from '../components/PartHeader.vue'
+import Contact from '../components/Contact.vue'
 
 export default {
     name: 'About',
+    components: {
+        PartHeader,
+        Contact
+    },
     setup() {
         return setupData
     },
