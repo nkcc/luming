@@ -1,6 +1,9 @@
 // app global css in SCSS form
 @import 'https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap';
 @import 'https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.min.css';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @mixin read-more {
   color: $white;
@@ -60,58 +63,7 @@ $md-breakpoint: 89.9375rem;
 $lg-breakpoint: 100rem;
 $xl-breakpoint: 120rem;
 
-.container,
-.container-sm,
-.container-md,
-.container-lg,
-.container-xl {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media (min-width: $xs-breakpoint) {
-  .container,
-  .container-sm {
-    max-width: 33.75rem;
-  }
-}
-
-@media (min-width: $sm-breakpoint) {
-  .container,
-  .container-sm,
-  .container-md {
-    max-width: 57.5rem;
-  }
-}
-
-@media (min-width: $md-breakpoint) {
-  .container,
-  .container-sm,
-  .container-md,
-  .container-lg {
-    max-width: 71.25rem;
-  }
-}
-
-@media (min-width: $lg-breakpoint) {
-  .container,
-  .container-sm,
-  .container-md,
-  .container-lg,
-  .container-xl {
-    max-width: 90rem;
-  }
-}
-
 @media (min-width: $xl-breakpoint) {
-  .container,
-  .container-sm,
-  .container-md,
-  .container-lg,
-  .container-xl {
-    max-width: 100rem;
-  }
 
   html {
     font-size: 16px;
@@ -198,7 +150,7 @@ $xl-breakpoint: 120rem;
 .lm-services {
   width: 100%;
   background-color: #000;
-  min-height: calc(541.891rem / 16);
+  // min-height: calc(541.891rem / 16);
 
   .bar {
     height: $services-bar-height;
