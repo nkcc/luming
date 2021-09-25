@@ -57,9 +57,9 @@
     border-bottom: 1px solid $quaternary;
 
     .spot-title {
-      font-size: 5.95rem;
-      height: 5.95rem;
-      line-height: 5.95rem
+      font-size: 6.2vw;
+      height: 6.2vw;
+      line-height: 6.2vw
     }
 
     .spot-description {
@@ -94,6 +94,12 @@
 
       .team-avatar-p {
         padding: 1rem 1rem 1rem 0;
+      }
+      
+      .spot-title {
+        font-size: 15vw;
+        height: 15vw;
+        line-height: 15vw;
       }
     }
   }
