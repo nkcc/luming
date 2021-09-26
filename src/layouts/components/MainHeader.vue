@@ -13,7 +13,7 @@
 
                 <ul class="navbar-nav col-md-6">
                     <li v-for="(list, key) in navList" :key="key" class="nav-item">
-                        <a :href="list.link" class="nav-link">{{list.label}}</a>
+                        <router-link :to="list.link" class="nav-link">{{list.label}}</router-link>
                     </li>
                 </ul>
                 <div class="right col-xs-1 col-sm-1 col-md-3">
@@ -78,7 +78,7 @@ export default defineComponent({
             {
                 id: 2,
                 label: '关于鹿名',
-                link: '',
+                link: 'about',
                 icon: 'error_outline',
             },
             {
@@ -96,13 +96,13 @@ export default defineComponent({
             {
                 id: 5,
                 label: '鹿名亮点',
-                link: '',
+                link: 'spot',
                 icon: 'tips_and_updates',
             },
             {
                 id: 6,
                 label: '联系鹿名',
-                link: '',
+                link: 'contact',
                 icon: 'phone',
             },
         ]);
