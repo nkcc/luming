@@ -1,7 +1,7 @@
 <template>
 <div class="lm-spot">
     <section class="lm-culture-points lm-light-dark-background">
-        <part-header name="鹿鸣亮点" class=" "></part-header>
+        <part-header name="鹿名亮点" class=" "></part-header>
         <div class="lm-spot row justify-center pb-14 ">
             <div class="spot-container col-9 col-xs-12 col-md-9 flex items-center pb-24 q-px-xs-md q-px-md-none" :class="[k !== 0 ? 'pt-24' :'', k === spotData.length - 1 ? 'last' : '']" v-for="(v, k) in spotData" :key="k">
                 <div class="row items-center" :class=" k % 2 === 0 ? '' : 'reverse'">
@@ -29,7 +29,7 @@
 </div>
 </template>
 
-<script>
+<script lang="ts">
 import setupData from '../ts/pages/spot'
 import PartHeader from '../components/PartHeader.vue'
 import Contact from '../components/Contact.vue'

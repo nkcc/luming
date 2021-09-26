@@ -71,13 +71,13 @@ export default defineComponent({
             },
             {
                 id: 2,
-                title: '关于鹿鸣',
+                title: '关于鹿名',
                 link: '',
                 description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
             },
             {
                 id: 3,
-                title: '鹿鸣留学',
+                title: '鹿名留学',
                 link: '',
                 description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
             }
@@ -85,13 +85,13 @@ export default defineComponent({
 
         const navListRight = ref([{
                 id: 4,
-                title: '鹿鸣案例',
+                title: '鹿名案例',
                 link: '',
                 description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
             },
             {
                 id: 5,
-                title: '鹿鸣亮点',
+                title: '鹿名亮点',
                 link: '',
                 description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
             },

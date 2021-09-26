@@ -2,7 +2,7 @@
 <div class="lm-about">
     <section class="lm-comes">
         <div class="lm-light-dark-background">
-            <part-header name="鹿鸣来源" class=" "></part-header>
+            <part-header name="鹿名来源" class=" "></part-header>
             <div class="lm-comes-introduction w-full q-px-xs-md">
                 <div class="content w-full text-center pb-5" v-for="(v, k) in history" :key="k">
                     <div class="title text-base text-weight-bold pb-1" v-for="(vv, kk) in v.title" :key="kk">{{ vv }}</div>
@@ -11,7 +11,7 @@
                     </p>
                 </div>
             </div>
-            <part-header name="鹿鸣文化" class=" "></part-header>
+            <part-header name="鹿名文化" class=" "></part-header>
         </div>
 
     </section>
@@ -38,7 +38,7 @@
                 </template>
             </div>
         </div>
-        <part-header name="鹿鸣团队" class=" "></part-header>
+        <part-header name="鹿名团队" class=" "></part-header>
         <div class="lm-culture-team row justify-center pb-14 ">
             <div class="team-container col-9 col-xs-12 col-md-9 flex items-center pb-24 q-px-xs-md q-px-md-none" :class="[k !== 0 ? 'pt-24' :'', k === teamData.length - 1 ? 'last' : '']" v-for="(v, k) in teamData" :key="k">
                 <div class="row items-center" :class=" k % 2 === 0 ? '' : 'reverse'">
