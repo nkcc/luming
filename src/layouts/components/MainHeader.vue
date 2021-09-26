@@ -72,8 +72,8 @@ export default defineComponent({
         const navList = ref([{
                 id: 1,
                 label: '首页',
-                link: '',
-                icon: 'home',
+                link: '/',
+                icon: '',
             },
             {
                 id: 2,
@@ -90,7 +90,7 @@ export default defineComponent({
             {
                 id: 4,
                 label: '鹿名案例',
-                link: '',
+                link: 'case',
                 icon: 'today',
             },
             {
