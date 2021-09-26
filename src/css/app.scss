@@ -45,6 +45,15 @@ section {
   overflow: hidden;
 }
 
+.lm-bg-background {
+  background: #08100b;
+}
+
+.lm-light-dark-background {
+  background-color: #030604;
+  background: radial-gradient(#0b150e 80%, #020503 1000%);
+}
+
 .bg-dark-green {
   background-color: $dark-green;
 }
