@@ -37,16 +37,17 @@
                 <q-separator color="secondary" />
                 <q-list class="q-mt-md">
                     <template v-for="(menuItem, index) in navList" :key="index">
-
-                        <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple>
-                            <q-item-section avatar>
-                                <q-icon :name="menuItem.icon" color="secondary" />
-                            </q-item-section>
-                            <q-item-section class="text-secondary">
-                                {{ menuItem.label }}
-                            </q-item-section>
-                            <q-separator />
-                        </q-item>
+                        <router-link :to="menuItem.link" class="nav-link">
+                            <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple>
+                                <q-item-section avatar>
+                                    <q-icon :name="menuItem.icon" color="secondary" />
+                                </q-item-section>
+                                <q-item-section class="text-secondary">
+                                    {{ menuItem.label }}
+                                </q-item-section>
+                                <q-separator />
+                            </q-item>
+                        </router-link>
                     </template>
 
                 </q-list>
@@ -73,7 +74,7 @@ export default defineComponent({
                 id: 1,
                 label: '首页',
                 link: '/',
-                icon: '',
+                icon: 'home',
             },
             {
                 id: 2,
