@@ -4,12 +4,12 @@
     <div class="lm-case-plan-container mb-24">
         <div class="lm-plans row justify-center mb-10">
             <div class="lm-plans-title_container col-9 flex justify-center pb-7">
-                <span class="plan-title text-center" :class="v.type === 'name1' ? 'active' : ''" v-for="(v, k) in planType" :key="k">
+                <span class="plan-title text-center cursor-pointer" :class="v.type === 'name1' ? 'active' : ''" v-for="(v, k) in planType" :key="k">
                     {{ v.title }}
                 </span>
             </div>
             <div class="lm-plans-button_container col-9 flex justify-center">
-                <span class="plan-button text-center" :class="v.type === 'name1' ? 'active' : ''" v-for="(v, k) in planType" :key="k">
+                <span class="plan-button text-center cursor-pointer" :class="v.type === 'name1' ? 'active' : ''" v-for="(v, k) in planType" :key="k">
                 </span>
             </div>
         </div>
