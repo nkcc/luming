@@ -3,24 +3,16 @@ import { ref } from 'vue';
 
 const caseType = ref([
   {
-    title: '美国藤校',
+    title: '天梯计划',
     type: 'america',
   },
   {
-    title: '英国前五',
+    title: '青云计划',
     type: 'England',
   },
   {
-    title: '澳洲八大',
+    title: '孵育计划',
     type: 'Australia',
-  },
-  {
-    title: '新加坡名校',
-    type: 'Singapore',
-  },
-  {
-    title: '香港名校',
-    type: 'hongkong',
   },
 ]);
 
