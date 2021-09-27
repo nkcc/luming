@@ -41,7 +41,7 @@ export default {
           .title {
             text-indent: 0.5rem;
             color: $quaternary;
-            font-size: 3.6em;
+            font-size: 2.75rem;
             letter-spacing: 1rem;
           }
         }

@@ -3,7 +3,7 @@
     <part-header name="联系鹿鸣"></part-header>
     <div class="contact-container row justify-center">
         <div class="col-9 row q-gutter-lg pb-36 justify-center">
-            <div class="col-3 ">
+            <div class="col-3 col-xs-12 col-sm-5 col-md-3">
                 <q-responsive :ratio="504/360">
                     <div class="contact-card lm-bg-green">
                         <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-3">
@@ -21,7 +21,7 @@
                 </q-responsive>
 
             </div>
-            <div class="col-3 ">
+            <div class="col-3 col-xs-12 col-sm-5 col-md-3 ">
                 <q-responsive :ratio="504/360">
                     <div class="contact-card lm-bg-green">
                         <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-8">
@@ -37,7 +37,7 @@
                     </div>
                 </q-responsive>
             </div>
-            <div class="col-3 ">
+            <div class="col-3 col-xs-12 col-sm-5 col-md-3 ">
                 <q-responsive :ratio="504/360">
                     <div class="contact-card lm-bg-green">
                         <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-5">
@@ -53,7 +53,7 @@
                 </q-responsive>
 
             </div>
-            <div class="col-3 ">
+            <div class="col-3 col-xs-12 col-sm-5 col-md-3 ">
                 <q-responsive :ratio="504/360">
                     <div class="contact-card lm-bg-green">
                         <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-8">
@@ -69,7 +69,7 @@
                     </div>
                 </q-responsive>
             </div>
-            <div class="col-3 ">
+            <div class="col-3 col-xs-12 col-sm-5 col-md-3 ">
                 <q-responsive :ratio="504/360">
                     <div class="contact-card lm-bg-green">
                         <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-5">
@@ -85,7 +85,7 @@
                 </q-responsive>
 
             </div>
-            <div class="col-3 ">
+            <div class="col-3 col-xs-12 col-sm-5 col-md-3 ">
                 <q-responsive :ratio="504/360">
                     <div class="contact-card lm-bg-green">
                         <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-10">
