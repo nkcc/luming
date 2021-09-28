@@ -2,7 +2,7 @@
 <section class="lm-contact">
     <q-parallax src="bg.jpg" :height="650">
         <div class="green-background">
-            <div class="row justify-center">
+            <div class="row justify-center lg:container lg:mx-auto">
                 <div class="col-lg-8 col-md-10 q-pa-md q-ma-md">
                     <h1 class="text-secondary title  py-12">联系我们</h1>
                     <h4 class="text-white text-weight-bold pb-10 text-4xl">

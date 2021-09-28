@@ -221,7 +221,7 @@ $xl-breakpoint: 120rem;
 }
 
 .lm-points {
-  background-color: $white;
+  // background-color: $white;
   min-height: 57rem;
 
   .points-container {
@@ -229,12 +229,16 @@ $xl-breakpoint: 120rem;
   }
 }
 
+.lm-green-background-container {
+  width: 100%;
+  background-color: $points-bg;
+  background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
+}
+
 .lm-points,
 .lm-offers {
   width: 100%;
   padding: 3.125rem 0;
-  background-color: $points-bg;
-  background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
 
   .header-title {
     margin-top: 0;
