@@ -68,12 +68,6 @@ section {
   }
 }
 
-// breakpoint variable, from https://quasar.dev/style/breakpoints
-// Except the xs one because I think 37.5rem is too small
-$xs-breakpoint: 44.875rem;
-$sm-breakpoint: 64rem;
-$md-breakpoint: 89.9375rem;
-$lg-breakpoint: 100rem;
 $xl-breakpoint: 1536px;
 
 @media (min-width: $xl-breakpoint) {
@@ -85,7 +79,7 @@ $xl-breakpoint: 1536px;
   $vw: 100rem;
 }
 
-@media screen and (max-width: 1200) {
+@media screen and (max-width: 1200px) {
   html {
     font-size: 12px;
   }
