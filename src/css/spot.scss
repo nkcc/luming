@@ -71,13 +71,33 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1600px) {
   .lm-spot {
     .spot-container {
       .spot-title {
         font-size: 7rem;
         height: 7rem;
         line-height: 7rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .lm-spot {
+    .spot-container {
+      .team-avatar-p-r {
+        padding: 1rem 1rem 1rem 0;
+      }
+
+      .team-avatar-p {
+        padding: 1rem 1rem 1rem 0;
+      }
+      
+      .spot-title {
+        font-size: 15vw;
+        height: 15vw;
+        line-height: 15vw;
       }
     }
   }
