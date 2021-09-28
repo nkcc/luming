@@ -4,23 +4,24 @@ import { ref } from 'vue';
 const planType = ref([
   {
     title: '天梯计划',
-    type: 'america',
+    type: 'staircase',
   },
   {
     title: '青云计划',
-    type: 'name1',
+    type: 'cloud',
   },
   {
     title: '孵育计划',
-    type: 'Australia',
+    type: 'born',
   },
 ]);
 
-const caseData = ref([
+const caseData = [
   {
     imgLink: 'case1.jpg',
     name: '康奈尔大学',
     rank: 'U.S. News 全美排名第17',
+    caseName: 'staircase|0',
     student: '陆同学',
     info: [
       {
@@ -45,6 +46,7 @@ const caseData = ref([
     name: '哥伦比亚大学-商学院',
     rank: 'U.S. News 全美排名第3',
     student: '马同学',
+    caseName: 'cloud|0',
     info: [
       {
         label: '优势',
@@ -55,12 +57,14 @@ const caseData = ref([
         value: 'GPA低，无GRE/GMAT成绩，学术背景、科研与工作经历较为薄弱',
       },
     ],
+    caseStudy: [],
   },
   {
     imgLink: 'case3.jpg',
     name: '香港大学',
     rank: 'QS世界排名第22',
     student: '周同学',
+    caseName: 'born|0',
     info: [
       {
         label: 'GPA',
@@ -75,19 +79,18 @@ const caseData = ref([
         value: '美本',
       },
     ],
+    caseStudy: []
   },
-]);
+];
 
 
 export default {
   caseData,
-  slide: ref('carousel0'),
-  slideOffer: ref('america'),
-  slideActive: ref(
-    'background:#cc932e;width: 6.25rem;max-width:6.25vw;border-radius: 0;padding:0;'
-  ),
-  slideDefault: ref(
-    'background:#26322b;width: 6.25rem;max-width:6.25vw;border-radius: 0;padding:0;'
-  ),
+  caseDataLen: 3,
+  slide: ref('staircase|0'),
   planType,
+  currentCaseIndex: ref(0),
+  staircaseNum: 1,
+  cloudNum: 1,
+  bornNum: 1,
 };
