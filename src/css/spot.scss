@@ -71,6 +71,18 @@
   }
 }
 
+@media (min-width: 1280) {
+  .lm-spot {
+    .spot-container {
+      .spot-title {
+        font-size: 7rem;
+        height: 7rem;
+        line-height: 7rem;
+      }
+    }
+  }
+}
+
 .mobile {
   .lm-spot {
     .spot-container {

@@ -2,22 +2,23 @@
 <div class="lm-about">
     <section class="lm-comes">
         <div class="lm-light-dark-background">
-            <part-header name="鹿名来源" class=" "></part-header>
-            <div class="lm-comes-introduction w-full q-px-xs-md">
-                <div class="content w-full text-center pb-5" v-for="(v, k) in history" :key="k">
-                    <div class="title text-base text-weight-bold pb-1" v-for="(vv, kk) in v.title" :key="kk">{{ vv }}</div>
-                    <p class="description text-weight-light leading-5" v-for="(vd, kd) in v.content" :key="kd">
-                        {{ vd }}
-                    </p>
+            <div class=" lg:container lg:mx-auto">
+                <part-header name="鹿名来源" class=" "></part-header>
+                <div class="lm-comes-introduction w-full q-px-xs-md">
+                    <div class="content w-full text-center pb-5" v-for="(v, k) in history" :key="k">
+                        <div class="title text-base text-weight-bold pb-1" v-for="(vv, kk) in v.title" :key="kk">{{ vv }}</div>
+                        <p class="description text-weight-light leading-5" v-for="(vd, kd) in v.content" :key="kd">
+                            {{ vd }}
+                        </p>
+                    </div>
                 </div>
+                <part-header name="鹿名文化" class=" "></part-header>
             </div>
-            <part-header name="鹿名文化" class=" "></part-header>
         </div>
-
     </section>
 
     <section class="lm-culture-points lm-light-dark-background">
-        <div class="row justify-center">
+        <div class="row justify-center  lg:container lg:mx-auto">
             <div class="col-9 col-xs-12 col-md-9 row">
                 <template v-for="(v, k) in cultureData" :key="k">
                     <div class="col-4 col-xs-12 col-md-4">
@@ -39,7 +40,7 @@
             </div>
         </div>
         <part-header name="鹿名团队" class=" "></part-header>
-        <div class="lm-culture-team row justify-center pb-14 ">
+        <div class="lm-culture-team row justify-center pb-14 lg:container lg:mx-auto">
             <div class="team-container col-9 col-xs-12 col-md-9 flex items-center pb-24 q-px-xs-md q-px-md-none" :class="[k !== 0 ? 'pt-24' :'', k === teamData.length - 1 ? 'last' : '']" v-for="(v, k) in teamData" :key="k">
                 <div class="row items-center" :class=" k % 2 === 0 ? '' : 'reverse'">
                     <div class="col-7 col-xs-12 col-md-7">

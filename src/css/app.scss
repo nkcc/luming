@@ -74,7 +74,7 @@ $xs-breakpoint: 44.875rem;
 $sm-breakpoint: 64rem;
 $md-breakpoint: 89.9375rem;
 $lg-breakpoint: 100rem;
-$xl-breakpoint: 120rem;
+$xl-breakpoint: 1536px;
 
 @media (min-width: $xl-breakpoint) {
 
@@ -85,9 +85,9 @@ $xl-breakpoint: 120rem;
   $vw: 100rem;
 }
 
-@media screen and (max-width: 75rem) {
+@media screen and (max-width: 1200) {
   html {
-    font-size: 0.75rem;
+    font-size: 12px;
   }
 }
 

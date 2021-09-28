@@ -114,31 +114,31 @@
         </div>
     </section>
     <div class="lm-green-background-container ">
-   <section class="lm-offers row items-center lg:container lg:mx-auto">
-        <div class="offer-container">
-            <div class="row">
-                <div class="col-12 q-pa-xs-xs">
-                    <h1 class="text-center text-white text-weight-bold header-title">
-                        鹿名国际 录取院校
-                    </h1>
-                    <ul class="area">
-                        <li :class="['label', slideOffer == v.type ? 'active' : '']" v-for="(v, k) in offerType" :key="k" @click="changeSlideOfferType(v.type)">
-                            {{ v.title }}
-                        </li>
-                    </ul>
+        <section class="lm-offers row items-center lg:container lg:mx-auto">
+            <div class="offer-container">
+                <div class="row">
+                    <div class="col-12 q-pa-xs-xs">
+                        <h1 class="text-center text-white text-weight-bold header-title">
+                            鹿名国际 录取院校
+                        </h1>
+                        <ul class="area">
+                            <li :class="['label', slideOffer == v.type ? 'active' : '']" v-for="(v, k) in offerType" :key="k" @click="changeSlideOfferType(v.type)">
+                                {{ v.title }}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <q-carousel v-model="slideOffer" control-color="white" navigation padding arrows animated transition-prev="fade" transition-next="fade" class="lm-points-background">
-                >
-                <template v-slot:navigation-icon="{ active, onClick }">
-                    <q-btn v-if="active" size="3px" flat dense @click="onClick" :style="slideActive" />
-                    <q-btn v-else size="3px" flat dense :style="slideDefault" @click="onClick" />
-                </template>
+                <q-carousel v-model="slideOffer" control-color="white" navigation padding arrows animated transition-prev="fade" transition-next="fade" class="lm-points-background">
+                    >
+                    <template v-slot:navigation-icon="{ active, onClick }">
+                        <q-btn v-if="active" size="3px" flat dense @click="onClick" :style="slideActive" />
+                        <q-btn v-else size="3px" flat dense :style="slideDefault" @click="onClick" />
+                    </template>
 
-                <template v-for="(v, k) in offerData" :key="k">
-                    <q-carousel-slide :name="v.name" class="column no-wrap flex-center">
-                        <q-scroll-area class="lm-scroll" :bar-style="{ background: 'white' }">
-                            <ul class="
+                    <template v-for="(v, k) in offerData" :key="k">
+                        <q-carousel-slide :name="v.name" class="column no-wrap flex-center">
+                            <q-scroll-area class="lm-scroll" :bar-style="{ background: 'white' }">
+                                <ul class="
                     offer-list
                     row
                     fit
@@ -147,72 +147,72 @@
                     q-gutter-xs q-col-gutter
                     no-wrap
                   ">
-                                <li class="offer-item" v-for="(sv, sk) in v.list" :key="sk">
-                                    <div class="school-logo">
-                                        <q-img class="img" :src="sv.imgLink" fit="scale-down"></q-img>
-                                    </div>
-                                    <div class="school-desc">
-                                        <div class="title">{{ sv.title }}</div>
-                                        <div class="description ellipsis-3-lines overflow-y-auto">
-                                            {{ sv.description }}
+                                    <li class="offer-item" v-for="(sv, sk) in v.list" :key="sk">
+                                        <div class="school-logo">
+                                            <q-img class="img" :src="sv.imgLink" fit="scale-down"></q-img>
                                         </div>
-                                        <div class="footer">
-                                            <q-icon class="dot" name="fiber_manual_record"></q-icon>
-                                            <a :href="sv.link">了解更多 ></a>
+                                        <div class="school-desc">
+                                            <div class="title">{{ sv.title }}</div>
+                                            <div class="description ellipsis-3-lines overflow-y-auto">
+                                                {{ sv.description }}
+                                            </div>
+                                            <div class="footer">
+                                                <q-icon class="dot" name="fiber_manual_record"></q-icon>
+                                                <a :href="sv.link">了解更多 ></a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </q-scroll-area>
-                    </q-carousel-slide>
-                </template>
-            </q-carousel>
-        </div>
-    </section>
+                                    </li>
+                                </ul>
+                            </q-scroll-area>
+                        </q-carousel-slide>
+                    </template>
+                </q-carousel>
+            </div>
+        </section>
     </div>
     <section class="lm-case">
         <div :class="[
           'case-item',
           k % 2 !== 0 ? 'reverse' : '',
         ]" v-for="(v, k) in caseData" :key="k">
-        <div class="row justify-center items-center items-stretch lg:container lg:mx-auto" :class="k % 2 !== 0 ? 'reverse' : ''">
-        <div class="img-container col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5">
-                <q-responsive :ratio="899 / 716" class="shadow-up-10">
-                    <q-img class="img" :src="v.imgLink" fit="contain"></q-img>
-                </q-responsive>
-            </div>
-            <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5 content-container">
-                <div class="content">
-                    <div class="header">
-                        <div class="title">
-                            <span class="caption text-weight-bolder">录取院校：</span>
-                            <span class="value text-secondary">{{ v.name }}</span>
-                        </div>
-                        <div class="rank">
-                            <span class="caption text-weight-bolder">学校排名：</span>
-                            <span class="value text-weight-bolder">{{ v.rank }}</span>
-                        </div>
-                    </div>
-                    <div class="body">
-                        <div class="name text-weight-bolder">{{ v.student }}</div>
-                        <div class="title text-weight-bolder">背景分析：</div>
-                        <div class="background">
-                            <div class="info" v-for="(vv, kk) in v.info" :key="kk">
-                                <span class="label text-weight-bolder">
-                                    {{ vv.label }}:
-                                </span>
-                                <span class="value text-weight-light"> {{ vv.value }}</span>
+            <div class="row justify-center items-center items-stretch lg:container lg:mx-auto" :class="k % 2 !== 0 ? 'reverse' : ''">
+                <div class="img-container col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5">
+                    <q-responsive :ratio="899 / 716" class="shadow-up-10">
+                        <q-img class="img" :src="v.imgLink" fit="contain"></q-img>
+                    </q-responsive>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5 content-container">
+                    <div class="content">
+                        <div class="header">
+                            <div class="title">
+                                <span class="caption text-weight-bolder">录取院校：</span>
+                                <span class="value text-secondary">{{ v.name }}</span>
+                            </div>
+                            <div class="rank">
+                                <span class="caption text-weight-bolder">学校排名：</span>
+                                <span class="value text-weight-bolder">{{ v.rank }}</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="footer">
-                        <q-icon class="dot" name="fiber_manual_record"></q-icon>
-                        <a href="">了解更多 ></a>
+                        <div class="body">
+                            <div class="name text-weight-bolder">{{ v.student }}</div>
+                            <div class="title text-weight-bolder">背景分析：</div>
+                            <div class="background">
+                                <div class="info" v-for="(vv, kk) in v.info" :key="kk">
+                                    <span class="label text-weight-bolder">
+                                        {{ vv.label }}:
+                                    </span>
+                                    <span class="value text-weight-light"> {{ vv.value }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <q-icon class="dot" name="fiber_manual_record"></q-icon>
+                            <a href="">了解更多 ></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    
+
         </div>
     </section>
     <section class="lm-team lm-dark-background">
