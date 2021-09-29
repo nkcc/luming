@@ -66,15 +66,15 @@
 import setupData from '../ts/pages/case'
 import PartHeader from '../components/PartHeader.vue'
 import Contact from '../components/Contact.vue'
+import { defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
     name: 'Case',
     components: {
         PartHeader,
         Contact,
     },
     setup() {
-
         return setupData
     },
     methods: {
@@ -82,42 +82,7 @@ export default {
             this.slide = caseName + '|0'
         }
     },
-    watch: {
-        slide(val) {
-            switch (this.currentCaseType) {
-                case 'staircase':
-                  this.currentCaseIndex = this.currentCaseTypeIndex
-                    break
-                case 'cloud':
-                  this.currentCaseIndex = this.currentCaseTypeIndex + this.staircaseNum
-                    break
-                case 'born':
-                  this.currentCaseIndex = this.currentCaseTypeIndex + this.staircaseNum + this.bornNum
-                    break
-            }
-
-        }
-    },
-    computed: {
-        currentCase() {
-            return this.caseData[this.currentCaseIndex]
-        },
-        currentCaseType() {
-            let caseTypeData: string[]
-            let caseType: string
-            caseTypeData = this.slide.split('|');
-            caseType = caseTypeData[0];
-            return caseType
-        },
-        currentCaseTypeIndex() {
-            let caseTypeData: string[]
-            let caseTypeIndex: string
-            caseTypeData = this.slide.split('|');
-            caseTypeIndex = caseTypeData[1];
-            return parseInt(caseTypeIndex, 10)
-        },
-    }
-}
+})
 </script>
 
 <style lang="scss">
@@ -134,8 +99,7 @@ export default {
                 align-self: flex-end;
                 width: 12rem;
 
-                &.active {
-                    font-size: 2.75rem;
+                &.active {                    font-size: 2.75rem;
                     color: $quaternary;
                 }
             }

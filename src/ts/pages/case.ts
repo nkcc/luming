@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { ref } from 'vue';
+import { ref,  reactive, computed, watch } from 'vue';
+import { CaseData } from 'src/components/models';
 
 const planType = ref([
   {
@@ -16,7 +17,7 @@ const planType = ref([
   },
 ]);
 
-const caseData = [
+const caseData =  reactive(<CaseData[]>[
   {
     imgLink: 'case1.jpg',
     name: '康奈尔大学',
@@ -91,16 +92,55 @@ const caseData = [
       '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
     ],
   },
-];
+]);
 
+const currentCaseIndex = ref(0);
+const slide = ref('staircase|0');
+const  staircaseNum = ref(1),
+cloudNum = ref(1),
+bornNum = ref(1);
+
+const currentCase = computed(() => {
+  const currentIndex = currentCaseIndex
+  const currentCase = (<CaseData[]>caseData)[currentIndex.value]
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return currentCase
+});
+const currentCaseType = computed(() =>{
+  const caseTypeData = (slide.value).split('|');
+  const caseType = caseTypeData[0];
+  return caseType
+});
+const currentCaseTypeIndex = computed((): number => {
+  const caseTypeData = (slide.value).split('|');
+  const caseTypeIndex = caseTypeData[1];
+  return parseInt(caseTypeIndex, 10)
+});
+
+watch(slide, () => {
+  switch (currentCaseType.value) {
+      case 'staircase':
+        currentCaseIndex.value = currentCaseTypeIndex.value
+          break
+      case 'cloud':
+        currentCaseIndex.value = currentCaseTypeIndex.value + staircaseNum.value
+          break
+      case 'born':
+        currentCaseIndex.value = currentCaseTypeIndex.value + staircaseNum.value + cloudNum.value
+          break
+  }
+})
 
 export default {
   caseData,
   caseDataLen: 3,
-  slide: ref('staircase|0'),
+  slide,
   planType,
-  currentCaseIndex: ref(0),
-  staircaseNum: 1,
-  cloudNum: 1,
-  bornNum: 1,
+  currentCaseIndex,
+  currentCase,
+  currentCaseType,
+  currentCaseTypeIndex,
+  staircaseNum,
+  cloudNum,
+  bornNum,
 };

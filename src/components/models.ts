@@ -21,3 +21,16 @@ export interface CarouselData {
     list: {title: string, imgLink: string, description: string, link?: string}[];
  }
 
+
+ export interface CaseData {
+   name: string,
+   rank: string,
+   caseName: string,
+   student: string,
+   info: {
+     label: string,
+     value: string,
+   }[],
+   imgLink: string,
+   caseStudy: string[],
+ }
