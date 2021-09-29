@@ -1,6 +1,6 @@
 <template>
 <div class="lm-contact w-full lm-bg-background">
-    <part-header name="联系鹿鸣"></part-header>
+    <part-header name="联系鹿名"></part-header>
     <div class="contact-container row justify-center">
         <div class="col-9 row q-gutter-lg pb-36 justify-center">
             <div class="col-3 col-xs-12 col-sm-5 col-md-3">
