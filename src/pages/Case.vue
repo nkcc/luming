@@ -66,7 +66,9 @@
 import setupData from '../ts/pages/case'
 import PartHeader from '../components/PartHeader.vue'
 import Contact from '../components/Contact.vue'
-import { defineComponent } from 'vue'
+import {
+    defineComponent
+} from 'vue'
 
 export default defineComponent({
     name: 'Case',
@@ -99,7 +101,8 @@ export default defineComponent({
                 align-self: flex-end;
                 width: 12rem;
 
-                &.active {                    font-size: 2.75rem;
+                &.active {
+                    font-size: 2.75rem;
                     color: $quaternary;
                 }
             }

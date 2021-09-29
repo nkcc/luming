@@ -6,8 +6,8 @@
                 <part-header name="鹿名来源" class=" "></part-header>
                 <div class="lm-comes-introduction w-full q-px-xs-md">
                     <div class="content w-full text-center pb-5" v-for="(v, k) in history" :key="k">
-                        <div class="title text-base text-weight-bold pb-1" v-for="(vv, kk) in v.title" :key="kk">{{ vv }}</div>
-                        <p class="description text-weight-light leading-5" v-for="(vd, kd) in v.content" :key="kd">
+                        <div class="title text-base text-weight-bold pb-1  animate__animated  animate__fadeInUp" :class="'animate__delay-' + k + 's'" v-for="(vv, kk) in v.title" :key="kk">{{ vv }}</div>
+                        <p class="description text-weight-light leading-7 animate__animated animate__fadeInUp" :class="'animate__delay-' + k + 's'" v-for="(vd, kd) in v.content" :key="kd">
                             {{ vd }}
                         </p>
                     </div>
