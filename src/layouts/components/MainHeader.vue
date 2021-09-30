@@ -3,7 +3,7 @@
     <q-header :reveal="true">
 
         <div class="lm-top-bar"></div>
-        <div class="lm-header q-px-md lg:container lg:mx-auto">
+        <div class="lm-header q-px-md">
             <nav class="navbar row items-center gt-sm">
 
                 <div class=" col-sm-10 col-xs-10 col-md-3 left">

@@ -45,14 +45,6 @@ section {
   overflow: hidden;
 }
 
-img {
-  transition: all ease 0.5s;
-  &:hover {
-    transform: scale(1.05);
-    transition: all ease 0.5s;
-  }
-}
-
 .lm-bg-background {
   background: #08100b;
 }

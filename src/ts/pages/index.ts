@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { CarouselData, OfferData } from '../../components/models';
+import { CarouselData, OfferData } from 'components/models';
 import { ref } from 'vue';
 
 const servicesData = ref([
@@ -447,6 +447,15 @@ const professorData = ref([
   },
 ]);
 
+const slide = ref('carousel0')
+const slideOffer = ref('america')
+const  slideActive = ref(
+  'background:#cc932e;width: 6.25rem;max-width:6.25vw;border-radius: 0;padding:0;'
+)
+const  slideDefault = ref(
+  'background:#26322b;width: 6.25rem;max-width:6.25vw;border-radius: 0;padding:0;'
+)
+
 export default {
   servicesData,
   carouselData,
@@ -455,13 +464,72 @@ export default {
   caseData,
   teamData,
   professorData,
-  slide: ref('carousel0'),
-  slideOffer: ref('america'),
-  slideActive: ref(
-    'background:#cc932e;width: 6.25rem;max-width:6.25vw;border-radius: 0;padding:0;'
-  ),
-  slideDefault: ref(
-    'background:#26322b;width: 6.25rem;max-width:6.25vw;border-radius: 0;padding:0;'
-  ),
+  slide,
+  slideOffer,
+  slideActive,
+  slideDefault,
   offerType,
+  changeSlideOfferType(type: string) {
+    slideOffer.value = type;
+  },
+  cultureAnimation(k: number, length: number) {
+    return k > length / 2 - 1 ? 'animated animate__fadeInRight' : 'animated animate__fadeInLeft';
+  },
+
+  getClassType(k: number, firstClass: string, secondClass: string) {
+    return k % 2 == 0 ? firstClass : secondClass;
+  },
+  onCultureIntersection(entry: {
+    target: {
+      dataset: {
+        id: string,
+      }
+    },
+    isIntersecting: boolean
+  }) {
+    const index = parseInt(entry.target.dataset.id, 10);
+
+    cultureData.value[index].visible = entry.isIntersecting;
+
+  },
+  onServiceIntersection(entry: {
+    target: {
+      dataset: {
+        id: string,
+      }
+    },
+    isIntersecting: boolean
+  }) {
+    const index = parseInt(entry.target.dataset.id, 10);
+
+    setTimeout(() => {
+      servicesData.value[index].visible = entry.isIntersecting;
+    }, 100 * index);
+
+  },
+  onTeamIntersection(entry: {
+    target: {
+      dataset: {
+        id: string,
+      }
+    },
+    isIntersecting: boolean
+  }) {
+    const index = parseInt(entry.target.dataset.id, 10);
+
+    setTimeout(() => {
+      teamData.value[index].visible = entry.isIntersecting;
+    }, 100 * index);
+
+  },
+  scrollFullScreen() {
+    const height = window.innerHeight - 20;
+    window.scrollTo({
+      top: height,
+      behavior: 'smooth'
+    });
+  },
+  visibilityChanged() {
+    console.log(123);
+  }
 };
