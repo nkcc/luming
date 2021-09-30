@@ -135,9 +135,7 @@
                       transition-prev='fade' transition-next='fade' class='lm-points-background'>
             >
             <template v-slot:navigation-icon=''>
-              <ul class='offer-indicator-container'>
-<!--                <li class='buttom-indicator' v-for='(sv, sk) in v.list'></li>-->
-              </ul>
+
             </template>
 
             <template v-for='(v, k) in offerData' :key='k'>
@@ -152,7 +150,7 @@
                     q-gutter-xs q-col-gutter
                     no-wrap
                   '>
-                    <li class='offer-item' v-for='(sv, sk) in v.list' :key='sk'>
+                    <li class='offer-item' v-for='(sv, sk) in v.list' :key='sk' @mouseenter='getCurrentOfferSchool(sk)'>
                       <div class='school-logo'>
                         <q-img class='img' :src='sv.imgLink' fit='scale-down'></q-img>
                       </div>
@@ -172,6 +170,12 @@
               </q-carousel-slide>
             </template>
           </q-carousel>
+          <div class='offer-indicator-container'>
+            <ul class='offer-indicator-list' :style='{"--left": offerIndicatorLeft }'>
+              <li class='offer-indicator-item' v-for='(v, k) in currentOffer.list' :key='k'></li>
+            </ul>
+          </div>
+
         </div>
       </section>
     </div>

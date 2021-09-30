@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { CarouselData, OfferData } from 'components/models';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 const servicesData = ref([
   {
@@ -455,6 +454,8 @@ const  slideActive = ref(
 const  slideDefault = ref(
   'background:#26322b;width: 6.25rem;max-width:6.25vw;border-radius: 0;padding:0;'
 )
+const currentOfferSchool = ref(0)
+const offerIndicatorLeft = ref('0rem')
 
 export default {
   servicesData,
@@ -469,6 +470,17 @@ export default {
   slideActive,
   slideDefault,
   offerType,
+  currentOfferSchool,
+  offerIndicatorLeft,
+  currentOffer: computed(() : OfferData => {
+    return <OfferData>offerData.value.find((offer) => {
+      return offer.name === slideOffer.value
+    })
+  }),
+  getCurrentOfferSchool(index: number) {
+    offerIndicatorLeft.value =  `${index * 9.25}rem`
+    currentOfferSchool.value = index
+  },
   changeSlideOfferType(type: string) {
     slideOffer.value = type;
   },

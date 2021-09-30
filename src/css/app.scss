@@ -4,6 +4,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import './quasar.variables.scss';
 
 @mixin read-more {
   color: $white;
@@ -23,7 +24,7 @@ html {
 }
 
 body {
-  font-family: 'Noto Serif SC';
+  font-family: 'Noto Serif SC', serif;
   font-size: 0.75rem;
   background-color: $white;
 }
@@ -50,8 +51,7 @@ section {
 }
 
 .lm-light-dark-background {
-  background-color: #030604;
-  background: radial-gradient(#0b150e 80%, #020503 1000%);
+  background: #030604 radial-gradient(#0b150e 80%, #020503 1000%);
 }
 
 .bg-dark-green {
@@ -89,9 +89,6 @@ $xl-breakpoint: 1536px;
   position: relative;
   width: 100%;
   height: calc(100vh - 6.2rem);
-  background-image: url('/lb.jpg');
-  background-position: center center;
-  background-size: cover;
 
   .lm-introduction {
     height: 100%;
@@ -225,8 +222,7 @@ $xl-breakpoint: 1536px;
 
 .lm-green-background-container {
   width: 100%;
-  background-color: $points-bg;
-  background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
+  background: $points-bg radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
 }
 
 .lm-points,
@@ -381,6 +377,41 @@ $xl-breakpoint: 1536px;
 
   .offer-container {
     width: 100%;
+    .offer-indicator-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      .offer-indicator-list {
+        position: relative;
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+        .offer-indicator-item {
+          height: .5rem;
+          width: 8rem;
+          background: $light-fade-green;
+          list-style-type: none;
+          margin: 0.625rem;
+          transition: all 0.4s ease-in-out;
+          &.active {
+            background: $secondary;
+          }
+        }
+
+        &:after {
+          content: '';
+          height: .5rem;
+          width: 8rem;
+          background: $secondary;
+          position: absolute;
+          margin: 0.625rem;
+          left: var(--left);
+          transition: all 0.4s ease-in-out;
+        }
+      }
+
+    }
   }
 
   .caption {
@@ -440,9 +471,8 @@ $xl-breakpoint: 1536px;
         height: 11.25rem;
         display: flex;
         border-right: 0.3125rem solid $secondary;
-        margin: 0.625rem 0;
         padding-left: 2.5rem;
-        margin-right: 3.125rem;
+        margin: 0.625rem 3.125rem 0.625rem 0;
         align-items: center;
 
         .school-logo {
@@ -526,7 +556,6 @@ $xl-breakpoint: 1536px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 100%;
 
       .header {
         .title {
