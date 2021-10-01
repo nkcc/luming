@@ -281,22 +281,6 @@
   </q-page>
 </template>
 
-<script lang='ts'>
-import data from '../ts/pages/index';
-import Contact from '../components/Contact.vue';
-import {
-  defineComponent
-} from 'vue';
+<script lang='ts' src='../ts/pages/index.ts'>
 
-export default defineComponent({
-  name: 'PageIndex',
-  components: {
-    Contact
-  },
-  setup() {
-    return data;
-  },
-  methods: {
-  }
-});
 </script>

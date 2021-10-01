@@ -314,6 +314,7 @@ $xl-breakpoint: 1536px;
     }
   }
 }
+
 .lm-culture {
   padding: 0 0.375rem 5rem;
   background-color: $white;
@@ -377,16 +378,19 @@ $xl-breakpoint: 1536px;
 
   .offer-container {
     width: 100%;
+
     .offer-indicator-container {
       position: relative;
       display: flex;
       justify-content: center;
       width: 100%;
+
       .offer-indicator-list {
         position: relative;
         padding-left: 0;
         display: flex;
         justify-content: center;
+
         .offer-indicator-item {
           height: .5rem;
           width: 8rem;
@@ -394,6 +398,7 @@ $xl-breakpoint: 1536px;
           list-style-type: none;
           margin: 0.625rem;
           transition: all 0.4s ease-in-out;
+
           &.active {
             background: $secondary;
           }
@@ -792,14 +797,30 @@ $xl-breakpoint: 1536px;
   .lm-offers {
     .area {
       justify-content: flex-start;
+
       .label {
         margin-bottom: 6px;
       }
     }
+
+    .offer-container {
+      .offer-indicator-container {
+        .offer-indicator-list {
+          .offer-indicator-item {
+            width: 3rem;
+          }
+          &:after {
+            width: 3rem;
+          }
+        }
+      }
+    }
   }
+
   .lm-case {
     .case-item {
       padding: 3.75rem 10px;
+
       .content-container {
         margin-top: 10px;
         padding: 0;
@@ -813,6 +834,7 @@ $xl-breakpoint: 1536px;
 
   .lm-team {
     padding-top: 6.25rem;
+
     .header-title {
       margin-top: auto;
     }
@@ -823,6 +845,7 @@ $xl-breakpoint: 1536px;
       .avatar {
         padding: 20px;
       }
+
       .content {
         padding: 0;
       }

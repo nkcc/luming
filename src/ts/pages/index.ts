@@ -1,5 +1,7 @@
 import { CarouselData, OfferData } from 'components/models';
 import { ref, computed } from 'vue';
+import { useQuasar } from 'quasar';
+import Contact from 'components/Contact.vue';
 
 const servicesData = ref([
   {
@@ -457,91 +459,114 @@ const  slideDefault = ref(
 const currentOfferSchool = ref(0)
 const offerIndicatorLeft = ref('0rem')
 
-export default {
-  servicesData,
-  carouselData,
-  cultureData,
-  offerData,
-  caseData,
-  teamData,
-  professorData,
-  slide,
-  slideOffer,
-  slideActive,
-  slideDefault,
-  offerType,
-  currentOfferSchool,
-  offerIndicatorLeft,
-  currentOffer: computed(() : OfferData => {
-    return <OfferData>offerData.value.find((offer) => {
-      return offer.name === slideOffer.value
-    })
-  }),
-  getCurrentOfferSchool(index: number) {
-    offerIndicatorLeft.value =  `${index * 9.25}rem`
-    currentOfferSchool.value = index
-  },
-  changeSlideOfferType(type: string) {
-    slideOffer.value = type;
-  },
-  cultureAnimation(k: number, length: number) {
-    return k > length / 2 - 1 ? 'animated animate__fadeInRight' : 'animated animate__fadeInLeft';
-  },
+const setup = function() {
+  const $q = useQuasar()
+  return {
+    servicesData,
+    carouselData,
+    cultureData,
+    offerData,
+    caseData,
+    teamData,
+    professorData,
+    slide,
+    slideOffer,
+    slideActive,
+    slideDefault,
+    offerType,
+    currentOfferSchool,
+    offerIndicatorLeft,
+    currentOffer: computed(() : OfferData => {
+      return <OfferData>offerData.value.find((offer) => {
+        return offer.name === slideOffer.value
+      })
+    }),
 
-  getClassType(k: number, firstClass: string, secondClass: string) {
-    return k % 2 == 0 ? firstClass : secondClass;
-  },
-  onCultureIntersection(entry: {
-    target: {
-      dataset: {
-        id: string,
-      }
+    getCurrentOfferSchool(index: number) {
+      const offset = $q.platform.is.mobile ? 4.25 : 9.25
+
+      offerIndicatorLeft.value =  `${index * offset}rem`
+      currentOfferSchool.value = index
     },
-    isIntersecting: boolean
-  }) {
-    const index = parseInt(entry.target.dataset.id, 10);
 
-    cultureData.value[index].visible = entry.isIntersecting;
-
-  },
-  onServiceIntersection(entry: {
-    target: {
-      dataset: {
-        id: string,
-      }
+    changeSlideOfferType(type: string) {
+      slideOffer.value = type;
     },
-    isIntersecting: boolean
-  }) {
-    const index = parseInt(entry.target.dataset.id, 10);
-
-    setTimeout(() => {
-      servicesData.value[index].visible = entry.isIntersecting;
-    }, 100 * index);
-
-  },
-  onTeamIntersection(entry: {
-    target: {
-      dataset: {
-        id: string,
-      }
+    cultureAnimation(k: number, length: number) {
+      return k > length / 2 - 1 ? 'animated animate__fadeInRight' : 'animated animate__fadeInLeft';
     },
-    isIntersecting: boolean
-  }) {
-    const index = parseInt(entry.target.dataset.id, 10);
 
-    setTimeout(() => {
-      teamData.value[index].visible = entry.isIntersecting;
-    }, 100 * index);
+    getClassType(k: number, firstClass: string, secondClass: string) {
+      return k % 2 == 0 ? firstClass : secondClass;
+    },
+    onCultureIntersection(entry: {
+      target: {
+        dataset: {
+          id: string,
+        }
+      },
+      isIntersecting: boolean
+    }) {
+      const index = parseInt(entry.target.dataset.id, 10);
 
+      cultureData.value[index].visible = entry.isIntersecting;
+
+    },
+    onServiceIntersection(entry: {
+      target: {
+        dataset: {
+          id: string,
+        }
+      },
+      isIntersecting: boolean
+    }) {
+      const index = parseInt(entry.target.dataset.id, 10);
+
+      setTimeout(() => {
+        servicesData.value[index].visible = entry.isIntersecting;
+      }, 100 * index);
+
+    },
+    onTeamIntersection(entry: {
+      target: {
+        dataset: {
+          id: string,
+        }
+      },
+      isIntersecting: boolean
+    }) {
+      const index = parseInt(entry.target.dataset.id, 10);
+
+      setTimeout(() => {
+        teamData.value[index].visible = entry.isIntersecting;
+      }, 100 * index);
+
+    },
+    scrollFullScreen() {
+      const height = window.innerHeight - 20;
+      window.scrollTo({
+        top: height,
+        behavior: 'smooth'
+      });
+    },
+    visibilityChanged() {
+      console.log(123);
+    }
+  };
+}
+
+
+import {
+  defineComponent
+} from 'vue';
+
+export default defineComponent({
+  name: 'PageIndex',
+  components: {
+    Contact
   },
-  scrollFullScreen() {
-    const height = window.innerHeight - 20;
-    window.scrollTo({
-      top: height,
-      behavior: 'smooth'
-    });
-  },
-  visibilityChanged() {
-    console.log(123);
+  setup,
+  methods: {
   }
-};
+});
+

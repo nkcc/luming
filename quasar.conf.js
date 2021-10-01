@@ -102,7 +102,9 @@ module.exports = configure(function (ctx) {
       // directives: [],
 
       // Quasar plugins
-      plugins: [],
+      plugins: [
+        'Platform'
+      ],
       cssAddon: true
     },
 
