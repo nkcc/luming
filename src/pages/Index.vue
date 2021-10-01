@@ -1,15 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 <template>
   <q-page>
-    <section class='lm-background'>
-      <div class='lm-introduction animate__animated animate__fadeIn row justify-center'>
-        <div class='lm-text-title text-center  lg:container lg:mx-auto'>鹿 名 国 际 教 育</div>
-        <div class='lm-text-second-title '>
-          <q-img class='logo-title' src='logo_letter.svg' fit='contain'></q-img>
+    <section class=''>
+      <q-img class='lm-background ' src='lb.jpg'>
+        <div class='lm-introduction row justify-center animate__animated animate__fadeIn'>
+          <div class='lm-text-title text-center  lg:container lg:mx-auto animate__animated  animate__fadeIn'>鹿 名 国 际 教 育</div>
+          <div class='lm-text-second-title animate__animated animate__fadeInUp animate__delay-1s'>
+            <q-img class='logo-title' src='logo_letter.svg' fit='contain'></q-img>
+          </div>
+          <p class='text-center animate__animated animate__fadeInUp animate__delay-2s'>让世界名校， 不再高不可攀</p>
         </div>
-        <p class='text-center'>让世界名校， 不再高不可攀</p>
-      </div>
-      <div class='
+        <div class='
             show-more
             justify-center
             row
@@ -18,10 +19,11 @@
             animate__repeat
             animate__infinite
             animate__slideOutUp
-            lg:container lg:mx-auto
         ' @click='scrollFullScreen'>
-        <q-img class='up-scroll' src='up_arrow.svg' fit='contain' height='3.125rem' width='12.5rem' />
-      </div>
+          <q-img class='up-scroll' src='up_arrow.svg' fit='contain' height='3.125rem' width='12.5rem' />
+        </div>
+      </q-img>
+
     </section>
     <section class='lm-services'>
       <div class='row q-col-gutter-x-sm lg:container lg:mx-auto'>

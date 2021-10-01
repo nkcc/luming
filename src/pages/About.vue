@@ -22,7 +22,7 @@
             <div class="col-9 col-xs-12 col-md-9 row">
                 <template v-for="(v, k) in cultureData" :key="k">
                     <div class="col-4 col-xs-12 col-md-4">
-                        <div class="points-img" :class="[k==0 ? 'border-b-0' : '', k==1 ? 'border-r-0' : '', k==2 ? 'border-l-0' : '' ]">
+                        <div class="points-img" :class="[k===0 ? 'border-b-0' : '', k===1 ? 'border-r-0' : '', k===2 ? 'border-l-0' : '' ]">
                             <q-img :src="cultureImg[k].backgroundImage" fit="cover" :ratio="557/400"></q-img>
                         </div>
                     </div>
