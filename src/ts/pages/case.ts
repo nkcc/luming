@@ -1,46 +1,33 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { ref,  reactive, computed, watch } from 'vue';
-import { CaseData } from 'src/components/models';
+import { computed, reactive, ref, Ref } from 'vue';
+import { CaseData, PlanData } from 'src/components/models';
+import { ElCarousel } from 'element-plus'
+import { useQuasar } from 'quasar';
 
-const planType = ref([
-  {
-    title: '天梯计划',
-    type: 'staircase',
-  },
-  {
-    title: '青云计划',
-    type: 'cloud',
-  },
-  {
-    title: '孵育计划',
-    type: 'born',
-  },
-]);
 
-const caseData =  reactive(<CaseData[]>[
+const stairCaseData = reactive(<CaseData[]>[
   {
     imgLink: 'case1.jpg',
-    name: '康奈尔大学',
+    name: '哈佛大学',
     rank: 'U.S. News 全美排名第17',
     caseName: 'staircase|0',
     student: '陆同学',
     info: [
       {
         label: '优势',
-        value: 'IB课程体系，GPA达标',
+        value: 'IB课程体系，GPA达标'
       },
       {
         label: '劣势',
-        value: '综合实力不够理想，没有SAT成绩，活动背景较为薄弱',
-      },
+        value: '综合实力不够理想，没有SAT成绩，活动背景较为薄弱'
+      }
     ],
     caseStudy: [
       '陆同学和其父亲在2020年12月底找到我们，当时她ED申请布朗大学被拒，父女俩很是焦虑，害怕从小到大的藤校梦破碎。我们首先安抚了学生情绪，然后了解了学生的背景情况，得知陆同学是一个成绩相对来说比较优秀的学生，托福考到了110并IB成绩有38分，但没有SAT考试成绩。如果正常申请的话，申请至美国30-50名的大学，问题倒不是很大。',
 
       '但陆同学从小就有藤校情结，坚持只选择美国常春藤大学。于是我们给陆同学推荐了鹿名国际的“青云计划”，精准录取康奈尔大学，而且只用申请这一所学校。获知此方案后，陆同学的父亲陆总对如此“完美”的方案不敢相信，前前后后沟通了不下10次，最终要求我们必须接受“公平对赌条款”（对赌一定数量金额，不录取赔付客户，录取则客户多支付其金额）才与我们签约。我们对自己方案有100%的信心，于是便答应下来。',
 
-      '可怜天下父母心，签约之后，爱女心切的陆总频繁的与我们沟通，询问申请进度，我们一一耐心解答。官方下录取offer的时间是2021年4月7号，而我们在三月份已获知陆同学被康奈尔录取的消息。在北京时间4月7号早上7点，不出所料陆同学被康奈尔大学官方通知录取。陆总感叹：“一路走过，选择没有错，感谢我们陪伴和支持”。和同学们结伴同行在海南旅游的陆同学，也与同学们一起分享了这胜利的喜悦。我们也为圆满的结果感到欣慰。预祝陆同学在新的旅程绽放精彩人生！',
-    ],
+      '可怜天下父母心，签约之后，爱女心切的陆总频繁的与我们沟通，询问申请进度，我们一一耐心解答。官方下录取offer的时间是2021年4月7号，而我们在三月份已获知陆同学被康奈尔录取的消息。在北京时间4月7号早上7点，不出所料陆同学被康奈尔大学官方通知录取。陆总感叹：“一路走过，选择没有错，感谢我们陪伴和支持”。和同学们结伴同行在海南旅游的陆同学，也与同学们一起分享了这胜利的喜悦。我们也为圆满的结果感到欣慰。预祝陆同学在新的旅程绽放精彩人生！'
+    ]
   },
   {
     imgLink: 'case2.jpg',
@@ -51,19 +38,19 @@ const caseData =  reactive(<CaseData[]>[
     info: [
       {
         label: '优势',
-        value: '美国本科学历，专业匹配度高',
+        value: '美国本科学历，专业匹配度高'
       },
       {
         label: '劣势',
-        value: 'GPA低，无GRE/GMAT成绩，学术背景、科研与工作经历较为薄弱',
-      },
+        value: 'GPA低，无GRE/GMAT成绩，学术背景、科研与工作经历较为薄弱'
+      }
     ],
     caseStudy: [
       '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
       '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
       '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
-      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
-    ],
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中'
+    ]
   },
   {
     imgLink: 'case3.jpg',
@@ -74,73 +61,377 @@ const caseData =  reactive(<CaseData[]>[
     info: [
       {
         label: 'GPA',
-        value: '2.6/4.0',
+        value: '2.6/4.0'
       },
       {
         label: 'GRE',
-        value: 'Waived',
+        value: 'Waived'
       },
       {
         label: '本科',
-        value: '美本',
-      },
+        value: '美本'
+      }
     ],
     caseStudy: [
       '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
       '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
       '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
-      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中'
+    ]
+  }
+]);
+
+const bornCaseData = reactive(<CaseData[]>[
+  {
+    imgLink: 'course-1.jpg',
+    name: '耶鲁大学',
+    rank: 'U.S. News 全美排名第17',
+    caseName: 'staircase|0',
+    student: '陆同学',
+    info: [
+      {
+        label: '优势',
+        value: 'IB课程体系，GPA达标'
+      },
+      {
+        label: '劣势',
+        value: '综合实力不够理想，没有SAT成绩，活动背景较为薄弱'
+      }
     ],
+    caseStudy: [
+      '陆同学和其父亲在2020年12月底找到我们，当时她ED申请布朗大学被拒，父女俩很是焦虑，害怕从小到大的藤校梦破碎。我们首先安抚了学生情绪，然后了解了学生的背景情况，得知陆同学是一个成绩相对来说比较优秀的学生，托福考到了110并IB成绩有38分，但没有SAT考试成绩。如果正常申请的话，申请至美国30-50名的大学，问题倒不是很大。',
+
+      '但陆同学从小就有藤校情结，坚持只选择美国常春藤大学。于是我们给陆同学推荐了鹿名国际的“青云计划”，精准录取康奈尔大学，而且只用申请这一所学校。获知此方案后，陆同学的父亲陆总对如此“完美”的方案不敢相信，前前后后沟通了不下10次，最终要求我们必须接受“公平对赌条款”（对赌一定数量金额，不录取赔付客户，录取则客户多支付其金额）才与我们签约。我们对自己方案有100%的信心，于是便答应下来。',
+
+      '可怜天下父母心，签约之后，爱女心切的陆总频繁的与我们沟通，询问申请进度，我们一一耐心解答。官方下录取offer的时间是2021年4月7号，而我们在三月份已获知陆同学被康奈尔录取的消息。在北京时间4月7号早上7点，不出所料陆同学被康奈尔大学官方通知录取。陆总感叹：“一路走过，选择没有错，感谢我们陪伴和支持”。和同学们结伴同行在海南旅游的陆同学，也与同学们一起分享了这胜利的喜悦。我们也为圆满的结果感到欣慰。预祝陆同学在新的旅程绽放精彩人生！'
+    ]
+  },
+  {
+    imgLink: 'course-2.jpg',
+    name: '哥伦比亚大学-商学院',
+    rank: 'U.S. News 全美排名第3',
+    student: '马同学',
+    caseName: 'cloud|0',
+    info: [
+      {
+        label: '优势',
+        value: '美国本科学历，专业匹配度高'
+      },
+      {
+        label: '劣势',
+        value: 'GPA低，无GRE/GMAT成绩，学术背景、科研与工作经历较为薄弱'
+      }
+    ],
+    caseStudy: [
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中'
+    ]
+  },
+  {
+    imgLink: 'teacher-2.jpg',
+    name: '香港大学',
+    rank: 'QS世界排名第22',
+    student: '周同学',
+    caseName: 'born|0',
+    info: [
+      {
+        label: 'GPA',
+        value: '2.6/4.0'
+      },
+      {
+        label: 'GRE',
+        value: 'Waived'
+      },
+      {
+        label: '本科',
+        value: '美本'
+      }
+    ],
+    caseStudy: [
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中'
+    ]
+  },
+  {
+    imgLink: 'teacher-1.jpg',
+    name: '康奈尔大学',
+    rank: 'U.S. News 全美排名第17',
+    caseName: 'staircase|0',
+    student: '陆同学',
+    info: [
+      {
+        label: '优势',
+        value: 'IB课程体系，GPA达标'
+      },
+      {
+        label: '劣势',
+        value: '综合实力不够理想，没有SAT成绩，活动背景较为薄弱'
+      }
+    ],
+    caseStudy: [
+      '陆同学和其父亲在2020年12月底找到我们，当时她ED申请布朗大学被拒，父女俩很是焦虑，害怕从小到大的藤校梦破碎。我们首先安抚了学生情绪，然后了解了学生的背景情况，得知陆同学是一个成绩相对来说比较优秀的学生，托福考到了110并IB成绩有38分，但没有SAT考试成绩。如果正常申请的话，申请至美国30-50名的大学，问题倒不是很大。',
+
+      '但陆同学从小就有藤校情结，坚持只选择美国常春藤大学。于是我们给陆同学推荐了鹿名国际的“青云计划”，精准录取康奈尔大学，而且只用申请这一所学校。获知此方案后，陆同学的父亲陆总对如此“完美”的方案不敢相信，前前后后沟通了不下10次，最终要求我们必须接受“公平对赌条款”（对赌一定数量金额，不录取赔付客户，录取则客户多支付其金额）才与我们签约。我们对自己方案有100%的信心，于是便答应下来。',
+
+      '可怜天下父母心，签约之后，爱女心切的陆总频繁的与我们沟通，询问申请进度，我们一一耐心解答。官方下录取offer的时间是2021年4月7号，而我们在三月份已获知陆同学被康奈尔录取的消息。在北京时间4月7号早上7点，不出所料陆同学被康奈尔大学官方通知录取。陆总感叹：“一路走过，选择没有错，感谢我们陪伴和支持”。和同学们结伴同行在海南旅游的陆同学，也与同学们一起分享了这胜利的喜悦。我们也为圆满的结果感到欣慰。预祝陆同学在新的旅程绽放精彩人生！'
+    ]
+  },
+  {
+    imgLink: 'web-developer.jpg',
+    name: '哥伦比亚大学-商学院',
+    rank: 'U.S. News 全美排名第3',
+    student: '马同学',
+    caseName: 'cloud|0',
+    info: [
+      {
+        label: '优势',
+        value: '美国本科学历，专业匹配度高'
+      },
+      {
+        label: '劣势',
+        value: 'GPA低，无GRE/GMAT成绩，学术背景、科研与工作经历较为薄弱'
+      }
+    ],
+    caseStudy: [
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中'
+    ]
   },
 ]);
 
-const currentCaseIndex = ref(0);
-const slide = ref('staircase|0');
-const  staircaseNum = ref(1),
-cloudNum = ref(1),
-bornNum = ref(1);
+const cloudCaseData = reactive(<CaseData[]>[
+  {
+    imgLink: 'case1.jpg',
+    name: '康奈尔大学',
+    rank: 'U.S. News 全美排名第17',
+    caseName: 'staircase|0',
+    student: '陆同学',
+    info: [
+      {
+        label: '优势',
+        value: 'IB课程体系，GPA达标'
+      },
+      {
+        label: '劣势',
+        value: '综合实力不够理想，没有SAT成绩，活动背景较为薄弱'
+      }
+    ],
+    caseStudy: [
+      '陆同学和其父亲在2020年12月底找到我们，当时她ED申请布朗大学被拒，父女俩很是焦虑，害怕从小到大的藤校梦破碎。我们首先安抚了学生情绪，然后了解了学生的背景情况，得知陆同学是一个成绩相对来说比较优秀的学生，托福考到了110并IB成绩有38分，但没有SAT考试成绩。如果正常申请的话，申请至美国30-50名的大学，问题倒不是很大。',
 
-const currentCase = computed(() => {
-  const currentIndex = currentCaseIndex
-  const currentCase = (<CaseData[]>caseData)[currentIndex.value]
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  return currentCase
-});
-const currentCaseType = computed(() =>{
-  const caseTypeData = (slide.value).split('|');
-  const caseType = caseTypeData[0];
-  return caseType
-});
-const currentCaseTypeIndex = computed((): number => {
-  const caseTypeData = (slide.value).split('|');
-  const caseTypeIndex = caseTypeData[1];
-  return parseInt(caseTypeIndex, 10)
-});
+      '但陆同学从小就有藤校情结，坚持只选择美国常春藤大学。于是我们给陆同学推荐了鹿名国际的“青云计划”，精准录取康奈尔大学，而且只用申请这一所学校。获知此方案后，陆同学的父亲陆总对如此“完美”的方案不敢相信，前前后后沟通了不下10次，最终要求我们必须接受“公平对赌条款”（对赌一定数量金额，不录取赔付客户，录取则客户多支付其金额）才与我们签约。我们对自己方案有100%的信心，于是便答应下来。',
 
-watch(slide, () => {
-  switch (currentCaseType.value) {
-      case 'staircase':
-        currentCaseIndex.value = currentCaseTypeIndex.value
-          break
-      case 'cloud':
-        currentCaseIndex.value = currentCaseTypeIndex.value + staircaseNum.value
-          break
-      case 'born':
-        currentCaseIndex.value = currentCaseTypeIndex.value + staircaseNum.value + cloudNum.value
-          break
+      '可怜天下父母心，签约之后，爱女心切的陆总频繁的与我们沟通，询问申请进度，我们一一耐心解答。官方下录取offer的时间是2021年4月7号，而我们在三月份已获知陆同学被康奈尔录取的消息。在北京时间4月7号早上7点，不出所料陆同学被康奈尔大学官方通知录取。陆总感叹：“一路走过，选择没有错，感谢我们陪伴和支持”。和同学们结伴同行在海南旅游的陆同学，也与同学们一起分享了这胜利的喜悦。我们也为圆满的结果感到欣慰。预祝陆同学在新的旅程绽放精彩人生！'
+    ]
+  },
+  {
+    imgLink: 'case2.jpg',
+    name: '哥伦比亚大学-商学院',
+    rank: 'U.S. News 全美排名第3',
+    student: '马同学',
+    caseName: 'cloud|0',
+    info: [
+      {
+        label: '优势',
+        value: '美国本科学历，专业匹配度高'
+      },
+      {
+        label: '劣势',
+        value: 'GPA低，无GRE/GMAT成绩，学术背景、科研与工作经历较为薄弱'
+      }
+    ],
+    caseStudy: [
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中'
+    ]
+  },
+  {
+    imgLink: 'case3.jpg',
+    name: '香港大学',
+    rank: 'QS世界排名第22',
+    student: '周同学',
+    caseName: 'born|0',
+    info: [
+      {
+        label: 'GPA',
+        value: '2.6/4.0'
+      },
+      {
+        label: 'GRE',
+        value: 'Waived'
+      },
+      {
+        label: '本科',
+        value: '美本'
+      }
+    ],
+    caseStudy: [
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中'
+    ]
+  }, {
+    imgLink: 'case1.jpg',
+    name: '康奈尔大学',
+    rank: 'U.S. News 全美排名第17',
+    caseName: 'staircase|0',
+    student: '陆同学',
+    info: [
+      {
+        label: '优势',
+        value: 'IB课程体系，GPA达标'
+      },
+      {
+        label: '劣势',
+        value: '综合实力不够理想，没有SAT成绩，活动背景较为薄弱'
+      }
+    ],
+    caseStudy: [
+      '陆同学和其父亲在2020年12月底找到我们，当时她ED申请布朗大学被拒，父女俩很是焦虑，害怕从小到大的藤校梦破碎。我们首先安抚了学生情绪，然后了解了学生的背景情况，得知陆同学是一个成绩相对来说比较优秀的学生，托福考到了110并IB成绩有38分，但没有SAT考试成绩。如果正常申请的话，申请至美国30-50名的大学，问题倒不是很大。',
+
+      '但陆同学从小就有藤校情结，坚持只选择美国常春藤大学。于是我们给陆同学推荐了鹿名国际的“青云计划”，精准录取康奈尔大学，而且只用申请这一所学校。获知此方案后，陆同学的父亲陆总对如此“完美”的方案不敢相信，前前后后沟通了不下10次，最终要求我们必须接受“公平对赌条款”（对赌一定数量金额，不录取赔付客户，录取则客户多支付其金额）才与我们签约。我们对自己方案有100%的信心，于是便答应下来。',
+
+      '可怜天下父母心，签约之后，爱女心切的陆总频繁的与我们沟通，询问申请进度，我们一一耐心解答。官方下录取offer的时间是2021年4月7号，而我们在三月份已获知陆同学被康奈尔录取的消息。在北京时间4月7号早上7点，不出所料陆同学被康奈尔大学官方通知录取。陆总感叹：“一路走过，选择没有错，感谢我们陪伴和支持”。和同学们结伴同行在海南旅游的陆同学，也与同学们一起分享了这胜利的喜悦。我们也为圆满的结果感到欣慰。预祝陆同学在新的旅程绽放精彩人生！'
+    ]
+  },
+  {
+    imgLink: 'case2.jpg',
+    name: '哥伦比亚大学-商学院',
+    rank: 'U.S. News 全美排名第3',
+    student: '马同学',
+    caseName: 'cloud|0',
+    info: [
+      {
+        label: '优势',
+        value: '美国本科学历，专业匹配度高'
+      },
+      {
+        label: '劣势',
+        value: 'GPA低，无GRE/GMAT成绩，学术背景、科研与工作经历较为薄弱'
+      }
+    ],
+    caseStudy: [
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中'
+    ]
+  },
+  {
+    imgLink: 'case3.jpg',
+    name: '香港大学',
+    rank: 'QS世界排名第22',
+    student: '周同学',
+    caseName: 'born|0',
+    info: [
+      {
+        label: 'GPA',
+        value: '2.6/4.0'
+      },
+      {
+        label: 'GRE',
+        value: 'Waived'
+      },
+      {
+        label: '本科',
+        value: '美本'
+      }
+    ],
+    caseStudy: [
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中',
+      '滚滚长江东逝水2，浪花淘尽英雄3。是非成败转头空4。青山依旧在5，几度夕阳红6。白发渔樵江渚上7，惯看秋月春风8。一壶浊酒喜相逢9。古今多少事10，都付笑谈中'
+    ]
   }
+]);
+
+const planData = ref(<PlanData[]>[
+  {
+    title: '天梯计划',
+    type: 'staircase',
+    data: stairCaseData
+  },
+  {
+    title: '青云计划',
+    type: 'cloud',
+    data: bornCaseData
+  },
+  {
+    title: '孵育计划',
+    type: 'born',
+    data: cloudCaseData
+  }
+]);
+
+
+const currentType = ref('staircase');
+const indicatorLeft = ref('0rem');
+const carouselClass = ref('left:-18.2%;');
+const isLastCarousel = ref(false);
+
+const caseData = computed((): CaseData[] => {
+  let currentData = planData.value.find((element) => {
+    return element.type === currentType.value;
+  });
+
+  if (currentData === undefined) {
+    currentData = <PlanData>planData.value[0];
+  }
+
+  return currentData.data;
+});
+
+const centerIndex = computed(() => {
+  return Math.floor(((caseData.value.length) / 2))
 })
 
-export default {
-  caseData,
-  caseDataLen: 3,
-  slide,
-  planType,
-  currentCaseIndex,
-  currentCase,
-  currentCaseType,
-  currentCaseTypeIndex,
-  staircaseNum,
-  cloudNum,
-  bornNum,
+const currentCaseIndex = ref(Math.floor(((caseData.value.length) / 2)));
+
+const currentCase = computed((): CaseData => {
+  return caseData.value[currentCaseIndex.value];
+});
+
+export default function() {
+  const carousel : Ref<InstanceType<typeof ElCarousel> | null> = ref(null)
+  const $q = useQuasar()
+  const offset = $q.platform.is.mobile ? 4.25 : 9.25
+  indicatorLeft.value = `${centerIndex.value * offset}rem`
+
+  return {
+    carouselClass,
+    isLastCarousel,
+    currentType,
+    centerIndex,
+    planData,
+    indicatorLeft,
+    carousel,
+    caseData,
+    currentCase,
+    currentCaseIndex,
+    carouselChange(index: number) {
+      indicatorLeft.value =  `${index * offset}rem`
+
+      currentCaseIndex.value = index;
+      isLastCarousel.value = index === caseData.value.length - 1;
+    },
+    changePlanType(index: number) {
+      currentType.value = planData.value[index].type;
+
+      indicatorLeft.value =  `${centerIndex.value * offset}rem`
+      console.log(indicatorLeft.value)
+
+      currentCaseIndex.value = centerIndex.value
+      carousel.value?.setActiveItem(centerIndex.value);
+    }
+  };
 };

@@ -2,6 +2,7 @@ import { CarouselData, OfferData } from 'components/models';
 import { ref, computed } from 'vue';
 import { useQuasar } from 'quasar';
 import Contact from 'components/Contact.vue';
+import Indicator from 'components/Indicator.vue';
 
 const servicesData = ref([
   {
@@ -563,7 +564,8 @@ import {
 export default defineComponent({
   name: 'PageIndex',
   components: {
-    Contact
+    Contact,
+    Indicator
   },
   setup,
   methods: {

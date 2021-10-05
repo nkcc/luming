@@ -14,7 +14,7 @@ export interface CarouselData {
     description: string;
     imgLink: string;
  }
- 
+
  export interface OfferData {
     title: string;
     name: string,
@@ -33,4 +33,10 @@ export interface CarouselData {
    }[],
    imgLink: string,
    caseStudy: string[],
+ }
+
+ export interface PlanData {
+   title: string,
+   type: string,
+   data: CaseData[],
  }

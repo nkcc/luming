@@ -172,12 +172,7 @@
               </q-carousel-slide>
             </template>
           </q-carousel>
-          <div class='offer-indicator-container'>
-            <ul class='offer-indicator-list' :style='{"--left": offerIndicatorLeft }'>
-              <li class='offer-indicator-item' v-for='(v, k) in currentOffer.list' :key='k'></li>
-            </ul>
-          </div>
-
+          <indicator :data='currentOffer.list' :left='offerIndicatorLeft'></indicator>
         </div>
       </section>
     </div>

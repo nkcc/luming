@@ -379,45 +379,6 @@ $xl-breakpoint: 1536px;
 
   .offer-container {
     width: 100%;
-
-    .offer-indicator-container {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      width: 100%;
-
-      .offer-indicator-list {
-        position: relative;
-        padding-left: 0;
-        display: flex;
-        justify-content: center;
-
-        .offer-indicator-item {
-          height: .5rem;
-          width: 8rem;
-          background: $light-fade-green;
-          list-style-type: none;
-          margin: 0.625rem;
-          transition: all 0.4s ease-in-out;
-
-          &.active {
-            background: $secondary;
-          }
-        }
-
-        &:after {
-          content: '';
-          height: .5rem;
-          width: 8rem;
-          background: $secondary;
-          position: absolute;
-          margin: 0.625rem;
-          left: var(--left);
-          transition: all 0.4s ease-in-out;
-        }
-      }
-
-    }
   }
 
   .caption {
@@ -805,16 +766,6 @@ $xl-breakpoint: 1536px;
     }
 
     .offer-container {
-      .offer-indicator-container {
-        .offer-indicator-list {
-          .offer-indicator-item {
-            width: 3rem;
-          }
-          &:after {
-            width: 3rem;
-          }
-        }
-      }
     }
   }
 
