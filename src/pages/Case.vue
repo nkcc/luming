@@ -16,8 +16,9 @@
           </div>
         </div>
         <div class='lm-case-plan_slider__container row justify-center mb-14'>
-          <el-carousel type='card' :autoplay='false' class='bg-transparent lm-case-plan_slider col-md-8 col-xs-12'
-                       height='29rem' @change='carouselChange' ref='carousel'>
+          <el-carousel :type='carouselType' :autoplay='false'
+                       class='bg-transparent lm-case-plan_slider col-md-8 col-xs-11'
+                       :height='carouselHeight' @change='carouselChange' ref='carousel'>
             <el-carousel-item v-for='(v, k) in caseData' :key='k' :name='v.name'
                               :style='k === 0 && isLastCarousel ? carouselClass : ""'>
               <div class='row justify-center items-center w-full'>
@@ -42,13 +43,14 @@
               <div class='name text-white text-weight-bold pb-1'> {{ currentCase.student }}</div>
               <div class='background'>
                 <div class='title text-white text-weight-bolder'>背景分析：</div>
-                <div class='info text-white text-weight-bolder  pr-10' v-for='(v, k) in currentCase.info' :key='k'>
+                <div class='info text-white text-weight-bolder pr-0 md:pr-10 lg:pr-10 xl:pr-10' v-for='(v, k) in currentCase.info'
+                     :key='k'>
                   {{ v.label }}：<span class='text-weight-light'>{{ v.value }}</span>
                 </div>
 
                 <div class='case-study text-white text-weight-bolder pt-9'>
                   <div class='title pb-1'>案例解读：</div>
-                  <p class='text-weight-light mb-7 pr-10' v-for='(v, k) in currentCase.caseStudy' :key='k'> {{ v }}</p>
+                  <p class='text-weight-light mb-7 pr-0 md:pr-10 lg:pr-10 xl:pr-10' v-for='(v, k) in currentCase.caseStudy' :key='k'> {{ v }}</p>
                 </div>
               </div>
             </div>
@@ -239,11 +241,28 @@ export default defineComponent({
       position: relative;
 
       .lm-case-plan_slider {
-        padding-top: 2.5rem;
+        padding-top: 0;
 
-        .case-img {
-          border: 2px solid $quaternary;
+        .el-carousel__item {
+          left: 0;
+          width: 100%;
+
+          .case-img {
+            border: 1px solid $quaternary;
+            border-radius: 0;
+          }
+
+          &.is-active {
+            left: 0;
+            width: 100%;
+
+            .case-img {
+              border: 1px solid $quaternary;
+              border-radius: 0;
+            }
+          }
         }
+
 
       }
     }

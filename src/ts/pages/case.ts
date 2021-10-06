@@ -378,6 +378,8 @@ const currentType = ref('staircase');
 const indicatorLeft = ref('0rem');
 const carouselClass = ref('left:-18.2%;');
 const isLastCarousel = ref(false);
+const carouselType = ref('card');
+const carouselHeight = ref('29rem');
 
 const caseData = computed((): CaseData[] => {
   let currentData = planData.value.find((element) => {
@@ -406,6 +408,10 @@ export default function() {
   const $q = useQuasar()
   const offset = $q.platform.is.mobile ? 4.25 : 9.25
   indicatorLeft.value = `${centerIndex.value * offset}rem`
+  if ($q.platform.is.mobile) {
+    carouselType.value = ''
+    carouselHeight.value = '20rem'
+  }
 
   return {
     carouselClass,
@@ -418,6 +424,8 @@ export default function() {
     caseData,
     currentCase,
     currentCaseIndex,
+    carouselType,
+    carouselHeight,
     carouselChange(index: number) {
       indicatorLeft.value =  `${index * offset}rem`
 

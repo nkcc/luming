@@ -72,7 +72,7 @@
                       </p>
                     </div>
                     <div class='footer'>
-                      <q-icon class='dot' name='fiber_manual_record'></q-icon>
+<!--                      <q-icon class='dot' name='fiber_manual_record'></q-icon>-->
                       <a href=''>了解更多 ></a>
                     </div>
                   </div>
@@ -162,7 +162,7 @@
                             {{ sv.description }}
                           </q-scroll-area>
                         <div class='footer'>
-                          <q-icon class='dot' name='fiber_manual_record'></q-icon>
+<!--                          <q-icon class='dot' name='fiber_manual_record'></q-icon>-->
                           <a :href='sv.link'>了解更多 ></a>
                         </div>
                       </div>
@@ -213,7 +213,7 @@
                 </div>
               </div>
               <div class='footer'>
-                <q-icon class='dot' name='fiber_manual_record'></q-icon>
+<!--                <q-icon class='dot' name='fiber_manual_record'></q-icon>-->
                 <a href=''>了解更多 ></a>
               </div>
             </div>
