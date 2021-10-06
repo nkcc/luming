@@ -492,6 +492,8 @@ const setup = function() {
 
     changeSlideOfferType(type: string) {
       slideOffer.value = type;
+      offerIndicatorLeft.value = '0rem'
+      currentOfferSchool.value = 0
     },
     cultureAnimation(k: number, length: number) {
       return k > length / 2 - 1 ? 'animated animate__fadeInRight' : 'animated animate__fadeInLeft';

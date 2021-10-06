@@ -1,7 +1,6 @@
 <template>
   <div class='page-footer '>
-
-    <div class='row justify-center information q-pa-xs-lg q-pa-lg-xs q-pa-md-xs q-pa-xl-xs lg:container lg:mx-auto'>
+    <div class='row justify-center information q-px-xs-lg q-px-lg-xs q-px-md-xs q-px-xl-xs lg:container lg:mx-auto'>
       <div class='col-12 row justify-center'>
         <div class='col-md-9 col-xs-12 relative'>
           <div class='back-to-top'>
@@ -9,7 +8,6 @@
                    @click='scrollToTop' />
           </div>
         </div>
-
       </div>
       <div class='col-3 col-md-3 left col-xs-12'>
         <ul class='item-list'>
