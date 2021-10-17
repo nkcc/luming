@@ -1,5 +1,5 @@
 <template>
-  <div class='lm-case-plan w-full lm-bg-background'>
+  <div class='lm-case-plan w-full lm-bg-background lm-light-dark-background'>
     <div class='lg:container lg:mx-auto'>
       <part-header name='鹿名案例'></part-header>
       <div class='lm-case-plan-container mb-24'>
