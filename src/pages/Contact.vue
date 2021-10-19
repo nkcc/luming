@@ -1,5 +1,5 @@
 <template>
-<div class="lm-contact w-full lm-bg-background">
+<div class="lm-contact w-full lm-bg-background lm-light-dark-background">
     <part-header name="联系鹿名"></part-header>
     <div class="contact-container row justify-center">
         <div class="col-9 row q-gutter-lg pb-36 justify-center">
