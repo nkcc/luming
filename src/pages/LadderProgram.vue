@@ -16,7 +16,7 @@
 import PartHeader from '../components/PartHeader.vue'
 
 export default {
-    name: 'StudyAbroad',
+    name: 'LadderProgram',
     components: {
         PartHeader
     },
