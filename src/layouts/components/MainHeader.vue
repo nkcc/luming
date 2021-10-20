@@ -1,63 +1,59 @@
 <template>
-<div>
-    <q-header :reveal="true">
+<q-header :reveal="true">
+    <div class="lm-top-bar"></div>
+    <div class="lm-header q-px-md">
+        <nav class="navbar row items-center gt-sm">
 
-        <div class="lm-top-bar"></div>
-        <div class="lm-header q-px-md">
-            <nav class="navbar row items-center gt-sm">
+            <div class=" col-sm-10 col-xs-10 col-md-3 left">
+                <div class="lm-margin"> </div>
+                <img class="header-logo" src="logo.svg" alt="" />
+            </div>
 
-                <div class=" col-sm-10 col-xs-10 col-md-3 left">
-                    <div class="lm-margin"> </div>
-                    <img class="header-logo" src="logo.svg" alt="" />
-                </div>
+            <ul class="navbar-nav col-md-6">
+                <li v-for="(list, key) in navList" :key="key" class="nav-item">
+                    <router-link :to="list.link" class="nav-link">{{list.label}}</router-link>
+                </li>
+            </ul>
+            <div class="right col-xs-1 col-sm-1 col-md-3">
+                <q-btn flat icon="search" color="secondary" />
+                <div class="lm-margin"></div>
+            </div>
+        </nav>
 
-                <ul class="navbar-nav col-md-6">
-                    <li v-for="(list, key) in navList" :key="key" class="nav-item">
-                        <router-link :to="list.link" class="nav-link">{{list.label}}</router-link>
-                    </li>
-                </ul>
-                <div class="right col-xs-1 col-sm-1 col-md-3">
-                    <q-btn flat icon="search" color="secondary" />
-                    <div class="lm-margin"></div>
-                </div>
-            </nav>
+        <q-toolbar class="bg-primary text-secondary lm-head-drawer lt-md">
+            <div class="q-mr-sm col-xs-1">
+                <q-btn flat round dense icon="menu" class="" padding="xs" @click="drawer = !drawer" />
+            </div>
+            <div class="logo-container col-xs-auto col-10"><img src="logo.svg" class=""></div>
 
-            <q-toolbar class="bg-primary text-secondary lm-head-drawer lt-md">
-                <div class="q-mr-sm col-xs-1">
-                    <q-btn flat round dense icon="menu" class="" padding="xs" @click="drawer = !drawer" />
-                </div>
-                <div class="logo-container col-xs-auto col-10"><img src="logo.svg" class=""></div>
+            <div class="col-xs-1">
+                <q-btn flat round dense icon="search" />
+            </div>
+        </q-toolbar>
+        <q-drawer v-model="drawer" :breakpoint="100" :width="windowWidth" overlay class="bg-primary">
 
-                <div class="col-xs-1">
-                    <q-btn flat round dense icon="search" />
-                </div>
-            </q-toolbar>
-            <q-drawer v-model="drawer" :breakpoint="100" :width="windowWidth" overlay class="bg-primary">
+            <q-separator color="secondary" />
+            <q-list class="q-mt-md">
+                <template v-for="(menuItem, index) in navList" :key="index">
+                    <router-link :to="menuItem.link" class="nav-link">
+                        <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple>
+                            <q-item-section avatar>
+                                <q-icon :name="menuItem.icon" color="secondary" />
+                            </q-item-section>
+                            <q-item-section class="text-secondary">
+                                {{ menuItem.label }}
+                            </q-item-section>
+                            <q-separator />
+                        </q-item>
+                    </router-link>
+                </template>
 
-                <q-separator color="secondary" />
-                <q-list class="q-mt-md">
-                    <template v-for="(menuItem, index) in navList" :key="index">
-                        <router-link :to="menuItem.link" class="nav-link">
-                            <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple>
-                                <q-item-section avatar>
-                                    <q-icon :name="menuItem.icon" color="secondary" />
-                                </q-item-section>
-                                <q-item-section class="text-secondary">
-                                    {{ menuItem.label }}
-                                </q-item-section>
-                                <q-separator />
-                            </q-item>
-                        </router-link>
-                    </template>
+            </q-list>
 
-                </q-list>
+        </q-drawer>
+    </div>
 
-            </q-drawer>
-        </div>
-
-    </q-header>
-
-</div>
+</q-header>
 </template>
 
 <script lang="ts">

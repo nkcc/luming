@@ -4,9 +4,21 @@
         <div class='lm-light-dark-background'>
             <div class='lg:container lg:mx-auto'>
                 <part-header name='鹿名留学'></part-header>
+                <div class="lm-container row justify-center pb-20">
+                    <div class="col-9">
+                        <div class="mb-16">
+                            <div class='text-quaternary text-weight-bolder text-center text-base leading-6' v-for='(v,k) in prodTitle' :key='k'>{{v}}</div>
+                            <div class="text-quaternary text-center text-weight-thin text-sm  leading-7" v-for='(v,k) in prodDescription' :key='k'>{{v}}</div>
+                        </div>
+                        <div class="text-quaternary text-weight-bold mb-13 text-center lm-question-title mb-14">
+                            {{questionTitle}}
+                        </div>
+                        <div class="text-quaternary text-center text-weight-bolder text-base leading-" v-for='(v,k) in questionAnswer' :key='k' > {{v}}</div>
+                    </div>
+                </div>
+
             </div>
         </div>
-
     </section>
 
 </div>
@@ -46,5 +58,8 @@ export default {
 </script>
 
 <style lang='scss'>
-
+.lm-question-title {
+  font-size: 2.5rem;
+  letter-spacing: 1.5625rem;
+}
 </style>
