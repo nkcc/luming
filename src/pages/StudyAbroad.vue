@@ -13,7 +13,7 @@
                         <div class="text-quaternary text-weight-bold mb-13 text-center lm-question-title mb-14">
                             {{questionTitle}}
                         </div>
-                        <div class="text-quaternary text-center text-weight-bolder text-base leading-" v-for='(v,k) in questionAnswer' :key='k'> {{v}}</div>
+                        <div class="text-quaternary text-center text-weight-bolder text-base leading-7" v-for='(v,k) in questionAnswer' :key='k'> {{v}}</div>
                     </div>
                 </div>
                 <section class='lm-services pb-2'>
