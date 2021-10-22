@@ -114,6 +114,7 @@
             </div>
         </div>
     </section>
+    <contact></contact>
 </div>
 </template>
 
@@ -124,6 +125,7 @@ import {
 } from 'vue'
 import PartHeader from '../components/PartHeader.vue'
 import DescriptionWithImg from '../components/DescriptionWithImg.vue'
+import Contact from '../components/Contact.vue'
 import Indicator from 'components/Indicator.vue';
 import {
     CarouselData,
@@ -138,7 +140,8 @@ export default {
     components: {
         PartHeader,
         DescriptionWithImg,
-        Indicator
+        Indicator,
+        Contact
     },
     setup() {
         const offerData = ref < OfferData[] > ([{
