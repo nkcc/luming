@@ -94,9 +94,9 @@
                                                             <div class='title text-quaternary text-weight-bolder text-xl'>{{ sv.title }}</div>
                                                             <div class='subtitle text-white text-weight-bold text-lg'>{{ sv.subTitle }}</div>
                                                             <q-scroll-area class='description ellipsis-3-lines text-weight-thin text-xs leading-5' :bar-style="{ background: 'white' }">
-                                                              <span class="scale-50 transform">
- {{ sv.description }}
-                                                              </span>
+                                                                <span class="scale-50 transform">
+                                                                    {{ sv.description }}
+                                                                </span>
 
                                                             </q-scroll-area>
                                                         </div>
@@ -110,6 +110,46 @@
                             </div>
                         </section>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class='lm-professor transparent lg:container lg:mx-auto'>
+        <div class="row justify-center">
+            <div class="col-9">
+                <div class='prof-intro' :class="getClassType(k, '', 'reverse')" v-for='(v, k) in professorData' :key='k'>
+                    <div :class="[
+            'row justify-center items-center q-pa-xs-md',
+            getClassType(k, '', 'reverse'),
+          ]">
+                        <div class='col-lg-2 col-3 col-md-3 col-sm-3 col-xs-6 avatar align-items-center'>
+                            <q-responsive :ratio='1'>
+                                <q-img class='img' :src='v.imgLink'></q-img>
+                            </q-responsive>
+                        </div>
+                        <div class='col-7 col-lg-10 col-md-9 col-sm-12 col-xs-12 content'>
+                            <div class='header text-weight-bolder text-quaternary'>{{ v.name }}</div>
+                            <div class='body'>
+                                <div class='title text-quaternary text-weight-light text-base' v-for='(vv, kk) in v.title' :key='kk'>
+                                    {{ vv }}
+                                </div>
+                                <div class='description text-white text-weight-light'>
+                                    {{ v.description }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="transparent">
+        <div class='lg:container lg:mx-auto'>
+            <div class="lm-container row justify-center pb-20">
+                <div class="col-12">
+                    <description-with-img :info="serviceProgress" title="服务流程" background="service-progress.png" top="6" :imgStyle="{height: '33rem'}">
+                    </description-with-img>
                 </div>
             </div>
         </div>
@@ -144,6 +184,47 @@ export default {
         Contact
     },
     setup() {
+        const serviceProgress = [
+            '前期咨询沟通 初步形成名校留学申请方案',
+            '与知名教授完成学术课题',
+            '确定最终名校留学申请方案',
+            '准备优质推荐信',
+            '打造完美简历和文书',
+            '完成其他相关申请工作',
+            '拿到录取通知书',
+
+        ];
+        const professorData = ref([{
+                name: 'Dennis H Chookaszian教授',
+                title: [
+                    'CNA保险公司前董事长兼CEO',
+                    '美国53家上市公司董事',
+                    '前美国国家审计署执行委员会主席',
+                ],
+                imgLink: 'teacher-1.jpg',
+                description: '丹尼斯·乔卡西安是CNA保险公司的前任事长兼首席执行官。从1992年到1999年担任CNA的主席和首席执行官。1999年至2001年任国家审计署执行委员会主席。1990年至1992年，乔卡西安担任CNA总裁兼首席运营官，负责所有财产和伤亡、生命、健康和投资运营。于1975年加入CNA，担任首席财务官，直到1990年被任……',
+            },
+            {
+                name: '李贝贝 讲席副教授',
+                title: [
+                    '美国卡内基梅隆大学助理教授',
+                    '美国纽约大学信息系统与管理学博士',
+                    '美国经济、市场营销与信息科学顶级会议演讲者',
+                ],
+                imgLink: 'teacher-1.jpg',
+                description: '李贝贝教授现任卡内基梅隆大学(Caregie Mel-lonUniversity)约翰·海因茨管理学院、计算机学院与商学院Anna Loomis McCandless讲席教授，副教授与博士生导师。为纽约大学斯特恩商学院信息系统与管理学博士学位。专注于研究信息科技与个体行为、组织和社会的关系，并利 用大规模历史和实验数据进行相关决策……',
+            },
+            {
+                name: 'Dennis H Chookaszian教授',
+                title: [
+                    'CNA保险公司前董事长兼CEO',
+                    '美国53家上市公司董事',
+                    '前美国国家审计署执行委员会主席',
+                ],
+                imgLink: 'teacher-1.jpg',
+                description: 'Patrick老师坚信力量来源于知识，在申请服务过程不断激发学生的潜能，挖掘学生的亮点……',
+            },
+        ]);
         const offerData = ref < OfferData[] > ([{
                 title: '',
                 name: 'america',
@@ -420,11 +501,16 @@ export default {
             slideOffer,
             currentOfferSchool,
             offerIndicatorLeft,
+            professorData,
+            serviceProgress,
             currentOffer: computed((): OfferData => {
                 return <OfferData > offerData.value.find((offer) => {
                     return offer.name === slideOffer.value
                 })
             }),
+            getClassType(k: number, firstClass: string, secondClass: string) {
+                return k % 2 == 0 ? firstClass : secondClass;
+            },
             getCurrentOfferSchool(index: number) {
                 const offset = $q.platform.is.mobile ? 4.25 : 9.25
 
@@ -451,6 +537,34 @@ export default {
 }
 
 .incubation-title {
-  font-size: 2.5rem;
+    font-size: 2.5rem;
+}
+
+.prof-intro {
+    background-color: transparent;
+
+    &.reverse {
+        background-color: transparent;
+    }
+
+    .reverse {
+        background-color: transparent;
+    }
+
+    &:not(:last-child) {
+        border-bottom: 3px solid $quaternary;
+    }
+}
+
+.lm-professor {
+    .prof-intro {
+        min-height: 25rem;
+
+        .avatar {
+            .img {
+                border: 0.6rem solid $quaternary;
+            }
+        }
+    }
 }
 </style>
