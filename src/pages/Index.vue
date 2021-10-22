@@ -158,7 +158,7 @@
                       </div>
                       <div class='school-desc'>
                         <div class='title'>{{ sv.title }}</div>
-                          <q-scroll-area class='description ellipsis-3-lines overflow-y-auto' :bar-style="{ background: 'white' }">
+                          <q-scroll-area class='description ellipsis-3-lines' :bar-style="{ background: 'white' }">
                             {{ sv.description }}
                           </q-scroll-area>
                         <div class='footer'>
