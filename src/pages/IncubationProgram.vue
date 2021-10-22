@@ -144,7 +144,7 @@
         </div>
 
     </section>
-    <section class="transparent">
+    <section class="transparent mb-20">
         <div class='lg:container lg:mx-auto'>
             <div class="lm-container row justify-center pb-20">
                 <div class="col-12">
@@ -153,6 +153,33 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section class="transparent mb-20">
+        <div class='lg:container lg:mx-auto'>
+            <div class="lm-container row justify-center pb-20">
+                <div class="col-9">
+                    <div class="text-quaternary text-center text-weight-bolder text-5xl">产品亮点</div>
+                    <div class="highlight mt-10">
+                        <div class="row lm-highlight">
+                            <div :class="['col-4 mb-10 item', (k === 2 || k===5) ? 'no-link' : '', (k === 0 || k===2) ? 'link-bottom' : '']" v-for="(v, k) in highlight" :key="k">
+                                <div class="title text-quaternary text-weight-bolder text-7xl text-center">
+                                    {{v.title}}
+                                </div>
+                                <div class="description mt-2">
+                                    <p class="text-center text-white text-xs text-weight-thin leading-5" v-for="(vv, kk) in v.list" :key="kk">{{vv}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="transparent">
+      <div class='lg:container lg:mx-auto'>
+        <div class="text-center text-quaternary text-weight-bolder text-5xl mb-10">案例解读</div>
+      </div>
+      <case-carousel></case-carousel>
     </section>
     <contact></contact>
 </div>
@@ -167,6 +194,7 @@ import PartHeader from '../components/PartHeader.vue'
 import DescriptionWithImg from '../components/DescriptionWithImg.vue'
 import Contact from '../components/Contact.vue'
 import Indicator from 'components/Indicator.vue';
+import CaseCarousel from 'components/carousel/CaseCarousel.vue'
 import {
     CarouselData,
     OfferData
@@ -181,9 +209,50 @@ export default {
         PartHeader,
         DescriptionWithImg,
         Indicator,
-        Contact
+        Contact,
+        CaseCarousel
     },
     setup() {
+        const highlight = [{
+                title: '资源',
+                list: ['真实、独家的',
+                    '教授团队资源',
+                    '确保多对一的名校教授指导',
+                    '帮助学生快速成长',
+                ]
+            },
+            {
+                title: '录取',
+                list: ['100%录取理想大学', ]
+            },
+            {
+                title: '未来',
+                list: ['学生将结实多名顶尖大学教授',
+                    '和高质量的人脉资源',
+                    '（如名校校友）',
+                    '为学生未来进入更高层圈子打下基础',
+                ]
+            }, {
+                title: '院校',
+                list: ['我们致力于',
+                    '和学生一起精挑细选出',
+                    '最适合他自己',
+                    '特点和理想的世界级名校',
+                ]
+            }, {
+                title: '院校',
+                list: ['长期高质量的培育流程',
+                    '学生将与多名顶尖大学教授共同研究工作并且将会全程配有一位全职助理老师7*24小时为学生保驾护航'
+                ]
+            }, {
+                title: '师资',
+                list: ['资深和专业的名校教授',
+                    '使学生在获得理想录取的同时，',
+                    '发现自己的长处，提高学习能力，',
+                    '提前深入了解留学生活',
+                ]
+            }
+        ];
         const serviceProgress = [
             '前期咨询沟通 初步形成名校留学申请方案',
             '与知名教授完成学术课题',
@@ -503,6 +572,7 @@ export default {
             offerIndicatorLeft,
             professorData,
             serviceProgress,
+            highlight,
             currentOffer: computed((): OfferData => {
                 return <OfferData > offerData.value.find((offer) => {
                     return offer.name === slideOffer.value
@@ -566,5 +636,43 @@ export default {
             }
         }
     }
+}
+
+.lm-highlight {
+    position: relative;
+
+    .item {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: 3px;
+            background-color: $quaternary;
+            width: 30%;
+            top: 25%;
+            right: -15%;
+        }
+
+        &.no-link {
+            &::after {
+                height: 0;
+            }
+        }
+
+        &.link-bottom {
+            &::before {
+                content: '';
+                position: absolute;
+                height: 1.5rem;
+                background-color: $quaternary;
+                width: 3px;
+                bottom: -2rem;
+                right: 50%;
+            }
+
+        }
+    }
+
 }
 </style>
