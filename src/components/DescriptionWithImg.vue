@@ -1,4 +1,3 @@
-import { type } from 'os';
 <template>
 <div class="description-img-container relative">
     <q-img :style="imgStyle" :src="background" fit="contain">
