@@ -23,7 +23,7 @@
                     </template>
                     <template v-for='(v, k) in carouselData' :key='k'>
                         <q-carousel-slide :name="'carousel' + k" class='column no-wrap'>
-                            <div class='row justify-center items-center'>
+                            <div class='row justify-center items-center mb-10'>
                                 <div class='col-xs-12 col-sm-12 col-md-5 left q-py-xs-lg q-py-xs-lg'>
                                     <h3 class='text-white text-weight-bold text-2xl'>{{ v.title }}</h3>
                                     <div class='mt-2'>
