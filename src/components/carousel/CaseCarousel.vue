@@ -52,7 +52,6 @@
 
 <script lang='ts'>
 import setup from '../../ts/pages/case';
-import Indicator from 'components/Indicator.vue';
 import { ElCarousel, ElCarouselItem } from 'element-plus';
 import 'element-plus/theme-chalk/index.css';
 // import 'element-plus/theme-chalk/el-carousel-item.css'
@@ -64,8 +63,7 @@ export default defineComponent({
   name: 'CaseCarousel',
   components: {
     ElCarousel,
-    ElCarouselItem,
-    Indicator
+    ElCarouselItem
   },
   setup
 });
