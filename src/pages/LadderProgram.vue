@@ -132,7 +132,7 @@
                     <div class="highlight mt-10">
                         <div class="row lm-highlight justify-center">
                             <div :class="['col-4 item flex justify-center']" v-for="(v, k) in highlight" :key="k">
-                                <div :class="[k === highlight.length - 1 ? 'w-5/6' : 'w-2/4']">
+                                <div :class="[k === highlight.length - 1 ? 'w-5/6' : 'w-2/4', k > 2 ? '' : '']">
                                     <div class="title text-quaternary text-weight-bolder text-8xl text-center">
                                         {{v.title}}
                                     </div>
@@ -637,6 +637,11 @@ export default {
         div {
             background-color: #0b150e;
             height: fit-content;
+
+            &.highlight-up {
+              position: relative;
+              top: -4rem;
+            }
         }
 
         &::after {
