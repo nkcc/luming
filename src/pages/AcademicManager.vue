@@ -1,30 +1,432 @@
 <template>
-<div class='lm-study-abroad'>
-    <section>
-        <div class='lm-light-dark-background'>
+<div class='lm-study-abroad lm-light-dark-background'>
+    <section class="transparent">
+        <div>
             <div class='lg:container lg:mx-auto'>
-                <part-header name='鹿名留学'></part-header>
+                <part-header name='青云计划'></part-header>
+                <div class="lm-container row justify-center pb-20">
+                    <div class="col-9">
+                        <div class='text-quaternary text-weight-bolder text-center text-4xl mb-4'>{{programTitle}}</div>
+                        <div class='text-quaternary text-weight-bold text-center text-2xl'>{{programDescription}}</div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </section>
+    <section class="transparent mb-10">
+        <div class='lm-points row items-center lg:container lg:mx-auto'>
+            <div class='points-container '>
+                <q-carousel v-model='slide' transition-prev='scale' transition-next='scale' swipeable animated control-color='secondary' navigation padding arrows class='lm-points-background' keep-alive :keep-alive-include="'carousel0, carousel1, carousel2, carousel3'">
+                    <template v-slot:navigation-icon="{ active, onClick }">
+                        <q-btn v-if="active" size="2px" flat dense @click="onClick" :style="slideActive" />
+                        <q-btn v-else size="2px" flat dense :style="slideDefault" @click="onClick" />
+                    </template>
+                    <template v-for='(v, k) in carouselData' :key='k'>
+                        <q-carousel-slide :name="'carousel' + k" class='column no-wrap'>
+                            <div class='row justify-center items-center mb-10'>
+                                <div class='col-xs-12 col-sm-12 col-md-5 left q-py-xs-lg q-py-xs-lg'>
+                                    <h3 class='text-white text-weight-bold text-3xl'>{{ v.title }}</h3>
+                                    <div class='mt-2'>
+                                        <h2 class='text-quaternary text-weight-bolder text-5xl pb-10'>
+                                            {{ v.subTitle }}
+                                        </h2>
+                                        <p class='text-white text-sm pr-24 text-weight-thin leading-7 tracking-wide'>
+                                            {{ v.description }}
+                                        </p>
+                                    </div>
+                                    <div class='footer'>
+                                    </div>
+                                </div>
+                                <div class='col-xs-12 col-sm-12 col-md-4 right q-py-xs-lg q-py-sm-lg'>
+                                    <q-responsive :ratio='692 / 511'>
+                                        <q-img class='points-img' :src='v.imgLink'></q-img>
+                                    </q-responsive>
+                                </div>
+                            </div>
+                        </q-carousel-slide>
+                    </template>
+                </q-carousel>
+            </div>
+        </div>
+    </section>
+    <section class="transparent mb-20">
+        <div class='lg:container lg:mx-auto'>
+            <div class="lm-container row justify-center pb-20">
+                <div class="col-9">
+                    <description-with-img :info="productIntro" title="产品介绍" background="shield.png" top="2" :imgStyle="{height: '30rem'}"></description-with-img>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="transparent">
+        <div class='lg:container lg:mx-auto'>
+            <div class="lm-container row justify-center">
+                <div class="col-9">
+                    <div class="lm-product-points mb-8">
+                        <div class="text-center text-quaternary text-weight-bolder text-2xl mb-2">{{productPoints[0].title}}</div>
+                        <div class="text-center text-white text-weight-thin text-xs leading-7" v-for="(v, k) in productPoints[0].description" :key="k">{{v}}</div>
+                    </div>
+                </div>
 
+                <div class="col-12 row relative">
+                    <div class="col-4 flex flex-col justify-center">
+                        <div class="lm-product-points mb-20">
+                            <div class="text-center text-quaternary text-weight-bolder text-2xl mb-2">{{productPoints[1].title}}</div>
+                            <div class="text-center text-white text-weight-thin text-xs leading-7" v-for="(v, k) in productPoints[1].description" :key="k">{{v}}</div>
+                        </div>
+                        <div class="lm-product-points">
+                            <div class="text-center text-quaternary text-weight-bolder text-2xl mb-2">{{productPoints[3].title}}</div>
+                            <div class="text-center text-white text-weight-thin text-xs leading-7" v-for="(v, k) in productPoints[3].description" :key="k">{{v}}</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <q-img class="lm-product-img" src="product-intro-black.svg" fit="contain">
+                            <div class="lm-product-container absolute-full text-quaternary text-weight-bolder flex flex-center transparent text-7xl">
+                                <div class="lm-product-caption text-center">
+                                    师资配置
+                                </div>
+                            </div>
+
+                        </q-img>
+                    </div>
+                    <div class="col-4  flex flex-col justify-center">
+                        <div class="lm-product-points mb-20">
+                            <div class="text-center text-quaternary text-weight-bolder text-2xl mb-2">{{productPoints[2].title}}</div>
+                            <div class="text-center text-white text-weight-thin text-xs leading-7" v-for="(v, k) in productPoints[2].description" :key="k">{{v}}</div>
+                        </div>
+                        <div class="lm-product-points">
+                            <div class="text-center text-quaternary text-weight-bolder text-2xl mb-2">{{productPoints[4].title}}</div>
+                            <div class="text-center text-white text-weight-thin text-xs leading-7" v-for="(v, k) in productPoints[4].description" :key="k">{{v}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="mt-8 relative row justify-center">
+                        <div class=" w-full col-7  relative -top-36">
+                            <q-img class="w-full" src="service-progress.png" fit="contain" height="34rem"></q-img>
+                        </div>
+                        <div class=" col-12 absolute top-0">
+                            <div class="lm-product-points">
+                                <div class="text-center text-quaternary text-weight-bolder text-2xl mb-2">{{productPoints[5].title}}</div>
+                                <div class="text-center text-white text-weight-thin text-xs leading-7" v-for="(v, k) in productPoints[5].description" :key="k">{{v}}</div>
+                            </div>
+                            <div class="lm-source-extra mt-16">
+                                <div class="text-center text-quaternary text-weight-bolder text-2xl mb-2">
+                                    {{sourceInfo.title}}
+                                </div>
+                                <div class="text-center text-quaternary text-weight-bolder text-base leading-10" v-for="(v, k) in sourceInfo.description" :key="k">{{v}}</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="transparent">
+        <div class='lg:container lg:mx-auto'>
+            <div class="lm-container row justify-center mb-96 ">
+                <div class="col-12 ">
+                    <div class="text-quaternary text-center text-weight-bolder text-5xl mb-4">{{serviceContent.title}}</div>
+                    <div class="text-white text-center text-weight-medium text-base">{{serviceContent.subtitle}}</div>
+                    <text-card :title="v.title" :list="v.list" v-for="(v, k) in serviceContent.list" :key="k"></text-card>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="transparent mb-20">
+        <div class='lg:container lg:mx-auto'>
+            <div class="lm-service-advantage row justify-center p-10 ">
+                <div class="col-12 ">
+                    <div class="text-quaternary text-center text-weight-bolder text-5xl mb-20">{{serviceAdvantage.title}}</div>
+                </div>
+                <div :class="['col-12 row py-20 item', k % 2 !== 0 ? 'reverse' : '']" v-for="(v, k) in serviceAdvantage.list" :key="k">
+                    <div class="col-8">
+                        <div class="text-quaternary text-weight-bolder text-6xl leading-20" v-for="(vt, kt) in v.title" :key="kt"> {{vt}}</div>
+                        <div class="text-white text-weight-bolder text-4xl mt-10 mb-5">{{v.subtitle}}</div>
+                        <div class="text-white text-weight-thin text-xs leading-6">
+                            {{ v.description}}
+                        </div>
+                    </div>
+                    <div class="col-4 cover">
+                      <q-responsive :ratio="1">
+                        <q-img class="img" :src="v.cover" fit="cover"></q-img>
+                      </q-responsive>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <contact></contact>
 </div>
 </template>
 
 <script lang="ts">
+import {
+    ref
+} from 'vue'
 import PartHeader from '../components/PartHeader.vue'
+import DescriptionWithImg from '../components/DescriptionWithImg.vue'
+import TextCard from '../components/TextCard.vue'
+import Contact from '../components/Contact.vue'
+import {
+    CarouselData
+} from 'components/models';
+import {
+    useQuasar
+} from 'quasar';
 
 export default {
-    name: 'StudyAbroad',
+    name: 'AcademicManager',
     components: {
-        PartHeader
+        PartHeader,
+        DescriptionWithImg,
+        Contact,
+        TextCard
     },
     setup() {
-        const prodTitle = ['鹿名留学为不同的学生量身打造了三个留学申请产品：', '青云计划、天梯计划、孵育计划。']
-        const prodDescription = ['对于每一位鹿名学员，我们都会结合他的自身优势、成绩和背景基础、',
-            '申请准备时间以及学生自己的择校想法，提供一套最符合学生自己的梦校申请方案。'
+        const serviceAdvantage = {
+            title: '服务优势',
+            list: [{
+                    title: ['金牌导师团队',
+                        '专属管家服务'
+                    ],
+                    subtitle: '服务优势',
+                    description: '名校经营导师团：教授和学霸导师来自哈佛大学、耶鲁大学、麦吉尔大学、英属哥伦比亚大学、剑桥牛津大学、麻省理工大学、澳洲国立大学、悉尼大学等遍布全球300+搞校，全面覆盖不同学科和专业。学霸导师皆经过严格的考核、选拔与培训，GPA都在3.8/4.0以上。',
+                    cover: 'harvard_school.jpg'
+                },
+                {
+                    title: [
+                        '每学期选课规划'
+                    ],
+                    subtitle: '服务优势',
+                    description: '个性定制化服务,学生自由选择课程组合，由导师提供一对一的指导。导师充分结合学生的学术能力、专业需求、发展目标等因素全方位定制学习规划，并根据学生的学习情况和个人志向及时优化调整课业方案与授课内容。',
+                    cover: 'harvard_school.jpg',
+                }
+            ]
+        };
+        const serviceContent = {
+            title: '服务内容',
+            subtitle: '（服务总目标：确保学生通过学业管家计划提高自身学习成绩，并顺利毕业)',
+            list: [{
+                    title: '开学前',
+                    list: [{
+                            title: ['树立', '目标'],
+                            description: [
+                                '确立学生下阶段目标（研究生专业/职业）',
+                                '引导学术确定自己最适合专业让学业最终与职业接轨'
+                            ]
+                        },
+                        {
+                            title: ['选课', '指导'],
+                            description: [
+                                '结合个人优势与官方要求',
+                                '制定个性化选课方案',
+                            ]
+                        },
+                        {
+                            title: ['学术', '衔接'],
+                            description: [
+                                '根据学生的专业和所选课程',
+                                '提前预习，做好准备。'
+                            ]
+                        },
+
+                    ]
+                },
+                {
+                    title: '学期中',
+                    list: [{
+                            title: ['学习', '规划'],
+                            description: [
+                                '量身定制学习计划，',
+                                '做好时间和资源的分配，提升执行力',
+                            ]
+                        },
+                        {
+                            title: ['量身', '授课'],
+                            description: [
+                                '根据每个学生的个性化需求，',
+                                '针对性地提供学业辅导'
+                            ]
+                        },
+                        {
+                            title: ['论文', '辅导'],
+                            description: [
+                                '分层次循序渐进辅导论文写作，',
+                                '潜移默化中提升写作能力'
+                            ]
+                        }, {
+                            title: ['论文', '辅导'],
+                            description: [
+                                '定期跟踪与反馈学生情况，',
+                                '对面对的问题和挑战提供对应建议'
+                            ]
+                        },
+
+                    ]
+                },
+                {
+                    title: '一路护航',
+                    list: [{
+                            title: ['升学', '辅助'],
+                            description: [
+                                '针对有转学和申请硕博项目的学生，',
+                                '提供升学规划与指导'
+                            ]
+                        },
+                        {
+                            title: ['科研', '实习'],
+                            description: [
+                                '为学生提供参与科研实习的机会，',
+                                '为学生职业生涯增加砝码'
+                            ]
+                        },
+                        {
+                            title: ['高端', '社交'],
+                            description: [
+                                '为学生对接名校教授、社会名流、',
+                                '行业领军人物等稀缺社交资源'
+                            ]
+                        },
+
+                    ]
+                },
+                {
+                    title: '其他',
+                    list: [{
+                            title: ['邮件', '助手'],
+                            description: [
+                                '可以提供帮助学生查收学校邮件，撰写和学习相关的邮件等服务',
+                            ]
+                        },
+                        {
+                            title: ['语音', '反馈'],
+                            description: [
+                                ' 每周规定时间与家长学生电话沟通一次（30分钟时长）',
+                                '给予跟进反馈并解决问题'
+                            ]
+                        },
+                        {
+                            title: ['学习资料', '整理'],
+                            description: [
+                                '拿到学生学校账号密码，帮助学生下载整理作业，',
+                                '并提醒作业提交时间。'
+                            ]
+                        }, {
+                            title: ['课表', '制作'],
+                            description: [
+                                '帮助学生制作学习时间规划课程表',
+                                '以及学期作业提交时间表，供家长参考'
+                            ]
+                        }, {
+                            title: ['心理', '咨询'],
+                            description: [
+                                '大多数一个人独自在外的学生总会感到孤独，且压力大困难多',
+                                '很容易产生消极情绪，抵触学习导致自闭',
+                                '学习管家会在上课额外时间帮助疏导',
+                                '沟通，正面影响孩子，确保孩子心理健康',
+                            ]
+                        },
+                        {
+                            title: ['调研', '学校情况'],
+                            description: [
+                                '如家长有关于学生特定学校以及课程情况',
+                                '给予咨询和详细解答',
+                                '如学生有与导师上课以外相关学习和生活问题',
+                                '例如保险，衣食住行等问题',
+                            ]
+                        }, {
+                            title: ['课外活动', '介绍'],
+                            description: [
+                                '各类学校内外发生的',
+                                '课外活动介绍和推荐',
+                                '培养孩子乐观向上的积极态度',
+                            ]
+                        }
+
+                    ]
+                }
+            ]
+        };
+        const sourceInfo = {
+            title: '我们的高端资源还包括',
+            description: [
+                '康奈尔的前副校长，宾大的校董，M I T的校董，哥大TC的院长，茱莉亚的现任院长，',
+                '耶鲁音乐学院的现任院长，哈佛教育学院的现任院长，',
+                '布朗大学现任副校长，斯坦福大学智能机器人实验室教授等',
+            ]
+        }
+        const productPoints = [{
+                title: '各行业职业精英',
+                description: [
+                    '独家深度研习课程导师',
+                    '全面覆盖热门行业与高科技领域'
+                ]
+            }, {
+                title: '理想考研院校导师',
+                description: [
+                    '转学/硕博',
+                    '目标学校教授资源',
+                    '授课、科研、学业领航',
+                    '全方位对接',
+                ]
+            }, {
+                title: '双语教育顾问',
+                description: [
+                    '实时监控课程进度',
+                    '老师—学生—家长',
+                    '高效沟通桥梁',
+                ]
+            }, {
+                title: '专业科目学辅导老师',
+                description: [
+                    '量身定制一对一学科辅导',
+                    '同步提升能力与技巧',
+                    '助力高GPA',
+                ]
+            }, {
+                title: '学术教授',
+                description: ['量身定制学术进阶课程',
+                    '辅导学术',
+                    '保证高GPA',
+                ]
+            }, {
+                title: '同校学长学姐',
+                description: [
+                    '过来人全方位领航',
+                    '帮助新生快速融入',
+                    '开启高能状态',
+                ]
+            }
+
         ];
+        const productIntro = [
+            '学业管家服务旨在从“培养符合未来发展高素质人才”角度出发',
+            '全方位考虑学生和家庭的需求。',
+            '整合美加英澳1000+同校导师、500+教授、500+职场精英、300+学术专家等资',
+            '匹配学生和导师，提供学术学科辅导（提高GPA成绩）',
+            '身心安全健康和社会责任心；实战培训和职业潜能培养',
+            '让留学生挖掘潜能、提高竞争力、脱颖而出，实现名校名企双重成功！',
+        ];
+        const serviceProgress = [
+            '前期咨询沟通',
+            '提交材料进行评估',
+            '合同签约',
+            '拿到梦校录取通知书',
+            '一站式后留学服务，贴心保障留学生活（可选）',
+        ];
+        const $q = useQuasar()
+        const currentOfferSchool = ref(0)
+        const offerIndicatorLeft = ref('0rem')
+        const slideActive = ref(
+            'background:#cc932e;width: 6.25rem;max-width:6.25vw;border-radius: 0;padding:0;'
+        )
+        const slideDefault = ref(
+            'background:#26322b;width: 6.25rem;max-width:6.25vw;border-radius: 0;padding:0;'
+        )
+        const programTitle = '中长期规划型名校申请方式'
+        const programDescription = '进入梦校只是你梦想的起点，而并非终点…… 你有曾想过……'
         const questionTitle = '为什么选择鹿名留学申请服务?'
         const questionAnswer = ['独家全球名校资源',
             '99%+录取率',
@@ -35,16 +437,203 @@ export default {
             '零门槛以及低分高录',
             '申请周期短'
         ]
+        const slide = ref('carousel0')
+        const carouselData = ref < CarouselData[] > ([{
+                name: '',
+                title: '产品特点',
+                subTitle: '如何选择合适专业？',
+                description: '专业选择很大程度上影响着一个人的未来发展。正确的引导学生找到合适的专业，让学业与职业正确接轨，学以致用，其中的统筹作用尤为重要。80%的大一学生，甚至是已经决定专业的学生，都表示对自己的专业选择不确定，超半数的学生在确定专业后有换专业的想法。没有系统地了解专业的特性以及职业的发展性，导致学生在入学后不喜欢自己的专业，毕业后难以就业。',
+                imgLink: 'oxford.jpeg',
+            },
+            {
+                name: '',
+                title: '为什么选择鹿名',
+                subTitle: '实力强大',
+                description: '拥有独家全球名校资源,包括美国TOP30、英国G5、加拿大、澳洲、香港、新加坡等世界级名校;与传统留学中介和咨询机构形成服务互补。',
+                imgLink: 'lb.jpg',
+            },
+            {
+                name: '',
+                title: '为什么选择鹿名',
+                subTitle: '保障结果',
+                description: '签约鹿名的学生有着9996+名校录取率,不录取全额退费,并且保证学员1009%顺利毕业。',
+                imgLink: 'harvard_school.jpg',
+            },
+            {
+                name: '',
+                title: '为什么选择鹿名',
+                subTitle: '硕果累累',
+                description: '8年来鹿名已帮助学员斩获600+顶级名校 offer ',
+                imgLink: 'bg.jpg',
+            },
+            {
+                name: '',
+                title: '为什么选择鹿名',
+                subTitle: '价格合理',
+                description: '鹿名所有项目均自主研发,不存在中间商,能提供给客户最合理的价格。',
+                imgLink: 'bg.jpg',
+            },
+            {
+                name: '',
+                title: '为什么选择鹿名',
+                subTitle: '客户放心',
+                description: '正规注册公司,实体办公场所,支持低订金面签合同,保障资金安全。',
+                imgLink: 'bg.jpg',
+            },
+        ]);
         return {
-            prodTitle,
-            prodDescription,
+            programTitle,
+            programDescription,
             questionTitle,
             questionAnswer,
+            slide,
+            carouselData,
+            slideActive,
+            slideDefault,
+            currentOfferSchool,
+            offerIndicatorLeft,
+            serviceProgress,
+            productIntro,
+            productPoints,
+            sourceInfo,
+            serviceContent,
+            serviceAdvantage,
         }
     },
 }
 </script>
 
-<style lang='scss'>
+<style lang="scss" scoped>
+.lm-points {
+    min-height: 0;
+}
 
+.lm-offers {
+    min-height: 0;
+    padding: 0;
+
+    &.transparent {
+        background-color: transparent;
+    }
+}
+
+.incubation-title {
+    font-size: 2.5rem;
+}
+
+.prof-intro {
+    background-color: transparent;
+
+    &.reverse {
+        background-color: transparent;
+    }
+
+    .reverse {
+        background-color: transparent;
+    }
+
+    &:not(:last-child) {
+        border-bottom: 3px solid $quaternary;
+    }
+}
+
+.lm-professor {
+    .prof-intro {
+        min-height: 25rem;
+
+        .avatar {
+            .img {
+                border: 0.6rem solid $quaternary;
+            }
+        }
+    }
+}
+
+.lm-highlight {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 60%;
+        width: 68%;
+        border: 3px solid $quaternary;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .item {
+        position: relative;
+
+        div {
+            background-color: #0b150e;
+            height: fit-content;
+
+            &.highlight-up {
+                position: relative;
+                top: -4rem;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            // height: 3px;
+            background-color: $quaternary;
+            width: 30%;
+            top: 25%;
+            right: -15%;
+        }
+
+        &.no-link {
+            &::after {
+                height: 0;
+            }
+        }
+
+        &.link-bottom {
+            &::before {
+                content: '';
+                position: absolute;
+                // height: 1.5rem;
+                background-color: $quaternary;
+                width: 3px;
+                bottom: -2rem;
+                right: 50%;
+            }
+
+        }
+    }
+
+}
+
+.lm-product-img {
+    // height: 30rem;
+
+    .lm-product-container {
+        .lm-product-caption {
+            width: 10rem;
+        }
+    }
+}
+
+.lm-service-advantage {
+  .item:not(:last-child) {
+    border-bottom: 2px solid $quaternary;
+  }
+  .reverse {
+    .cover {
+      padding-left: 0;
+      padding-right: 6rem;
+    }
+  }
+  .cover {
+    padding-left: 5rem;
+    padding-right: 1rem;
+    .img {
+      box-shadow: 1rem 1rem $secondary;
+    }
+  }
+}
 </style>
