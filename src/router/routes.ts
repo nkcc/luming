@@ -12,7 +12,9 @@ const routes: RouteRecordRaw[] = [
       { path: 'case', component: () => import('pages/Case.vue') },
       { path: 'study-abroad', component: () => import('pages/StudyAbroad.vue')},
       { path: 'incubation', component: () => import('pages/IncubationProgram.vue')},
-      { path: 'study-abroad', component: () => import('pages/StudyAbroad.vue')},
+      { path: 'cloud', component: () => import('pages/CloudProgram.vue')},
+      { path: 'ladder', component: () => import('pages/LadderProgram.vue')},
+      { path: 'academic', component: () => import('pages/AcademicManager.vue')},
     ],
   },
 
