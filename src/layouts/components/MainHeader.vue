@@ -98,7 +98,7 @@ export default defineComponent({
                 show: false,
                 list: [{
                         label: '青云计划',
-                        link: 'study-abroad',
+                        link: 'cloud',
                         icon: 'flight',
                         show: false
                     },
