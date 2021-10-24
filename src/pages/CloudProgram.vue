@@ -280,7 +280,7 @@ export default {
                     {
                         title: '普林斯顿大学',
                         description: '普林斯顿大学（Princeton University），简称“普林斯顿”，创建于1746年 ，位于美国东海岸新泽西州的普林斯顿市，是美国大学协会的14个始创院校之一，也是著名的常春藤联盟成员，是世界顶尖私立研究型大学， 常年位居U.S. News美国最佳大学排名第1位。',
-                        imgLink: 'https://www.logoids.com/upload/image/202007/15948739852577878.jpg',
+                        imgLink: 'school-logo/248px-Princeton_shield.png',
                         link: 'https://www.princeton.edu/',
                     },
                     {

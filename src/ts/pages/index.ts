@@ -10,24 +10,28 @@ const servicesData = ref([
     img: 'course-1.jpg',
     description: '单所申请世界名校精准直录',
     visible: false,
+    link: 'cloud'
   },
   {
     title: '天梯计划',
     img: 'course-2.jpg',
     description: '低门槛宝保录取全球顶尖院校',
     visible: false,
+    link: 'ladder'
   },
   {
     title: '孵育计划',
     img: 'course-3.jpg',
     description: '美国名校教授培育保藤规划',
     visible: false,
+    link: 'incubation'
   },
   {
     title: '学业管家',
     img: 'course-4.jpg',
     description: '全托学业辅导确保顺利毕业',
     visible: false,
+    link: 'academic'
   },
 ]);
 
@@ -123,7 +127,7 @@ const offerData = ref<OfferData[]>([
         description:
           '普林斯顿大学（Princeton University），简称“普林斯顿”，创建于1746年 ，位于美国东海岸新泽西州的普林斯顿市，是美国大学协会的14个始创院校之一，也是著名的常春藤联盟成员，是世界顶尖私立研究型大学， 常年位居U.S. News美国最佳大学排名第1位。',
         imgLink:
-          'https://www.logoids.com/upload/image/202007/15948739852577878.jpg',
+          'school-logo/248px-Princeton_shield.png',
         link: 'https://www.princeton.edu/',
       },
       {

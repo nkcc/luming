@@ -32,7 +32,7 @@
                                     <div class='introduction' :class="getClassType(k, 'bg-secondary', 'bg-primary')" v-if='servicesData[k].visible'>
                                         <h3 class='text-white text-weight-bold heading text-5xl py-10'>{{ v.title }}</h3>
                                         <p>{{ v.description }}</p>
-                                        <a href=''>了解更多 ></a>
+                                        <router-link class="root-link" :to="v.link">了解更多</router-link>
                                     </div>
                                 </transition-group>
                             </div>
@@ -80,24 +80,28 @@ export default {
                 img: 'course-1.jpg',
                 description: '单所申请世界名校精准直录',
                 visible: false,
+                link: 'cloud'
             },
             {
                 title: '天梯计划',
                 img: 'course-2.jpg',
                 description: '低门槛宝保录取全球顶尖院校',
                 visible: false,
+                link: 'ladder'
             },
             {
                 title: '孵育计划',
                 img: 'course-3.jpg',
                 description: '美国名校教授培育保藤规划',
                 visible: false,
+                link: 'incubation'
             },
             {
                 title: '学业管家',
                 img: 'course-4.jpg',
                 description: '全托学业辅导确保顺利毕业',
                 visible: false,
+                link: 'academic'
             },
         ]);
         return {

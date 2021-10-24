@@ -197,7 +197,7 @@ const incubationCaseData = reactive( < CaseData[] > [{
 ]);
 
 const cloudCaseData = reactive( < CaseData[] > [{
-    imgLink: 'case2.jpg',
+    imgLink: 'case1.jpg',
     name: '康奈尔大学',
     rank: 'U.S. News 全美排名第17',
     caseName: 'laddercase|0',
