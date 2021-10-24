@@ -47,6 +47,9 @@
           font-size: 15px;
           letter-spacing: 4px;
         }
+        .sub-nav {
+            background: rgba(0, 0,0, 0.1);
+        }
         .sub-item {
             border-bottom: 1px solid $primary;
             transition: all 0.3s ease;

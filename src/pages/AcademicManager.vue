@@ -27,7 +27,7 @@
                                 <div class='col-xs-12 col-sm-12 col-md-5 left q-py-xs-lg q-py-xs-lg'>
                                     <h3 class='text-white text-weight-bold text-3xl'>{{ v.title }}</h3>
                                     <div class='mt-2'>
-                                        <h2 class='text-quaternary text-weight-bolder text-5xl pb-10'>
+                                        <h2 class='text-quaternary text-weight-bolder text-5xl pb-10 pr-5'>
                                             {{ v.subTitle }}
                                         </h2>
                                         <p class='text-white text-sm pr-24 text-weight-thin leading-7 tracking-wide'>
@@ -143,7 +143,7 @@
                 <div :class="['col-12 row py-20 item', k % 2 !== 0 ? 'reverse' : '']" v-for="(v, k) in serviceAdvantage.list" :key="k">
                     <div class="col-8">
                         <div class="text-quaternary text-weight-bolder text-6xl leading-20" v-for="(vt, kt) in v.title" :key="kt"> {{vt}}</div>
-                        <div class="text-white text-weight-bolder text-4xl mt-10 mb-5">{{v.subtitle}}</div>
+                        <div class="text-white text-weight-bolder text-4xl mt-10 mb-5 ">{{v.subtitle}}</div>
                         <div class="text-white text-weight-thin text-xs leading-6">
                             {{ v.description}}
                         </div>
@@ -447,37 +447,30 @@ export default {
             },
             {
                 name: '',
-                title: '为什么选择鹿名',
-                subTitle: '实力强大',
-                description: '拥有独家全球名校资源,包括美国TOP30、英国G5、加拿大、澳洲、香港、新加坡等世界级名校;与传统留学中介和咨询机构形成服务互补。',
+                title: '产品特点',
+                subTitle: '如何融入学校生活？',
+                description: '每一位中国留学生都要经历一场艰苦的蜕变与成长，授课模式和考试形式的改变。海外大学里的教授授课有很大的自由度，授课内容完全不受到教材的限制。学生除了要掌握教材上的内容，还要阅读教授补充的阅读和学习资料，这让习惯国内“填鸭式”教育的留学生感到非常不适应。同时倒时差、水土不服、饮食习惯、语言社交等困难在方方面面影响着留学生的日常生活。',
                 imgLink: 'lb.jpg',
             },
             {
                 name: '',
-                title: '为什么选择鹿名',
-                subTitle: '保障结果',
-                description: '签约鹿名的学生有着9996+名校录取率,不录取全额退费,并且保证学员1009%顺利毕业。',
+                title: '产品特点',
+                subTitle: '如何一入校就能拿稳高GPA',
+                description: '国外学校的教授通常不会提供类似于教辅材料、考试重点、复习资料等帮助学生总结知识点和备考冲刺工具。“水土不服”的中国留学生学习效率低、作业分数低、复习效率低、考试分数低、不得不面临低GPA、挂科重修、延迟毕业、勒令退学等严重后果，身心俱疲，自信心遭受打击从而自暴自弃，拿到高GPA更成奢望。这种情况在赴海留学的第一学期和学年尤为严重。',
                 imgLink: 'harvard_school.jpg',
             },
             {
                 name: '',
-                title: '为什么选择鹿名',
-                subTitle: '硕果累累',
-                description: '8年来鹿名已帮助学员斩获600+顶级名校 offer ',
+                title: '产品特点',
+                subTitle: '如何选课既能学到东西又能拿到高分？',
+                description: '选课是开启海外学习的第一步，量身定制的选课方案将成为优异成绩和个人发展奠定坚实基础。然而，出于对西方教学系统的不熟悉，很多海外留学生在选课上折戟沉沙，苦恼不已。',
                 imgLink: 'bg.jpg',
             },
             {
                 name: '',
-                title: '为什么选择鹿名',
-                subTitle: '价格合理',
-                description: '鹿名所有项目均自主研发,不存在中间商,能提供给客户最合理的价格。',
-                imgLink: 'bg.jpg',
-            },
-            {
-                name: '',
-                title: '为什么选择鹿名',
-                subTitle: '客户放心',
-                description: '正规注册公司,实体办公场所,支持低订金面签合同,保障资金安全。',
+                title: '产品特点',
+                subTitle: '如何能快速加入课堂讨论？',
+                description: '国内课堂内交流氛围淡薄、留学语言能力薄弱、交流欲望低或者语言不自信等问题都在困扰着当今的留学生。课堂缺乏交流在学习生活社交等各个方面都会对留学生造成负面影响。甚至造成出国后英语反而倒退的现象。',
                 imgLink: 'bg.jpg',
             },
         ]);

@@ -10,8 +10,8 @@
                               :style='k === 0 && isLastCarousel ? carouselClass : ""'>
               <div class='row justify-center items-center w-full'>
                 <div class='col-md-12 col-xs-12'>
-                  <q-responsive :ratio='1260 / 800'>
-                    <q-img class='case-img' :src='v.imgLink'></q-img>
+                  <q-responsive :ratio='1260 / 800' class="bg-white">
+                    <q-img class='case-img' :src='v.imgLink' fit="contain"></q-img>
                   </q-responsive>
                 </div>
               </div>
@@ -51,7 +51,7 @@
 </template>
 
 <script lang='ts'>
-import setup from '../../ts/pages/case';
+import setup from './case';
 import { ElCarousel, ElCarouselItem } from 'element-plus';
 import 'element-plus/theme-chalk/index.css';
 // import 'element-plus/theme-chalk/el-carousel-item.css'
@@ -61,6 +61,12 @@ import {
 
 export default defineComponent({
   name: 'CaseCarousel',
+  props: {
+      programType: {
+          type: String,
+          default: 'laddercase'
+      }
+  },
   components: {
     ElCarousel,
     ElCarouselItem

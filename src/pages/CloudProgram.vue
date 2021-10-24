@@ -152,7 +152,7 @@
         <div class='lg:container lg:mx-auto'>
             <div class="text-center text-quaternary text-weight-bolder text-5xl mb-10">案例解读</div>
         </div>
-        <case-carousel></case-carousel>
+        <case-carousel programType="cloud"></case-carousel>
     </section>
     <contact></contact>
 </div>
@@ -434,23 +434,16 @@ export default {
                 list: [{
                         title: '康奈尔大学',
                         subTitle: '文理学院',
-                        description: '哈佛大学（英语：Harvard University）为一所本部坐落于美国马萨诸塞剑桥市的私立研究型大学。其因历史、学术影响力、财富等因素而获评为世上最享负盛名的学府之一。',
-                        imgLink: 'https://cdn.ischoolconnect.com/logo/1313.png',
-                        link: 'https://www.harvard.edu/',
+                        description: '康奈尔大学（英语：Cornell University）是一所位于美国纽约州伊萨卡的私立研究型大学，另有两所分校位于纽约市曼哈顿和卡塔尔教育城，是美洲大学协会的十二个创会成员之一，及NCAA体育赛事联盟常春藤盟校的成员，截止2020年10月，先后有超过61位校友、教职工和研究人员获颁诺贝尔奖（世界第十二）、1位菲尔兹奖得主、4位图灵奖得主',
+                        imgLink: 'school-logo/225px-Cornell_University.png',
+                        link: 'https://www.cornell.edu/',
                     },
                     {
-                        title: '普林斯顿大学',
-                        subTitle: '文理学院',
-                        description: '普林斯顿大学（Princeton University），简称“普林斯顿”，创建于1746年 ，位于美国东海岸新泽西州的普林斯顿市，是美国大学协会的14个始创院校之一，也是著名的常春藤联盟成员，是世界顶尖私立研究型大学， 常年位居U.S. News美国最佳大学排名第1位。',
-                        imgLink: 'https://www.logoids.com/upload/image/202007/15948739852577878.jpg',
-                        link: 'https://www.princeton.edu/',
-                    },
-                    {
-                        title: '麻省理工学院',
-                        subTitle: '文理学院',
-                        description: '麻省理工学院在2021年QS世界大学排名中位列全球第一。截至2020年10月，麻省理工学院的校友、教授及研究人员涵盖97位诺贝尔奖得主、8名菲尔兹奖获奖者、26位图灵奖得主，以及52位国家科学奖章获奖者、45位罗德学者、38名麦克阿瑟奖得主。该校同时具很强的创业文化，由其校友所创办的公司利润总值相当于全球第十一大经济体（截至2014年）。',
-                        imgLink: 'school-logo/200px-MIT_Seal.svg.png',
-                        link: 'https://www.mit.edu/',
+                        title: '康奈尔大学',
+                        subTitle: '酒店管理学院',
+                        description: '康奈尔大学（英语：Cornell University）是一所位于美国纽约州伊萨卡的私立研究型大学，另有两所分校位于纽约市曼哈顿和卡塔尔教育城，是美洲大学协会的十二个创会成员之一，及NCAA体育赛事联盟常春藤盟校的成员，截止2020年10月，先后有超过61位校友、教职工和研究人员获颁诺贝尔奖（世界第十二）、1位菲尔兹奖得主、4位图灵奖得主',
+                        imgLink: 'school-logo/225px-Cornell_University.png',
+                        link: 'https://www.cornell.edu/',
                     },
                     {
                         title: '约翰霍普金斯大学',
@@ -460,11 +453,79 @@ export default {
                         link: 'https://www.jhu.edu/',
                     },
                     {
-                        title: '宾夕法尼亚大学',
+                        title: '南加利福尼亚大学',
                         subTitle: '文理学院',
-                        description: '宾夕法尼亚大学（英语：University of Pennsylvania），简称宾大（UPenn）是一所位于美国宾夕法尼亚州费城的世界著名私立研究型大学，美洲大学协会的12所创始校之一，与哈佛，耶鲁等七所美国顶尖大学同属蜚声全球的常春藤盟校成员。大学宣称创建于1740年，是美国第四古老的高等教育机构，也是美国第一所从事科学技术和人文教育的现代高等学校。美国《独立宣言》的9位签字者和《美国宪法》的11位签字者和该校有关。该校的创建者是美利坚合众国著名开国元勋之一的本杰明·富兰克林。',
-                        imgLink: 'school-logo/250px-UPenn_shield_with_banner.svg.png',
-                        link: 'https://www.upenn.edu/',
+                        description: '南加利福尼亚大学，位于加州洛杉矶市中心，由Robert M. Widney于1880年创立，是加州最古老的私立研究型大学。南加大拥有曾被评为全美国排名第一的电影学院、全美国排名第一的老龄学院、全美国排名第三的公共政策学院、全美国排名的第十的工程学院。',
+                        imgLink: 'school-logo/Usc_seal.gif',
+                        link: 'https://www.usc.edu/',
+                    },
+                    {
+                        title: '埃默里大学',
+                        subTitle: '文理学院',
+                        description: '埃默里大学（英语：Emory University），或译艾文理大学、艾默利大学，创校于1836年，为一位于美国乔治亚州亚特兰大都市地区迪卡尔布县德鲁伊山之私立菁英大学。默里大学的学校基金会财产在美国排第16名，在全世界是第21富有的，根据《美国新闻与世界报道》2017年美国大学排行榜排第20名，综合排名第82名。',
+                        imgLink: 'school-logo/Emory-University642.jpg',
+                        link: 'https://www.jhu.edu/',
+                    },
+                    {
+                        title: '密歇根大学-安娜堡分校',
+                        subTitle: '文理学院',
+                        description: '密歇根大学（英语：University of Michigan，简称：U-M、UM、U of M、UMich 或 Michigan），简称密大，位于美国密歇根州安娜堡，是一所公立研究型大学，为美洲大学协会的创始院校之一，是美国乃至世界顶尖的大学之一。',
+                        imgLink: 'school-logo/270px-Seal_of_the_University_of_Michigan.svg.png',
+                        link: 'https://umich.edu/',
+                    }, {
+                        title: '纽约大学',
+                        subTitle: '文理学院',
+                        description: '纽约大学（英语：New York University，缩写为NYU），于1831年成立，是一所位于纽约市曼哈顿的研究型私立大学。主要的校区位于曼哈顿格林威治村的附近区域，以华盛顿广场为中心，是全美国境内规模最大的私立非营利高等教育机构。',
+                        imgLink: 'school-logo/320px-New_York_University_Seal.png',
+                        link: 'https://www.nyu.edu/',
+                    }, {
+                        title: '香港大学',
+                        subTitle: '专业任选',
+                        description: '香港大学（英语：The University of Hong Kong，缩写：HKU），简称港大，是香港的一所公立研究型大学，大学本部位于香港岛中西区龙虎山。香港大学成立于1911年，并于1912年3月11日正式办学，是香港最早建立的高等教育机构。成立之初，更是大英帝国在东亚成立的唯一一间大学，现时属于“QS世界百强大学”以及“泰晤士高等教育世界百强大学”。',
+                        imgLink: 'school-logo/200px-HKU_Coat_of_Arms.png',
+                        link: 'https://hku.hk/',
+                    }, {
+                        title: '香港科技大学',
+                        subTitle: '专业任选',
+                        description: '香港科技大学（英语：The Hong Kong University of Science and Technology，缩写：HKUST），简称科大，是香港的一所公立研究型大学，位于香港新界西贡区清水湾半岛，现时属于“QS世界百强大学”以及“泰晤士高等教育世界百强大学”。',
+                        imgLink: 'school-logo/HKUST.png',
+                        link: 'https://hkust.edu.hk/',
+                    } , {
+                        title: '哥伦比亚大学',
+                        subTitle: '商学院',
+                        description: '纽约市哥伦比亚大学（英语：Columbia University in the City of New York；通称：“哥伦比亚大学”；简称：“哥大”）是一所坐落于美国纽约曼哈顿上城晨边高地的私立研究型大学，是美洲大学协会的12个创始校之一，及NCAA体育赛事联盟常春藤盟校的成员。哥大是纽约州最古老的高等教育学府，也是美国历史第五悠久的高等教育机构',
+                        imgLink: 'school-logo/ColumbiaSeal.png',
+                        link: 'https://www.columbia.edu/',
+                    },                    {
+                        title: '南加利福尼亚大学',
+                        subTitle: '工学院',
+                        description: '南加利福尼亚大学，位于加州洛杉矶市中心，由Robert M. Widney于1880年创立，是加州最古老的私立研究型大学。南加大拥有曾被评为全美国排名第一的电影学院、全美国排名第一的老龄学院、全美国排名第三的公共政策学院、全美国排名的第十的工程学院。',
+                        imgLink: 'school-logo/Usc_seal.gif',
+                        link: 'https://www.usc.edu/',
+                    }, {
+                        title: '纽约大学',
+                        subTitle: '工学院',
+                        description: '纽约大学（英语：New York University，缩写为NYU），于1831年成立，是一所位于纽约市曼哈顿的研究型私立大学。主要的校区位于曼哈顿格林威治村的附近区域，以华盛顿广场为中心，是全美国境内规模最大的私立非营利高等教育机构。',
+                        imgLink: 'school-logo/320px-New_York_University_Seal.png',
+                        link: 'https://www.nyu.edu/',
+                    }, {
+                        title: '香港大学',
+                        subTitle: '商学院',
+                        description: '香港大学（英语：The University of Hong Kong，缩写：HKU），简称港大，是香港的一所公立研究型大学，大学本部位于香港岛中西区龙虎山。香港大学成立于1911年，并于1912年3月11日正式办学，是香港最早建立的高等教育机构。成立之初，更是大英帝国在东亚成立的唯一一间大学，现时属于“QS世界百强大学”以及“泰晤士高等教育世界百强大学”。',
+                        imgLink: 'school-logo/200px-HKU_Coat_of_Arms.png',
+                        link: 'https://hku.hk/',
+                    }, {
+                        title: '香港大学',
+                        subTitle: '工学院',
+                        description: '香港大学（英语：The University of Hong Kong，缩写：HKU），简称港大，是香港的一所公立研究型大学，大学本部位于香港岛中西区龙虎山。香港大学成立于1911年，并于1912年3月11日正式办学，是香港最早建立的高等教育机构。成立之初，更是大英帝国在东亚成立的唯一一间大学，现时属于“QS世界百强大学”以及“泰晤士高等教育世界百强大学”。',
+                        imgLink: 'school-logo/200px-HKU_Coat_of_Arms.png',
+                        link: 'https://hku.hk/',
+                    },  {
+                        title: '香港科技大学',
+                        subTitle: '商学院',
+                        description: '香港科技大学（英语：The Hong Kong University of Science and Technology，缩写：HKUST），简称科大，是香港的一所公立研究型大学，位于香港新界西贡区清水湾半岛，现时属于“QS世界百强大学”以及“泰晤士高等教育世界百强大学”。',
+                        imgLink: 'school-logo/HKUST.png',
+                        link: 'https://hkust.edu.hk/',
                     },
                 ],
             }]
@@ -613,7 +674,6 @@ export default {
         transform: translate(-50%, -50%);
     }
 
-
     .item {
         position: relative;
 
@@ -622,8 +682,8 @@ export default {
             height: fit-content;
 
             &.highlight-up {
-              position: relative;
-              top: -4rem;
+                position: relative;
+                top: -4rem;
             }
         }
 

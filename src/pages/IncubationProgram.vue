@@ -179,7 +179,7 @@
       <div class='lg:container lg:mx-auto'>
         <div class="text-center text-quaternary text-weight-bolder text-5xl mb-10">案例解读</div>
       </div>
-      <case-carousel></case-carousel>
+      <case-carousel programType="incubation"></case-carousel>
     </section>
     <contact></contact>
 </div>

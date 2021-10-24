@@ -4,12 +4,12 @@ import { ElCarousel } from 'element-plus'
 import { useQuasar } from 'quasar';
 
 
-const stairCaseData = reactive(<CaseData[]>[
+const ladderCaseData = reactive(<CaseData[]>[
   {
     imgLink: 'case1.jpg',
-    name: '哈佛大学',
+    name: '康纳尔大学',
     rank: 'U.S. News 全美排名第17',
-    caseName: 'staircase|0',
+    caseName: 'laddercase|0',
     student: '陆同学',
     info: [
       {
@@ -86,7 +86,7 @@ const bornCaseData = reactive(<CaseData[]>[
     imgLink: 'course-1.jpg',
     name: '耶鲁大学',
     rank: 'U.S. News 全美排名第17',
-    caseName: 'staircase|0',
+    caseName: 'laddercase|0',
     student: '陆同学',
     info: [
       {
@@ -160,7 +160,7 @@ const bornCaseData = reactive(<CaseData[]>[
     imgLink: 'teacher-1.jpg',
     name: '康奈尔大学',
     rank: 'U.S. News 全美排名第17',
-    caseName: 'staircase|0',
+    caseName: 'laddercase|0',
     student: '陆同学',
     info: [
       {
@@ -210,7 +210,7 @@ const cloudCaseData = reactive(<CaseData[]>[
     imgLink: 'case1.jpg',
     name: '康奈尔大学',
     rank: 'U.S. News 全美排名第17',
-    caseName: 'staircase|0',
+    caseName: 'laddercase|0',
     student: '陆同学',
     info: [
       {
@@ -283,7 +283,7 @@ const cloudCaseData = reactive(<CaseData[]>[
     imgLink: 'case1.jpg',
     name: '康奈尔大学',
     rank: 'U.S. News 全美排名第17',
-    caseName: 'staircase|0',
+    caseName: 'laddercase|0',
     student: '陆同学',
     info: [
       {
@@ -358,8 +358,8 @@ const cloudCaseData = reactive(<CaseData[]>[
 const planData = ref(<PlanData[]>[
   {
     title: '天梯计划',
-    type: 'staircase',
-    data: stairCaseData
+    type: 'laddercase',
+    data: ladderCaseData
   },
   {
     title: '青云计划',
@@ -374,7 +374,7 @@ const planData = ref(<PlanData[]>[
 ]);
 
 
-const currentType = ref('staircase');
+const currentType = ref('laddercase');
 const indicatorLeft = ref('0rem');
 const carouselClass = ref('left:-18.2%;');
 const isLastCarousel = ref(false);
