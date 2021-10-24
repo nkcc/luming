@@ -51,7 +51,7 @@
 </template>
 
 <script lang='ts'>
-import setup from './case';
+import setup from './case-carousel';
 import { ElCarousel, ElCarouselItem } from 'element-plus';
 import 'element-plus/theme-chalk/index.css';
 // import 'element-plus/theme-chalk/el-carousel-item.css'

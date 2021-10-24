@@ -315,8 +315,6 @@ const caseData = computed((): CaseData[] => {
   if (currentData === undefined) {
     currentData = < PlanData > planData.value[0];
   }
-  
-  console.log(currentType.value,  currentData.data);
 
   return currentData.data;
 });

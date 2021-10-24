@@ -172,9 +172,6 @@ import Contact from '../components/Contact.vue'
 import {
     CarouselData
 } from 'components/models';
-import {
-    useQuasar
-} from 'quasar';
 
 export default {
     name: 'AcademicManager',
