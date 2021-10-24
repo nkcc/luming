@@ -42,7 +42,7 @@
                    v-if='servicesData[k].visible'>
                 <h3 class='text-white text-weight-bold heading text-5xl py-10'>{{ v.title }}</h3>
                 <p>{{ v.description }}</p>
-                <router-link class="root-link" :to="v.link">了解更多</router-link>
+                <router-link class="root-link" :to="v.link">了解更多></router-link>
               </div>
             </transition-group>
           </div>
