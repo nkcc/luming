@@ -6,14 +6,14 @@
                 <part-header name='鹿名留学'></part-header>
                 <div class="lm-container row justify-center pb-20">
                     <div class="col-9">
-                        <div class="mb-16">
+                        <div class="mb-16 animate__animated  animate__zoomIn">
                             <div class='text-quaternary text-weight-bolder text-center text-base leading-6' v-for='(v,k) in prodTitle' :key='k'>{{v}}</div>
                             <div class="text-quaternary text-center text-weight-thin text-sm  leading-7" v-for='(v,k) in prodDescription' :key='k'>{{v}}</div>
                         </div>
-                        <div class="text-quaternary text-weight-bold mb-13 text-center lm-question-title mb-14">
+                        <div class="text-quaternary text-weight-bold mb-13 text-center lm-question-title mb-14 animate__animated  animate__flipInX animate__delay-1s">
                             {{questionTitle}}
                         </div>
-                        <div class="text-quaternary text-center text-weight-bolder text-base leading-7" v-for='(v,k) in questionAnswer' :key='k'> {{v}}</div>
+                        <div class="text-quaternary text-center text-weight-bolder text-base leading-7 animate__animated  animate__zoomIn animate__delay-2s" v-for='(v,k) in questionAnswer' :key='k'> {{v}}</div>
                     </div>
                 </div>
                 <section class='lm-services pb-2'>
@@ -27,7 +27,7 @@
                             <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
 
                             <div class='media' :data-id='k' v-intersection.once='onServiceIntersection'>
-                                <transition-group appear enter-active-class='animated animate__fadeInUp'>
+                                <transition-group appear enter-active-class='animated animate__fadeIn'>
                                     <q-img class='img' :src='v.img' :ratio='537 / 336' v-if='servicesData[k].visible'></q-img>
                                     <div class='introduction' :class="getClassType(k, 'bg-secondary', 'bg-primary')" v-if='servicesData[k].visible'>
                                         <h3 class='text-white text-weight-bold heading text-5xl py-10'>{{ v.title }}</h3>
@@ -79,28 +79,28 @@ export default {
                 title: '青云计划',
                 img: 'course-1.jpg',
                 description: '单所申请世界名校精准直录',
-                visible: false,
+                visible: true,
                 link: 'cloud'
             },
             {
                 title: '天梯计划',
                 img: 'course-2.jpg',
                 description: '低门槛宝保录取全球顶尖院校',
-                visible: false,
+                visible: true,
                 link: 'ladder'
             },
             {
                 title: '孵育计划',
                 img: 'course-3.jpg',
                 description: '美国名校教授培育保藤规划',
-                visible: false,
+                visible: true,
                 link: 'incubation'
             },
             {
                 title: '学业管家',
                 img: 'course-4.jpg',
                 description: '全托学业辅导确保顺利毕业',
-                visible: false,
+                visible: true,
                 link: 'academic'
             },
         ]);
