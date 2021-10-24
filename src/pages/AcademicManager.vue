@@ -416,7 +416,7 @@ export default {
             '拿到梦校录取通知书',
             '一站式后留学服务，贴心保障留学生活（可选）',
         ];
-        const $q = useQuasar()
+        // const $q = useQuasar()
         const currentOfferSchool = ref(0)
         const offerIndicatorLeft = ref('0rem')
         const slideActive = ref(
