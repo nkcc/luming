@@ -3,7 +3,7 @@
     <section class="transparent">
         <div>
             <div class='lg:container lg:mx-auto'>
-                <part-header name='青云计划'></part-header>
+                <part-header name='学业管家'></part-header>
                 <div class="lm-container row justify-center pb-20">
                     <div class="col-9">
                         <div class='text-quaternary text-weight-bolder text-center text-4xl mb-4'>{{programTitle}}</div>
