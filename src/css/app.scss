@@ -11,6 +11,7 @@
   font-size: 1.25rem;
   text-decoration: none;
   transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
+
   &:hover {
     //   color: #000;
   }
@@ -19,7 +20,8 @@
 .text-quaternary {
   color: $quaternary;
 }
-.text-fade-green  {
+
+.text-fade-green {
   color: $fade-green;
 }
 
@@ -429,6 +431,7 @@ $xl-breakpoint: 1536px;
   }
 
   .lm-points-background {
+
     .left,
     .right {
       &.offer {
@@ -635,6 +638,11 @@ $xl-breakpoint: 1536px;
 
         .description {
           font-size: 0.9375rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 5;
+          -webkit-box-orient: vertical;
         }
       }
 
@@ -771,8 +779,7 @@ $xl-breakpoint: 1536px;
       }
     }
 
-    .offer-container {
-    }
+    .offer-container {}
   }
 
   .lm-case {
@@ -816,7 +823,7 @@ $xl-breakpoint: 1536px;
 }
 
 .root-link {
-    &:hover {
-        color: $primary;
-    }
+  &:hover {
+    color: $primary;
+  }
 }
