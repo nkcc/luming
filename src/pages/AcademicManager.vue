@@ -144,14 +144,14 @@
                     <div class="col-8">
                         <div class="text-quaternary text-weight-bolder text-6xl leading-20" v-for="(vt, kt) in v.title" :key="kt"> {{vt}}</div>
                         <div class="text-white text-weight-bolder text-4xl mt-10 mb-5 ">{{v.subtitle}}</div>
-                        <div class="text-white text-weight-thin text-xs leading-6">
+                        <div class="text-white text-weight-thin text-base leading-6">
                             {{ v.description}}
                         </div>
                     </div>
                     <div class="col-4 cover">
-                      <q-responsive :ratio="1">
-                        <q-img class="img" :src="v.cover" fit="cover"></q-img>
-                      </q-responsive>
+                        <q-responsive :ratio="1">
+                            <q-img class="img" :src="v.cover" fit="cover"></q-img>
+                        </q-responsive>
                     </div>
                 </div>
             </div>
@@ -199,7 +199,29 @@ export default {
                     subtitle: '服务优势',
                     description: '个性定制化服务,学生自由选择课程组合，由导师提供一对一的指导。导师充分结合学生的学术能力、专业需求、发展目标等因素全方位定制学习规划，并根据学生的学习情况和个人志向及时优化调整课业方案与授课内容。',
                     cover: 'harvard_school.jpg',
-                }
+                },
+                {
+                    title: [
+                        '全方位支持与协同'
+                    ],
+                    subtitle: '服务优势',
+                    description: '不限课时，不限答疑，贯穿整个学期每周更新的每周学习时间计划表；学校上课、office   hour、作业deadline、考试时间地点、GPA辅导课安排等一目了然。每一位学员都配有专属助教，全方位实时跟进学习情况。微信群内同步教学系统，提醒学生重要事项、发布课件/笔记、跟踪平时成绩、分析评语反馈，投喂We- Education专属学习资源; 全方位帮助学生快速进入学习状态、学期中查漏补缺、期末提早复习备考。与导师、专家、家长、学生保持沟通，及时了解并处理学生家长提出的问题与反馈，协调多方之间的信息沟通，有益于家长随时了解学生近况。',
+                    cover: 'harvard_school.jpg',
+                }, {
+                    title: [
+                        '职业规划与就业'
+                    ],
+                    subtitle: '服务优势',
+                    description: '八节职业小班课，为国际青少年提供最优质的高端人才成长平台，通过案例分析与实战课题，提高解决实际问题的能力以及团队协作能力，多方位提升专业技能与职业素养，帮助在校大学生了解行业前沿信息，增加职场实战经验，发掘自身潜力，提升专业技能和综合素养。',
+                    cover: 'harvard_school.jpg',
+                }, {
+                    title: [
+                        '关注孩子身心发展'
+                    ],
+                    subtitle: '服务优势',
+                    description: '24小时身心健康对接服务，学业管家计划不仅看重学生的学业表现和提升过程，同时也关注孩子海外求学的身心健康。专业心理咨询专家提供压力舒缓、情绪管理等问题解答。搭建社会公益平台，全面关注世界公民的身心发展，培养孩子的社会公益视野及领袖能力。',
+                    cover: 'harvard_school.jpg',
+                },
             ]
         };
         const serviceContent = {
@@ -609,21 +631,24 @@ export default {
 }
 
 .lm-service-advantage {
-  .item:not(:last-child) {
-    border-bottom: 2px solid $quaternary;
-  }
-  .reverse {
+    .item:not(:last-child) {
+        border-bottom: 2px solid $quaternary;
+    }
+
+    .reverse {
+        .cover {
+            padding-left: 0;
+            padding-right: 6rem;
+        }
+    }
+
     .cover {
-      padding-left: 0;
-      padding-right: 6rem;
+        padding-left: 5rem;
+        padding-right: 1rem;
+
+        .img {
+            box-shadow: 1rem 1rem $secondary;
+        }
     }
-  }
-  .cover {
-    padding-left: 5rem;
-    padding-right: 1rem;
-    .img {
-      box-shadow: 1rem 1rem $secondary;
-    }
-  }
 }
 </style>

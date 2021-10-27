@@ -45,7 +45,7 @@ export default defineComponent({
             getListCol(length: number, key: number) {
                 const modNum = length % 4
                 let colNum = '3'
-                if (key > length - modNum) {
+                if (key >= length - modNum || length < 4) {
                     colNum = Math.floor(12 / modNum).toString()
 
                 }
