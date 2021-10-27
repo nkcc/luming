@@ -116,7 +116,7 @@
               </q-responsive>
 
               <div class="content">
-                <p class="py-5">{{ v.description }}</p>
+                <p class="my-5">{{ v.description }}</p>
 
                 <div class="footer">
                   <a href>了解更多 ></a>
@@ -254,7 +254,10 @@
           </q-responsive>
 
           <div class="content">
-            <div class="name text-weight-bolder">{{ v.name }}</div>
+            <div
+              class="name text-weight-bolder"
+              :class="k === teamData.length - 1 ? 'text-2xl' : 'text-3xl'"
+            >{{ v.name }}</div>
             <p class="description">{{ v.description }}</p>
             <div class="footer">
               <a href>了解更多 ></a>

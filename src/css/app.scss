@@ -356,6 +356,12 @@ $xl-breakpoint: 1536px;
 
     p {
       font-size: 1.125rem;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
     }
 
     .footer {
@@ -632,7 +638,7 @@ $xl-breakpoint: 1536px;
         justify-content: space-between;
 
         .name {
-          font-size: 1.875rem;
+          //   font-size: 1.875rem;
           padding: 1.25rem 0;
         }
 
