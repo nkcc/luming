@@ -378,28 +378,28 @@ const caseData = ref([
 const teamData = ref([
     {
         name: 'Patrick Shui',
-        imgLink: 'oxford.jpeg',
+        imgLink: 'team1.png',
         description:
             'Patrick老师坚信力量来源于知识，在申请服务过程不断激发学生的潜能，挖掘学生的亮点。让学生在压力极大的申请过程中不断提高自己能力和自我认知，从而帮助学生成功通过人生的第一道重大关卡。',
         visible: false,
     },
     {
         name: 'Andy Xue',
-        imgLink: 'oxford.jpeg',
+        imgLink: 'team2.png',
         description:
             'Andy老师坚信留学申请过程不是困惑的或者令人沮丧的。事实上，如果用聪明的方法，这个过程将是学生拥有的一个绝佳的机会，去帮助他们提高自我认知和自信。',
         visible: false,
     },
     {
         name: 'Alex Gu',
-        imgLink: 'oxford.jpeg',
+        imgLink: 'team3.png',
         description:
             'Alex老师认为一次真正成功的留学申请是对自己重新发现、认识、认知的旅程。和老师一起重温自己的学术历程，挖掘每一段难忘的课外经历，发现自己内心深处的渴望，追寻自己一直以来的梦想。每一次陪伴学生走入dream school的旅程都是一段为人师者的记忆。',
         visible: false,
     },
     {
         name: 'Danny Chueng',
-        imgLink: 'oxford.jpeg',
+        imgLink: 'team1.png',
         description:
             'Danny老师善于从西方人的视角去发现和诠释东方学生的优点与优势，真正站在以白人为核心的西方招生官的角度，精准挖掘学生潜力，精确定位背景提升项目等一系列为成功入校做努力的方式，达到院校、申请学院及留学机构三方都满意的最佳结果。',
         visible: false,
@@ -414,7 +414,7 @@ const professorData = ref([
             '美国53家上市公司董事',
             '前美国国家审计署执行委员会主席',
         ],
-        imgLink: 'teacher-1.jpg',
+        imgLink: 'prof1.png',
         description:
             '丹尼斯.乔卡西安是CNA保险公司的前任董事长兼首席执行官。从1992年到1999年担任CNA的主席和首席执行官。1999年至2001年任国家审计署执行委员会主席。1990年至1992年乔卡西安担任CNA总裁兼首席运营官，负责所有财产和伤亡、生命、健康和投资运营。于1975年加入CNA，担任首席财务官，直到1990年被任命为总裁。1999年至2001年他还担任互联网金融咨询服务公司MPower Inc.的董事长兼首席执行官。在加入CNA之前，他曾在德勤但任8年的管理顾问负责，各种财务和系统相关任务。2010年丹尼斯乔卡西安教授获得美国权威金融报刊《Financial Times》授予的Out-standing Director奖项 ',
     },
@@ -425,7 +425,7 @@ const professorData = ref([
             '美国纽约大学信息系统与管理学博士',
             '美国经济、市场营销与信息科学顶级会议演讲者',
         ],
-        imgLink: 'teacher-1.jpg',
+        imgLink: 'prof2.png',
         description:
             '李贝贝教授现任卡内基梅隆大学(Carnegie Mel-IonUniversity）约翰.海因茨管理学院、计算机院与商学院Anna Loomis McCandless讲席教授，副教授与博士生导师。为纽约大学斯特恩商学院信息系统与管理学博士学位。专注于研究信息科技与个体行为、组织和社会的关系并，利用大规模历史和实验数据进行相关决策分析和政策制定。她的研究领域涉及智慧城市和医疗移动和物联网新零售，人工智能与大数据金融社交媒体和搜索引擎全渠道智能营销等等多篇论文发布在Managenment Science、Marketing Science、Information Systems Research和MIS Quarterly等顶级研究与商业期刊，以及一些经济，市场营销， 信息科学和计算科学的顶级会议上。并有多篇研究成果获国际大奖',
     },
@@ -436,7 +436,7 @@ const professorData = ref([
             'Zacks投资基金公司基金经理',
             '美国CFA协会员会员',
         ],
-        imgLink: 'teacher-1.jpg',
+        imgLink: 'prof3.png',
         description:
             '张庆全博士是美国伊利诺伊大学香槟分校商学院客座教授。美国 Zacks 投资基金公司基金经理,美国 CFA 会芝加哥分会委员会委员，美国华人交易与投资协会芝加加哥分会会长，长期从事金融科技领域的研究，包括人工智能与大数据研究工作。已经在国际上发表了50多篇SCI论文，绝大部分是第一作者；张庆全博士毕业于美国芝加哥大学主攻方向金融，量化投资和创业学。张博士足美国电子电气工程协会高级会员( EEE Senior Member)，美国特许金分析( ChartedFinancial Analyst)',
     }, {
@@ -446,7 +446,7 @@ const professorData = ref([
             '《商业周刊》杰出企业家教授',
             '私募股权行业主要投资者',
         ],
-        imgLink: 'teacher-1.jpg',
+        imgLink: 'prof4.png',
         description:
             'Scott Meadow是私股权行业的主要投资者,理查德J.戴利奖的获得者。自2000年以来担任芝加哥大学布斯色学院的创业临床教授。2002年-2005年荣获菲尼克斯奖，2010年教师优秀奖。他被《商业周刊》的“最佳商学院指南”指定为该国杰出的企业家教授之一。为8000名学生教授创业融资和私募股权、商业化创新(他创建的)、新的风脸挑战，并担任风险投资竞争的教员顾问。是四家风险投资和私募股权公司合伙人，批准了数百项股权融资，亲自领导、发起或创建了60多项投资，被 Venture One 认可为业内杰出的医疗投资者之一。',
     },
