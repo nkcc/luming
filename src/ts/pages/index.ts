@@ -499,7 +499,7 @@ const setup = function () {
             currentOfferSchool.value = 0
         },
         cultureAnimation (k: number, length: number) {
-            return k > length / 2 - 1 ? 'animated animate__fadeInRight' : 'animated animate__fadeInLeft';
+            return k > length / 2 - 1 ? 'animated animate__fadeInUp' : 'animated animate__fadeInUp';
         },
 
         getClassType (k: number, firstClass: string, secondClass: string) {
@@ -515,7 +515,11 @@ const setup = function () {
         }) {
             const index = parseInt(entry.target.dataset.id, 10);
 
-            cultureData.value[index].visible = entry.isIntersecting;
+            const delayMap = [3, 2, 1, 0];
+
+            setTimeout(() => {
+                cultureData.value[index].visible = entry.isIntersecting;
+            }, 100 * delayMap[index]);
 
         },
         onServiceIntersection (entry: {
@@ -543,9 +547,11 @@ const setup = function () {
         }) {
             const index = parseInt(entry.target.dataset.id, 10);
 
+            const delayMap = [2, 1, 1, 2];
+
             setTimeout(() => {
                 teamData.value[index].visible = entry.isIntersecting;
-            }, 100 * index);
+            }, 100 * delayMap[index]);
 
         },
         scrollFullScreen () {
