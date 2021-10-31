@@ -22,7 +22,7 @@
                 class="text-quaternary text-weight-bold mb-13 text-center lm-question-title mb-14 animate__animated animate__flipInX animate__delay-1s"
               >{{questionTitle}}</div>
               <div
-                class="text-quaternary text-center text-weight-bolder text-base leading-7 animate__animated animate__zoomIn animate__delay-2s"
+                class="text-quaternary text-center text-weight-bolder text-base leading-7 animate__animated animate__fadeInUp animate__delay-2s"
                 v-for="(v,k) in questionAnswer"
                 :key="k"
               >{{v}}</div>
