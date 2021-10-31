@@ -6,30 +6,23 @@ import Indicator from 'components/Indicator.vue';
 
 const servicesData = ref([
     {
-        title: '青云计划',
+        title: '世界名校直通车',
         img: 'course-1.jpg',
-        description: '单所申请世界名校精准直录',
+        description: ['短时间内帮助学生低分高录', '实现最高学府的留学梦'],
         visible: false,
-        link: 'cloud'
+        link: 'famous-school-car',
     },
     {
-        title: '天梯计划',
+        title: '名校教授培养计划',
         img: 'course-2.jpg',
-        description: '低门槛宝保录取全球顶尖院校',
-        visible: false,
-        link: 'ladder'
-    },
-    {
-        title: '孵育计划',
-        img: 'course-3.jpg',
-        description: '美国名校教授培育保藤规划',
+        description: ['通过名校教授亲带学生完成', '科研和学术课题来提高背景和个人录取实力'],
         visible: false,
         link: 'incubation'
     },
     {
         title: '学业管家',
         img: 'course-4.jpg',
-        description: '全托学业辅导确保顺利毕业',
+        description: ['全托学业辅导确保顺利毕业'],
         visible: false,
         link: 'academic'
     },
@@ -515,7 +508,7 @@ const setup = function () {
         }) {
             const index = parseInt(entry.target.dataset.id, 10);
 
-            const delayMap = [3, 2, 1, 0];
+            const delayMap = [0, 1, 2, 3];
 
             setTimeout(() => {
                 cultureData.value[index].visible = entry.isIntersecting;

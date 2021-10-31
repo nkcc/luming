@@ -29,7 +29,7 @@
     <section class="lm-services">
       <div class="row q-col-gutter-x-sm lg:container lg:mx-auto">
         <div
-          class="col-md-3 col-sm-6 col-xs-12 animate__animated animate__animated service-container"
+          class="col-md-4 col-sm-6 col-xs-12 animate__animated animate__animated service-container"
           v-for="(v, k) in servicesData"
           :key="k"
         >
@@ -43,8 +43,11 @@
                 :class="getClassType(k, 'bg-secondary', 'bg-primary')"
                 v-if="servicesData[k].visible"
               >
-                <h3 class="text-white text-weight-bold heading text-5xl py-10">{{ v.title }}</h3>
-                <p>{{ v.description }}</p>
+                <h3 class="text-white text-weight-bold heading text-4xl py-10">{{ v.title }}</h3>
+                <div class="h-24">
+                  <p class="text-white text-lg" v-for="(vd, vk) in v.description" :key="vk">{{ vd }}</p>
+                </div>
+
                 <router-link class="root-link" :to="v.link">了解更多></router-link>
               </div>
             </transition-group>

@@ -3,7 +3,7 @@
     <section class="transparent">
       <div>
         <div class="lg:container lg:mx-auto">
-          <part-header name="孵育计划"></part-header>
+          <part-header name="名校教授培养计划"></part-header>
           <div class="lm-container row justify-center pb-20">
             <div class="col-9">
               <div
@@ -67,7 +67,7 @@
       <div class="lg:container lg:mx-auto">
         <div class="lm-container row justify-center pb-20">
           <div class="col-9">
-            <description-with-img></description-with-img>
+            <description-with-img :info="suitableStudents"></description-with-img>
           </div>
         </div>
       </div>
@@ -254,6 +254,16 @@ export default {
     CaseCarousel,
   },
   setup() {
+    const suitableStudents = [
+      '高中在读或毕业生',
+      '本科在读或毕业生',
+      '研究生在读或毕业生',
+      '已经工作，希望继续深造获得硕士或博士学位等更高履历的同学',
+      '有较好的学习和成绩基础，但自身条件不够稳定录取最顶尖的学校',
+      '想提前适应美国大学课程',
+      '对于背景提升和推荐信方面有需求',
+      '距离申请截止日期不小于2个学期',
+    ];
     const highlight = [
       {
         title: '资源',
@@ -549,7 +559,7 @@ export default {
     const offerIndicatorLeft = ref('0rem');
     const slideOffer = ref('america');
     const offers = {
-      title: '孵育计划 录取院校',
+      title: '会被录取的梦校',
       subTitle: '（任何一所美国前30名大学）',
       list: [
         {
@@ -626,48 +636,41 @@ export default {
       {
         name: '',
         title: '产品特点',
-        subTitle: '学习量较大',
+        subTitle: '长期参与',
         description:
-          '看似鸡蛋不要放在一个篮子里，实则鹿名确实有实力和和底气能够为学员只报一所名校并收获录取通知书，因为我们掌握着全球顶尖院校的独家资源。',
+          '学员一个学年的沉浸式学习体验，提前进入大学状态，在此之间提升个人学习能力和背景，并参与美国名校名师牵头的科研项目之中。学员将学习的课程包括投资学、金融科技前沿、商业智能等',
         imgLink: 'oxford.jpeg',
       },
       {
         name: '',
-        title: '为什么选择鹿名',
-        subTitle: '实力强大',
+        title: '产品特点',
+        subTitle: '成绩有要求',
         description:
-          '拥有独家全球名校资源,包括美国TOP30、英国G5、加拿大、澳洲、香港、新加坡等世界级名校;与传统留学中介和咨询机构形成服务互补。',
+          '鹿名名校教授培养计划对学员的自身学习成绩有一定要求，因为这会直接影响到学员参与的教授培养计划课程的最终效果，当然，鹿名会在计划全称帮助学员，给他提供最佳、最到位的辅导和帮助',
         imgLink: 'lb.jpg',
       },
       {
         name: '',
-        title: '为什么选择鹿名',
-        subTitle: '保障结果',
+        title: '产品特点',
+        subTitle: '学习量较大',
         description:
-          '签约鹿名的学生有着9996+名校录取率,不录取全额退费,并且保证学员1009%顺利毕业。',
+          '虽然鹿名名校教授培养计划的学习任务偏重，但是这不仅能够为学员带来一封名校录取通知书，同时更能培养学生的持续性学习习惯，并未之后的留学打下有力的基础',
         imgLink: 'harvard_school.jpg',
       },
       {
         name: '',
-        title: '为什么选择鹿名',
-        subTitle: '硕果累累',
-        description: '8年来鹿名已帮助学员斩获600+顶级名校 offer ',
+        title: '产品特点',
+        subTitle: '院校精准保录',
+        description:
+          '凭借鹿名的全球顶尖院校资源，名校教授培养计划可以为学员打造单所或多所名校申请计划，为学员提供更多名校的选择机会',
         imgLink: 'bg.jpg',
       },
       {
         name: '',
-        title: '为什么选择鹿名',
-        subTitle: '价格合理',
+        title: '产品特点',
+        subTitle: '独家资源',
         description:
-          '鹿名所有项目均自主研发,不存在中间商,能提供给客户最合理的价格。',
-        imgLink: 'bg.jpg',
-      },
-      {
-        name: '',
-        title: '为什么选择鹿名',
-        subTitle: '客户放心',
-        description:
-          '正规注册公司,实体办公场所,支持低订金面签合同,保障资金安全。',
+          '随着多年以来的积累，鹿名凝聚着最核心、最顶尖的国际名校招生官、校董、校园管理层、名师资源。这些独有的资源渠道是鹿名名校教授培养计划短时间帮助学员完成申请、低分高录、名校精准保录的最坚实保障',
         imgLink: 'bg.jpg',
       },
     ]);
@@ -687,6 +690,7 @@ export default {
       professorData,
       serviceProgress,
       highlight,
+      suitableStudents,
       currentOffer: computed((): OfferData => {
         return <OfferData>offerData.value.find((offer) => {
           return offer.name === slideOffer.value;

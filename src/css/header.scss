@@ -24,20 +24,21 @@
         display: flex;
         align-items: center;
         position: relative;
+
         &:after {
-            position: absolute;
-            content: '';
-            height: 1px;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            transform: translate(-50%);
-            transition: all .3s ease-in-out;
+          position: absolute;
+          content: '';
+          height: 1px;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          transform: translate(-50%);
+          transition: all .3s ease-in-out;
         }
-        
+
         &:hover:after {
-            width: 100%;
-            background: $secondary;
+          width: 100%;
+          background: $secondary;
         }
 
         a {
@@ -47,16 +48,22 @@
           font-size: 15px;
           letter-spacing: 4px;
         }
+
         .sub-nav {
-            background: rgba(0, 0,0, 0.1);
+          background: rgba(0, 0, 0, 0.1);
         }
+
         .sub-item {
-            border-bottom: 1px solid $primary;
-            transition: all 0.3s ease;
-            width: 100%;
-            &:hover {
-                border-bottom: 1px solid $secondary;
-            }
+          border-bottom: 1px solid $primary;
+          transition: all 0.3s ease;
+          width: calc(100% + 5rem);
+          display: flex;
+          justify-content: center;
+          left: -2.5rem;
+
+          &:hover {
+            border-bottom: 1px solid $secondary;
+          }
         }
       }
 
@@ -68,6 +75,7 @@
     .logo-container {
       display: flex;
       justify-content: center;
+
       img {
         width: 200px;
       }
@@ -80,7 +88,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    .drawer-logo{
+
+    .drawer-logo {
       width: 80%;
     }
   }
