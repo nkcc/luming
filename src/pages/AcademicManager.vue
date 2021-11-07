@@ -4,21 +4,28 @@
       <div>
         <div class="lg:container lg:mx-auto">
           <part-header name="学业管家"></part-header>
-          <div class="lm-container row justify-center pb-20">
+          <div class="lm-container row justify-center">
             <div class="col-9">
               <div
-                class="text-quaternary text-weight-bolder text-center text-4xl mb-4"
-              >{{programTitle}}</div>
+                class="
+                  text-quaternary text-weight-bolder text-center text-4xl
+                  mb-4
+                "
+              >
+                {{ programTitle }}
+              </div>
               <div
                 class="text-quaternary text-weight-bold text-center text-2xl"
-              >{{programDescription}}</div>
+              >
+                {{ programDescription }}
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
     <section class="transparent mb-10">
-      <div class="lm-points row items-center lg:container lg:mx-auto">
+      <div class="lm-points row items-center lg:container lg:mx-auto pt-0">
         <div class="points-container">
           <q-carousel
             v-model="slide"
@@ -35,25 +42,66 @@
             :keep-alive-include="'carousel0, carousel1, carousel2, carousel3'"
           >
             <template v-slot:navigation-icon="{ active, onClick }">
-              <q-btn v-if="active" size="2px" flat dense @click="onClick" :style="slideActive" />
-              <q-btn v-else size="2px" flat dense :style="slideDefault" @click="onClick" />
+              <q-btn
+                v-if="active"
+                size="2px"
+                flat
+                dense
+                @click="onClick"
+                :style="slideActive"
+              />
+              <q-btn
+                v-else
+                size="2px"
+                flat
+                dense
+                :style="slideDefault"
+                @click="onClick"
+              />
             </template>
             <template v-for="(v, k) in carouselData" :key="k">
               <q-carousel-slide :name="'carousel' + k" class="column no-wrap">
                 <div class="row justify-center items-center mb-10">
-                  <div class="col-xs-12 col-sm-12 col-md-5 left q-py-xs-lg q-py-xs-lg">
-                    <h3 class="text-white text-weight-bold text-3xl">{{ v.title }}</h3>
+                  <div
+                    class="
+                      col-xs-12 col-sm-12 col-md-5
+                      left
+                      q-py-xs-lg q-py-xs-lg
+                    "
+                  >
                     <div class="mt-2">
                       <h2
-                        class="text-quaternary text-weight-bolder text-5xl pb-10 pr-5"
-                      >{{ v.subTitle }}</h2>
+                        class="
+                          subtitle
+                          text-quaternary text-weight-bolder text-5xl
+                          pb-10
+                          pr-5
+                        "
+                      >
+                        {{ v.subTitle }}
+                      </h2>
                       <p
-                        class="text-white text-sm pr-24 text-weight-thin leading-7 tracking-wide"
-                      >{{ v.description }}</p>
+                        class="
+                          description
+                          text-white text-sm
+                          pr-24
+                          text-weight-thin
+                          leading-7
+                          tracking-wide
+                        "
+                      >
+                        {{ v.description }}
+                      </p>
                     </div>
                     <div class="footer"></div>
                   </div>
-                  <div class="col-xs-12 col-sm-12 col-md-4 right q-py-xs-lg q-py-sm-lg">
+                  <div
+                    class="
+                      col-xs-12 col-sm-12 col-md-4
+                      right
+                      q-py-xs-lg q-py-sm-lg
+                    "
+                  >
                     <q-responsive :ratio="692 / 511">
                       <q-img class="points-img" :src="v.imgLink"></q-img>
                     </q-responsive>
@@ -74,108 +122,141 @@
               title="产品介绍"
               background="shield.png"
               top="2"
-              :imgStyle="{height: '30rem'}"
+              :imgStyle="{ height: '30rem' }"
             ></description-with-img>
           </div>
         </div>
       </div>
     </section>
-    <section class="transparent">
+    <section class="bg-white">
       <div class="lg:container lg:mx-auto">
         <div class="lm-container row justify-center">
           <div class="col-9">
-            <div class="lm-product-points mb-8">
+            <div class="lm-product-points my-20">
+              <div class="text-center text-weight-bolder text-2xl mb-2">
+                {{ productPoints[0].title }}
+              </div>
               <div
-                class="text-center text-quaternary text-weight-bolder text-2xl mb-2"
-              >{{productPoints[0].title}}</div>
-              <div
-                class="text-center text-white text-weight-thin text-xs leading-7"
+                class="text-center text-weight-thin text-xs leading-7"
                 v-for="(v, k) in productPoints[0].description"
                 :key="k"
-              >{{v}}</div>
+              >
+                {{ v }}
+              </div>
             </div>
           </div>
 
           <div class="col-12 row relative">
             <div class="col-4 flex flex-col justify-center">
               <div class="lm-product-points mb-20">
+                <div class="text-center text-weight-bolder text-2xl mb-2">
+                  {{ productPoints[1].title }}
+                </div>
                 <div
-                  class="text-center text-quaternary text-weight-bolder text-2xl mb-2"
-                >{{productPoints[1].title}}</div>
-                <div
-                  class="text-center text-white text-weight-thin text-xs leading-7"
+                  class="text-center text-weight-thin text-xs leading-7"
                   v-for="(v, k) in productPoints[1].description"
                   :key="k"
-                >{{v}}</div>
+                >
+                  {{ v }}
+                </div>
               </div>
               <div class="lm-product-points">
+                <div class="text-center text-weight-bolder text-2xl mb-2">
+                  {{ productPoints[3].title }}
+                </div>
                 <div
-                  class="text-center text-quaternary text-weight-bolder text-2xl mb-2"
-                >{{productPoints[3].title}}</div>
-                <div
-                  class="text-center text-white text-weight-thin text-xs leading-7"
+                  class="text-center text-weight-thin text-xs leading-7"
                   v-for="(v, k) in productPoints[3].description"
                   :key="k"
-                >{{v}}</div>
+                >
+                  {{ v }}
+                </div>
               </div>
             </div>
             <div class="col-4">
-              <q-img class="lm-product-img" src="product-intro-black.svg" fit="contain">
+              <q-img
+                class="lm-product-img"
+                src="product-intro-black.svg"
+                fit="contain"
+              >
                 <div
-                  class="lm-product-container absolute-full text-quaternary text-weight-bolder flex flex-center transparent text-7xl"
+                  class="
+                    lm-product-container
+                    absolute-full
+                    text-weight-bolder
+                    flex flex-center
+                    transparent
+                    text-7xl
+                  "
                 >
-                  <div class="lm-product-caption text-center">师资配置</div>
+                  <div class="lm-product-caption text-center text-black">
+                    师资配置
+                  </div>
                 </div>
               </q-img>
             </div>
             <div class="col-4 flex flex-col justify-center">
               <div class="lm-product-points mb-20">
+                <div class="text-center text-weight-bolder text-2xl mb-2">
+                  {{ productPoints[2].title }}
+                </div>
                 <div
-                  class="text-center text-quaternary text-weight-bolder text-2xl mb-2"
-                >{{productPoints[2].title}}</div>
-                <div
-                  class="text-center text-white text-weight-thin text-xs leading-7"
+                  class="text-center text-weight-thin text-xs leading-7"
                   v-for="(v, k) in productPoints[2].description"
                   :key="k"
-                >{{v}}</div>
+                >
+                  {{ v }}
+                </div>
               </div>
               <div class="lm-product-points">
+                <div class="text-center text-weight-bolder text-2xl mb-2">
+                  {{ productPoints[4].title }}
+                </div>
                 <div
-                  class="text-center text-quaternary text-weight-bolder text-2xl mb-2"
-                >{{productPoints[4].title}}</div>
-                <div
-                  class="text-center text-white text-weight-thin text-xs leading-7"
+                  class="text-center text-weight-thin text-xs leading-7"
                   v-for="(v, k) in productPoints[4].description"
                   :key="k"
-                >{{v}}</div>
+                >
+                  {{ v }}
+                </div>
               </div>
             </div>
           </div>
           <div class="col-12">
             <div class="mt-8 relative row justify-center">
               <div class="w-full col-7 relative -top-36">
-                <q-img class="w-full" src="service-progress.png" fit="contain" height="34rem"></q-img>
+                <q-img
+                  class="w-full"
+                  src="service-progress.png"
+                  fit="contain"
+                  height="34rem"
+                  :style="{ opacity: 0.2 }"
+                ></q-img>
               </div>
               <div class="col-12 absolute top-0">
                 <div class="lm-product-points">
+                  <div class="text-center text-weight-bolder text-2xl mb-2">
+                    {{ productPoints[5].title }}
+                  </div>
                   <div
-                    class="text-center text-quaternary text-weight-bolder text-2xl mb-2"
-                  >{{productPoints[5].title}}</div>
-                  <div
-                    class="text-center text-white text-weight-thin text-xs leading-7"
+                    class="text-center text-weight-thin text-xs leading-7"
                     v-for="(v, k) in productPoints[5].description"
                     :key="k"
-                  >{{v}}</div>
+                  >
+                    {{ v }}
+                  </div>
                 </div>
                 <div class="lm-source-extra mt-16">
+                  <div class="text-center text-weight-bolder text-2xl mb-2">
+                    {{ sourceInfo.title }}
+                  </div>
                   <div
-                    class="text-center text-quaternary text-weight-bolder text-2xl mb-2"
-                  >{{sourceInfo.title}}</div>
-                  <div
-                    class="text-center text-quaternary text-weight-bolder text-base leading-10"
+                    class="text-center text-weight-bolder text-base leading-10"
                     v-for="(v, k) in sourceInfo.description"
                     :key="k"
-                  >{{v}}</div>
+                  >
+                    {{ v }}
+                  </div>
                 </div>
               </div>
             </div>
@@ -183,16 +264,21 @@
         </div>
       </div>
     </section>
-    <section class="transparent">
+    <section class="transparent mt-20">
       <div class="lg:container lg:mx-auto">
-        <div class="lm-container row justify-center mb-96">
+        <div class="lm-container row justify-center mb-20">
           <div class="col-12">
             <div
-              class="text-quaternary text-center text-weight-bolder text-5xl mb-4"
-            >{{serviceContent.title}}</div>
-            <div
-              class="text-white text-center text-weight-medium text-base"
-            >{{serviceContent.subtitle}}</div>
+              class="
+                text-quaternary text-center text-weight-bolder text-5xl
+                mb-4
+              "
+            >
+              {{ serviceContent.title }}
+            </div>
+            <div class="text-white text-center text-weight-medium text-base">
+              {{ serviceContent.subtitle }}
+            </div>
             <text-card
               :title="v.title"
               :list="v.list"
@@ -208,25 +294,36 @@
         <div class="lm-service-advantage row justify-center p-10">
           <div class="col-12">
             <div
-              class="text-quaternary text-center text-weight-bolder text-5xl mb-20"
-            >{{serviceAdvantage.title}}</div>
+              class="
+                text-quaternary text-center text-weight-bolder text-5xl
+                mb-20
+              "
+            >
+              {{ serviceAdvantage.title }}
+            </div>
           </div>
           <div
             :class="['col-12 row py-20 item', k % 2 !== 0 ? 'reverse' : '']"
             v-for="(v, k) in serviceAdvantage.list"
             :key="k"
           >
-            <div class="col-8">
+            <div class="col-7">
               <div
                 class="text-quaternary text-weight-bolder text-6xl leading-20"
                 v-for="(vt, kt) in v.title"
                 :key="kt"
-              >{{vt}}</div>
-              <div class="text-white text-weight-bolder text-4xl mt-10 mb-5">{{v.subtitle}}</div>
-              <div class="text-white text-weight-thin text-base leading-6">{{ v.description}}</div>
+              >
+                {{ vt }}
+              </div>
+              <div
+                class="text-white text-weight-bolder text-4xl mt-10 mb-5"
+              ></div>
+              <div class="text-white text-weight-thin text-base leading-6">
+                {{ v.description }}
+              </div>
             </div>
-            <div class="col-4 cover">
-              <q-responsive :ratio="1">
+            <div class="col-5 cover">
+              <q-responsive :ratio="4 / 3">
                 <q-img class="img" :src="v.cover" fit="cover"></q-img>
               </q-responsive>
             </div>
@@ -588,6 +685,10 @@ export default {
 <style lang="scss" scoped>
 .lm-points {
   min-height: 0;
+  padding: 0;
+  .left {
+    height: 23rem;
+  }
 }
 
 .lm-offers {

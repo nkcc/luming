@@ -230,7 +230,7 @@
           <div class="row">
             <div class="col-12 q-pa-xs-xs mb-14">
               <h1 class="text-center text-white text-weight-bold header-title">
-                鹿名国际 录取院校
+                录取院校
               </h1>
               <ul class="area">
                 <li
@@ -271,6 +271,7 @@
                 <q-scroll-area
                   class="lm-scroll"
                   :bar-style="{ background: 'transparent' }"
+                  :thumb-style="{ background: 'transparent' }"
                   :ref="
                     (el) => {
                       if (el) itemRefs[k] = el;
@@ -324,11 +325,15 @@
               </q-carousel-slide>
             </template>
           </q-carousel>
-          <indicator
-            :data="currentOffer.list"
-            :left="offerIndicatorLeft"
-            @show="showIndicator"
-          ></indicator>
+          <div class="row justify-center items-center">
+            <div class="col-6">
+              <indicator
+                :data="currentOffer.list"
+                :left="offerIndicatorLeft"
+                @show="showIndicator"
+              ></indicator>
+            </div>
+          </div>
         </div>
       </section>
     </div>

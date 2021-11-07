@@ -1,6 +1,6 @@
 import { CarouselData, OfferData } from 'components/models';
 import { ref, computed, onBeforeUpdate } from 'vue';
-import { useQuasar, QScrollArea } from 'quasar';
+import { QScrollArea } from 'quasar';
 import Contact from 'components/Contact.vue';
 import Indicator from 'components/Indicator.vue';
 
@@ -460,7 +460,6 @@ const currentOfferSchoolTypeIndex = ref(0)
 
 
 const setup = function () {
-    const $q = useQuasar()
     const itemRefs = ref([])
     const currentScrollAreaRef = computed((): InstanceType<typeof QScrollArea> => {
         return <InstanceType<typeof QScrollArea>>itemRefs.value[currentOfferSchoolTypeIndex.value]
@@ -493,20 +492,18 @@ const setup = function () {
             })
         }),
         getCurrentOfferSchool (index: number) {
-            const offset = $q.platform.is.mobile ? 4.25 : 9.25
+            const currentOfferSchoolLength = offerData.value[currentOfferSchoolTypeIndex.value].list.length
 
-            offerIndicatorLeft.value = `${index * offset}rem`
+            offerIndicatorLeft.value = `${(index * 100) / currentOfferSchoolLength
+                }%`;
             currentOfferSchool.value = index
         },
         currentScrollAreaRef,
         showIndicator (index: number) {
-            const offset = $q.platform.is.mobile ? 4.25 : 9.25
-
-            offerIndicatorLeft.value = `${index * offset}rem`
-            currentOfferSchool.value = index
-
             const currentOfferSchoolLength = offerData.value[currentOfferSchoolTypeIndex.value].list.length
-
+            offerIndicatorLeft.value = `${(index * 100) / currentOfferSchoolLength
+                }%`;
+            currentOfferSchool.value = index
             if (index === 0) {
                 currentPosition.value = 0
             } else if (index === currentOfferSchoolLength - 1) {
@@ -520,7 +517,7 @@ const setup = function () {
 
         changeSlideOfferType (type: string, index: number) {
             slideOffer.value = type;
-            offerIndicatorLeft.value = '0rem'
+            offerIndicatorLeft.value = '0'
             currentOfferSchool.value = 0
             currentPosition.value = 0
             currentOfferSchoolTypeIndex.value = index
