@@ -1,6 +1,6 @@
 import { CarouselData, OfferData } from 'components/models';
-import { ref, computed } from 'vue';
-import { useQuasar } from 'quasar';
+import { ref, computed, onBeforeUpdate } from 'vue';
+import { useQuasar, QScrollArea } from 'quasar';
 import Contact from 'components/Contact.vue';
 import Indicator from 'components/Indicator.vue';
 
@@ -455,10 +455,23 @@ const slideDefault = ref(
 )
 const currentOfferSchool = ref(0)
 const offerIndicatorLeft = ref('0rem')
+const currentPosition = ref(0)
+const currentOfferSchoolTypeIndex = ref(0)
+
 
 const setup = function () {
     const $q = useQuasar()
+    const itemRefs = ref([])
+    const currentScrollAreaRef = computed((): InstanceType<typeof QScrollArea> => {
+        return <InstanceType<typeof QScrollArea>>itemRefs.value[currentOfferSchoolTypeIndex.value]
+    })
+
+    onBeforeUpdate(() => {
+        itemRefs.value = []
+    })
     return {
+        itemRefs,
+        currentPosition,
         servicesData,
         carouselData,
         cultureData,
@@ -472,24 +485,45 @@ const setup = function () {
         slideDefault,
         offerType,
         currentOfferSchool,
+        currentOfferSchoolTypeIndex,
         offerIndicatorLeft,
         currentOffer: computed((): OfferData => {
             return <OfferData>offerData.value.find((offer) => {
                 return offer.name === slideOffer.value
             })
         }),
-
         getCurrentOfferSchool (index: number) {
             const offset = $q.platform.is.mobile ? 4.25 : 9.25
 
             offerIndicatorLeft.value = `${index * offset}rem`
             currentOfferSchool.value = index
         },
+        currentScrollAreaRef,
+        showIndicator (index: number) {
+            const offset = $q.platform.is.mobile ? 4.25 : 9.25
 
-        changeSlideOfferType (type: string) {
+            offerIndicatorLeft.value = `${index * offset}rem`
+            currentOfferSchool.value = index
+
+            const currentOfferSchoolLength = offerData.value[currentOfferSchoolTypeIndex.value].list.length
+
+            if (index === 0) {
+                currentPosition.value = 0
+            } else if (index === currentOfferSchoolLength - 1) {
+                currentPosition.value = 1
+            } else {
+                currentPosition.value = (index + 1) / currentOfferSchoolLength
+            }
+
+            currentScrollAreaRef.value.setScrollPercentage('horizontal', currentPosition.value, 300)
+        },
+
+        changeSlideOfferType (type: string, index: number) {
             slideOffer.value = type;
             offerIndicatorLeft.value = '0rem'
             currentOfferSchool.value = 0
+            currentPosition.value = 0
+            currentOfferSchoolTypeIndex.value = index
         },
         cultureAnimation (k: number, length: number) {
             return k > length / 2 - 1 ? 'animated animate__fadeInUp' : 'animated animate__fadeInUp';
@@ -556,7 +590,21 @@ const setup = function () {
         },
         visibilityChanged () {
             console.log(123);
-        }
+        },
+        scrollLeft () {
+            currentPosition.value -= 2 / offerData.value[currentOfferSchoolTypeIndex.value].list.length
+            if (currentPosition.value < 0) {
+                currentPosition.value = 0
+            }
+            currentScrollAreaRef.value.setScrollPercentage('horizontal', currentPosition.value, 300)
+        },
+        scrollRight () {
+            currentPosition.value += 2 / offerData.value[currentOfferSchoolTypeIndex.value].list.length
+            if (currentPosition.value > 1) {
+                currentPosition.value = 1
+            }
+            currentScrollAreaRef.value.setScrollPercentage('horizontal', currentPosition.value, 300)
+        },
     };
 }
 
