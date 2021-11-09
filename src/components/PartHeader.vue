@@ -19,7 +19,7 @@
         <div class="title text-weight-bold text-center pb-5 w-full">
           {{ name }}
         </div>
-        <q-img class="w-60" src="logo_letter.svg"></q-img>
+        <q-img class="w-60" src="logo_letter.svg" fit="contain"></q-img>
       </div>
     </div>
   </div>

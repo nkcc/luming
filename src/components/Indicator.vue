@@ -42,6 +42,7 @@ export default defineComponent({
     const $q = useQuasar();
 
     const indicatorWidth = ref(8);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { data } = toRefs<any>(props);
     onMounted(() => {
       indicatorWidth.value = $q.platform.is.mobile ? 3 : 8;

@@ -7,18 +7,11 @@
           <div class="lm-container row justify-center pb-20">
             <div class="col-9">
               <div
-                class="
-                  text-quaternary text-weight-bolder text-center text-4xl
-                  mb-7
-                "
-              >
-                {{ programTitle }}
-              </div>
+                class="text-quaternary text-weight-bolder text-center text-4xl mb-7"
+              >{{ programTitle }}</div>
               <div
                 class="text-quaternary text-weight-bolder text-center text-xl"
-              >
-                {{ programDescription }}
-              </div>
+              >{{ programDescription }}</div>
             </div>
           </div>
         </div>
@@ -42,65 +35,27 @@
             :keep-alive-include="'carousel0, carousel1, carousel2, carousel3'"
           >
             <template v-slot:navigation-icon="{ active, onClick }">
-              <q-btn
-                v-if="active"
-                size="2px"
-                flat
-                dense
-                @click="onClick"
-                :style="slideActive"
-              />
-              <q-btn
-                v-else
-                size="2px"
-                flat
-                dense
-                :style="slideDefault"
-                @click="onClick"
-              />
+              <div v-if="active">
+                <q-btn size="3px" flat dense @click="onClick" :style="slideActive" />
+              </div>
+              <div v-else>
+                <q-btn size="3px" flat dense :style="slideDefault" @click="onClick" />
+              </div>
             </template>
             <template v-for="(v, k) in carouselData" :key="k">
               <q-carousel-slide :name="'carousel' + k" class="column no-wrap">
                 <div class="row justify-center items-center mb-10">
-                  <div
-                    class="
-                      col-xs-12 col-sm-12 col-md-5
-                      left
-                      q-py-xs-lg q-py-xs-lg
-                    "
-                  >
-                    <h3 class="text-white text-weight-bold text-2xl">
-                      {{ v.title }}
-                    </h3>
+                  <div class="col-xs-12 col-sm-12 col-md-5 left q-py-xs-lg q-py-xs-lg">
+                    <h3 class="text-white text-weight-bold text-2xl">{{ v.title }}</h3>
                     <div class="mt-2">
-                      <h2
-                        class="
-                          text-quaternary text-weight-bolder text-5xl
-                          pb-10
-                        "
-                      >
-                        {{ v.subTitle }}
-                      </h2>
+                      <h2 class="text-quaternary text-weight-bolder text-5xl pb-10">{{ v.subTitle }}</h2>
                       <p
-                        class="
-                          text-white text-sm
-                          pr-24
-                          text-weight-thin
-                          leading-6
-                        "
-                      >
-                        {{ v.description }}
-                      </p>
+                        class="text-white text-sm pr-24 text-weight-thin leading-6"
+                      >{{ v.description }}</p>
                     </div>
                     <div class="footer"></div>
                   </div>
-                  <div
-                    class="
-                      col-xs-12 col-sm-12 col-md-4
-                      right
-                      q-py-xs-lg q-py-sm-lg
-                    "
-                  >
+                  <div class="col-xs-12 col-sm-12 col-md-4 right q-py-xs-lg q-py-sm-lg">
                     <q-responsive :ratio="692 / 511">
                       <q-img class="points-img" :src="v.imgLink"></q-img>
                     </q-responsive>
@@ -118,7 +73,7 @@
           <div class="col-9">
             <description-with-img
               :info="suitableStudents"
-              :darkMode="false"
+              :darkMode="!!false"
               :imgStyle="{ height: '25rem', opacity: 0.2 }"
             ></description-with-img>
           </div>
@@ -131,32 +86,14 @@
           <div class="col-12">
             <div class="header">
               <div
-                class="
-                  incubation-title
-                  text-quaternary text-center text-weight-bolder
-                "
-              >
-                {{ offers.title }}
-              </div>
+                class="incubation-title text-quaternary text-center text-weight-bolder"
+              >{{ offers.title }}</div>
               <div
-                class="
-                  subtitle
-                  text-quaternary text-center text-text-weight-bolder
-                "
-              >
-                {{ offers.subTitle }}
-              </div>
+                class="subtitle text-quaternary text-center text-text-weight-bolder"
+              >{{ offers.subTitle }}</div>
             </div>
             <div class="content">
-              <section
-                class="
-                  lm-offers
-                  transparent
-                  row
-                  items-center
-                  lg:container lg:mx-auto
-                "
-              >
+              <section class="lm-offers transparent row items-center lg:container lg:mx-auto">
                 <div class="offer-container">
                   <q-carousel
                     v-model="slideOffer"
@@ -173,10 +110,7 @@
                     <template v-slot:navigation-icon></template>
 
                     <template v-for="(v, k) in offers.list" :key="k">
-                      <q-carousel-slide
-                        :name="v.name"
-                        class="flex no-wrap flex-center relative"
-                      >
+                      <q-carousel-slide :name="v.name" class="flex no-wrap flex-center relative">
                         <div class="flex items-center mr-2">
                           <q-btn
                             flat
@@ -197,15 +131,7 @@
                           "
                         >
                           <ul
-                            class="
-                              offer-list
-                              row
-                              fit
-                              justify-start
-                              items-center
-                              q-gutter-xs q-col-gutter
-                              no-wrap
-                            "
+                            class="offer-list row fit justify-start items-center q-gutter-xs q-col-gutter no-wrap"
                           >
                             <li
                               class="offer-item"
@@ -214,41 +140,24 @@
                               @mouseenter="getCurrentOfferSchool(sk)"
                             >
                               <div class="school-logo">
-                                <q-img
-                                  class="img"
-                                  :src="sv.imgLink"
-                                  fit="scale-down"
-                                ></q-img>
+                                <q-img class="img" :src="sv.imgLink" fit="scale-down"></q-img>
                               </div>
                               <div class="school-desc">
                                 <div
-                                  class="
-                                    title
-                                    text-quaternary text-weight-bolder text-xl
-                                  "
-                                >
-                                  {{ sv.title }}
-                                </div>
+                                  class="title text-quaternary text-weight-bolder text-xl"
+                                >{{ sv.title }}</div>
                                 <div
-                                  class="
-                                    subtitle
-                                    text-white text-weight-bold text-lg
-                                  "
-                                >
-                                  {{ sv.subTitle }}
-                                </div>
+                                  class="subtitle text-white text-weight-bold text-lg"
+                                >{{ sv.subTitle }}</div>
                                 <q-scroll-area
-                                  class="
-                                    description
-                                    ellipsis-3-lines
-                                    text-weight-thin text-xs
-                                    leading-5
-                                  "
+                                  class="description ellipsis-3-lines text-weight-thin text-xs leading-5"
                                   :bar-style="{ background: 'white' }"
                                 >
-                                  <span class="scale-50 transform">{{
+                                  <span class="scale-50 transform">
+                                    {{
                                     sv.description
-                                  }}</span>
+                                    }}
+                                  </span>
                                 </q-scroll-area>
                               </div>
                             </li>
@@ -297,32 +206,20 @@
                 getClassType(k, '', 'reverse'),
               ]"
             >
-              <div
-                class="
-                  col-lg-2 col-3 col-md-3 col-sm-3 col-xs-6
-                  avatar
-                  align-items-center
-                "
-              >
+              <div class="col-lg-2 col-3 col-md-3 col-sm-3 col-xs-6 avatar align-items-center">
                 <q-responsive :ratio="1">
                   <q-img class="img" :src="v.imgLink"></q-img>
                 </q-responsive>
               </div>
               <div class="col-7 col-lg-10 col-md-9 col-sm-12 col-xs-12 content">
-                <div class="header text-weight-bolder text-quaternary">
-                  {{ v.name }}
-                </div>
+                <div class="header text-weight-bolder text-quaternary">{{ v.name }}</div>
                 <div class="body">
                   <div
                     class="title text-quaternary text-weight-light text-base"
                     v-for="(vv, kk) in v.title"
                     :key="kk"
-                  >
-                    {{ vv }}
-                  </div>
-                  <div class="description text-white text-weight-light">
-                    {{ v.description }}
-                  </div>
+                  >{{ vv }}</div>
+                  <div class="description text-white text-weight-light">{{ v.description }}</div>
                 </div>
               </div>
             </div>
@@ -339,7 +236,7 @@
               title="服务流程"
               background="service-progress.png"
               top="6"
-              darkMode="false"
+              :darkMode="false"
               :imgStyle="{ height: '33rem', opacity: 0.2 }"
             ></description-with-img>
           </div>
@@ -350,11 +247,7 @@
       <div class="lg:container lg:mx-auto">
         <div class="lm-container row justify-center pb-20">
           <div class="col-9">
-            <div
-              class="text-quaternary text-center text-weight-bolder text-5xl"
-            >
-              产品亮点
-            </div>
+            <div class="text-quaternary text-center text-weight-bolder text-5xl">产品亮点</div>
             <div class="highlight mt-10">
               <div class="row lm-highlight">
                 <div
@@ -367,24 +260,14 @@
                   :key="k"
                 >
                   <div
-                    class="
-                      title
-                      text-quaternary text-weight-bolder text-7xl text-center
-                    "
-                  >
-                    {{ v.title }}
-                  </div>
+                    class="title text-quaternary text-weight-bolder text-7xl text-center"
+                  >{{ v.title }}</div>
                   <div class="description mt-2">
                     <p
-                      class="
-                        text-center text-white text-xs text-weight-thin
-                        leading-5
-                      "
+                      class="text-center text-white text-xs text-weight-thin leading-5"
                       v-for="(vv, kk) in v.list"
                       :key="kk"
-                    >
-                      {{ vv }}
-                    </p>
+                    >{{ vv }}</p>
                   </div>
                 </div>
               </div>
@@ -395,13 +278,9 @@
     </section>
     <section class="transparent">
       <div class="lg:container lg:mx-auto">
-        <div
-          class="text-center text-quaternary text-weight-bolder text-5xl mb-10"
-        >
-          案例解读
-        </div>
+        <div class="text-center text-quaternary text-weight-bolder text-5xl mb-10">案例解读</div>
       </div>
-      <case-carousel programType="incubation"></case-carousel>
+      <case-carousel programType="incubation" id="case"></case-carousel>
     </section>
     <contact></contact>
   </div>
@@ -415,7 +294,7 @@ import Contact from '../components/Contact.vue';
 import Indicator from 'components/Indicator.vue';
 import CaseCarousel from 'components/carousel/CaseCarousel.vue';
 import { CarouselData, OfferData } from 'components/models';
-import { QScrollArea, useQuasar } from 'quasar';
+import { QScrollArea } from 'quasar';
 
 export default {
   name: 'IncubationProgram',
@@ -740,7 +619,6 @@ export default {
         ],
       },
     ]);
-    const $q = useQuasar();
     const currentOfferSchool = ref(0);
     const offerIndicatorLeft = ref('0rem');
     const slideOffer = ref('america');

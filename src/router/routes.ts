@@ -14,7 +14,7 @@ const routes: RouteRecordRaw[] = [
             { path: 'incubation', component: () => import('pages/IncubationProgram.vue') },
             { path: 'famous-school-car', component: () => import('pages/CloudProgram.vue') },
             { path: 'ladder', component: () => import('pages/LadderProgram.vue') },
-            { path: 'academic', component: () => import('pages/AcademicManager.vue') },
+            { path: 'academic/:id', component: () => import('pages/AcademicManager.vue'), props: true  },
         ],
     },
 

@@ -40,7 +40,7 @@
         </div>
       </nav>
 
-      <q-toolbar class="bg-primary text-secondary lm-head-drawer lt-md">
+      <q-toolbar class="bg-primary text-secondary lm-head-drawer lt-md py-3">
         <div class="q-mr-sm col-xs-1">
           <q-btn flat round dense icon="menu" class padding="xs" @click="drawer = !drawer" />
         </div>
