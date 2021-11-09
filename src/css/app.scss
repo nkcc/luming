@@ -707,6 +707,11 @@ $xl-breakpoint: 1536px;
         .description {
           margin-top: 1.25rem;
           font-size: 0.875rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
         }
       }
 

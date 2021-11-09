@@ -216,6 +216,9 @@
             :class="['col-12 row py-20 item', k % 2 !== 0 ? 'reverse' : '']"
             v-for="(v, k) in serviceAdvantage.list"
             :key="k"
+            :ref="(el) => {
+                if (el) itemRefs[k] = el;
+            }"
           >
             <div class="col-7">
               <div
@@ -240,7 +243,7 @@
 </template>
 
 <script lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted, onBeforeUpdate } from 'vue';
 import PartHeader from '../components/PartHeader.vue';
 import DescriptionWithImg from '../components/DescriptionWithImg.vue';
 import TextCard from '../components/TextCard.vue';
@@ -262,7 +265,21 @@ export default {
     },
   },
   setup(props: { id?: string }) {
-    console.log(props);
+    const itemRefs = ref([]);
+    onMounted(() => {
+      const id = props.id;
+      if (typeof id !== 'undefined') {
+        let index = parseInt(id ?? '0', 10);
+        const currentProfRef = <InstanceType<typeof HTMLElement>>(
+          itemRefs.value[index]
+        );
+
+        setTimeout(() => currentProfRef.scrollIntoView(), 0);
+      }
+    });
+    onBeforeUpdate(() => {
+      itemRefs.value = [];
+    });
     const serviceAdvantage = {
       title: '服务优势',
       list: [
@@ -572,6 +589,7 @@ export default {
       },
     ]);
     return {
+      itemRefs,
       programTitle,
       programDescription,
       questionTitle,

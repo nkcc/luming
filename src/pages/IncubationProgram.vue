@@ -199,6 +199,11 @@
             :class="getClassType(k, '', 'reverse')"
             v-for="(v, k) in professorData"
             :key="k"
+            :ref="
+                (el) => {
+                    if (el) profRefs[k] = el;
+                }
+            "
           >
             <div
               :class="[
@@ -287,7 +292,7 @@
 </template>
 
 <script lang="ts">
-import { ref, computed, onBeforeUpdate } from 'vue';
+import { ref, computed, onBeforeUpdate, onMounted } from 'vue';
 import PartHeader from '../components/PartHeader.vue';
 import DescriptionWithImg from '../components/DescriptionWithImg.vue';
 import Contact from '../components/Contact.vue';
@@ -305,7 +310,13 @@ export default {
     Contact,
     CaseCarousel,
   },
-  setup() {
+  props: {
+    id: {
+      type: String,
+      required: true,
+    },
+  },
+  setup(props: { id?: string }) {
     const currentOfferSchoolTypeIndex = ref(0);
     const currentPosition = ref(0);
     const itemRefs = ref([]);
@@ -316,8 +327,21 @@ export default {
         );
       }
     );
+    onMounted(() => {
+      const id = props.id;
+      if (typeof id !== 'undefined') {
+        let index = parseInt(id ?? '0', 10);
+        const currentProfRef = <InstanceType<typeof HTMLElement>>(
+          profRefs.value[index]
+        );
+
+        setTimeout(() => currentProfRef.scrollIntoView(), 0);
+      }
+    });
+    const profRefs = ref([]);
     onBeforeUpdate(() => {
       itemRefs.value = [];
+      profRefs.value = [];
     });
     const suitableStudents = [
       '高中在读或毕业生',
@@ -740,6 +764,7 @@ export default {
     ]);
     return {
       itemRefs,
+      profRefs,
       currentPosition,
       currentScrollAreaRef,
       currentOfferSchoolTypeIndex,
