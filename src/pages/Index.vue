@@ -205,7 +205,11 @@
           </q-carousel>
           <div class="row justify-center items-center">
             <div class="col-6">
-              <indicator :data="currentOffer.list" :left="offerIndicatorLeft" @show="showIndicator"></indicator>
+              <indicator
+                :num="currentOffer.list.length"
+                :left="offerIndicatorLeft"
+                @show="showIndicator"
+              ></indicator>
             </div>
           </div>
         </div>
@@ -246,7 +250,7 @@
               </div>
               <div class="footer">
                 <!--                <q-icon class='dot' name='fiber_manual_record'></q-icon>-->
-                <a href>了解更多 ></a>
+                <router-link :to="v.link">了解更多 ></router-link>
               </div>
             </div>
           </div>

@@ -316,6 +316,7 @@ const offerType = ref([
 const caseData = ref([
     {
         imgLink: 'case1.jpg',
+        link: '/case/0',
         name: '康奈尔大学',
         rank: 'U.S. News 全美排名第17',
         student: '陆同学',
@@ -334,6 +335,7 @@ const caseData = ref([
         imgLink: 'case2.jpg',
         name: '哥伦比亚大学-商学院',
         rank: 'U.S. News 全美排名第3',
+        link: '/case/1',
         student: '马同学',
         info: [
             {
@@ -351,6 +353,7 @@ const caseData = ref([
         name: '香港大学',
         rank: 'QS世界排名第22',
         student: '周同学',
+        link: '/case/2',
         info: [
             {
                 label: 'GPA',

@@ -14,7 +14,7 @@
             >{{ v.title }}</span>
           </div>
           <div class="lm-plans-button_container col-9 flex justify-center">
-            <indicator :data="caseData" :left="indicatorLeft"></indicator>
+            <indicator :num="caseData.length" :left="indicatorLeft"></indicator>
           </div>
         </div>
         <div class="lm-case-plan_slider__container row justify-center mb-14">
