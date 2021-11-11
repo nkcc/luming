@@ -282,7 +282,10 @@ const currentCase = computed((): CaseData => {
     return caseData.value[currentCaseIndex.value];
 });
 
-export default function () {
+export default function (props: {
+    id?: string
+}) {
+    console.log(props);
     const carousel: Ref<InstanceType<typeof ElCarousel> | null> = ref(null)
     const $q = useQuasar()
     const offset = $q.platform.is.mobile ? 4.25 : 9.25

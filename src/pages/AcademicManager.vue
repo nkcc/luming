@@ -249,6 +249,7 @@ import DescriptionWithImg from '../components/DescriptionWithImg.vue';
 import TextCard from '../components/TextCard.vue';
 import Contact from '../components/Contact.vue';
 import { CarouselData } from 'components/models';
+import { useRoute } from 'vue-router';
 
 export default {
   name: 'AcademicManager',
@@ -258,18 +259,15 @@ export default {
     Contact,
     TextCard,
   },
-  props: {
-    id: {
-      type: String,
-      required: true,
-    },
-  },
-  setup(props: { id?: string }) {
+  setup() {
+    const route = useRoute();
     const itemRefs = ref([]);
     onMounted(() => {
-      const id = props.id;
+      const id = route.query.id;
+
+      console.log(route.query.id);
       if (typeof id !== 'undefined') {
-        let index = parseInt(id ?? '0', 10);
+        let index = parseInt('0', 10);
         const currentProfRef = <InstanceType<typeof HTMLElement>>(
           itemRefs.value[index]
         );
