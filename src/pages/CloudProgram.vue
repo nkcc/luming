@@ -771,4 +771,23 @@ export default {
     }
   }
 }
+
+.mobile {
+  .lm-highlight {
+    overflow: hidden;
+    &::before {
+      width: 0;
+      height: 100%;
+    }
+    .item {
+      &:first-child {
+        margin-top: 0;
+      }
+      margin: 10px;
+      div.highlight-up {
+        top: 0;
+      }
+    }
+  }
+}
 </style>

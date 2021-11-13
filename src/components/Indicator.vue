@@ -104,7 +104,7 @@ export default defineComponent({
       height: 3rem;
       //   background: $light-fade-green;
       list-style-type: none;
-      margin: 0.625rem;
+      padding-right: 0.625rem;
       transition: all 0.4s ease-in-out;
 
       &:hover {
@@ -115,11 +115,11 @@ export default defineComponent({
         content: '';
         position: absolute;
         top: 50%;
-        left: 0;
-        width: 100%;
+        left: 50%;
+        width: calc(100% - 1.25rem);
         height: 0.3rem;
         background: $light-fade-green;
-        transform: translateY(-50%);
+        transform: translate(-50%, -50%);
       }
     }
 

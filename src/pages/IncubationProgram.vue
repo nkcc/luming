@@ -104,15 +104,6 @@
                   >
                     >
                     <template v-slot:navigation-icon>
-                      <div class="row justify-center items-center">
-                        <div class="col-6">
-                          <indicator
-                            :num="currentOffer.list.length"
-                            :left="offerIndicatorLeft"
-                            @show="showIndicator"
-                          ></indicator>
-                        </div>
-                      </div>
                     </template>
 
                     <template v-for="(v, k) in offers.list" :key="k">
@@ -181,6 +172,15 @@
                       </q-carousel-slide>
                     </template>
                   </q-carousel>
+                    <div class="row justify-center items-center">
+                        <div class="col-md-6 col-sm-12 col-xs-11">
+                          <indicator
+                            :num="currentOffer.list.length"
+                            :left="offerIndicatorLeft"
+                            @show="showIndicator"
+                          ></indicator>
+                        </div>
+                      </div>
                 </div>
               </section>
             </div>
