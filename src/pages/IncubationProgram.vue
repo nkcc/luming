@@ -46,7 +46,7 @@
                     <div class="mt-2">
                       <h2 class="text-quaternary text-weight-bolder text-5xl pb-10">{{ v.subTitle }}</h2>
                       <p
-                        class="text-white text-sm pr-24 text-weight-thin leading-6"
+                        class="text-white text-sm pr-0 sm:pr-24 text-weight-thin leading-6"
                       >{{ v.description }}</p>
                     </div>
                     <div class="footer"></div>
@@ -66,7 +66,7 @@
     <section class="bg-white mb-20">
       <div class="lg:container lg:mx-auto">
         <div class="lm-container row justify-center py-20">
-          <div class="col-9">
+          <div class="col-md-9 col-xs-12">
             <description-with-img
               :info="suitableStudents"
               :darkMode="!!false"
@@ -190,7 +190,7 @@
     </section>
     <section class="lm-professor transparent lg:container lg:mx-auto">
       <div class="row justify-center">
-        <div class="col-9">
+        <div class="col-md-9 col-xs-11">
           <div
             class="prof-intro"
             :class="getClassType(k, '', 'reverse')"
@@ -214,10 +214,10 @@
                 </q-responsive>
               </div>
               <div class="col-7 col-lg-10 col-md-9 col-sm-12 col-xs-12 content">
-                <div class="header text-weight-bolder text-quaternary">{{ v.name }}</div>
+                <div class="text-center sm:text-left header text-weight-bolder text-quaternary">{{ v.name }}</div>
                 <div class="body">
                   <div
-                    class="title text-quaternary text-weight-light text-base"
+                    class="title text-quaternary text-weight-light text-base text-center sm:text-left"
                     v-for="(vv, kk) in v.title"
                     :key="kk"
                   >{{ vv }}</div>

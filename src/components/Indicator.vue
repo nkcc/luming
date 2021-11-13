@@ -7,7 +7,7 @@
     >
       <li
         class="offer-indicator-item"
-        :class="{ 'active': k === currentIndex }"
+        :class="{ 'active': k === currentIndex + 1 }"
         v-for="k in dataNum"
         :key="k"
         @click="showIndicator(k)"
@@ -50,6 +50,8 @@ export default defineComponent({
     const dataNum = ref(props.num);
     const leftNum = ref(0);
     onMounted(() => {
+      currentIndex.value = props.index;
+      leftNum.value = (props.index / dataNum.value) * 100;
       indicatorWidth.value = $q.platform.is.mobile ? 3 : 8;
       indicatorWidth.value = 100 / props.num;
     });
@@ -66,13 +68,13 @@ export default defineComponent({
       () => props.index,
       (val) => {
         leftNum.value = (val / dataNum.value) * 100
-                currentIndex.value = val
+        currentIndex.value = val
       }
     );
     return {
       showIndicator(k: number) {
-        currentIndex.value = k;
-        leftNum.value = ((k - 1) / dataNum.value) * 100;
+        currentIndex.value = k - 1;
+        leftNum.value = (k - 1 / dataNum.value) * 100;
         emit('show', k - 1);
       },
       currentIndex,

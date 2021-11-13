@@ -194,7 +194,7 @@
     <section class="bg-white my-20">
       <div class="lg:container lg:mx-auto">
         <div class="lm-container row justify-center pb-20">
-          <div class="col-12">
+          <div class="col-xs-11">
             <description-with-img
               :info="serviceProgress"
               title="服务流程"
@@ -212,7 +212,7 @@
         <div class="lm-container row justify-center pb-20">
           <div class="col-12">
             <div class="text-quaternary text-center text-weight-bolder text-5xl">产品亮点</div>
-            <div class="highlight mt-10">
+            <div class="highlight mt-20 sm:mt10">
               <div class="row lm-highlight justify-center">
                 <div
                   :class="['col-md-4 item flex justify-center col-xs-12']"
@@ -221,7 +221,7 @@
                 >
                   <div :class="['w-2/4', k > 2 ? 'highlight-up' : '']">
                     <div
-                      class="title text-quaternary text-weight-bolder text-8xl text-center"
+                      class="title text-quaternary text-weight-bolder text-8xl text-center pb-2 sm:pb-0"
                     >{{ v.title }}</div>
                     <div class="description py-2">
                       <p

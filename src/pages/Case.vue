@@ -13,12 +13,20 @@
               @click="changePlanType(k)"
             >{{ v.title }}</div>
           </div>
-          <div class="lm-plans-button_container col-9 flex justify-center">
+          <div class="lm-plans-button_container col-9 flex justify-center" v-if="caseData.length > 1">
             <indicator :num="caseData.length" :index="currentCaseIndex" @show="changeCurrentCaseIndex"></indicator>
           </div>
         </div>
         <div class="lm-case-plan_slider__container row justify-center mb-14" ref="caseRef">
+          <div class="row justify-center items-center w-full" v-if="caseData.length === 1" >
+            <div class="col-md-6 col-xs-11">
+              <q-responsive :ratio="1260 / 800" class="bg-white w-full">
+                <q-img class="case-img" :src="caseData[0].imgLink" fit="cover"></q-img>
+              </q-responsive>
+            </div>
+          </div>
           <el-carousel
+            v-else
             :type="carouselType"
             :autoplay="false"
             class="bg-transparent lm-case-plan_slider col-md-8 col-xs-11"
@@ -36,7 +44,7 @@
               <div class="row justify-center items-center w-full">
                 <div class="col-md-12 col-xs-12">
                   <q-responsive :ratio="1260 / 800" class="bg-white">
-                    <q-img class="case-img" :src="v.imgLink" fit="contain"></q-img>
+                    <q-img class="case-img" :src="v.imgLink" fit="cover"></q-img>
                   </q-responsive>
                 </div>
               </div>
@@ -121,82 +129,6 @@ export default defineComponent({
         name: '宾夕法尼亚大学',
         rank: 'U.S. News 全美商学院第一名',
         caseName: 'incubation|0',
-        student: '孟同学',
-        info: [
-          {
-            label: 'GPA',
-            value: '3.9/4.0',
-          },
-          {
-            label: 'SAT',
-            value: '1520',
-          },
-          {
-            label: '高中',
-            value: '美高',
-          },
-          {
-            label: '优势',
-            value: '学习成绩优异，有明确的职业规划，学习态度积极',
-          },
-          {
-            label: '劣势',
-            value: '个人独特亮点不明晰，缺乏名师指导与顶尖教育资源',
-          },
-        ],
-        caseStudy: [
-          '孟同学在11年级之前的暑假找到我们，当时他的学习成绩不错，属于次优等生，但距离申请美国前15名的顶尖大学还是有一定距离的。但是可喜的是，孟同学在初期沟通的过程中明确表示自己的学习积极性很高，渴望在申请大学的过程中不断学习新的知识，提高自己的能力，同时也渴望有“引路人”，可以帮助他确保进入美国前15名的大学。所以根据孟同学的需求，顾问老师给孟同学推荐了独家的“孵育计划”。孟同学在了解到孵育计划详细情况后，很高兴的接受了。',
-
-          '“星辰计划”初期我们首先要了解学生的兴趣爱好，特长，以及未来理想的事业目标，从而来制定整个培养计划。简单来说孟学生比较喜欢策略型游戏，对商业很感兴趣，父母也都是商人，尤其是数学能力比较突出。',
-
-          '因此，在了解孟同学的具体情况的后，“孵育计划”的在职教授团队制定了详细的培养方案，全覆盖式辅导孟同学，综合提升学生的背景竞争力的同时兼顾学术成绩的提高。',
-          '在六位权威教授的努力下，通过多个项目全方未提升学生的综合竞争力，包括康奈尔大学暑期课程，拿全A，并获得其教授推荐信；参加高含金量的商科竞赛以及数学竞赛并获奖；参加并成功完成哈佛大学经济金融学科研项目；并且参加了谷歌暑期实习项目等；',
-          '孵育计划让孟同学从一开始的腼腆，变成一个谈笑风生，无比自信的人。加强了背景竞争力的同时，学术水平也有了长足进步。更重要的是，孟同学在教授的代领下找到了自己的兴趣所在，确定了自己未来想从事的事业，有了每天能为之努力的明确目标。孟同学也在老师合理的规划下，和六位权威教授共同度过了一年的美好时光，最终获得理想成绩，进入了最理想的院校。',
-        ],
-      },
-      {
-        imgLink: 'incubation-case-1.png',
-        name: '宾夕法尼亚大学',
-        rank: 'U.S. News 全美商学院第一名',
-        caseName: 'incubation|1',
-        student: '孟同学',
-        info: [
-          {
-            label: 'GPA',
-            value: '3.9/4.0',
-          },
-          {
-            label: 'SAT',
-            value: '1520',
-          },
-          {
-            label: '高中',
-            value: '美高',
-          },
-          {
-            label: '优势',
-            value: '学习成绩优异，有明确的职业规划，学习态度积极',
-          },
-          {
-            label: '劣势',
-            value: '个人独特亮点不明晰，缺乏名师指导与顶尖教育资源',
-          },
-        ],
-        caseStudy: [
-          '孟同学在11年级之前的暑假找到我们，当时他的学习成绩不错，属于次优等生，但距离申请美国前15名的顶尖大学还是有一定距离的。但是可喜的是，孟同学在初期沟通的过程中明确表示自己的学习积极性很高，渴望在申请大学的过程中不断学习新的知识，提高自己的能力，同时也渴望有“引路人”，可以帮助他确保进入美国前15名的大学。所以根据孟同学的需求，顾问老师给孟同学推荐了独家的“孵育计划”。孟同学在了解到孵育计划详细情况后，很高兴的接受了。',
-
-          '“星辰计划”初期我们首先要了解学生的兴趣爱好，特长，以及未来理想的事业目标，从而来制定整个培养计划。简单来说孟学生比较喜欢策略型游戏，对商业很感兴趣，父母也都是商人，尤其是数学能力比较突出。',
-
-          '因此，在了解孟同学的具体情况的后，“孵育计划”的在职教授团队制定了详细的培养方案，全覆盖式辅导孟同学，综合提升学生的背景竞争力的同时兼顾学术成绩的提高。',
-          '在六位权威教授的努力下，通过多个项目全方未提升学生的综合竞争力，包括康奈尔大学暑期课程，拿全A，并获得其教授推荐信；参加高含金量的商科竞赛以及数学竞赛并获奖；参加并成功完成哈佛大学经济金融学科研项目；并且参加了谷歌暑期实习项目等；',
-          '孵育计划让孟同学从一开始的腼腆，变成一个谈笑风生，无比自信的人。加强了背景竞争力的同时，学术水平也有了长足进步。更重要的是，孟同学在教授的代领下找到了自己的兴趣所在，确定了自己未来想从事的事业，有了每天能为之努力的明确目标。孟同学也在老师合理的规划下，和六位权威教授共同度过了一年的美好时光，最终获得理想成绩，进入了最理想的院校。',
-        ],
-      },
-      {
-        imgLink: 'incubation-case-1.png',
-        name: '宾夕法尼亚大学',
-        rank: 'U.S. News 全美商学院第一名',
-        caseName: 'incubation|2',
         student: '孟同学',
         info: [
           {
@@ -446,6 +378,10 @@ export default defineComponent({
 
 <style lang='scss'>
 @import '../css/quasar.variables.scss';
+.case-img {
+  border: 4px solid $quaternary;
+  border-radius: 2px;
+}
 
 .lm-case-plan {
   .lm-plans {
@@ -552,6 +488,10 @@ export default defineComponent({
 }
 
 @media (max-width: 768px) {
+  .case-img {
+    border: 1px solid $quaternary;
+    border-radius: 2px;
+  }
   .lm-case-plan {
     .lm-plans {
       .lm-plans-title_container {
