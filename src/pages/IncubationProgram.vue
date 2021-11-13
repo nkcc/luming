@@ -282,7 +282,7 @@
       <div class="lg:container lg:mx-auto">
         <div class="text-center text-quaternary text-weight-bolder text-5xl mb-10">案例解读</div>
       </div>
-      <case-carousel programType="incubation" id="case"></case-carousel>
+      <case-carousel programType="incubation"></case-carousel>
     </section>
     <contact></contact>
   </div>
@@ -845,6 +845,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.mobile {
+  .lm-professor .prof-intro .content {
+    padding: 0;
+}
+}
+
 .lm-points {
   min-height: 0;
 }
