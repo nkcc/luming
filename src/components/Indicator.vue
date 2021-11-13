@@ -7,6 +7,7 @@
     >
       <li
         class="offer-indicator-item"
+        :class="{ 'active': k === currentIndex }"
         v-for="k in dataNum"
         :key="k"
         @click="showIndicator(k)"
@@ -30,14 +31,20 @@ export default defineComponent({
       type: Number,
       default: 1,
     },
+    index: {
+      type: Number,
+      default: 0,
+    },
   },
   emits: ['show'],
   setup(
     props: {
       num: number;
+      index: number;
     },
     { emit }
   ) {
+    const currentIndex = ref(0);
     const $q = useQuasar();
     const indicatorWidth = ref(8);
     const dataNum = ref(props.num);
@@ -55,11 +62,20 @@ export default defineComponent({
         indicatorWidth.value = 100 / props.num;
       }
     );
+    watch(
+      () => props.index,
+      (val) => {
+        leftNum.value = (val / dataNum.value) * 100
+                currentIndex.value = val
+      }
+    );
     return {
       showIndicator(k: number) {
+        currentIndex.value = k;
         leftNum.value = ((k - 1) / dataNum.value) * 100;
-        emit('show', k);
+        emit('show', k - 1);
       },
+      currentIndex,
       dataNum,
       leftNum,
       indicatorWidth,
@@ -90,10 +106,6 @@ export default defineComponent({
       list-style-type: none;
       margin: 0.625rem;
       transition: all 0.4s ease-in-out;
-
-      &.active {
-        background: $secondary;
-      }
 
       &:hover {
         cursor: pointer;
@@ -129,11 +141,16 @@ export default defineComponent({
 .mobile {
   .offer-indicator-container {
     .offer-indicator-list {
+      flex-wrap: wrap;
       .offer-indicator-item {
-        width: 3rem;
+        &.active {
+          &:before {
+            background: $secondary;
+          }
+        }
       }
       &:after {
-        width: 3rem;
+        width: 0;
       }
     }
   }

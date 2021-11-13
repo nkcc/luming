@@ -153,7 +153,6 @@
             class="lm-points-background"
           >
             <template v-slot:navigation-icon></template>
-
             <template v-for="(v, k) in offerData" :key="k">
               <q-carousel-slide :name="v.name" class="flex no-wrap flex-center relative">
                 <div class="flex items-center mr-2">

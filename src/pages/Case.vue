@@ -4,17 +4,17 @@
       <part-header name="鹿名案例"></part-header>
       <div class="lm-case-plan-container mb-24">
         <div class="lm-plans row justify-center mb-10">
-          <div class="lm-plans-title_container col-9 flex justify-center pb-7">
-            <span
+          <div class="lm-plans-title_container col-xs-12 col-sm-12 col-md-9 flex justify-center pb-7">
+            <div
               class="plan-title text-center cursor-pointer p-2"
               :class="v.type === currentType ? 'active' : ''"
               v-for="(v, k) in planData"
               :key="k"
               @click="changePlanType(k)"
-            >{{ v.title }}</span>
+            >{{ v.title }}</div>
           </div>
           <div class="lm-plans-button_container col-9 flex justify-center">
-            <indicator :num="caseData.length" :left="indicatorLeft"></indicator>
+            <indicator :num="caseData.length" :index="currentCaseIndex" @show="changeCurrentCaseIndex"></indicator>
           </div>
         </div>
         <div class="lm-case-plan_slider__container row justify-center mb-14" ref="caseRef">
@@ -24,6 +24,7 @@
             class="bg-transparent lm-case-plan_slider col-md-8 col-xs-11"
             :height="carouselHeight"
             @change="carouselChange"
+            :initialIndex="currentCaseIndex"
             ref="carousel"
           >
             <el-carousel-item
@@ -361,12 +362,12 @@ export default defineComponent({
       },
     ]);
 
-    const caseRef = ref<HTMLElement>();
+    const caseRef = ref<HTMLElement | null>(null);
     onMounted(() => {
       const id = router.query.id;
-      console.log(id, caseRef);
       if (typeof id !== 'undefined') {
-        setTimeout(() => caseRef.value?.scrollIntoView(), 1000);
+        currentCaseIndex.value = Number(id);
+        setTimeout(() => caseRef.value?.scrollIntoView({behavior: 'smooth'}), 1000);
       }
     });
     const currentType = ref('laddercase');
@@ -407,6 +408,7 @@ export default defineComponent({
     }
 
     return {
+      caseRef,
       carouselClass,
       isLastCarousel,
       currentType,
@@ -429,10 +431,13 @@ export default defineComponent({
         currentType.value = planData.value[index].type;
 
         indicatorLeft.value = `${centerIndex.value * offset}rem`;
-        console.log(indicatorLeft.value);
 
         currentCaseIndex.value = centerIndex.value;
         carousel.value?.setActiveItem(centerIndex.value);
+      },
+      changeCurrentCaseIndex(index: number) {
+        currentCaseIndex.value = index;
+        carousel.value?.setActiveItem(index);
       },
     };
   },

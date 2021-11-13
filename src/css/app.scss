@@ -774,14 +774,18 @@ $xl-breakpoint: 1536px;
 .mobile {
   .lm-offers {
     .area {
-      justify-content: flex-start;
+      justify-content: center;
 
       .label {
         margin-bottom: 6px;
       }
     }
 
-    .offer-container {}
+    .offer-container {
+      .q-carousel--arrows-horizontal.q-carousel--with-padding .q-carousel__slide {
+        padding: 60px 0;
+      }
+    }
   }
 
   .lm-case {
@@ -827,5 +831,32 @@ $xl-breakpoint: 1536px;
 .root-link {
   &:hover {
     color: $primary;
+  }
+}
+
+
+.navigation-indicator-item {
+  position: relative;
+  height: 3rem;
+  margin: 0.625rem;
+  cursor: pointer;
+  max-width: 6rem;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 0.3rem;
+    background: $light-fade-green;
+    transform: translateY(-50%);
+    transition: all 0.4s ease-in-out;
+  }
+
+  &.active {
+    &:before {
+      background: $secondary;
+    }
   }
 }

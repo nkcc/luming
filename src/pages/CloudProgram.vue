@@ -34,19 +34,19 @@
             keep-alive
             :keep-alive-include="'carousel0, carousel1, carousel2, carousel3'"
           >
-            <template v-slot:navigation-icon="{ active, onClick }">
-              <q-btn v-if="active" size="2px" flat dense @click="onClick" :style="slideActive" />
-              <q-btn v-else size="2px" flat dense :style="slideDefault" @click="onClick" />
+            <template v-slot:navigation-icon="{ active, onClick, maxIndex }">
+                <div v-if="active" class="navigation-indicator-item active" :style="{ width: (1 / maxIndex) * 100 + '%'}"  @click="onClick"></div>
+                <div v-else class="navigation-indicator-item"  @click="onClick" :style="{ width: (1 / maxIndex) * 100 + '%'}"></div>
             </template>
             <template v-for="(v, k) in carouselData" :key="k">
               <q-carousel-slide :name="'carousel' + k" class="column no-wrap">
                 <div class="row justify-center items-center mb-10">
                   <div class="col-xs-12 col-sm-12 col-md-5 left q-py-xs-lg q-py-xs-lg">
-                    <h3 class="text-white text-weight-bold text-3xl">{{ v.title }}</h3>
+                    <h3 class="text-white text-weight-bold text-3xl text-center sm:text-left">{{ v.title }}</h3>
                     <div class="mt-2">
-                      <h2 class="text-quaternary text-weight-bolder text-5xl pb-10">{{ v.subTitle }}</h2>
+                      <h2 class="text-quaternary text-weight-bolder text-5xl pb-10 text-center sm:text-left">{{ v.subTitle }}</h2>
                       <p
-                        class="text-white text-sm pr-24 text-weight-thin leading-7 tracking-wide"
+                        class="text-white text-sm pr-0 text-weight-thin leading-7 tracking-wide md:pr-24 lg:pr-24"
                       >{{ v.description }}</p>
                     </div>
                     <div class="footer"></div>
@@ -106,7 +106,8 @@
                     class="lm-points-background transparent"
                   >
                     >
-                    <template v-slot:navigation-icon></template>
+                    <template v-slot:navigation-icon>
+                    </template>
 
                     <template v-for="(v, k) in offers.list" :key="k">
                       <q-carousel-slide :name="v.name" class="flex no-wrap flex-center relative">
@@ -174,11 +175,15 @@
                     </template>
                   </q-carousel>
 
-                  <indicator
-                    :data="currentOffer.list"
-                    :left="offerIndicatorLeft"
-                    @show="showIndicator"
-                  ></indicator>
+                <div class="row justify-center items-center">
+                        <div class="col-md-9 col-xs-11">
+                          <indicator
+                            :num="currentOffer.list.length"
+                            :left="offerIndicatorLeft"
+                            @show="showIndicator"
+                          ></indicator>
+                        </div>
+                      </div>
                 </div>
               </section>
             </div>

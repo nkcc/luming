@@ -34,13 +34,9 @@
             keep-alive
             :keep-alive-include="'carousel0, carousel1, carousel2, carousel3'"
           >
-            <template v-slot:navigation-icon="{ active, onClick }">
-              <div v-if="active">
-                <q-btn size="3px" flat dense @click="onClick" :style="slideActive" />
-              </div>
-              <div v-else>
-                <q-btn size="3px" flat dense :style="slideDefault" @click="onClick" />
-              </div>
+            <template v-slot:navigation-icon="{ active, onClick, maxIndex }">
+                <div v-if="active" class="navigation-indicator-item active" :style="{ width: (1 / maxIndex) * 100 + '%'}"  @click="onClick"></div>
+                <div v-else class="navigation-indicator-item"  @click="onClick" :style="{ width: (1 / maxIndex) * 100 + '%'}"></div>
             </template>
             <template v-for="(v, k) in carouselData" :key="k">
               <q-carousel-slide :name="'carousel' + k" class="column no-wrap">
@@ -107,7 +103,17 @@
                     class="lm-points-background transparent"
                   >
                     >
-                    <template v-slot:navigation-icon></template>
+                    <template v-slot:navigation-icon>
+                      <div class="row justify-center items-center">
+                        <div class="col-6">
+                          <indicator
+                            :num="currentOffer.list.length"
+                            :left="offerIndicatorLeft"
+                            @show="showIndicator"
+                          ></indicator>
+                        </div>
+                      </div>
+                    </template>
 
                     <template v-for="(v, k) in offers.list" :key="k">
                       <q-carousel-slide :name="v.name" class="flex no-wrap flex-center relative">
@@ -175,15 +181,6 @@
                       </q-carousel-slide>
                     </template>
                   </q-carousel>
-                  <div class="row justify-center items-center">
-                    <div class="col-6">
-                      <indicator
-                        :data="currentOffer.list"
-                        :left="offerIndicatorLeft"
-                        @show="showIndicator"
-                      ></indicator>
-                    </div>
-                  </div>
                 </div>
               </section>
             </div>
@@ -300,6 +297,7 @@ import Indicator from 'components/Indicator.vue';
 import CaseCarousel from 'components/carousel/CaseCarousel.vue';
 import { CarouselData, OfferData } from 'components/models';
 import { QScrollArea } from 'quasar';
+import { useRoute } from 'vue-router';
 
 export default {
   name: 'IncubationProgram',
@@ -310,13 +308,8 @@ export default {
     Contact,
     CaseCarousel,
   },
-  props: {
-    id: {
-      type: String,
-      required: true,
-    },
-  },
-  setup(props: { id?: string }) {
+  setup() {
+    const router = useRoute();
     const currentOfferSchoolTypeIndex = ref(0);
     const currentPosition = ref(0);
     const itemRefs = ref([]);
@@ -328,9 +321,9 @@ export default {
       }
     );
     onMounted(() => {
-      const id = props.id;
+      const id = router.query.id;
       if (typeof id !== 'undefined') {
-        let index = parseInt(id ?? '0', 10);
+        let index = Number(id);
         const currentProfRef = <InstanceType<typeof HTMLElement>>(
           profRefs.value[index]
         );
@@ -892,6 +885,14 @@ export default {
     .avatar {
       .img {
         border: 0.6rem solid $quaternary;
+      }
+    }
+
+    .content {
+      .body {
+        .description {
+          -webkit-line-clamp: 10;
+        }
       }
     }
   }
