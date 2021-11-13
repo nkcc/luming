@@ -74,7 +74,7 @@ export default defineComponent({
     return {
       showIndicator(k: number) {
         currentIndex.value = k - 1;
-        leftNum.value = (k - 1 / dataNum.value) * 100;
+        leftNum.value = ((k - 1) / dataNum.value) * 100;
         emit('show', k - 1);
       },
       currentIndex,
