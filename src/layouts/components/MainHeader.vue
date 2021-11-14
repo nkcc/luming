@@ -65,6 +65,15 @@
                 <q-separator />
               </q-item>
             </router-link>
+            <router-link :to="vv.link" class="nav-link" v-for="(vv, kk) in menuItem.list" :key="kk">
+              <q-item clickable :active="vv.label === 'Outbox'" v-ripple class="pl-24">
+                <q-item-section avatar>
+                  <q-icon :name="vv.icon" color="secondary" />
+                </q-item-section>
+                <q-item-section class="text-secondary">{{ vv.label }}</q-item-section>
+                <q-separator />
+              </q-item>
+            </router-link>
           </template>
         </q-list>
       </q-drawer>
@@ -100,25 +109,25 @@ export default defineComponent({
         id: 3,
         label: '鹿名留学',
         link: 'study-abroad',
-        icon: 'flight',
+        icon: 'public',
         show: false,
         list: [
           {
             label: '世界名校直通车',
             link: 'famous-school-car',
-            icon: 'flight',
+            icon: 'directions_bus_filled',
             show: false,
           },
           {
             label: '名校教授培养计划',
             link: 'incubation',
-            icon: 'flight',
+            icon: 'school',
             show: false,
           },
           {
             label: '学业管家',
             link: 'academic',
-            icon: 'flight',
+            icon: 'event_note',
             show: false,
           },
         ],
