@@ -119,7 +119,7 @@
                 <p class="my-5">{{ v.description }}</p>
 
                 <div class="footer">
-                  <a href>了解更多 ></a>
+                  <router-link :to="v.link">了解更多></router-link>
                 </div>
               </div>
               <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
@@ -279,7 +279,7 @@
             >{{ v.name }}</div>
             <p class="description">{{ v.description }}</p>
             <div class="footer">
-              <a href>了解更多 ></a>
+              <router-link :to="v.link">了解更多 ></router-link>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@
       <nav class="navbar row items-center gt-sm">
         <div class="col-sm-10 col-xs-10 col-md-3 left">
           <div class="lm-margin"></div>
-          <img class="header-logo" src="logo.svg" alt />
+          <img class="header-logo" src="logo_center.svg" alt />
         </div>
 
         <ul class="navbar-nav col-md-6">

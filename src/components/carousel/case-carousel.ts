@@ -331,7 +331,7 @@ const indicatorLeft = ref('0rem');
 const carouselClass = ref('left:-18.2%;');
 const isLastCarousel = ref(false);
 const carouselType = ref('card');
-const carouselHeight = ref('29rem');
+const carouselHeight = ref('30rem');
 
 const caseData = computed((): CaseData[] => {
   let currentData = planData.value.find((element) => {

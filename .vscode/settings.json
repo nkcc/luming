@@ -67,5 +67,6 @@
     "**/*.sass",
     "**/*.scss",
     "**/*.vue"
-  ]
+  ],
+  "cSpell.words": ["Shui"]
 }

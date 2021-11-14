@@ -85,24 +85,28 @@ const cultureData = ref([
     description:
       '鹿名国际教育成立于2014年美国波士顿，其使命致力于让中国留学生的名校梦不再高不可攀。不论学生是怎样的背景和成绩，鹿名国际都可以通过其三条成熟和独特的留学申请产品线（青云计划、天梯计划、孵育计划）将学生保送到最顶尖的名校，并在留学后的校园生活中为学生提供系统性的学术辅导服务（学业管家）。',
     visible: false,
+    link: 'about',
   },
   {
     imgLink: 'bg.jpg',
     description:
       '鹿名国际凭借着多年以来独有的世界顶尖大学教授、招生官、学校管理层以及名校学长学姐资源，为学生的申请路上保驾护航。2016年至2018年，鹿名国际迅速扩张，名校保录业务不断扩展到了欧洲、澳大利亚、加拿大、新加坡和香港等地。',
     visible: false,
+    link: 'about',
   },
   {
     imgLink: 'index/12.jpeg',
     description:
       '自2014年以来鹿名国际已帮助学员斩获600+世界顶尖院校录取。随着口碑逐渐扩大，企业家子女，众多精品教育机构等选择与我们合作，但由于一直秉承小而精的运营方式和高质量服务理念，鹿名国际业务在年年增长的趋势下，每年限制最多50名本科生和80名研究生的世界名校申请名额。',
     visible: false,
+    link: 'about',
   },
   {
     imgLink: 'index/13.jpeg',
     description:
       '目前鹿名国际学员已遍布包括哈佛、耶鲁、牛津、剑桥、斯坦福、沃顿、康奈尔、及哥伦比亚等世界知名大学。对于大多数学生，我们将申请到世界顶尖名校的概率从10%提升到约90%，这也进一步证明了鹿名国际留学申请业务的保证性。在确保服务结果的同时，我们也始终以98%的用户满意度为学员服务。',
     visible: false,
+    link: 'about',
   },
 ]);
 
@@ -392,6 +396,12 @@ const teamData = ref([
   {
     name: 'Patrick Shui',
     imgLink: 'team1.png',
+    link: {
+      path: 'about',
+      query: {
+        id: 0,
+      },
+    },
     description:
       'Patrick老师坚信力量来源于知识，在申请服务过程不断激发学生的潜能，挖掘学生的亮点。让学生在压力极大的申请过程中不断提高自己能力和自我认知，从而帮助学生成功通过人生的第一道重大关卡。',
     visible: false,
@@ -399,6 +409,12 @@ const teamData = ref([
   {
     name: 'Andy Xue',
     imgLink: 'team2.png',
+    link: {
+      path: 'about',
+      query: {
+        id: 1,
+      },
+    },
     description:
       'Andy老师坚信留学申请过程不是困惑的或者令人沮丧的。事实上，如果用聪明的方法，这个过程将是学生拥有的一个绝佳的机会，去帮助他们提高自我认知和自信。',
     visible: false,
@@ -409,6 +425,12 @@ const teamData = ref([
     description:
       'Alex老师认为一次真正成功的留学申请是对自己重新发现、认识、认知的旅程。和老师一起重温自己的学术历程，挖掘每一段难忘的课外经历，发现自己内心深处的渴望，追寻自己一直以来的梦想。每一次陪伴学生走入dream school的旅程都是一段为人师者的记忆。',
     visible: false,
+    link: {
+      path: 'about',
+      query: {
+        id: 2,
+      },
+    },
   },
   {
     name: 'Danny Chueng',
@@ -416,6 +438,12 @@ const teamData = ref([
     description:
       'Danny老师善于从西方人的视角去发现和诠释东方学生的优点与优势，真正站在以白人为核心的西方招生官的角度，精准挖掘学生潜力，精确定位背景提升项目等一系列为成功入校做努力的方式，达到院校、申请学院及留学机构三方都满意的最佳结果。',
     visible: false,
+    link: {
+      path: 'about',
+      query: {
+        id: 3,
+      },
+    },
   },
 ]);
 

@@ -899,7 +899,7 @@ export default {
     .content {
       .body {
         .description {
-          -webkit-line-clamp: 10;
+          -webkit-line-clamp: 100;
         }
       }
     }
