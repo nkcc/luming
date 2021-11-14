@@ -368,7 +368,7 @@ const caseData = ref([
     imgLink: 'case3.jpg',
     name: '香港大学',
     rank: 'QS世界排名第22',
-    student: '周同学',
+    student: '龚同学',
     link: {
       path: 'case',
       query: {
