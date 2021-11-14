@@ -268,8 +268,8 @@
         >
           <div :class="k % 2 !== 0 ? 'bar' : 'bar-secondary'"></div>
 
-          <q-responsive :ratio="505 / 396">
-            <q-img class="img" :src="v.imgLink"></q-img>
+          <q-responsive :ratio="505 / 396" class="shadow-10">
+            <q-img class="img" :src="v.imgLink" fit="scale-down"></q-img>
           </q-responsive>
 
           <div class="content">

@@ -395,7 +395,7 @@ const caseData = ref([
 const teamData = ref([
   {
     name: 'Patrick Shui',
-    imgLink: 'team1.png',
+    imgLink: 'team1.jpeg',
     link: {
       path: 'about',
       query: {
@@ -408,7 +408,7 @@ const teamData = ref([
   },
   {
     name: 'Andy Xue',
-    imgLink: 'team2.png',
+    imgLink: 'team2.jpeg',
     link: {
       path: 'about',
       query: {
@@ -421,7 +421,7 @@ const teamData = ref([
   },
   {
     name: 'Alex Gu',
-    imgLink: 'team3.png',
+    imgLink: 'team3.jpeg',
     description:
       'Alex老师认为一次真正成功的留学申请是对自己重新发现、认识、认知的旅程。和老师一起重温自己的学术历程，挖掘每一段难忘的课外经历，发现自己内心深处的渴望，追寻自己一直以来的梦想。每一次陪伴学生走入dream school的旅程都是一段为人师者的记忆。',
     visible: false,
@@ -434,7 +434,7 @@ const teamData = ref([
   },
   {
     name: 'Danny Chueng',
-    imgLink: 'team1.png',
+    imgLink: 'team4.jpeg',
     description:
       'Danny老师善于从西方人的视角去发现和诠释东方学生的优点与优势，真正站在以白人为核心的西方招生官的角度，精准挖掘学生潜力，精确定位背景提升项目等一系列为成功入校做努力的方式，达到院校、申请学院及留学机构三方都满意的最佳结果。',
     visible: false,
