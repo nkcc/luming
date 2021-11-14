@@ -522,7 +522,6 @@ const slideDefault = ref(
   'background:#26322b;width: 6.25rem;max-width:6.25vw;border-radius: 0;padding:0;'
 );
 const currentOfferSchool = ref(0);
-const offerIndicatorLeft = ref('0rem');
 const currentPosition = ref(0);
 const currentOfferSchoolTypeIndex = ref(0);
 
@@ -556,25 +555,18 @@ const setup = function () {
     offerType,
     currentOfferSchool,
     currentOfferSchoolTypeIndex,
-    offerIndicatorLeft,
     currentOffer: computed((): OfferData => {
       return <OfferData>offerData.value.find((offer) => {
         return offer.name === slideOffer.value;
       });
     }),
     getCurrentOfferSchool(index: number) {
-      const currentOfferSchoolLength =
-        offerData.value[currentOfferSchoolTypeIndex.value].list.length;
-
-      offerIndicatorLeft.value = `${(index * 100) / currentOfferSchoolLength}%`;
       currentOfferSchool.value = index;
     },
     currentScrollAreaRef,
     showIndicator(index: number) {
       const currentOfferSchoolLength =
         offerData.value[currentOfferSchoolTypeIndex.value].list.length;
-      offerIndicatorLeft.value = `${(index * 100) / currentOfferSchoolLength}%`;
-      currentOfferSchool.value = index;
       if (index === 0) {
         currentPosition.value = 0;
       } else if (index === currentOfferSchoolLength - 1) {
@@ -592,7 +584,6 @@ const setup = function () {
 
     changeSlideOfferType(type: string, index: number) {
       slideOffer.value = type;
-      offerIndicatorLeft.value = '0';
       currentOfferSchool.value = 0;
       currentPosition.value = 0;
       currentOfferSchoolTypeIndex.value = index;
@@ -664,7 +655,7 @@ const setup = function () {
     },
     scrollLeft() {
       currentPosition.value -=
-        2 / offerData.value[currentOfferSchoolTypeIndex.value].list.length;
+        1 / offerData.value[currentOfferSchoolTypeIndex.value].list.length;
       if (currentPosition.value < 0) {
         currentPosition.value = 0;
       }
@@ -673,10 +664,16 @@ const setup = function () {
         currentPosition.value,
         300
       );
+      currentOfferSchool.value =
+        Math.floor(currentPosition.value * offerData.value.length) - 1;
+      currentOfferSchool.value =
+        currentOfferSchool.value < 0 ? 0 : currentOfferSchool.value;
+      currentOfferSchool.value;
+      console.log(currentOfferSchool.value, currentPosition.value);
     },
     scrollRight() {
       currentPosition.value +=
-        2 / offerData.value[currentOfferSchoolTypeIndex.value].list.length;
+        1 / offerData.value[currentOfferSchoolTypeIndex.value].list.length;
       if (currentPosition.value > 1) {
         currentPosition.value = 1;
       }
@@ -685,6 +682,14 @@ const setup = function () {
         currentPosition.value,
         300
       );
+
+      currentOfferSchool.value =
+        currentOfferSchool.value > offerData.value.length - 1
+          ? offerData.value.length - 1
+          : currentOfferSchool.value;
+      currentOfferSchool.value =
+        Math.floor(currentPosition.value * offerData.value.length) - 1;
+      console.log(currentOfferSchool.value, currentPosition.value);
     },
   };
 };

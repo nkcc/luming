@@ -208,7 +208,7 @@
             <div class="col-6">
               <indicator
                 :num="currentOffer.list.length"
-                :left="offerIndicatorLeft"
+                :index="currentOfferSchool"
                 @show="showIndicator"
               ></indicator>
             </div>
