@@ -669,7 +669,6 @@ const setup = function () {
       currentOfferSchool.value =
         currentOfferSchool.value < 0 ? 0 : currentOfferSchool.value;
       currentOfferSchool.value;
-      console.log(currentOfferSchool.value, currentPosition.value);
     },
     scrollRight() {
       currentPosition.value +=
@@ -689,7 +688,6 @@ const setup = function () {
           : currentOfferSchool.value;
       currentOfferSchool.value =
         Math.floor(currentPosition.value * offerData.value.length) - 1;
-      console.log(currentOfferSchool.value, currentPosition.value);
     },
   };
 };

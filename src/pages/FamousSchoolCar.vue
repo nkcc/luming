@@ -182,6 +182,7 @@
                           <indicator
                             :num="currentOffer.list.length"
                             :left="offerIndicatorLeft"
+                            :index="currentOfferSchool"
                             @show="showIndicator"
                           ></indicator>
                         </div>
@@ -608,7 +609,7 @@ export default {
       },
       scrollLeft() {
         currentPosition.value -=
-          2 / offers.list[currentOfferSchoolTypeIndex.value].list.length;
+          1 / offers.list[currentOfferSchoolTypeIndex.value].list.length;
         if (currentPosition.value < 0) {
           currentPosition.value = 0;
         }
@@ -617,10 +618,15 @@ export default {
           currentPosition.value,
           300
         );
+        currentOfferSchool.value =
+          Math.floor(currentPosition.value * offers.list.length) - 1;
+        currentOfferSchool.value =
+          currentOfferSchool.value < 0 ? 0 : currentOfferSchool.value;
+        currentOfferSchool.value;
       },
       scrollRight() {
         currentPosition.value +=
-          2 / offers.list[currentOfferSchoolTypeIndex.value].list.length;
+          1 / offers.list[currentOfferSchoolTypeIndex.value].list.length;
         if (currentPosition.value > 1) {
           currentPosition.value = 1;
         }
@@ -629,6 +635,12 @@ export default {
           currentPosition.value,
           300
         );
+      currentOfferSchool.value =
+        Math.floor(currentPosition.value * offers.list.length) - 1;
+      currentOfferSchool.value =
+        currentOfferSchool.value > offers.list.length - 1
+          ? offers.list.length - 1
+          : currentOfferSchool.value;
       },
     };
   },
