@@ -106,14 +106,14 @@ export default {
     const servicesData = ref([
       {
         title: '世界名校直通车',
-        img: 'course-1.jpg',
+        img: 'study-abroad/1.jpg',
         description: ['短时间内帮助学生低分高录', '实现最高学府的留学梦'],
         visible: false,
         link: 'famous-school-car',
       },
       {
         title: '名校教授培养计划',
-        img: 'course-2.jpg',
+        img: 'study-abroad/2.jpg',
         description: [
           '通过名校教授亲带学生完成',
           '科研和学术课题来提高背景和个人录取实力',
@@ -123,7 +123,7 @@ export default {
       },
       {
         title: '学业管家',
-        img: 'course-4.jpg',
+        img: 'study-abroad/3.jpg',
         description: ['全托学业辅导确保顺利毕业'],
         visible: false,
         link: 'academic',

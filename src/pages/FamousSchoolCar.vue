@@ -138,9 +138,11 @@
                               :key="sk"
                               @mouseenter="getCurrentOfferSchool(sk)"
                             >
-                              <div class="school-logo">
-                                <q-img class="img" :src="sv.imgLink" fit="scale-down"></q-img>
-                              </div>
+                              <q-responsive class="school-logo">
+                                <div class="flex items-center justify-center">
+                                  <q-img class="img" :src="sv.imgLink" fit="contain"></q-img>
+                                </div>
+                              </q-responsive>
                               <div class="school-desc">
                                 <div
                                   class="title text-quaternary text-weight-bolder text-xl"
@@ -352,41 +354,6 @@ export default {
       '拿到录取通知书',
       '一站式后留学服务，贴心保障留学生活（可选）',
     ];
-    const professorData = ref([
-      {
-        name: 'Dennis H Chookaszian教授',
-        title: [
-          'CNA保险公司前董事长兼CEO',
-          '美国53家上市公司董事',
-          '前美国国家审计署执行委员会主席',
-        ],
-        imgLink: 'teacher-1.jpg',
-        description:
-          '丹尼斯·乔卡西安是CNA保险公司的前任事长兼首席执行官。从1992年到1999年担任CNA的主席和首席执行官。1999年至2001年任国家审计署执行委员会主席。1990年至1992年，乔卡西安担任CNA总裁兼首席运营官，负责所有财产和伤亡、生命、健康和投资运营。于1975年加入CNA，担任首席财务官，直到1990年被任……',
-      },
-      {
-        name: '李贝贝 讲席副教授',
-        title: [
-          '美国卡内基梅隆大学助理教授',
-          '美国纽约大学信息系统与管理学博士',
-          '美国经济、市场营销与信息科学顶级会议演讲者',
-        ],
-        imgLink: 'teacher-1.jpg',
-        description:
-          '李贝贝教授现任卡内基梅隆大学(Caregie Mel-lonUniversity)约翰·海因茨管理学院、计算机学院与商学院Anna Loomis McCandless讲席教授，副教授与博士生导师。为纽约大学斯特恩商学院信息系统与管理学博士学位。专注于研究信息科技与个体行为、组织和社会的关系，并利 用大规模历史和实验数据进行相关决策……',
-      },
-      {
-        name: 'Dennis H Chookaszian教授',
-        title: [
-          'CNA保险公司前董事长兼CEO',
-          '美国53家上市公司董事',
-          '前美国国家审计署执行委员会主席',
-        ],
-        imgLink: 'teacher-1.jpg',
-        description:
-          'Patrick老师坚信力量来源于知识，在申请服务过程不断激发学生的潜能，挖掘学生的亮点……',
-      },
-    ]);
     const currentOfferSchool = ref(0);
     const offerIndicatorLeft = ref('0rem');
     const slideOffer = ref('america');
@@ -551,7 +518,7 @@ export default {
         subTitle: '短时间',
         description:
           '传统留学中介和咨询公司通常需要学生提前半年至两年的时间开始准备申请工作，而鹿名青云计划只需要学生距离申请截止日期一个月便可以确保申请流程高效且高质量顺利完成',
-        imgLink: 'oxford.jpeg',
+        imgLink: 'car/1.jpg',
       },
       {
         name: '',
@@ -559,7 +526,7 @@ export default {
         subTitle: '低分高录',
         description:
           '和其他留学和中介公司不同的是，鹿名学员不需要自身成绩和背景多么优秀，也不需要后续参加任何成绩和背景提升的额外培训，鹿名能够保证学员进入比其自身条件更高的名校',
-        imgLink: 'lb.jpg',
+        imgLink: 'car/2.jpg',
       },
       {
         name: '',
@@ -567,7 +534,7 @@ export default {
         subTitle: '单所名校精准保录',
         description:
           '看似鸡蛋不要放在一个篮子里，实则鹿名确实有实力和和底气能够为学员只报一所名校并收获录取通知书，因为我们掌握着全球顶尖院校的独家资源',
-        imgLink: 'harvard_school.jpg',
+        imgLink: 'car/3.jpeg',
       },
       {
         name: '',
@@ -575,7 +542,7 @@ export default {
         subTitle: '独家资源',
         description:
           '随着多年以来的积累，鹿名凝聚着最核心、最顶尖的国际名校招生官、校董、校园管理层、名师以及资源。这些独有的资源渠道是鹿名青云计划短时间帮助学员完成申请、低分高录、名校精准保录的最坚实保障',
-        imgLink: 'bg.jpg',
+        imgLink: 'car/4.jpg',
       },
     ]);
     return {
@@ -595,7 +562,6 @@ export default {
       slideOffer,
       currentOfferSchool,
       offerIndicatorLeft,
-      professorData,
       serviceProgress,
       highlight,
       suitableStudents,

@@ -449,9 +449,13 @@ $xl-breakpoint: 1536px;
         }
 
         .school-logo {
+          height: 10rem;
+          width: 10rem;
+          background: $white;
+
           .img {
-            height: 10rem;
-            width: 10rem;
+            height: 7rem;
+            width: 7rem;
             background: $white;
           }
         }
@@ -689,7 +693,7 @@ $xl-breakpoint: 1536px;
     .avatar {
       .img {
         border-radius: 50%;
-        border: 0.9375rem solid $secondary;
+        border: 10px solid $secondary;
       }
     }
 

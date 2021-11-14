@@ -7,14 +7,14 @@ import Indicator from 'components/Indicator.vue';
 const servicesData = ref([
   {
     title: '世界名校直通车',
-    img: 'course-1.jpg',
+    img: 'index/1.jpg',
     description: ['短时间内帮助学生低分高录', '实现最高学府的留学梦'],
     visible: false,
     link: 'famous-school-car',
   },
   {
     title: '名校教授培养计划',
-    img: 'course-2.jpg',
+    img: 'index/2.jpg',
     description: [
       '通过名校教授亲带学生完成',
       '科研和学术课题来提高背景和个人录取实力',
@@ -24,7 +24,7 @@ const servicesData = ref([
   },
   {
     title: '学业管家',
-    img: 'course-4.jpg',
+    img: 'index/3.jpg',
     description: ['全托学业辅导确保顺利毕业'],
     visible: false,
     link: 'academic',
@@ -38,7 +38,7 @@ const carouselData = ref<CarouselData[]>([
     subTitle: '来自海外',
     description:
       '鹿名国际成立于美国波士顿，并在伦敦和上海建立分公司，公司所有员工均拥有海外背景……',
-    imgLink: 'oxford.jpeg',
+    imgLink: 'index/4.jpg',
   },
   {
     name: '',
@@ -46,7 +46,7 @@ const carouselData = ref<CarouselData[]>([
     subTitle: '实力强大',
     description:
       '拥有独家全球名校资源,包括美国TOP30、英国G5、加拿大、澳洲、香港、新加坡等世界级名校;与传统留学中介和咨询机构形成服务互补。',
-    imgLink: 'lb.jpg',
+    imgLink: 'index/5.jpg',
   },
   {
     name: '',
@@ -54,14 +54,14 @@ const carouselData = ref<CarouselData[]>([
     subTitle: '保障结果',
     description:
       '签约鹿名的学生有着9996+名校录取率,不录取全额退费,并且保证学员1009%顺利毕业。',
-    imgLink: 'harvard_school.jpg',
+    imgLink: 'index/6.jpg',
   },
   {
     name: '',
     title: '为什么选择鹿名',
     subTitle: '硕果累累',
     description: '8年来鹿名已帮助学员斩获600+顶级名校 offer ',
-    imgLink: 'bg.jpg',
+    imgLink: 'index/7.jpg',
   },
   {
     name: '',
@@ -69,19 +69,19 @@ const carouselData = ref<CarouselData[]>([
     subTitle: '价格合理',
     description:
       '鹿名所有项目均自主研发,不存在中间商,能提供给客户最合理的价格。',
-    imgLink: 'bg.jpg',
+    imgLink: 'index/8.jpg',
   },
   {
     name: '',
     title: '为什么选择鹿名',
     subTitle: '客户放心',
     description: '正规注册公司,实体办公场所,支持低订金面签合同,保障资金安全。',
-    imgLink: 'bg.jpg',
+    imgLink: 'index/9.jpg',
   },
 ]);
 const cultureData = ref([
   {
-    imgLink: 'oxford.jpeg',
+    imgLink: 'index/10.jpeg',
     description:
       '鹿名国际教育成立于2014年美国波士顿，其使命致力于让中国留学生的名校梦不再高不可攀。不论学生是怎样的背景和成绩，鹿名国际都可以通过其三条成熟和独特的留学申请产品线（青云计划、天梯计划、孵育计划）将学生保送到最顶尖的名校，并在留学后的校园生活中为学生提供系统性的学术辅导服务（学业管家）。',
     visible: false,
@@ -93,13 +93,13 @@ const cultureData = ref([
     visible: false,
   },
   {
-    imgLink: 'oxford.jpeg',
+    imgLink: 'index/12.jpeg',
     description:
       '自2014年以来鹿名国际已帮助学员斩获600+世界顶尖院校录取。随着口碑逐渐扩大，企业家子女，众多精品教育机构等选择与我们合作，但由于一直秉承小而精的运营方式和高质量服务理念，鹿名国际业务在年年增长的趋势下，每年限制最多50名本科生和80名研究生的世界名校申请名额。',
     visible: false,
   },
   {
-    imgLink: 'oxford.jpeg',
+    imgLink: 'index/13.jpeg',
     description:
       '目前鹿名国际学员已遍布包括哈佛、耶鲁、牛津、剑桥、斯坦福、沃顿、康奈尔、及哥伦比亚等世界知名大学。对于大多数学生，我们将申请到世界顶尖名校的概率从10%提升到约90%，这也进一步证明了鹿名国际留学申请业务的保证性。在确保服务结果的同时，我们也始终以98%的用户满意度为学员服务。',
     visible: false,
@@ -427,7 +427,7 @@ const professorData = ref([
       '美国53家上市公司董事',
       '前美国国家审计署执行委员会主席',
     ],
-    imgLink: 'prof1.png',
+    imgLink: 'prof1.jpg',
     link: {
       path: '/incubation',
       query: {
@@ -444,7 +444,7 @@ const professorData = ref([
       '美国纽约大学信息系统与管理学博士',
       '美国经济、市场营销与信息科学顶级会议演讲者',
     ],
-    imgLink: 'prof2.png',
+    imgLink: 'prof2.jpg',
     link: {
       path: '/incubation',
       query: {
@@ -461,7 +461,7 @@ const professorData = ref([
       'Zacks投资基金公司基金经理',
       '美国CFA协会员会员',
     ],
-    imgLink: 'prof3.png',
+    imgLink: 'prof3.jpg',
     link: {
       path: '/incubation',
       query: {
@@ -478,7 +478,7 @@ const professorData = ref([
       '《商业周刊》杰出企业家教授',
       '私募股权行业主要投资者',
     ],
-    imgLink: 'prof4.png',
+    imgLink: 'prof4.jpg',
     link: '/incubation/3',
     description:
       'Scott Meadow是私股权行业的主要投资者,理查德J.戴利奖的获得者。自2000年以来担任芝加哥大学布斯色学院的创业临床教授。2002年-2005年荣获菲尼克斯奖，2010年教师优秀奖。他被《商业周刊》的“最佳商学院指南”指定为该国杰出的企业家教授之一。为8000名学生教授创业融资和私募股权、商业化创新(他创建的)、新的风脸挑战，并担任风险投资竞争的教员顾问。是四家风险投资和私募股权公司合伙人，批准了数百项股权融资，亲自领导、发起或创建了60多项投资，被 Venture One 认可为业内杰出的医疗投资者之一。',

@@ -183,9 +183,11 @@
                       :key="sk"
                       @mouseenter="getCurrentOfferSchool(sk)"
                     >
-                      <div class="school-logo">
-                        <q-img class="img" :src="sv.imgLink" fit="scale-down"></q-img>
-                      </div>
+                      <q-responsive class="school-logo">
+                        <div class="flex items-center justify-center">
+                          <q-img class="img" :src="sv.imgLink" fit="contain"></q-img>
+                        </div>
+                      </q-responsive>
                       <div class="school-desc">
                         <div class="title">{{ sv.title }}</div>
                         <q-scroll-area
@@ -222,7 +224,7 @@
         >
           <div class="img-container col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5">
             <q-responsive :ratio="899 / 716" class="shadow-up-10">
-              <q-img class="img" :src="v.imgLink" fit="contain"></q-img>
+              <q-img class="img" :src="v.imgLink" fit="cover"></q-img>
             </q-responsive>
           </div>
           <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5 content-container">
