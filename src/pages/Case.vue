@@ -13,9 +13,6 @@
               @click="changePlanType(k)"
             >{{ v.title }}</div>
           </div>
-          <div class="lm-plans-button_container col-9 flex justify-center" v-if="caseData.length > 1">
-            <indicator :num="caseData.length" :index="currentCaseIndex" @show="changeCurrentCaseIndex"></indicator>
-          </div>
         </div>
         <div class="lm-case-plan_slider__container row justify-center mb-14" ref="caseRef">
           <div class="row justify-center items-center w-full" v-if="caseData.length === 1" >
@@ -51,7 +48,11 @@
             </el-carousel-item>
           </el-carousel>
         </div>
-
+        <div class="row justify-center mb-12" v-if="caseData.length > 1">
+          <div class="lm-plans-button_container col-9 flex justify-center" >
+            <indicator :num="caseData.length" :index="currentCaseIndex" @show="changeCurrentCaseIndex"></indicator>
+          </div>
+        </div>
         <div class="lm-case-plan__content row justify-center">
           <div class="lm-case-plan__content_container col-md-5 col-xs-10">
             <div class="school pb-9">
