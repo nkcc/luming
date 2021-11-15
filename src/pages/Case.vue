@@ -213,7 +213,7 @@ export default defineComponent({
         ],
       },
       {
-        imgLink: 'ladder-case-1.jpg',
+        imgLink: 'case5.png',
         name: '香港大学',
         rank: 'QS世界排名第22',
         caseName: 'laddercase|0',
@@ -381,7 +381,6 @@ export default defineComponent({
 @import '../css/quasar.variables.scss';
 .case-img {
   border: 4px solid $quaternary;
-  border-radius: 2px;
 }
 
 .lm-case-plan {
@@ -437,7 +436,6 @@ export default defineComponent({
 
         .case-img {
           border: 4px solid $quaternary;
-          border-radius: 2px;
         }
 
         &.is-in-stage {

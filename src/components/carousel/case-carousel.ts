@@ -5,7 +5,7 @@ import { useQuasar } from 'quasar';
 
 const ladderCaseData = reactive(<CaseData[]>[
   {
-    imgLink: 'ladder-case-1.jpg',
+    imgLink: 'case5.png',
     name: '香港大学',
     rank: 'QS世界排名第22',
     caseName: 'laddercase|0',
@@ -240,7 +240,7 @@ const cloudCaseData = reactive(<CaseData[]>[
     ],
   },
   {
-    imgLink: 'ladder-case-1.jpg',
+    imgLink: 'case5.png',
     name: '香港大学',
     rank: 'QS世界排名第22',
     caseName: 'laddercase|0',

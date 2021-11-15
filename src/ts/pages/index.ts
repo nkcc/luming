@@ -365,7 +365,7 @@ const caseData = ref([
     ],
   },
   {
-    imgLink: 'case3.jpg',
+    imgLink: 'case5.png',
     name: '香港大学',
     rank: 'QS世界排名第22',
     student: '龚同学',
@@ -455,7 +455,7 @@ const professorData = ref([
       '美国53家上市公司董事',
       '前美国国家审计署执行委员会主席',
     ],
-    imgLink: 'prof1.jpg',
+    imgLink: 'prof1.jpeg',
     link: {
       path: '/incubation',
       query: {
@@ -489,7 +489,7 @@ const professorData = ref([
       'Zacks投资基金公司基金经理',
       '美国CFA协会员会员',
     ],
-    imgLink: 'prof3.jpg',
+    imgLink: 'prof3.jpeg',
     link: {
       path: '/incubation',
       query: {
@@ -506,7 +506,7 @@ const professorData = ref([
       '《商业周刊》杰出企业家教授',
       '私募股权行业主要投资者',
     ],
-    imgLink: 'prof4.jpg',
+    imgLink: 'prof4.jpeg',
     link: '/incubation/3',
     description:
       'Scott Meadow是私股权行业的主要投资者,理查德J.戴利奖的获得者。自2000年以来担任芝加哥大学布斯色学院的创业临床教授。2002年-2005年荣获菲尼克斯奖，2010年教师优秀奖。他被《商业周刊》的“最佳商学院指南”指定为该国杰出的企业家教授之一。为8000名学生教授创业融资和私募股权、商业化创新(他创建的)、新的风脸挑战，并担任风险投资竞争的教员顾问。是四家风险投资和私募股权公司合伙人，批准了数百项股权融资，亲自领导、发起或创建了60多项投资，被 Venture One 认可为业内杰出的医疗投资者之一。',
