@@ -6,7 +6,7 @@
                 <div class="row justify-center items-center w-full" v-if="caseData.length === 1">
                     <div class="col-md-6 col-xs-11">
                         <q-responsive :ratio="1260 / 800" class="bg-white w-full">
-                            <q-img class="case-img" :src="caseData[0].imgLink" fit="cover"></q-img>
+                            <q-img class="case-img" :src="caseData[0].imgLink" fit="cover" position="center top"></q-img>
                         </q-responsive>
                     </div>
                 </div>
@@ -15,7 +15,7 @@
                         <div class='row justify-center items-center w-full'>
                             <div class='col-md-12 col-xs-12'>
                                 <q-responsive :ratio='1260 / 800' class="bg-white">
-                                    <q-img class='case-img' :src='v.imgLink' fit="cover"></q-img>
+                                    <q-img class='case-img' :src='v.imgLink' fit="cover" position="center top"></q-img>
                                 </q-responsive>
                             </div>
                         </div>

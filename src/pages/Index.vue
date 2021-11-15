@@ -224,7 +224,7 @@
         >
           <div class="img-container col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5">
             <q-responsive :ratio="899 / 716" class="shadow-up-10">
-              <q-img class="img" :src="v.imgLink" fit="cover"></q-img>
+              <q-img class="img" :src="v.imgLink" fit="cover" position="center top"></q-img>
             </q-responsive>
           </div>
           <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5 content-container">
