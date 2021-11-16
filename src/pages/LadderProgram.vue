@@ -3,7 +3,7 @@
     <section class="transparent">
         <div>
             <div class='lg:container lg:mx-auto'>
-                <part-header name='天梯计划'></part-header>
+                <part-header name='世界名校直通车'></part-header>
                 <div class="lm-container row justify-center pb-20">
                     <div class="col-9">
                         <div class='text-quaternary text-weight-bolder text-center text-4xl mb-4'>{{programTitle}}</div>
@@ -432,7 +432,7 @@ export default {
         const offerIndicatorLeft = ref('0rem')
         const slideOffer = ref('america')
         const offers = {
-            title: '天梯计划 录取院校',
+            title: '世界名校直通车 录取院校',
             subTitle: '',
             list: [{
                 title: '',
