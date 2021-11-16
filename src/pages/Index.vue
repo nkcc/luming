@@ -286,7 +286,7 @@
       </div>
     </section>
     <section class="lm-professor">
-      <h1 class="header text-weight-bold text-center py-12">教授孵育计划</h1>
+      <h1 class="header text-weight-bold text-center py-12">教授名校教授培养计划</h1>
 
       <div
         class="prof-intro"
