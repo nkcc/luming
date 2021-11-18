@@ -73,9 +73,10 @@
 
   .lm-head-drawer {
     .logo-container {
+      height: 60px;
+      padding: 5px;
       display: flex;
       justify-content: center;
-
       img {
         width: 200px;
       }

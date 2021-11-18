@@ -41,10 +41,10 @@
       </nav>
 
       <q-toolbar class="bg-primary text-secondary lm-head-drawer lt-md py-3">
-        <div class="q-mr-sm col-xs-1">
+        <div class="col-xs-1">
           <q-btn flat round dense icon="menu" class padding="xs" @click="drawer = !drawer" />
         </div>
-        <div class="logo-container col-xs-auto col-10">
+        <div class="logo-container col-xs-10 col-10">
           <img src="logo.svg" class />
         </div>
 
