@@ -35,7 +35,7 @@
           </li>
         </ul>
         <div class="right col-xs-1 col-sm-1 col-md-3">
-          <q-btn flat icon="search" color="secondary" />
+          <!-- <q-btn flat icon="search" color="secondary" /> -->
           <div class="lm-margin"></div>
         </div>
       </nav>
@@ -49,7 +49,7 @@
         </div>
 
         <div class="col-xs-1">
-          <q-btn flat round dense icon="search" />
+          <!-- <q-btn flat round dense icon="search" /> -->
         </div>
       </q-toolbar>
       <q-drawer v-model="drawer" :breakpoint="100" :width="windowWidth" overlay class="bg-primary">

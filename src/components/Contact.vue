@@ -75,6 +75,8 @@ export default {
 
 <style lang="scss" scoped>
 .lm-contact {
-  background: url('/bg.jpg');
+  background-image: url('/bg.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
 }
 </style>
