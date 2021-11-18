@@ -2,13 +2,19 @@
 <template>
   <q-page>
     <section class>
-      <q-img class="lm-background" src="lb.jpg" loading="eager">
+      <q-img class="lm-background" src="lb.jpg" loading="eager" :no-spinner="true">
         <div class="lm-introduction row justify-center animate__animated animate__fadeIn">
           <div
             class="lm-text-title text-center lg:container lg:mx-auto animate__animated animate__fadeIn"
           >鹿 名 国 际 教 育</div>
           <div class="lm-text-second-title animate__animated animate__fadeInUp animate__delay-1s">
-            <q-img class="logo-title" src="logo_letter.svg" fit="contain" loading="eager"></q-img>
+            <q-img
+              class="logo-title"
+              src="logo_letter.svg"
+              fit="contain"
+              loading="eager"
+              :no-spinner="true"
+            ></q-img>
           </div>
           <p class="text-center animate__animated animate__fadeInUp animate__delay-2s">让世界名校， 不再高不可攀</p>
         </div>
@@ -23,6 +29,7 @@
             height="3.125rem"
             width="12.5rem"
             loading="eager"
+            :no-spinner="true"
           />
         </div>
       </q-img>
@@ -38,7 +45,14 @@
 
           <div class="media" :data-id="k" v-intersection.once="onServiceIntersection">
             <transition-group appear enter-active-class="animated animate__fadeInUp">
-              <q-img class="img" :src="v.img" :ratio="537 / 336" v-if="servicesData[k].visible" loading="eager"></q-img>
+              <q-img
+                class="img"
+                :src="v.img"
+                :ratio="537 / 336"
+                v-if="servicesData[k].visible"
+                loading="eager"
+                :no-spinner="true"
+              ></q-img>
               <div
                 class="introduction"
                 :class="getClassType(k, 'bg-secondary', 'bg-primary')"
@@ -87,7 +101,7 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-4 right q-py-xs-lg q-py-sm-lg">
                     <q-responsive :ratio="692 / 511">
-                      <q-img class="points-img" :src="v.imgLink" loading="eager"></q-img>
+                      <q-img class="points-img" :src="v.imgLink" loading="eager" :no-spinner="true"></q-img>
                     </q-responsive>
                   </div>
                 </div>
@@ -99,7 +113,13 @@
     </section>
     <section class="lm-culture lg:container lg:mx-auto">
       <div class="caption">
-        <q-img class="logo-letter" src="logo_letter_dark.svg" fit="contain" loading="eager"></q-img>
+        <q-img
+          class="logo-letter"
+          src="logo_letter_dark.svg"
+          fit="contain"
+          loading="eager"
+          :no-spinner="true"
+        ></q-img>
       </div>
       <div class="row q-col-gutter-sm">
         <div
@@ -113,7 +133,7 @@
             <div class="animation-container" v-if="cultureData[k].visible">
               <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
               <q-responsive :ratio="542 / 511">
-                <q-img class="culture-img" :src="v.imgLink" loading="eager"></q-img>
+                <q-img class="culture-img" :src="v.imgLink" loading="eager" :no-spinner="true"></q-img>
               </q-responsive>
 
               <div class="content">
@@ -186,7 +206,13 @@
                     >
                       <q-responsive class="school-logo">
                         <div class="flex items-center justify-center">
-                          <q-img class="img" :src="sv.imgLink" fit="contain" loading="eager"></q-img>
+                          <q-img
+                            class="img"
+                            :src="sv.imgLink"
+                            fit="contain"
+                            loading="eager"
+                            :no-spinner="true"
+                          ></q-img>
                         </div>
                       </q-responsive>
                       <div class="school-desc">
@@ -225,7 +251,14 @@
         >
           <div class="img-container col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5">
             <q-responsive :ratio="899 / 716" class="shadow-up-10">
-              <q-img class="img" :src="v.imgLink" fit="cover" position="center top" loading="eager"></q-img>
+              <q-img
+                class="img"
+                :src="v.imgLink"
+                fit="cover"
+                position="center top"
+                loading="eager"
+                :no-spinner="true"
+              ></q-img>
             </q-responsive>
           </div>
           <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5 content-container">
@@ -270,7 +303,7 @@
           <div :class="k % 2 !== 0 ? 'bar' : 'bar-secondary'"></div>
 
           <q-responsive :ratio="505 / 396" class="shadow-10">
-            <q-img class="img" :src="v.imgLink" fit="scale-down" loading="eager"></q-img>
+            <q-img class="img" :src="v.imgLink" fit="scale-down" loading="eager" :no-spinner="true"></q-img>
           </q-responsive>
 
           <div class="content">
@@ -303,7 +336,7 @@
         >
           <div class="col-lg-2 col-3 col-md-3 col-sm-3 col-xs-6 avatar align-items-center">
             <q-responsive :ratio="1">
-              <q-img class="img" :src="v.imgLink" loading="eager"></q-img>
+              <q-img class="img" :src="v.imgLink" loading="eager" :no-spinner="true"></q-img>
             </q-responsive>
           </div>
           <div class="col-7 col-lg-6 col-md-9 col-sm-12 col-xs-12 content">

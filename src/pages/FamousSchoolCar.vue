@@ -35,16 +35,30 @@
             :keep-alive-include="'carousel0, carousel1, carousel2, carousel3'"
           >
             <template v-slot:navigation-icon="{ active, onClick, maxIndex }">
-                <div v-if="active" class="navigation-indicator-item active" :style="{ width: (1 / maxIndex) * 100 + '%'}"  @click="onClick"></div>
-                <div v-else class="navigation-indicator-item"  @click="onClick" :style="{ width: (1 / maxIndex) * 100 + '%'}"></div>
+              <div
+                v-if="active"
+                class="navigation-indicator-item active"
+                :style="{ width: (1 / maxIndex) * 100 + '%'}"
+                @click="onClick"
+              ></div>
+              <div
+                v-else
+                class="navigation-indicator-item"
+                @click="onClick"
+                :style="{ width: (1 / maxIndex) * 100 + '%'}"
+              ></div>
             </template>
             <template v-for="(v, k) in carouselData" :key="k">
               <q-carousel-slide :name="'carousel' + k" class="column no-wrap">
                 <div class="row justify-center items-center mb-10">
                   <div class="col-xs-12 col-sm-12 col-md-5 left q-py-xs-lg q-py-xs-lg">
-                    <h3 class="text-white text-weight-bold text-3xl text-center sm:text-left">{{ v.title }}</h3>
+                    <h3
+                      class="text-white text-weight-bold text-3xl text-center sm:text-left"
+                    >{{ v.title }}</h3>
                     <div class="mt-2">
-                      <h2 class="text-quaternary text-weight-bolder text-5xl pb-10 text-center sm:text-left">{{ v.subTitle }}</h2>
+                      <h2
+                        class="text-quaternary text-weight-bolder text-5xl pb-10 text-center sm:text-left"
+                      >{{ v.subTitle }}</h2>
                       <p
                         class="text-white text-sm pr-0 text-weight-thin leading-7 tracking-wide md:pr-24 lg:pr-24"
                       >{{ v.description }}</p>
@@ -53,7 +67,7 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-4 right q-py-xs-lg q-py-sm-lg">
                     <q-responsive :ratio="692 / 511">
-                      <q-img class="points-img" :src="v.imgLink"></q-img>
+                      <q-img class="points-img" :src="v.imgLink" loading="eager" :no-spinner="true"></q-img>
                     </q-responsive>
                   </div>
                 </div>
@@ -106,8 +120,7 @@
                     class="lm-points-background transparent"
                   >
                     >
-                    <template v-slot:navigation-icon>
-                    </template>
+                    <template v-slot:navigation-icon></template>
 
                     <template v-for="(v, k) in offers.list" :key="k">
                       <q-carousel-slide :name="v.name" class="flex no-wrap flex-center relative">
@@ -140,7 +153,13 @@
                             >
                               <q-responsive class="school-logo">
                                 <div class="flex items-center justify-center">
-                                  <q-img class="img" :src="sv.imgLink" fit="contain"></q-img>
+                                  <q-img
+                                    class="img"
+                                    :src="sv.imgLink"
+                                    fit="contain"
+                                    loading="eager"
+                                    :no-spinner="true"
+                                  ></q-img>
                                 </div>
                               </q-responsive>
                               <div class="school-desc">
@@ -177,16 +196,16 @@
                     </template>
                   </q-carousel>
 
-                <div class="row justify-center items-center">
-                        <div class="col-md-9 col-xs-11">
-                          <indicator
-                            :num="currentOffer.list.length"
-                            :left="offerIndicatorLeft"
-                            :index="currentOfferSchool"
-                            @show="showIndicator"
-                          ></indicator>
-                        </div>
-                      </div>
+                  <div class="row justify-center items-center">
+                    <div class="col-md-9 col-xs-11">
+                      <indicator
+                        :num="currentOffer.list.length"
+                        :left="offerIndicatorLeft"
+                        :index="currentOfferSchool"
+                        @show="showIndicator"
+                      ></indicator>
+                    </div>
+                  </div>
                 </div>
               </section>
             </div>
@@ -635,12 +654,12 @@ export default {
           currentPosition.value,
           300
         );
-      currentOfferSchool.value =
-        Math.floor(currentPosition.value * offers.list.length) - 1;
-      currentOfferSchool.value =
-        currentOfferSchool.value > offers.list.length - 1
-          ? offers.list.length - 1
-          : currentOfferSchool.value;
+        currentOfferSchool.value =
+          Math.floor(currentPosition.value * offers.list.length) - 1;
+        currentOfferSchool.value =
+          currentOfferSchool.value > offers.list.length - 1
+            ? offers.list.length - 1
+            : currentOfferSchool.value;
       },
     };
   },

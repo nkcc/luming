@@ -35,8 +35,18 @@
             :keep-alive-include="'carousel0, carousel1, carousel2, carousel3'"
           >
             <template v-slot:navigation-icon="{ active, onClick, maxIndex }">
-                <div v-if="active" class="navigation-indicator-item active" :style="{ width: (1 / maxIndex) * 100 + '%'}"  @click="onClick"></div>
-                <div v-else class="navigation-indicator-item"  @click="onClick" :style="{ width: (1 / maxIndex) * 100 + '%'}"></div>
+              <div
+                v-if="active"
+                class="navigation-indicator-item active"
+                :style="{ width: (1 / maxIndex) * 100 + '%'}"
+                @click="onClick"
+              ></div>
+              <div
+                v-else
+                class="navigation-indicator-item"
+                @click="onClick"
+                :style="{ width: (1 / maxIndex) * 100 + '%'}"
+              ></div>
             </template>
             <template v-for="(v, k) in carouselData" :key="k">
               <q-carousel-slide :name="'carousel' + k" class="column no-wrap">
@@ -53,7 +63,7 @@
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-4 right q-py-xs-lg q-py-sm-lg">
                     <q-responsive :ratio="692 / 511">
-                      <q-img class="points-img" :src="v.imgLink"></q-img>
+                      <q-img class="points-img" :src="v.imgLink" loading="eager" :no-spinner="true"></q-img>
                     </q-responsive>
                   </div>
                 </div>
@@ -103,8 +113,7 @@
                     class="lm-points-background transparent"
                   >
                     >
-                    <template v-slot:navigation-icon>
-                    </template>
+                    <template v-slot:navigation-icon></template>
 
                     <template v-for="(v, k) in offers.list" :key="k">
                       <q-carousel-slide :name="v.name" class="flex no-wrap flex-center relative">
@@ -138,7 +147,13 @@
                             >
                               <q-responsive class="school-logo">
                                 <div class="flex items-center justify-center">
-                                  <q-img class="img" :src="sv.imgLink" fit="contain"></q-img>
+                                  <q-img
+                                    class="img"
+                                    :src="sv.imgLink"
+                                    fit="contain"
+                                    loading="eager"
+                                    :no-spinner="true"
+                                  ></q-img>
                                 </div>
                               </q-responsive>
                               <div class="school-desc">
@@ -174,16 +189,16 @@
                       </q-carousel-slide>
                     </template>
                   </q-carousel>
-                    <div class="row justify-center items-center">
-                        <div class="col-md-6 col-sm-12 col-xs-11">
-                          <indicator
-                            :num="currentOffer.list.length"
-                            :left="offerIndicatorLeft"
-                            :index="currentOfferSchool"
-                            @show="showIndicator"
-                          ></indicator>
-                        </div>
-                      </div>
+                  <div class="row justify-center items-center">
+                    <div class="col-md-6 col-sm-12 col-xs-11">
+                      <indicator
+                        :num="currentOffer.list.length"
+                        :left="offerIndicatorLeft"
+                        :index="currentOfferSchool"
+                        @show="showIndicator"
+                      ></indicator>
+                    </div>
+                  </div>
                 </div>
               </section>
             </div>
@@ -213,11 +228,13 @@
             >
               <div class="col-lg-2 col-3 col-md-3 col-sm-3 col-xs-6 avatar align-items-center">
                 <q-responsive :ratio="1">
-                  <q-img class="img" :src="v.imgLink"></q-img>
+                  <q-img class="img" :src="v.imgLink" loading="eager" :no-spinner="true"></q-img>
                 </q-responsive>
               </div>
               <div class="col-7 col-lg-10 col-md-9 col-sm-12 col-xs-12 content">
-                <div class="text-center sm:text-left header text-weight-bolder text-quaternary">{{ v.name }}</div>
+                <div
+                  class="text-center sm:text-left header text-weight-bolder text-quaternary"
+                >{{ v.name }}</div>
                 <div class="body">
                   <div
                     class="title text-quaternary text-weight-light text-base text-center sm:text-left"
@@ -458,7 +475,7 @@ export default {
     const slideOffer = ref('america');
     const offers = {
       title: '会被录取的梦校',
-      subTitle: '（任何一所美国前30名大学）',
+      subTitle: '任何一所美国前30名大学',
       list: [
         {
           title: '',
@@ -637,11 +654,11 @@ export default {
           currentPosition.value,
           300
         );
-      currentOfferSchool.value =
-        Math.floor(currentPosition.value * offers.list.length) - 1;
-      currentOfferSchool.value =
-        currentOfferSchool.value < 0 ? 0 : currentOfferSchool.value;
-      currentOfferSchool.value;
+        currentOfferSchool.value =
+          Math.floor(currentPosition.value * offers.list.length) - 1;
+        currentOfferSchool.value =
+          currentOfferSchool.value < 0 ? 0 : currentOfferSchool.value;
+        currentOfferSchool.value;
       },
       scrollRight() {
         currentPosition.value +=
@@ -660,7 +677,7 @@ export default {
           currentOfferSchool.value > offers.list.length - 1
             ? offers.list.length - 1
             : currentOfferSchool.value;
-        },
+      },
     };
   },
 };
@@ -670,7 +687,7 @@ export default {
 .mobile {
   .lm-professor .prof-intro .content {
     padding: 0;
-}
+  }
 }
 
 .lm-points {

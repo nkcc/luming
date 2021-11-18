@@ -776,6 +776,22 @@ $xl-breakpoint: 1536px;
 }
 
 .mobile {
+  .lm-background {
+    .lm-introduction {
+      .lm-text-title {
+        font-size: 8vw;
+        letter-spacing: 3vw;
+      }
+
+      .lm-text-second-title {
+        .logo-title {
+          width: 80vw;
+          height: 5vw;
+        }
+      }
+    }
+  }
+
   .lm-offers {
     .area {
       justify-content: center;
