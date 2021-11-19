@@ -12,8 +12,8 @@
       <div class='col-3 col-md-3 left col-xs-12'>
         <ul class='item-list'>
           <li class='item' v-for='(v, key) in navList' :key='key'>
-            <a href='' class='title text-weight-bold'>{{ v.title }}</a>
-            <div class='description  text-weight-regular'>{{ v.description }}</div>
+            <router-link :to="v.link" class='title text-weight-bold text-center sm:text-left block'>{{ v.title }}</router-link>
+            <div class='description  text-weight-regular text-center sm:text-left block'>{{ v.description }}</div>
           </li>
         </ul>
       </div>
@@ -23,8 +23,8 @@
       <div class='col-3 col-md-3 right col-xs-12'>
         <ul class='item-list'>
           <li class='item' v-for='(v, key) in navListRight' :key='key'>
-            <a href='' class='title'>{{ v.title }}</a>
-            <div class='description text-weight-thin'> {{ v.description }}</div>
+            <router-link :to="v.link" class='title text-center sm:text-left block'>{{ v.title }}</router-link>
+            <div class='description text-weight-thin text-center sm:text-left block'> {{ v.description }}</div>
           </li>
         </ul>
       </div>
@@ -34,10 +34,10 @@
     <div
       class='row justify-center items-center information q-pa-xs-lg q-pa-lg-xs q-pa-md-xs q-pa-xl-xs lg:container lg:mx-auto'>
       <div class='col-xs-12 col-md-9 copyright row justify-center items-center'>
-        <div class='copyright-left text-weight-bolder col-xs-12 col-md-6 col-lg-6 col-xl-6'>@2021 The President and
+        <div class='copyright-left text-weight-bolder col-xs-12 col-md-6 col-lg-6 col-xl-6 text-center sm:text-left blocktext-center sm:text-left block mb-4 sm:mb-0'>@2021 The President and
           Fellows of Maxfuture
         </div>
-        <div class='copyright-right col-xs-12 col-md-6 col-lg-6 col-xl-6'>
+        <div class='copyright-right col-xs-12 col-md-6 col-lg-6 col-xl-6 text-center sm:text-left block'>
                 <span class='name text-weight-bolder'>
                     Wechat
                 </span>
@@ -74,19 +74,19 @@ export default defineComponent({
     const navList = ref([{
       id: 1,
       title: '首页',
-      link: '',
+      link: '/',
       description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
     },
       {
         id: 2,
         title: '关于鹿名',
-        link: '',
+        link: 'about',
         description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
       },
       {
         id: 3,
         title: '鹿名留学',
-        link: '',
+        link: 'study-abroad',
         description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
       }
     ]);
@@ -94,19 +94,19 @@ export default defineComponent({
     const navListRight = ref([{
       id: 4,
       title: '鹿名案例',
-      link: '',
+      link: 'case',
       description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
     },
       {
         id: 5,
         title: '鹿名亮点',
-        link: '',
+        link: 'spot',
         description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
       },
       {
         id: 6,
         title: '联系我们',
-        link: '',
+        link: 'contact',
         description: '这里留给二级标题一个位置去填写一些东西让它看起来更舒服'
       }
     ]);
