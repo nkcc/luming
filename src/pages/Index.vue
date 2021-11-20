@@ -146,7 +146,7 @@
           <transition appear :enter-active-class="cultureAnimation(k, cultureData.length)">
             <div class="animation-container" v-if="cultureData[k].visible">
               <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
-              <q-responsive :ratio="542 / 511" class="mt-5 sm:mt-0 m-4">
+              <q-responsive :ratio="542 / 511" class="mt-5 sm:mt-0">
                 <q-img class="culture-img" :src="v.imgLink" loading="eager" :no-spinner="true"></q-img>
               </q-responsive>
 
