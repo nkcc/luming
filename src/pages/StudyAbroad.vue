@@ -31,7 +31,7 @@
           <section class="lm-services pb-2">
             <div class="row q-col-gutter-x-sm lg:container lg:mx-auto">
               <div
-                class="col-md-4 col-sm-6 col-xs-12 animate__animated animate__animated service-container"
+                class="col-md-4 col-sm-4 col-xs-12 animate__animated animate__animated service-container"
                 v-for="(v, k) in servicesData"
                 :key="k"
               >
@@ -50,7 +50,9 @@
                       :class="getClassType(k, 'bg-secondary', 'bg-primary')"
                       v-if="servicesData[k].visible"
                     >
-                      <h3 class="text-white text-weight-bold heading text-4xl py-10">{{ v.title }}</h3>
+                      <h3
+                        class="text-white text-weight-bold heading text-4xl py-10 sm:text-2xl md:text-3xl lg:text-4xl"
+                      >{{ v.title }}</h3>
                       <div class="h-24">
                         <p
                           class="text-white text-lg"

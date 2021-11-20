@@ -117,7 +117,7 @@ import PartHeader from '../components/PartHeader.vue';
 import Contact from '../components/Contact.vue';
 import Indicator from 'components/Indicator.vue';
 import { ElCarousel, ElCarouselItem } from 'element-plus';
-import 'element-plus/theme-chalk/el-carousel.css';
+import 'element-plus/theme-chalk/index.css';
 import 'element-plus/theme-chalk/el-carousel-item.css';
 import { computed, reactive, ref, Ref, onMounted, defineComponent } from 'vue';
 import { CaseData, PlanData } from 'src/components/models';
@@ -313,7 +313,7 @@ export default defineComponent({
         currentCaseIndex.value = Number(id);
         setTimeout(
           () => caseRef.value?.scrollIntoView({ behavior: 'smooth' }),
-          1000
+          0
         );
       }
     });
