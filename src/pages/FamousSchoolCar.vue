@@ -1,5 +1,5 @@
 <template>
-  <div class="lm-study-abroad lm-light-dark-background">
+  <div class="lm-study-abroad lm-light-dark-background no-gradient">
     <section class="transparent">
       <div>
         <div class="lg:container lg:mx-auto">
@@ -237,13 +237,13 @@
             <div class="highlight mt-20 sm:mt10">
               <div class="row lm-highlight justify-center">
                 <div
-                  :class="['col-md-4 item flex justify-center col-xs-12']"
+                  :class="['col-md-4 item flex justify-center items-center col-xs-12']"
                   v-for="(v, k) in highlight"
                   :key="k"
                 >
-                  <div :class="['w-2/4', k > 2 ? 'highlight-up' : '']">
+                  <div :class="['w-full sm:w-2/4', k > 2 ? 'highlight-up' : '']">
                     <div
-                      class="title text-quaternary text-weight-bolder text-8xl text-center pb-2 sm:pb-0"
+                      class="title text-quaternary text-weight-bolder text-5xl sm:text-8xl text-center pb-2 sm:pb-0"
                     >{{ v.title }}</div>
                     <div class="description py-2">
                       <p
@@ -721,7 +721,7 @@ export default {
     height: 60%;
     width: 68%;
     border: 3px solid $quaternary;
-    top: 40%;
+    top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -771,16 +771,24 @@ export default {
 
 .mobile {
   .lm-highlight {
+    position: relative;
     overflow: hidden;
+    padding: 0;
+    margin: 10px;
+    // border: 1px solid $quaternary;
     &::before {
-      width: 0;
+      position: absolute;
+      content: '';
+      border: 0;
+      width: 2px;
+      background: $quaternary;
       height: 100%;
     }
     .item {
       &:first-child {
         margin-top: 0;
       }
-      margin: 10px;
+      margin: 20px;
       div.highlight-up {
         top: 0;
       }

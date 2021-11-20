@@ -56,7 +56,7 @@
           </el-carousel>
         </div>
         <div class="row justify-center mb-12" v-if="caseData.length > 1">
-          <div class="lm-plans-button_container col-9 flex justify-center">
+          <div class="lm-plans-button_container col-md-6 col-xs-9 flex justify-center">
             <indicator
               :num="caseData.length"
               :index="currentCaseIndex"
@@ -508,15 +508,15 @@ export default defineComponent({
   .lm-case-plan {
     .lm-plans {
       .lm-plans-title_container {
+        justify-content: space-evenly;
         .plan-title {
-          font-size: 2.125rem;
+          font-size: 1rem;
           color: $light-fade-green;
           font-weight: 700;
           align-self: flex-end;
-          width: 12rem;
 
           &.active {
-            font-size: 2.75rem;
+            font-size: 1.25rem;
             color: $quaternary;
           }
         }

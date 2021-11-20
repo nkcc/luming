@@ -1,5 +1,5 @@
 <template>
-  <div class="lm-study-abroad lm-light-dark-background">
+  <div class="lm-study-abroad lm-light-dark-background no-gradient">
     <section class="transparent">
       <div>
         <div class="lg:container lg:mx-auto">
@@ -267,14 +267,14 @@
     </section>
     <section class="transparent mb-20">
       <div class="lg:container lg:mx-auto">
-        <div class="lm-container row justify-center pb-20">
-          <div class="col-9">
+        <div class="lm-container row justify-center items-center pb-20">
+          <div class="col-md-9 col-xs-11">
             <div class="text-quaternary text-center text-weight-bolder text-5xl">产品亮点</div>
-            <div class="highlight mt-10">
+            <div class="highlight mt-20 sm:mt-10">
               <div class="row lm-highlight">
                 <div
                   :class="[
-                    'col-4 mb-10 item',
+                    'col-md-4 mb-10 item col-xs-12',
                     k === 2 || k === 5 ? 'no-link' : '',
                     k === 0 || k === 2 ? 'link-bottom' : '',
                   ]"
@@ -282,7 +282,7 @@
                   :key="k"
                 >
                   <div
-                    class="title text-quaternary text-weight-bolder text-7xl text-center"
+                    class="title text-quaternary text-weight-bolder text-5xl sm:text-7xl text-center"
                   >{{ v.title }}</div>
                   <div class="description mt-2">
                     <p
@@ -687,6 +687,38 @@ export default {
 .mobile {
   .lm-professor .prof-intro .content {
     padding: 0;
+  }
+
+  .lm-highlight {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      left: 50%;
+      border: 0;
+      width: 2px;
+      background: $quaternary;
+      height: 100%;
+    }
+    .item {
+      margin: 20px 0;
+      background-color: #0b150e;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &.link-bottom {
+        &::before {
+          width: 0;
+        }
+      }
+
+      &::after {
+        width: 0;
+      }
+    }
   }
 }
 

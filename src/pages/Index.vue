@@ -44,7 +44,7 @@
     <section class="lm-services">
       <div class="row q-col-gutter-x-sm lg:container lg:mx-auto">
         <div
-          class="col-md-4 col-sm-6 col-xs-12 animate__animated animate__animated service-container"
+          class="col-md-4 col-sm-12 col-xs-12 animate__animated animate__animated service-container"
           v-for="(v, k) in servicesData"
           :key="k"
         >
@@ -115,7 +115,7 @@
                       <q-img class="points-img" :src="v.imgLink" loading="eager" :no-spinner="true"></q-img>
                     </q-responsive>
                   </div>
-                  <div class="col-xs-12 mt-16 sm:mt-0 lt-md">
+                  <div class="col-xs-12 mt-16 lg:mt-0 lt-md">
                     <p class="description text-white text-xl">{{ v.description }}</p>
                   </div>
                 </div>
@@ -152,13 +152,16 @@
 
               <div class="content lt-md q-px-xs-sm">
                 <p class="my-5" v-for="(vd, vk) in v.description" :key="vk">{{ vd }}</p>
+                <div class="footer text-center lt-md my-5">
+                  <router-link to="about">了解更多></router-link>
+                </div>
               </div>
               <div class="lt-md" :class="getClassType(k, 'bar-secondary', 'bar')"></div>
             </div>
           </transition>
         </div>
 
-        <div class="col-xs-10 col-md-12 culture-item py-5 gt-sm">
+        <div class="col-xs-10 col-md-12 culture-item gt-sm py-5">
           <template v-for="(v, k) in cultureData" :key="k">
             <p class="my-4" v-for="(vv, vk) in v.description" :key="vk" :data-id="vk">{{ vv }}</p>
           </template>

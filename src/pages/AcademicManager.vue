@@ -77,7 +77,7 @@
     <section class="transparent mb-20">
       <div class="lg:container lg:mx-auto">
         <div class="lm-container row justify-center pb-20">
-          <div class="col-9">
+          <div class="col-md-9 col-xs-11">
             <description-with-img
               :info="productIntro"
               title="产品介绍"
@@ -210,7 +210,7 @@
               class="text-quaternary text-center text-weight-bolder text-5xl mb-4"
             >{{ serviceContent.title }}</div>
             <div
-              class="text-white text-center text-weight-medium text-base"
+              class="text-white text-center text-weight-medium text-base px-6"
             >{{ serviceContent.subtitle }}</div>
             <text-card
               :title="v.title"
@@ -341,7 +341,7 @@ export default {
     const serviceContent = {
       title: '服务内容',
       subtitle:
-        '（服务总目标：确保学生通过学业管家计划提高自身学习成绩，并顺利毕业)',
+        '服务总目标：确保学生通过学业管家计划提高自身学习成绩，并顺利毕业',
       list: [
         {
           title: '开学前',

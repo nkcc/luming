@@ -60,6 +60,10 @@ section {
 
 .lm-light-dark-background {
   background: radial-gradient(#0b150e 50%, #050505 100%);
+
+  &.no-gradient {
+    background: #0b150e;
+  }
 }
 
 .bg-dark-green {
