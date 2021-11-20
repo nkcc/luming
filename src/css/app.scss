@@ -779,13 +779,15 @@ $xl-breakpoint: 1536px;
   .lm-background {
     .lm-introduction {
       .lm-text-title {
-        font-size: 8vw;
+        font-size: calc(100vw / 9);
         letter-spacing: 3vw;
+        text-indent: 3vw;
+        margin-bottom: 0.5rem;
       }
 
       .lm-text-second-title {
         .logo-title {
-          width: 80vw;
+          width: 70vw;
           height: 5vw;
         }
       }
@@ -794,10 +796,25 @@ $xl-breakpoint: 1536px;
 
   .lm-offers {
     .area {
-      justify-content: center;
+      justify-content: space-around;
+      flex-wrap: nowrap;
 
       .label {
-        margin-bottom: 6px;
+        margin-bottom: 0;
+        font-size: 12px;
+        padding: 2px;
+        margin: 0 2px;
+        white-space: nowrap;
+      }
+    }
+
+    .lm-points-background {
+      .row {
+        .content {
+          .description {
+            width: 100%;
+          }
+        }
       }
     }
 
@@ -824,10 +841,19 @@ $xl-breakpoint: 1536px;
   }
 
   .lm-team {
-    padding-top: 6.25rem;
+    padding-top: 2rem;
 
     .header-title {
       margin-top: auto;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .lm-culture {
+    .content {
+      p: {
+        -webkit-line-clamp: 20;
+      }
     }
   }
 
@@ -839,6 +865,26 @@ $xl-breakpoint: 1536px;
 
       .content {
         padding: 0;
+      }
+    }
+  }
+
+  .lm-case {
+    .case-item {
+      .content {
+        .header {
+          .title {
+            font-size: 1.5rem;
+          }
+
+          .rank {
+            font-size: 1.5rem;
+          }
+        }
+
+        .body {
+          margin-top: 1.25rem;
+        }
       }
     }
   }

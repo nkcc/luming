@@ -4,7 +4,9 @@
       <part-header name="鹿名案例"></part-header>
       <div class="lm-case-plan-container mb-24">
         <div class="lm-plans row justify-center mb-10">
-          <div class="lm-plans-title_container col-xs-12 col-sm-12 col-md-9 flex justify-center pb-7">
+          <div
+            class="lm-plans-title_container col-xs-12 col-sm-12 col-md-9 flex justify-center pb-7"
+          >
             <div
               class="plan-title text-center cursor-pointer p-2"
               :class="v.type === currentType ? 'active' : ''"
@@ -15,10 +17,15 @@
           </div>
         </div>
         <div class="lm-case-plan_slider__container row justify-center mb-14" ref="caseRef">
-          <div class="row justify-center items-center w-full" v-if="caseData.length === 1" >
+          <div class="row justify-center items-center w-full" v-if="caseData.length === 1">
             <div class="col-md-6 col-xs-11">
               <q-responsive :ratio="1260 / 800" class="bg-white w-full">
-                <q-img class="case-img" :src="caseData[0].imgLink" fit="cover" position="center top"></q-img>
+                <q-img
+                  class="case-img"
+                  :src="caseData[0].imgLink"
+                  fit="cover"
+                  position="center top"
+                ></q-img>
               </q-responsive>
             </div>
           </div>
@@ -49,8 +56,12 @@
           </el-carousel>
         </div>
         <div class="row justify-center mb-12" v-if="caseData.length > 1">
-          <div class="lm-plans-button_container col-9 flex justify-center" >
-            <indicator :num="caseData.length" :index="currentCaseIndex" @show="changeCurrentCaseIndex"></indicator>
+          <div class="lm-plans-button_container col-9 flex justify-center">
+            <indicator
+              :num="caseData.length"
+              :index="currentCaseIndex"
+              @show="changeCurrentCaseIndex"
+            ></indicator>
           </div>
         </div>
         <div class="lm-case-plan__content row justify-center">
@@ -106,8 +117,8 @@ import PartHeader from '../components/PartHeader.vue';
 import Contact from '../components/Contact.vue';
 import Indicator from 'components/Indicator.vue';
 import { ElCarousel, ElCarouselItem } from 'element-plus';
-import 'element-plus/theme-chalk/index.css';
-// import 'element-plus/theme-chalk/el-carousel-item.css'
+import 'element-plus/theme-chalk/el-carousel.css';
+import 'element-plus/theme-chalk/el-carousel-item.css';
 import { computed, reactive, ref, Ref, onMounted, defineComponent } from 'vue';
 import { CaseData, PlanData } from 'src/components/models';
 import { useQuasar } from 'quasar';
@@ -300,7 +311,10 @@ export default defineComponent({
       const id = router.query.id;
       if (typeof id !== 'undefined') {
         currentCaseIndex.value = Number(id);
-        setTimeout(() => caseRef.value?.scrollIntoView({behavior: 'smooth'}), 1000);
+        setTimeout(
+          () => caseRef.value?.scrollIntoView({ behavior: 'smooth' }),
+          1000
+        );
       }
     });
     const currentType = ref('laddercase');

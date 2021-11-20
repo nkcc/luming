@@ -6,7 +6,9 @@
         <div class="lm-introduction row justify-center animate__animated animate__fadeIn">
           <div
             class="lm-text-title text-center lg:container lg:mx-auto animate__animated animate__fadeIn"
-          >鹿 名 国 际 教 育</div>
+          >
+            <span>鹿名国际教育</span>
+          </div>
           <div class="lm-text-second-title animate__animated animate__fadeInUp animate__delay-1s">
             <q-img
               class="logo-title"
@@ -137,7 +139,7 @@
               </q-responsive>
 
               <div class="content">
-                <p class="my-5">{{ v.description }}</p>
+                <p class="my-5" v-for="(vd, vk) in v.description" :key="vk">{{ vd }}</p>
 
                 <div class="footer">
                   <router-link :to="v.link">了解更多></router-link>
@@ -320,7 +322,7 @@
       </div>
     </section>
     <section class="lm-professor">
-      <h1 class="header text-weight-bold text-center py-12">教授名校教授培养计划</h1>
+      <h1 class="header text-weight-bold text-center py-12 text-4xl sm:text-6xl">教授名校教授培养计划</h1>
 
       <div
         class="prof-intro"
@@ -340,9 +342,13 @@
             </q-responsive>
           </div>
           <div class="col-7 col-lg-6 col-md-9 col-sm-12 col-xs-12 content">
-            <div class="header text-weight-bolder">{{ v.name }}</div>
+            <div class="header text-weight-bolder text-center sm:text-left">{{ v.name }}</div>
             <div class="body">
-              <div class="title" v-for="(vv, kk) in v.title" :key="kk">{{ vv }}</div>
+              <div
+                class="title text-center sm:text-left"
+                v-for="(vv, kk) in v.title"
+                :key="kk"
+              >{{ vv }}</div>
               <div class="description">{{ v.description }}</div>
             </div>
             <div class="footer">
