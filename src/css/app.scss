@@ -97,6 +97,7 @@ $xl-breakpoint: 1536px;
   position: relative;
   width: 100%;
   height: calc(100vh - 6.2rem);
+  transition: all 1s ease-in-out;
 
   .lm-introduction {
     height: 100%;
@@ -105,7 +106,7 @@ $xl-breakpoint: 1536px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: rgb(0 0 0 / 60%);
+    // background: rgb(0 0 0 / 60%);
 
     .lm-text-title {
       font-weight: 600;
@@ -181,7 +182,6 @@ $xl-breakpoint: 1536px;
 
         .sub-title {
           color: $white;
-          // font-family: "Calibri";
           font-size: 1.125rem;
         }
 
@@ -770,7 +770,7 @@ $xl-breakpoint: 1536px;
   height: 100%;
 }
 
-.page-scroller-btn {
+.page-scroll-btn {
   border-radius: initial;
 }
 
@@ -778,9 +778,9 @@ $xl-breakpoint: 1536px;
   .lm-background {
     .lm-introduction {
       .lm-text-title {
-        font-size: calc(100vw / 9);
-        letter-spacing: 3vw;
-        text-indent: 3vw;
+        font-size: 9vw;
+        letter-spacing: 4vw;
+        text-indent: 4vw;
         margin-bottom: 0.5rem;
       }
 

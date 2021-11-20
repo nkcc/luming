@@ -1,59 +1,53 @@
 <template>
   <section class="lm-contact">
-    <div class="green-background">
-      <div class="row justify-center lg:container lg:mx-auto">
-        <div class="col-lg-8 col-md-10 q-pa-md q-ma-md">
-          <h1 class="text-secondary title py-12">联系我们</h1>
-          <h4 class="text-white text-weight-bold pb-10 text-4xl">
-            本科硕士精准直录，实现最高学府留学梦
-          </h4>
-          <div class="form">
-            <q-input
-              input-style="color: #cd932f"
-              color="secondary"
-              label-color="white"
-              v-model="form.name"
-              label="姓名"
-            >
-              <template v-slot:prepend>
-                <q-icon color="secondary" name="person" />
-              </template>
-            </q-input>
-            <q-input
-              input-style="color: #cd932f"
-              color="secondary"
-              label-color="white"
-              v-model="form.phone"
-              label="电话"
-            >
-              <template v-slot:prepend>
-                <q-icon color="secondary" name="phone" />
-              </template>
-            </q-input>
-            <q-input
-              color="secondary"
-              label-color="white"
-              input-style="color: #cd932f"
-              v-model="form.wechat"
-              label="微信"
-            >
-              <template v-slot:prepend>
-                <q-icon color="secondary" name="wechat" />
-              </template>
-            </q-input>
-            <q-btn
-              class="submit"
-              outline
-              type="submit"
-              style="color: goldenrod"
-            >
-              <q-icon class="dot" name="fiber_manual_record"></q-icon>
-              了解更多
-            </q-btn>
+    <q-img class="lm-contact" src="bg.jpg" fit="cover" img-class="bg-filter">
+      <div class="green-background">
+        <div class="row justify-center lg:container lg:mx-auto">
+          <div class="col-lg-8 col-md-10 q-pa-md q-ma-md">
+            <h1 class="text-secondary title py-12">联系我们</h1>
+            <h4 class="text-white text-weight-bold pb-10 text-4xl">本科硕士精准直录，实现最高学府留学梦</h4>
+            <div class="form">
+              <q-input
+                input-style="color: #cd932f"
+                color="secondary"
+                label-color="white"
+                v-model="form.name"
+                label="姓名"
+              >
+                <template v-slot:prepend>
+                  <q-icon color="secondary" name="person" />
+                </template>
+              </q-input>
+              <q-input
+                input-style="color: #cd932f"
+                color="secondary"
+                label-color="white"
+                v-model="form.phone"
+                label="电话"
+              >
+                <template v-slot:prepend>
+                  <q-icon color="secondary" name="phone" />
+                </template>
+              </q-input>
+              <q-input
+                color="secondary"
+                label-color="white"
+                input-style="color: #cd932f"
+                v-model="form.wechat"
+                label="微信"
+              >
+                <template v-slot:prepend>
+                  <q-icon color="secondary" name="wechat" />
+                </template>
+              </q-input>
+              <q-btn class="submit" outline type="submit" style="color: goldenrod">
+                <q-icon class="dot" name="fiber_manual_record"></q-icon>了解更多
+              </q-btn>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </q-img>
   </section>
 </template>
 
@@ -66,17 +60,19 @@ export default {
       form: ref({
         name: '',
         phone: '',
-        wechat: '',
-      }),
+        wechat: ''
+      })
     };
-  },
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .lm-contact {
-  background-image: url('/bg.jpg');
-  background-position: 50% 50%;
-  background-size: cover;
+  height: 500px;
+}
+
+.bg-filter {
+  filter: brightness(0.6);
 }
 </style>

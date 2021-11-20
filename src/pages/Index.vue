@@ -1,9 +1,14 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 <template>
   <q-page>
     <section class>
-      <q-img class="lm-background" src="lb.jpg" loading="eager" :no-spinner="true">
-        <div class="lm-introduction row justify-center animate__animated animate__fadeIn">
+      <q-img
+        class="lm-background"
+        src="lb.jpg"
+        loading="eager"
+        :no-spinner="true"
+        :img-class="bgFilter"
+      >
+        <div class="lm-introduction row justify-center">
           <div
             class="lm-text-title text-center lg:container lg:mx-auto animate__animated animate__fadeIn"
           >
@@ -123,7 +128,7 @@
           :no-spinner="true"
         ></q-img>
       </div>
-      <div class="row q-col-gutter-sm">
+      <div class="row q-col-gutter-sm justify-center">
         <div
           class="col col-sm-6 col-xs-12 col-md-3 culture-item"
           v-for="(v, k) in cultureData"
@@ -134,11 +139,11 @@
           <transition appear :enter-active-class="cultureAnimation(k, cultureData.length)">
             <div class="animation-container" v-if="cultureData[k].visible">
               <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
-              <q-responsive :ratio="542 / 511" class="mt-5 sm:mt-0">
+              <q-responsive :ratio="542 / 511" class="mt-5 sm:mt-0 m-4">
                 <q-img class="culture-img" :src="v.imgLink" loading="eager" :no-spinner="true"></q-img>
               </q-responsive>
 
-              <div class="content lt-md">
+              <div class="content lt-md q-px-xs-sm">
                 <p class="my-5" v-for="(vd, vk) in v.description" :key="vk">{{ vd }}</p>
               </div>
               <div class="lt-md" :class="getClassType(k, 'bar-secondary', 'bar')"></div>
@@ -146,7 +151,7 @@
           </transition>
         </div>
 
-        <div class="col-12 culture-item py-5 gt-sm">
+        <div class="col-xs-10 col-md-12 culture-item py-5 gt-sm">
           <template v-for="(v, k) in cultureData" :key="k">
             <p class="my-4" v-for="(vv, vk) in v.description" :key="vk" :data-id="vk">{{ vv }}</p>
           </template>
@@ -384,3 +389,13 @@
 
 <script lang='ts' src='../ts/pages/index.ts'>
 </script>
+
+<style lang="scss">
+.bg-filter {
+  filter: brightness(0.6);
+}
+
+.bg-filter-none {
+  filter: brightness(1);
+}
+</style>
