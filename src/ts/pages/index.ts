@@ -609,10 +609,8 @@ const setup = function () {
             currentPosition.value = 0;
             currentOfferSchoolTypeIndex.value = index;
         },
-        cultureAnimation (k: number, length: number) {
-            return k > length / 2 - 1
-                ? 'animated animate__fadeInUp'
-                : 'animated animate__fadeInUp';
+        cultureAnimation () {
+            return 'animated animate__fadeIn';
         },
 
         getClassType (k: number, firstClass: string, secondClass: string) {
@@ -631,7 +629,7 @@ const setup = function () {
             }
             const index = parseInt(entry.target.dataset.id, 10);
 
-            const delayMap = [0, 1, 2, 3];
+            const delayMap = [0, 0, 0, 0];
 
             setTimeout(() => {
                 cultureData.value[index].visible = entry.isIntersecting;

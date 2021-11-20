@@ -134,18 +134,38 @@
           <transition appear :enter-active-class="cultureAnimation(k, cultureData.length)">
             <div class="animation-container" v-if="cultureData[k].visible">
               <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
-              <q-responsive :ratio="542 / 511">
+              <q-responsive :ratio="542 / 511" class="mt-5 sm:mt-0">
                 <q-img class="culture-img" :src="v.imgLink" loading="eager" :no-spinner="true"></q-img>
               </q-responsive>
 
-              <div class="content">
+              <div class="content lt-md">
                 <p class="my-5" v-for="(vd, vk) in v.description" :key="vk">{{ vd }}</p>
-
-                <div class="footer">
-                  <router-link :to="v.link">了解更多></router-link>
-                </div>
               </div>
-              <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
+              <div class="lt-md" :class="getClassType(k, 'bar-secondary', 'bar')"></div>
+            </div>
+          </transition>
+        </div>
+
+        <div class="col-12 culture-item py-5 gt-sm">
+          <template v-for="(v, k) in cultureData" :key="k">
+            <p class="my-4" v-for="(vv, vk) in v.description" :key="vk" :data-id="vk">{{ vv }}</p>
+          </template>
+          <div class="content">
+            <div class="footer text-center">
+              <router-link to="about">了解更多></router-link>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col col-sm-6 col-xs-12 col-md-3 culture-item gt-sm"
+          v-for="(v, k) in cultureData"
+          :key="k"
+          :data-id="k"
+          v-intersection.once="onCultureIntersection"
+        >
+          <transition appear :enter-active-class="cultureAnimation(k, cultureData.length)">
+            <div class="animation-container" v-if="cultureData[k].visible">
+              <div class :class="getClassType(k, 'bar-secondary', 'bar')"></div>
             </div>
           </transition>
         </div>
