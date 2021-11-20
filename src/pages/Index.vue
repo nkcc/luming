@@ -98,18 +98,25 @@
             <template v-for="(v, k) in carouselData" :key="k">
               <q-carousel-slide :name="'carousel' + k" class="column no-wrap">
                 <div class="row justify-center items-center">
-                  <div class="col-xs-12 col-sm-12 col-md-5 left q-py-xs-lg q-py-xs-lg">
-                    <h2 class="text-secondary text-weight-bold text-6xl pb-14">{{ v.title }}</h2>
+                  <div class="col-xs-12 col-sm-12 col-md-5 left">
+                    <h2
+                      class="text-secondary text-weight-bold text-5xl pb-2 sm:pb-14 sm:text-6xl"
+                    >{{ v.title }}</h2>
                     <div class="content">
-                      <h3 class="text-white text-weight-bold text-5xl pb-10">{{ v.subTitle }}</h3>
-                      <p class="description">{{ v.description }}</p>
+                      <h3
+                        class="text-white text-weight-bold text-4xl pb-2 sm:pb-10 sm:text-5xl"
+                      >{{ v.subTitle }}</h3>
+                      <p class="description gt-sm">{{ v.description }}</p>
                     </div>
                     <div class="footer"></div>
                   </div>
-                  <div class="col-xs-12 col-sm-12 col-md-4 right q-py-xs-lg q-py-sm-lg">
+                  <div class="col-xs-12 col-sm-12 col-md-4 right mt-10 sm:mt-0">
                     <q-responsive :ratio="692 / 511">
                       <q-img class="points-img" :src="v.imgLink" loading="eager" :no-spinner="true"></q-img>
                     </q-responsive>
+                  </div>
+                  <div class="col-xs-12 mt-16 sm:mt-0 lt-md">
+                    <p class="description text-white text-xl">{{ v.description }}</p>
                   </div>
                 </div>
               </q-carousel-slide>
