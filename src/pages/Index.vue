@@ -395,6 +395,12 @@
   filter: brightness(0.6);
 }
 
+.mobile {
+  .bg-filter {
+    filter: brightness(0.4);
+  }
+}
+
 .bg-filter-none {
   filter: brightness(1);
 }

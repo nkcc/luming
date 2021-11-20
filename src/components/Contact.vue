@@ -1,7 +1,7 @@
 <template>
-  <section class="lm-contact">
+  <section class>
     <q-img class="lm-contact" src="bg.jpg" fit="cover" img-class="bg-filter">
-      <div class="green-background">
+      <div class="absolute-full lm-contact-container">
         <div class="row justify-center lg:container lg:mx-auto">
           <div class="col-lg-8 col-md-10 q-pa-md q-ma-md">
             <h1 class="text-secondary title py-12">联系我们</h1>
@@ -69,10 +69,15 @@ export default {
 
 <style lang="scss" scoped>
 .lm-contact {
-  height: 500px;
+  height: 45rem;
+  .lm-contact-container {
+    background-color: rgba(6, 12, 7, 0.85);
+  }
 }
 
-.bg-filter {
-  filter: brightness(0.6);
+.mobile {
+  .lm-contact {
+    height: 48rem;
+  }
 }
 </style>

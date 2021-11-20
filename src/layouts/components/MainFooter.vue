@@ -49,13 +49,13 @@
     >
       <div class="col-xs-12 col-md-9 copyright row justify-center items-center">
         <div
-          class="copyright-left text-weight-bolder col-xs-12 col-md-6 col-lg-6 col-xl-6 text-center sm:text-left blocktext-center sm:text-left block mb-4 sm:mb-0"
+          class="copyright-left text-weight-bolder col-xs-12 col-md-6 col-lg-6 col-xl-6 text-center sm:text-left block mb-4 sm:mb-0"
         >
           @2021 The President and
           Fellows of Maxfuture
         </div>
         <div
-          class="copyright-right col-xs-12 col-md-6 col-lg-6 col-xl-6 text-center sm:text-left block"
+          class="copyright-right col-xs-12 col-md-6 col-lg-6 col-xl-6 text-center sm:text-left flex justify-center flex-wrap"
         >
           <span class="name text-weight-bolder">Wechat</span>
           <span class="name text-weight-bolder">Facebook</span>
