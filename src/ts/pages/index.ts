@@ -4,6 +4,7 @@ import { QScrollArea, useQuasar } from 'quasar';
 import { defineComponent } from 'vue';
 import Contact from 'components/Contact.vue';
 import Indicator from 'components/Indicator.vue';
+import ScrollCarousel from 'components/carousel/ScrollCarousel.vue';
 
 const bgFilter = ref('bg-filter-none');
 
@@ -734,6 +735,7 @@ export default defineComponent({
   components: {
     Contact,
     Indicator,
+    ScrollCarousel,
   },
   setup,
   methods: {},

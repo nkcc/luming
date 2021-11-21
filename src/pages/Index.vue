@@ -143,7 +143,7 @@
           :data-id="k"
           v-intersection.once="onCultureIntersection"
         >
-          <transition appear :enter-active-class="cultureAnimation(k, cultureData.length)">
+          <transition appear :enter-active-class="cultureAnimation()">
             <div class="animation-container" v-if="cultureData[k].visible">
               <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
               <q-responsive :ratio="542 / 511" class="mt-5 sm:mt-0">
@@ -178,7 +178,7 @@
           :data-id="k"
           v-intersection.once="onCultureIntersection"
         >
-          <transition appear :enter-active-class="cultureAnimation(k, cultureData.length)">
+          <transition appear :enter-active-class="cultureAnimation()">
             <div class="animation-container" v-if="cultureData[k].visible">
               <div class :class="getClassType(k, 'bar-secondary', 'bar')"></div>
             </div>
@@ -201,80 +201,8 @@
                 >{{ v.title }}</li>
               </ul>
             </div>
-          </div>
-          <q-carousel
-            v-model="slideOffer"
-            padding
-            animated
-            transition-prev="fade"
-            transition-next="fade"
-            class="lm-points-background"
-          >
-            <template v-slot:navigation-icon></template>
-            <template v-for="(v, k) in offerData" :key="k">
-              <q-carousel-slide :name="v.name" class="flex no-wrap flex-center relative">
-                <div class="flex items-center mr-2">
-                  <q-btn
-                    flat
-                    round
-                    color="secondary"
-                    icon="navigate_before"
-                    @click="scrollLeft(k)"
-                  />
-                </div>
-                <q-scroll-area
-                  class="lm-scroll"
-                  :bar-style="{ background: 'transparent' }"
-                  :thumb-style="{ background: 'transparent' }"
-                  :ref="
-                    (el) => {
-                      if (el) itemRefs[k] = el;
-                    }
-                  "
-                >
-                  <ul
-                    class="offer-list row fit justify-start items-center q-gutter-xs q-col-gutter no-wrap"
-                  >
-                    <li
-                      class="offer-item"
-                      v-for="(sv, sk) in v.list"
-                      :key="sk"
-                      @mouseenter="getCurrentOfferSchool(sk)"
-                    >
-                      <q-responsive class="school-logo">
-                        <div class="flex items-center justify-center">
-                          <q-img
-                            class="img"
-                            :src="sv.imgLink"
-                            fit="contain"
-                            loading="eager"
-                            :no-spinner="true"
-                          ></q-img>
-                        </div>
-                      </q-responsive>
-                      <div class="school-desc">
-                        <div class="title">{{ sv.title }}</div>
-                        <q-scroll-area
-                          class="description ellipsis-3-lines"
-                          :bar-style="{ background: 'white' }"
-                        >{{ sv.description }}</q-scroll-area>
-                      </div>
-                    </li>
-                  </ul>
-                </q-scroll-area>
-                <div class="ml-2">
-                  <q-btn flat round color="secondary" icon="navigate_next" @click="scrollRight(k)" />
-                </div>
-              </q-carousel-slide>
-            </template>
-          </q-carousel>
-          <div class="row justify-center items-center">
-            <div class="col-6">
-              <indicator
-                :num="currentOffer.list.length"
-                :index="currentOfferSchool"
-                @show="showIndicator"
-              ></indicator>
+            <div class="col-12">
+              <scroll-carousel :data="offerData" :index="currentOfferSchoolTypeIndex"></scroll-carousel>
             </div>
           </div>
         </div>
@@ -386,7 +314,7 @@
               >{{ vv }}</div>
               <div class="description">{{ v.description }}</div>
             </div>
-            <div class="footer">
+            <div class="footer text-center sm:text-left">
               <router-link :to="v.link">了解更多 ></router-link>
             </div>
           </div>
