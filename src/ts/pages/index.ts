@@ -29,7 +29,7 @@ const servicesData = ref([
   {
     title: '学业管家',
     img: 'index/3.jpg',
-    description: ['全托学业辅导确保顺利毕业'],
+    description: ['全托学业辅导', '确保顺利毕业'],
     visible: false,
     link: 'academic',
   },
@@ -542,7 +542,7 @@ const setup = function () {
       item.visible = true;
       return item;
     });
-    servicesData.value = [servicesData.value[0]];
+    // servicesData.value = [servicesData.value[0]];
 
     const allDescription: string[] = [];
     cultureData.value = cultureData.value.map((item) => {

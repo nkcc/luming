@@ -29,7 +29,7 @@
       <div class="row justify-center lg:container lg:mx-auto">
         <div class="col-9 col-xs-11 col-md-9 row">
           <template v-for="(v, k) in cultureData" :key="k">
-            <div class="col-4 col-xs-12 col-md-4">
+            <div class="col-4">
               <div
                 class="points-img"
                 :class="[k===0 ? 'border-b-0' : '', k===1 ? 'border-r-0' : '', k===2 ? 'border-l-0' : '' ]"
@@ -37,7 +37,7 @@
                 <q-img :src="cultureImg[k].backgroundImage" fit="cover" :ratio="557/400"></q-img>
               </div>
             </div>
-            <div class="col-4 col-xs-12 col-md-4">
+            <div class="col-4">
               <q-responsive :ratio="557/400">
                 <div class="points-container flex align-center">
                   <div class="title text-weight-bolder">{{ v.title }}</div>
@@ -68,9 +68,6 @@
               <div
                 class="team-english-name text-quaternary text-6xl text-weight-bold pb-10 text-center sm:text-left"
               >{{v.englishName }}</div>
-              <div
-                class="team-Chinese-name text-white text-3xl text-weight-bold pb-5 text-center sm:text-left"
-              >{{ v.ChineseName }}</div>
               <p
                 class="text-white text-xs pb-2 leading-5"
                 v-for="(vv, kk) in v.description"

@@ -1,5 +1,24 @@
 @import './quasar.variables.scss';
 
+.mobile {
+  .lm-culture-points {
+    .points-container {
+      .title {
+        font-size: 12vw;
+        margin-top: 2px;
+        height: auto;
+        line-height: 1;
+      }
+
+      .description {
+        height: auto;
+        line-height: 1;
+        font-size: 1vw;
+      }
+    }
+  }
+}
+
 .lm-about {
   .lm-about-culture {
     position: relative;

@@ -61,16 +61,25 @@
                 :no-spinner="true"
               ></q-img>
               <div
-                class="introduction"
+                class="introduction relative px-12 pt-3 pb-8"
                 :class="getClassType(k, 'bg-secondary', 'bg-primary')"
                 v-if="servicesData[k].visible"
               >
-                <h3 class="text-white text-weight-bold heading text-4xl pb-10 pt-5">{{ v.title }}</h3>
-                <div class="h-24">
-                  <p class="text-white text-lg" v-for="(vd, vk) in v.description" :key="vk">{{ vd }}</p>
+                <h3
+                  class="text-white text-weight-bold heading text-4xl pb-1 sm:pb-10 sm:pt-5"
+                >{{ v.title }}</h3>
+                <div class="sm:h-24">
+                  <p
+                    class="text-white text-lg pr-20 sm:pr-0"
+                    v-for="(vd, vk) in v.description"
+                    :key="vk"
+                  >{{ vd }}</p>
                 </div>
 
-                <router-link class="root-link" :to="v.link">了解更多></router-link>
+                <router-link
+                  class="root-link absolute sm:relative right-0 bottom-0"
+                  :to="v.link"
+                >了解更多></router-link>
               </div>
             </transition-group>
           </div>
@@ -124,9 +133,9 @@
           </q-carousel>
         </div>
         <div class="col-12">
-            <div class="footer text-center white">
-              <router-link to="about">了解更多></router-link>
-            </div>
+          <div class="footer text-center white">
+            <router-link to="spot">了解更多></router-link>
+          </div>
         </div>
       </div>
     </section>
@@ -166,9 +175,9 @@
           </transition>
         </div>
 
-        <div class="col-xs-10 col-md-12 culture-item gt-sm py-5">
+        <div class="col-xs-10 col-md-12 culture-item gt-sm py-5 culture-introduction">
           <template v-for="(v, k) in cultureData" :key="k">
-            <p class="my-4" v-for="(vv, vk) in v.description" :key="vk" :data-id="vk">{{ vv }}</p>
+            <template class v-for="(vv, vk) in v.description" :key="vk" :data-id="vk">{{ vv }}</template>
           </template>
           <div class="content">
             <div class="footer text-center">
