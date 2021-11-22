@@ -125,7 +125,7 @@
         </div>
         <div class="col-12">
             <div class="footer text-center white">
-              <router-link to="culture">了解更多></router-link>
+              <router-link to="about">了解更多></router-link>
             </div>
         </div>
       </div>
