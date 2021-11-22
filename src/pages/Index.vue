@@ -78,7 +78,7 @@
       </div>
     </section>
     <section class="lm-green-background-container">
-      <div class="lm-points row items-center lg:container lg:mx-auto">
+      <div class="lm-points row items-center lg:container lg:mx-auto py-36">
         <div class="points-container">
           <q-carousel
             v-model="slide"
@@ -122,6 +122,11 @@
               </q-carousel-slide>
             </template>
           </q-carousel>
+        </div>
+        <div class="col-12">
+            <div class="footer text-center white">
+              <router-link to="culture">了解更多></router-link>
+            </div>
         </div>
       </div>
     </section>
@@ -187,7 +192,7 @@
       </div>
     </section>
     <div class="lm-green-background-container">
-      <section class="lm-offers row items-center lg:container lg:mx-auto">
+      <section class="lm-offers row items-center lg:container lg:mx-auto py-32">
         <div class="offer-container">
           <div class="row">
             <div class="col-12 q-pa-xs-xs mb-14">

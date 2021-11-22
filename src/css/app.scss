@@ -78,6 +78,12 @@ section {
   a {
     @include read-more;
   }
+
+  &.white {
+    a:hover {
+        color: $secondary;
+    }
+  }
 }
 
 $xl-breakpoint: 1536px;
@@ -214,9 +220,6 @@ $xl-breakpoint: 1536px;
 }
 
 .lm-points {
-  // background-color: $white;
-  min-height: 57rem;
-
   .points-container {
     width: 100%;
   }
@@ -230,8 +233,6 @@ $xl-breakpoint: 1536px;
 .lm-points,
 .lm-offers {
   width: 100%;
-  padding: 3.125rem 0;
-
   .header-title {
     margin-top: 0;
     margin-bottom: 6.25rem;
@@ -379,7 +380,7 @@ $xl-breakpoint: 1536px;
 
 .lm-offers {
   background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
-  min-height: 58.06rem;
+  // min-height: 58.06rem;
 
   .offer-container {
     width: 100%;
