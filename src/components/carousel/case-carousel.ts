@@ -306,6 +306,9 @@ export default function (props: propsType) {
         currentCaseIndex,
         carouselType,
         carouselHeight,
+        isMobile: computed(() => {
+            return <boolean>$q.platform.is.mobile;
+        }),
         carouselChange (index: number) {
             currentCaseIndex.value = index;
             isLastCarousel.value = index === caseData.value.length - 1;

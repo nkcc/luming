@@ -278,7 +278,7 @@ import Contact from '../components/Contact.vue';
 import Indicator from 'components/Indicator.vue';
 import CaseCarousel from 'components/carousel/CaseCarousel.vue';
 import { CarouselData, OfferData } from 'components/models';
-import { QScrollArea } from 'quasar';
+import { QScrollArea, useQuasar } from 'quasar';
 
 export default {
   name: 'CloudProgram',
@@ -290,6 +290,7 @@ export default {
     CaseCarousel,
   },
   setup() {
+    const $q = useQuasar();
     const suitableStudents = [
       '高中在读或毕业生',
       '本科在读或毕业生',
@@ -589,6 +590,9 @@ export default {
         return <OfferData>offers.list.find((offer) => {
           return offer.name === slideOffer.value;
         });
+      }),
+      isMobile: computed(() => {
+        return <boolean>$q.platform.is.mobile;
       }),
       getClassType(k: number, firstClass: string, secondClass: string) {
         return k % 2 == 0 ? firstClass : secondClass;

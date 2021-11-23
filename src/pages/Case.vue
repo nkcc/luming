@@ -368,6 +368,9 @@ export default defineComponent({
       currentCaseIndex,
       carouselType,
       carouselHeight,
+      isMobile: computed(() => {
+        return <boolean>$q.platform.is.mobile;
+      }),
       carouselChange(index: number) {
         indicatorLeft.value = `${index * offset}rem`;
 

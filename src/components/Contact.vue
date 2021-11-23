@@ -51,17 +51,23 @@
   </section>
 </template>
 
-<script>
-import { ref } from 'vue';
+<script lang="ts">
+import { ref, computed } from 'vue';
+import { useQuasar } from 'quasar'
+
 export default {
   name: 'Contact',
   setup() {
+    const $q = useQuasar();
     return {
       form: ref({
         name: '',
         phone: '',
         wechat: ''
-      })
+      }),
+      isMobile: computed(() => {
+        return <boolean>$q.platform.is.mobile;
+      }),
     };
   }
 };

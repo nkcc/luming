@@ -77,15 +77,17 @@
 <script lang="ts">
 import PartHeader from '../components/PartHeader.vue';
 import Contact from '../components/Contact.vue';
-import { ref } from 'vue';
+import { ref, computed, defineComponent } from 'vue';
+import { useQuasar } from 'quasar'
 
-export default {
+export default defineComponent({
   name: 'StudyAbroad',
   components: {
     PartHeader,
     Contact,
   },
   setup() {
+    const $q = useQuasar();
     const prodTitle = [
       '鹿名留学为不同的学生量身打造了两个留学申请产品：',
       '世界名校直通车和名校教授培养计划。',
@@ -137,6 +139,7 @@ export default {
       questionTitle,
       questionAnswer,
       servicesData,
+      isMobile: computed(() => <boolean>$q.platform.is.mobile),
       getClassType(k: number, firstClass: string, secondClass: string) {
         return k % 2 == 0 ? firstClass : secondClass;
       },
@@ -156,7 +159,7 @@ export default {
       },
     };
   },
-};
+});
 </script>
 
 <style lang="scss">

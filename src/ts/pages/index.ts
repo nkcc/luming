@@ -730,6 +730,9 @@ const setup = function () {
       currentOfferSchool.value =
         Math.floor(currentPosition.value * offerData.value.length) - 1;
     },
+    isMobile: computed(() => {
+      return <boolean>$q.platform.is.mobile;
+    })
   };
 };
 

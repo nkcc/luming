@@ -32,7 +32,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, computed } from 'vue';
 import { useQuasar } from 'quasar';
 
 export default defineComponent({
@@ -64,6 +64,9 @@ export default defineComponent({
         }
         return 'col-' + colNum;
       },
+      isMobile: computed(() => {
+        return <boolean>$q.platform.is.mobile;
+      }),
     };
   },
 });

@@ -316,7 +316,7 @@ import Contact from '../components/Contact.vue';
 import Indicator from 'components/Indicator.vue';
 import CaseCarousel from 'components/carousel/CaseCarousel.vue';
 import { CarouselData, OfferData } from 'components/models';
-import { QScrollArea } from 'quasar';
+import { QScrollArea, useQuasar } from 'quasar';
 import { useRoute } from 'vue-router';
 
 export default {
@@ -329,6 +329,7 @@ export default {
     CaseCarousel,
   },
   setup() {
+    const $q = useQuasar();
     const router = useRoute();
     const currentOfferSchoolTypeIndex = ref(0);
     const currentPosition = ref(0);
@@ -611,6 +612,9 @@ export default {
       serviceProgress,
       highlight,
       suitableStudents,
+      isMobile: computed(() => {
+        return <boolean>$q.platform.is.mobile;
+      }),
       currentOffer: computed((): OfferData => {
         return <OfferData>offers.list.find((offer) => {
           return offer.name === slideOffer.value;

@@ -44,17 +44,23 @@
 import setupData from '../ts/pages/spot';
 import PartHeader from '../components/PartHeader.vue';
 import Contact from '../components/Contact.vue';
+import { defineComponent, computed } from 'vue'
+import { useQuasar } from 'quasar'
 
-export default {
+export default defineComponent({
   name: 'Spot',
   components: {
     PartHeader,
     Contact,
   },
   setup() {
-    return setupData;
+    const $q = useQuasar();
+    return {
+      ...setupData,
+      isMobile: computed(() => <boolean>$q.platform.is.mobile),
+      };
   },
-};
+});
 </script>
 
 <style lang="scss">

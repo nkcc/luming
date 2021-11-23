@@ -93,8 +93,9 @@
 <script lang="ts">
 import PartHeader from '../components/PartHeader.vue';
 import Contact from '../components/Contact.vue';
-import { ref, onBeforeUpdate, onMounted } from 'vue';
+import { ref, onBeforeUpdate, onMounted, computed, defineComponent } from 'vue';
 import { useRoute } from 'vue-router';
+import { useQuasar } from 'quasar';
 
 const cultureData = ref([
   {
@@ -205,13 +206,14 @@ const teamData = ref([
   },
 ]);
 
-export default {
+export default defineComponent({
   name: 'About',
   components: {
     PartHeader,
     Contact,
   },
   setup() {
+    const $q = useQuasar();
     const router = useRoute();
     const itemRefs = ref([]);
     onBeforeUpdate(() => {
@@ -224,10 +226,13 @@ export default {
         const currentRef = <InstanceType<typeof HTMLElement>>(
           itemRefs.value[index]
         );
-        setTimeout(() => currentRef.scrollIntoView({ behavior: 'smooth' }), 0);
+        currentRef.scrollIntoView({ behavior: 'smooth' });
       }
     });
     return {
+      isMobile: computed(() => {
+        return <boolean>$q.platform.is.mobile;
+      }),
       itemRefs,
       cultureData,
       history,
@@ -235,7 +240,7 @@ export default {
       teamData,
     };
   },
-};
+});
 </script>
 
 <style lang="scss">
