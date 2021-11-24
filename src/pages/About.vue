@@ -4,16 +4,19 @@
       <div class="lm-light-dark-background">
         <div class="lg:container lg:mx-auto">
           <part-header name="鹿名来源" class></part-header>
-          <div class="lm-comes-introduction w-full q-px-xs-md">
+          <div class="lm-comes-introduction w-full q-px-xs-xs">
             <div class="content w-full text-center pb-5" v-for="(v, k) in history" :key="k">
-              <div
-                class="title text-base text-weight-bold pb-1 animate__animated animate__fadeInUp"
-                :class="'animate__delay-' + k + 's'"
-                v-for="(vv, kk) in v.title"
-                :key="kk"
-              >{{ vv }}</div>
+              <div class="pb-6 sm:pb-0" v-if="v.title.length">
+                <div
+                  class="title text-base text-weight-bold pb-1 animate__animated animate__fadeInUp"
+                  :class="'animate__delay-' + k + 's'"
+                  v-for="(vv, kk) in v.title"
+                  :key="kk"
+                >{{ vv }}</div>
+              </div>
+
               <p
-                class="description text-weight-light leading-7 animate__animated animate__fadeInUp"
+                class="description zoom-sm text-weight-light leading-7 animate__animated animate__fadeInUp"
                 :class="'animate__delay-' + k + 's'"
                 v-for="(vd, kd) in v.content"
                 :key="kd"
@@ -42,7 +45,7 @@
                 <div class="points-container flex align-center">
                   <div class="title text-weight-bolder">{{ v.title }}</div>
                   <div
-                    class="description text-quaternary w-full text-base text-weight-bolder text-center"
+                    class="description zoom-xs text-quaternary w-full text-xs text-weight-bolder text-center"
                   >{{ v.description }}</div>
                 </div>
               </q-responsive>
@@ -53,8 +56,8 @@
       <part-header name="鹿名团队" class></part-header>
       <div class="lm-culture-team row justify-center pb-14 lg:container lg:mx-auto">
         <div
-          class="team-container col-9 col-xs-12 col-md-9 flex items-center pb-24 q-px-xs-md q-px-md-none"
-          :class="[k !== 0 ? 'pt-24' :'', k === teamData.length - 1 ? 'last' : '']"
+          class="team-container col-9 col-xs-12 col-md-9 flex items-center py-8 sm:pb-24 q-px-xs-md q-px-md-none"
+          :class="[k !== 0 ? 'sm:pt-24' :'', k === teamData.length - 1 ? 'last' : '']"
           v-for="(v, k) in teamData"
           :key="k"
           :ref="
@@ -63,7 +66,7 @@
               }
             "
         >
-          <div class="row items-center" :class=" k % 2 === 0 ? '' : 'reverse'">
+          <div class="row items-center gt-sm" :class=" k % 2 === 0 ? '' : 'reverse'">
             <div class="col-7 col-xs-12 col-md-7">
               <div
                 class="team-english-name text-quaternary text-6xl text-weight-bold pb-10 text-center sm:text-left"
@@ -81,6 +84,28 @@
               <q-responsive :ratio="611/643">
                 <q-img class="team-avatar" :src="v.avatarUrl"></q-img>
               </q-responsive>
+            </div>
+          </div>
+          <div class="row items-start lt-md">
+            <div class="col-6 pt-4">
+              <div
+                class="team-english-name text-quaternary text-5xl text-weight-bold"
+                v-for="(vv, kk) in v.mobileEnglishName"
+                :key="kk"
+              >{{ vv}}</div>
+            </div>
+            <div class="col-6 team-avatar-p-r">
+              <q-responsive :ratio="611/643">
+                <q-img class="team-avatar" :src="v.avatarUrl"></q-img>
+              </q-responsive>
+            </div>
+
+            <div class="col-7 col-xs-12 col-md-7 pt-4">
+              <p
+                class="text-white text-xs pb-4 leading-5 zoom-md text-weight-thin"
+                v-for="(vv, kk) in v.description"
+                :key="kk"
+              >{{ vv }}</p>
             </div>
           </div>
         </div>
@@ -123,6 +148,57 @@ const cultureImg = ref([
   },
   {
     backgroundImage: 'culture/2.jpg',
+  },
+]);
+
+const historyMobile = ref([
+  {
+    title: ['SAT1400+能上什么样的大学？GPA3.8能被顶级名校录取吗？'],
+    content: [
+      '学术背景和社会实践要达到怎样的标准才能够算出众…',
+      '这些问题一直以来困扰着无数心怀一颗留学梦想的中国学生们。',
+      '通过很多传统留学中介机构和大学官网的途径，',
+      '学生们能够了解到所谓的上什么大学是什么样的一个“标准”。',
+      '通常学生们以及留学机构会将这样的“标准”作为申请学校时最关键的逻辑基础。',
+      '然而，没有一种“标准”是决定性的因素，',
+      '学生的SAT成绩，学校成绩、语言成绩、写作、',
+      '社会实践、学术背景、学校背景等都是录取时要考虑的。',
+      '这么多的考量因素最终往往会导致传统留学机构无法摸清目标学校的录取偏好、',
+      '考核侧重点以及最新招生政策等，',
+      '最终导致学生和学校的错配，使学生无法去到自己最理想的学校，',
+      '高分低录往往就是在这种情况下所造成的一个后果。',
+      '那么是否可以实现低分高录，即便学生的众多“标准”不够出彩，',
+      '尤其是成绩方面不够优秀，也可以实现名校梦？',
+      '然而，进入名校后又担心自己的各科成绩跟不上，语言方面不适应该怎么办？',
+    ],
+  },
+  {
+    title: [
+      '鹿名国际教育能够解决以上的种种问题，',
+      '帮助学生们实现自己的名校梦、留学梦，并为学生们留学后的校园',
+      '学习生活中提供系统性的学术辅导和陪伴。',
+    ],
+    content: [
+      '鹿名国际教育成立于2013年美国波士顿，',
+      '其使命致力于让中国留学生的名校梦不再高不可攀。',
+      '不论学生是怎样的背景和成绩，鹿名国际都可以通过',
+      '其两条成熟和独特的留学申请产品线（世界名校直通车和名校教授培养计划）',
+      '将学生保送到最顶尖的名校，',
+      '并在留学后的校园生活中为学生提供系统性的学术辅导服务（学业管家）。',
+      '鹿名国际凭借着多年以来独有的世界顶尖大学教授、',
+      '招生官、学校管理层以及名校学长学姐资源，为学生的申请路上保驾护航。',
+      '2016年至2018年，鹿名国际迅速扩张，',
+      '名校保录业务不断扩展到了欧洲、澳大利亚、加拿大、新加坡和香港等地。',
+      '自2014年以来鹿名国际已帮助学员斩获600+世界顶尖院校录取。',
+      '随着口碑逐渐扩大，企业家子女，众多精品教育机构等选择与我们合作，',
+      '但由于一直秉承小而精的运营方式和高质量服务理念，鹿名国际业务在年年增长的趋势下，',
+      '每年限制最多50名本科生和80名研究生的世界名校申请名额。',
+      '目前鹿名国际学员已遍布包括哈佛、耶鲁、',
+      '牛津、剑桥、斯坦福、沃顿、康奈尔、及哥伦比亚等世界知名大学。',
+      '对于大多数学生，我们将申请到世界顶尖名校的概率从10%提升到约90%，',
+      '这也进一步证明了鹿名国际留学申请业务的保证性。',
+      '在确保服务结果的同时，我们也始终以98%的用户满意度为学员服务。',
+    ],
   },
 ]);
 
@@ -170,6 +246,7 @@ const history = ref([
 const teamData = ref([
   {
     englishName: 'Patrick Shui',
+    mobileEnglishName: ['Patrick', 'Shui'],
     ChineseName: '中文名字',
     description: [
       'Patrick老师坚信力量来源于知识，在申请服务过程不断激发学生的潜能，挖掘学生的亮点。让学生在压力极大的申请过程中不断提高自己能力和自我认知，从而帮助学生成功通过人生的第一道重大关卡。',
@@ -179,6 +256,7 @@ const teamData = ref([
   },
   {
     englishName: 'Andy Xue',
+    mobileEnglishName: ['Andy', 'Xue'],
     ChineseName: '中文名字',
     description: [
       'Andy老师坚信留学申请过程不是困惑的或者令人沮丧的。事实上，如果用聪明的方法，这个过程将是学生拥有的一个绝佳的机会，去帮助他们提高自我认知和自信。',
@@ -188,6 +266,7 @@ const teamData = ref([
   },
   {
     englishName: 'Alex Gu',
+    mobileEnglishName: ['Alex', 'Gu'],
     ChineseName: '中文名字',
     description: [
       'Alex老师认为一次真正成功的留学申请是对自己重新发现、认识、认知的旅程。和老师一起重温自己的学术历程，挖掘每一段难忘的课外经历，发现自己内心深处的渴望，追寻自己一直以来的梦想。每一次陪伴学生走入dream school的旅程都是一段为人师者的记忆。',
@@ -197,6 +276,7 @@ const teamData = ref([
   },
   {
     englishName: 'Danny Chueng',
+    mobileEnglishName: ['Danny', 'Chueng'],
     ChineseName: '汉语名字/音译名字',
     description: [
       'Danny老师善于从西方人的视角去发现和诠释东方学生的优点与优势，真正站在以白人为核心的西方招生官的角度，精准挖掘学生潜力，精确定位背景提升项目等一系列为成功入校做努力的方式，达到院校、申请学院及留学机构三方都满意的最佳结果。',
@@ -216,6 +296,9 @@ export default defineComponent({
     const $q = useQuasar();
     const router = useRoute();
     const itemRefs = ref([]);
+    const isMobile = computed(() => {
+      return <boolean>$q.platform.is.mobile;
+    });
     onBeforeUpdate(() => {
       itemRefs.value = [];
     });
@@ -229,13 +312,12 @@ export default defineComponent({
         currentRef.scrollIntoView({ behavior: 'smooth' });
       }
     });
+
     return {
-      isMobile: computed(() => {
-        return <boolean>$q.platform.is.mobile;
-      }),
+      isMobile,
       itemRefs,
       cultureData,
-      history,
+      history: isMobile.value ? historyMobile : history,
       cultureImg,
       teamData,
     };
@@ -245,4 +327,16 @@ export default defineComponent({
 
 <style lang="scss">
 @import '../css/about.scss';
+
+.zoom-sm {
+  zoom: 0.7;
+}
+
+.zoom-xs {
+  zoom: 0.5;
+}
+
+.zoom-md {
+  zoom: 0.9;
+}
 </style>
