@@ -92,4 +92,28 @@
       padding-left: 0;
     }
   }
+
+  .mobile-root-link {
+    padding: 0 5px;
+    position: relative;
+
+    &:not(:last-child) {
+      &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        zoom: 0.5;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 24px;
+        background: $quaternary;
+      }
+    }
+
+    a {
+      line-height: 1rem;
+      padding: 0;
+    }
+  }
 }

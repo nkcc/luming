@@ -53,7 +53,7 @@
 
 <script lang="ts">
 import { ref, computed } from 'vue';
-import { useQuasar } from 'quasar'
+import { useQuasar } from 'quasar';
 
 export default {
   name: 'Contact',
@@ -63,13 +63,13 @@ export default {
       form: ref({
         name: '',
         phone: '',
-        wechat: ''
+        wechat: '',
       }),
       isMobile: computed(() => {
         return <boolean>$q.platform.is.mobile;
       }),
     };
-  }
+  },
 };
 </script>
 
@@ -84,6 +84,10 @@ export default {
 .mobile {
   .lm-contact {
     height: 48rem;
+
+    .title {
+      font-size: 5rem;
+    }
   }
 }
 </style>

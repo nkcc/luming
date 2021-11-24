@@ -746,6 +746,12 @@ $xl-breakpoint: 1536px;
   }
 
   .lm-offers {
+
+    .header-title {
+      margin-top: 5rem;
+      margin-bottom: 2rem;
+    }
+
     .area {
       flex-wrap: nowrap;
 
@@ -817,6 +823,32 @@ $xl-breakpoint: 1536px;
     .header-title {
       margin-top: auto;
       margin-bottom: 2rem;
+    }
+
+    .team-container {
+      .team-card {
+        padding: 2px;
+
+        .mobile-link {
+          zoom: 0.75;
+          font-weight: 300;
+          padding: 1rem;
+        }
+
+        .mobile-name {
+          &:not(:first-child) {
+            color: gray;
+          }
+        }
+
+        .bar {
+          height: 6px;
+        }
+
+        .bar-secondary {
+          height: 6px;
+        }
+      }
     }
   }
 

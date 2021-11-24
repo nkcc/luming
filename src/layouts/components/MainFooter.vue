@@ -1,7 +1,7 @@
 <template>
   <div class="page-footer">
     <div
-      class="row justify-center information q-px-xs-lg q-px-lg-xs q-px-md-xs q-px-xl-xs lg:container lg:mx-auto"
+      class="row justify-center information q-px-xs-sm q-px-lg-xs q-px-md-xs q-px-xl-xs lg:container lg:mx-auto"
     >
       <div class="col-12 row justify-center">
         <div class="col-md-9 col-xs-12 relative">
@@ -16,7 +16,14 @@
           </div>
         </div>
       </div>
-      <div class="col-3 col-md-3 left col-xs-12">
+      <div class="col-12 mt-4">
+        <ul class="flex justify-center">
+          <li class="mobile-root-link" v-for="(v,k) in [...navList, ...navListRight]" :key="k">
+            <router-link :to="v.link" class="title text-weight-bold text-center">{{ v.title }}</router-link>
+          </li>
+        </ul>
+      </div>
+      <div class="col-3 col-md-3 left col-xs-12 gt-sm">
         <ul class="item-list w-full">
           <li class="item w-full" v-for="(v, key) in navList" :key="key">
             <router-link
@@ -32,7 +39,7 @@
       <div class="col-3 col-md-3 center col-xs-4 mb-10 mt-5 sm:mb-0 sm:mt-0">
         <q-img class="logo-center" initial-ratio="1" src="logo_center.svg"></q-img>
       </div>
-      <div class="col-3 col-md-3 right col-xs-12">
+      <div class="col-3 col-md-3 right col-xs-12 gt-sm">
         <ul class="item-list w-full">
           <li class="item" v-for="(v, key) in navListRight" :key="key">
             <router-link :to="v.link" class="title text-center sm:text-left block">{{ v.title }}</router-link>
@@ -45,7 +52,7 @@
     </div>
 
     <div
-      class="row justify-center items-center information q-pa-xs-lg q-pa-lg-xs q-pa-md-xs q-pa-xl-xs lg:container lg:mx-auto"
+      class="row justify-center items-center information q-pa-xs-lg q-pa-lg-xs q-pa-md-xs q-pa-xl-xs lg:container lg:mx-auto gt-sm"
     >
       <div class="col-xs-12 col-md-9 copyright row justify-center items-center">
         <div
