@@ -5,9 +5,9 @@
         <div class="lg:container lg:mx-auto">
           <part-header name="名校教授培养计划"></part-header>
           <div class="lm-container row justify-center pb-20">
-            <div class="col-9">
+            <div class="col-md-9 col-xs-11">
               <div
-                class="text-quaternary text-weight-bolder text-center text-4xl mb-7"
+                class="text-quaternary text-weight-bolder text-center text-3xl sm:text-4xl mb-7"
               >{{ programTitle }}</div>
               <div
                 class="text-quaternary text-weight-bolder text-center text-xl"
@@ -50,21 +50,26 @@
             </template>
             <template v-for="(v, k) in carouselData" :key="k">
               <q-carousel-slide :name="'carousel' + k" class="column no-wrap">
-                <div class="row justify-center items-center mb-10">
-                  <div class="col-xs-12 col-sm-12 col-md-5 left q-py-xs-lg q-py-xs-lg">
+                <div class="row justify-center items-start mb-10">
+                  <div class="col-xs-6 col-sm-6 col-md-5 left">
                     <h3 class="text-white text-weight-bold text-2xl">{{ v.title }}</h3>
                     <div class="mt-2">
                       <h2 class="text-quaternary text-weight-bolder text-5xl pb-10">{{ v.subTitle }}</h2>
                       <p
-                        class="text-white text-sm pr-0 sm:pr-24 text-weight-thin leading-6"
+                        class="text-white text-sm pr-0 sm:pr-24 text-weight-thin leading-6 gt-sm"
                       >{{ v.description }}</p>
                     </div>
                     <div class="footer"></div>
                   </div>
-                  <div class="col-xs-12 col-sm-12 col-md-4 right q-py-xs-lg q-py-sm-lg">
+                  <div class="col-xs-6 col-sm-6 col-md-4 right">
                     <q-responsive :ratio="692 / 511">
                       <q-img class="points-img" :src="v.imgLink" loading="eager" :no-spinner="true"></q-img>
                     </q-responsive>
+                  </div>
+                  <div class="col-12 lt-md">
+                    <p
+                      class="text-white zoom-md font-extralight text-sm pr-0 leading-9 tracking-wide md:pr-24 lg:pr-24"
+                    >{{ v.description }}</p>
                   </div>
                 </div>
               </q-carousel-slide>
@@ -73,9 +78,9 @@
         </div>
       </div>
     </section>
-    <section class="bg-white mb-20">
+    <section class="bg-white mb-0 sm:mb-20">
       <div class="lg:container lg:mx-auto">
-        <div class="lm-container row justify-center py-20">
+        <div class="lm-container row justify-center py-10 sm:py-20">
           <div class="col-md-9 col-xs-12">
             <description-with-img
               :info="suitableStudents"
@@ -87,124 +92,7 @@
       </div>
     </section>
     <section class="transparent">
-      <div class="lg:container lg:mx-auto">
-        <div class="lm-container row justify-center pb-20">
-          <div class="col-12">
-            <div class="header">
-              <div
-                class="incubation-title text-quaternary text-center text-weight-bolder"
-              >{{ offers.title }}</div>
-              <div
-                class="subtitle text-quaternary text-center text-text-weight-bolder"
-              >{{ offers.subTitle }}</div>
-            </div>
-            <div class="content">
-              <section class="lm-offers transparent row items-center lg:container lg:mx-auto">
-                <div class="offer-container">
-                  <q-carousel
-                    v-model="slideOffer"
-                    control-color="white"
-                    navigation
-                    padding
-                    arrows
-                    animated
-                    transition-prev="fade"
-                    transition-next="fade"
-                    class="lm-points-background transparent"
-                  >
-                    >
-                    <template v-slot:navigation-icon></template>
-
-                    <template v-for="(v, k) in offers.list" :key="k">
-                      <q-carousel-slide :name="v.name" class="flex no-wrap flex-center relative">
-                        <div class="flex items-center mr-2">
-                          <q-btn
-                            flat
-                            round
-                            color="secondary"
-                            icon="navigate_before"
-                            @click="scrollLeft(k)"
-                          />
-                        </div>
-                        <q-scroll-area
-                          class="lm-scroll"
-                          :bar-style="{ background: 'transparent' }"
-                          :thumb-style="{ background: 'transparent' }"
-                          :ref="
-                            (el) => {
-                              if (el) itemRefs[k] = el;
-                            }
-                          "
-                        >
-                          <ul
-                            class="offer-list row fit justify-start items-center q-gutter-xs q-col-gutter no-wrap"
-                          >
-                            <li
-                              class="offer-item"
-                              v-for="(sv, sk) in v.list"
-                              :key="sk"
-                              @mouseenter="getCurrentOfferSchool(sk)"
-                            >
-                              <q-responsive class="school-logo">
-                                <div class="flex items-center justify-center">
-                                  <q-img
-                                    class="img"
-                                    :src="sv.imgLink"
-                                    fit="contain"
-                                    loading="eager"
-                                    :no-spinner="true"
-                                  ></q-img>
-                                </div>
-                              </q-responsive>
-                              <div class="school-desc">
-                                <div
-                                  class="title text-quaternary text-weight-bolder text-xl"
-                                >{{ sv.title }}</div>
-                                <div
-                                  class="subtitle text-white text-weight-bold text-lg"
-                                >{{ sv.subTitle }}</div>
-                                <q-scroll-area
-                                  class="description ellipsis-3-lines text-weight-thin text-xs leading-5"
-                                  :bar-style="{ background: 'white' }"
-                                >
-                                  <span class="scale-50 transform">
-                                    {{
-                                    sv.description
-                                    }}
-                                  </span>
-                                </q-scroll-area>
-                              </div>
-                            </li>
-                          </ul>
-                        </q-scroll-area>
-                        <div class="ml-2">
-                          <q-btn
-                            flat
-                            round
-                            color="secondary"
-                            icon="navigate_next"
-                            @click="scrollRight(sk)"
-                          />
-                        </div>
-                      </q-carousel-slide>
-                    </template>
-                  </q-carousel>
-                  <div class="row justify-center items-center">
-                    <div class="col-md-6 col-sm-12 col-xs-11">
-                      <indicator
-                        :num="currentOffer.list.length"
-                        :left="offerIndicatorLeft"
-                        :index="currentOfferSchool"
-                        @show="showIndicator"
-                      ></indicator>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
+    <SlideOffer></SlideOffer>
     </section>
     <section class="lm-professor transparent lg:container lg:mx-auto">
       <div class="row justify-center">
@@ -241,7 +129,7 @@
                     v-for="(vv, kk) in v.title"
                     :key="kk"
                   >{{ vv }}</div>
-                  <div class="description text-white text-weight-light">{{ v.description }}</div>
+                  <div class="description zoom-md text-white text-weight-light">{{ v.description }}</div>
                 </div>
               </div>
             </div>
@@ -251,7 +139,7 @@
     </section>
     <section class="bg-white mb-20">
       <div class="lg:container lg:mx-auto">
-        <div class="lm-container row justify-center py-20">
+        <div class="lm-container row justify-center py-10 sm:py-20">
           <div class="col-12">
             <description-with-img
               :info="serviceProgress"
@@ -267,14 +155,14 @@
     </section>
     <section class="transparent mb-20">
       <div class="lg:container lg:mx-auto">
-        <div class="lm-container row justify-center items-center pb-20">
+        <div class="lm-container row justify-center items-center pb-0 sm:pb-20">
           <div class="col-md-9 col-xs-11">
             <div class="text-quaternary text-center text-weight-bolder text-5xl">产品亮点</div>
             <div class="highlight mt-20 sm:mt-10">
               <div class="row lm-highlight">
                 <div
                   :class="[
-                    'col-md-4 mb-10 item col-xs-12',
+                    'col-md-4 col-xs-4 mb-10 item',
                     k === 2 || k === 5 ? 'no-link' : '',
                     k === 0 || k === 2 ? 'link-bottom' : '',
                   ]"
@@ -286,7 +174,7 @@
                   >{{ v.title }}</div>
                   <div class="description mt-2">
                     <p
-                      class="text-center text-white text-xs text-weight-thin leading-5"
+                      class="text-center text-white zoom-xs text-xs text-weight-thin leading-5"
                       v-for="(vv, kk) in v.list"
                       :key="kk"
                     >{{ vv }}</p>
@@ -315,6 +203,7 @@ import DescriptionWithImg from '../components/DescriptionWithImg.vue';
 import Contact from '../components/Contact.vue';
 import Indicator from 'components/Indicator.vue';
 import CaseCarousel from 'components/carousel/CaseCarousel.vue';
+import SlideOffer from 'src/components/SlideOffer.vue';
 import { CarouselData, OfferData } from 'components/models';
 import { QScrollArea, useQuasar } from 'quasar';
 import { useRoute } from 'vue-router';
@@ -327,6 +216,7 @@ export default {
     Indicator,
     Contact,
     CaseCarousel,
+    SlideOffer
   },
   setup() {
     const $q = useQuasar();
@@ -693,35 +583,29 @@ export default {
     padding: 0;
   }
 
+    .lm-points .lm-points-background .row .right .points-img {
+    box-shadow: 6px 6px $quaternary;
+  }
+    .q-carousel--arrows-horizontal.q-carousel--with-padding .q-carousel__slide {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
   .lm-highlight {
     position: relative;
-    &::before {
-      position: absolute;
-      content: '';
-      left: 50%;
-      border: 0;
-      width: 2px;
-      background: $quaternary;
-      height: 100%;
-    }
     .item {
-      margin: 20px 0;
-      background-color: #0b150e;
-      &:first-child {
-        margin-top: 0;
-      }
-      &:last-child {
-        margin-bottom: 0;
-      }
       &.link-bottom {
         &::before {
-          width: 0;
+          width: 1px;
         }
       }
 
       &::after {
-        width: 0;
+        height: 1px;
       }
+    }
+    &::before {
+      background: $quaternary;
     }
   }
 }
