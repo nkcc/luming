@@ -5,7 +5,7 @@
         <div class="lg:container lg:mx-auto">
           <part-header name="鹿名留学"></part-header>
           <div class="lm-container row justify-center pb-20">
-            <div class="col-9">
+            <div class="col-9 col-xs-11 col-md-9">
               <div class="mb-16 animate__animated animate__zoomIn">
                 <div
                   class="text-quaternary text-weight-bolder text-center text-base leading-6"
@@ -13,7 +13,7 @@
                   :key="k"
                 >{{v}}</div>
                 <div
-                  class="text-quaternary text-center text-weight-thin text-sm leading-7"
+                  class="text-quaternary zoom-sm text-center text-weight-thin text-sm leading-7"
                   v-for="(v,k) in prodDescription"
                   :key="k"
                 >{{v}}</div>
@@ -28,45 +28,7 @@
               >{{v}}</div>
             </div>
           </div>
-          <section class="lm-services pb-2">
-            <div class="row q-col-gutter-x-sm lg:container lg:mx-auto">
-              <div
-                class="col-md-4 col-sm-4 col-xs-12 animate__animated animate__animated service-container"
-                v-for="(v, k) in servicesData"
-                :key="k"
-              >
-                <div :class="getClassType(k, 'bar-secondary', 'bar')"></div>
-
-                <div class="media" :data-id="k" v-intersection.once="onServiceIntersection">
-                  <transition-group appear enter-active-class="animated animate__fadeIn">
-                    <q-img
-                      class="img"
-                      :src="v.img"
-                      :ratio="537 / 336"
-                      v-if="servicesData[k].visible"
-                    ></q-img>
-                    <div
-                      class="introduction"
-                      :class="getClassType(k, 'bg-secondary', 'bg-primary')"
-                      v-if="servicesData[k].visible"
-                    >
-                      <h3
-                        class="text-white text-weight-bold heading text-4xl py-10 sm:text-2xl md:text-3xl lg:text-4xl"
-                      >{{ v.title }}</h3>
-                      <div class="h-24">
-                        <p
-                          class="text-white text-lg"
-                          v-for="(vd, vk) in v.description"
-                          :key="vk"
-                        >{{ vd }}</p>
-                      </div>
-                      <router-link class="root-link" :to="v.link">了解更多></router-link>
-                    </div>
-                  </transition-group>
-                </div>
-              </div>
-            </div>
-          </section>
+          <service></service>
         </div>
       </div>
     </section>
@@ -77,14 +39,16 @@
 <script lang="ts">
 import PartHeader from '../components/PartHeader.vue';
 import Contact from '../components/Contact.vue';
+import Service from '../components/Service.vue';
 import { ref, computed, defineComponent } from 'vue';
-import { useQuasar } from 'quasar'
+import { useQuasar } from 'quasar';
 
 export default defineComponent({
   name: 'StudyAbroad',
   components: {
     PartHeader,
     Contact,
+    Service,
   },
   setup() {
     const $q = useQuasar();
@@ -166,5 +130,11 @@ export default defineComponent({
 .lm-question-title {
   font-size: 2.5rem;
   letter-spacing: 1.5625rem;
+}
+.mobile {
+  .lm-question-title {
+    font-size: 1.5rem;
+    letter-spacing: 0;
+  }
 }
 </style>

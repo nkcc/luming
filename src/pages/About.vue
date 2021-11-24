@@ -327,16 +327,4 @@ export default defineComponent({
 
 <style lang="scss">
 @import '../css/about.scss';
-
-.zoom-sm {
-  zoom: 0.7;
-}
-
-.zoom-xs {
-  zoom: 0.5;
-}
-
-.zoom-md {
-  zoom: 0.9;
-}
 </style>
