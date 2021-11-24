@@ -26,6 +26,10 @@
   .zoom-md {
     zoom: 0.9;
   }
+
+  .zoom-xxs {
+    zoom: 0.3;
+  }
 }
 
 $vw: 100vw;
@@ -833,6 +837,7 @@ $xl-breakpoint: 1536px;
 
   .lm-team {
     padding-top: 2rem;
+    min-height: 0;
 
     .header-title {
       margin-top: auto;

@@ -66,13 +66,13 @@
                   :key="k"
                 >
                   {{ v.label }}：
-                  <span class="text-weight-light">{{ v.value }}</span>
+                  <span class="font-extralight">{{ v.value }}</span>
                 </div>
 
                 <div class="case-study text-white text-weight-bolder pt-9">
                   <div class="title pb-1">案例解读：</div>
                   <p
-                    class="text-weight-light mb-7 pr-0 md:pr-10 lg:pr-10 xl:pr-10"
+                    class="font-extralight mb-7 pr-0 md:pr-10 lg:pr-10 xl:pr-10"
                     v-for="(v, k) in currentCase.caseStudy"
                     :key="k"
                   >{{ v }}</p>
@@ -296,17 +296,17 @@ export default defineComponent({
       .lm-case-plan__content_container {
         .school {
           .name {
-            font-size: 1.8125rem;
+            font-size: 1.6125rem;
           }
 
           .rank {
-            font-size: 1.8125rem;
+            font-size: 1.6125rem;
           }
         }
 
         .student {
           .name {
-            font-size: 2.125rem;
+            font-size: 1.8125rem;
           }
 
           .background {

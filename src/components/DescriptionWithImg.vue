@@ -1,28 +1,19 @@
 <template>
   <div class="description-img-container relative">
-    <q-img :style="imgStyle" :src="background" fit="contain"> </q-img>
+    <q-img :style="imgStyle" :src="background" fit="contain"></q-img>
     <div :class="['transparent absolute w-full']" :style="{ top: top + 'rem' }">
       <slot>
         <div
-          class="
-            transparent
-            text-center text-weight-bolder text-5xl
-            mt-10
-            mb-10
-          "
+          class="transparent text-center text-weight-bolder text-5xl mt-10 mb-10"
           :class="darkMode ? 'text-quaternary' : ''"
-        >
-          {{ title }}
-        </div>
+        >{{ title }}</div>
         <ul>
           <li
-            class="text-weight-bolder text-center text-base leading-10"
+            class="text-weight-bolder zoom-md text-center text-base leading-10"
             :class="darkMode ? 'text-quaternary' : ''"
             v-for="(v, k) in info"
             :key="k"
-          >
-            {{ v }}
-          </li>
+          >{{ v }}</li>
         </ul>
       </slot>
     </div>

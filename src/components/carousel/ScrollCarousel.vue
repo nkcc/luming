@@ -175,7 +175,7 @@ export default defineComponent({
     padding: 16px 0 0 0;
   }
   .lm-offers .lm-points-background .offer-list .offer-item {
-    padding: 0;
+    padding: 0 4px;
   }
   .lm-offers .lm-points-background .offer-list .offer-item .school-desc .title  {
     font-weight: bold;

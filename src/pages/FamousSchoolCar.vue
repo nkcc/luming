@@ -7,10 +7,10 @@
           <div class="lm-container row justify-center pb-20">
             <div class="col-9">
               <div
-                class="text-quaternary text-weight-bolder text-center text-4xl mb-4"
+                class="text-quaternary text-weight-bolder text-center text-2xl sm:text-4xl sm:mb-4"
               >{{ programTitle }}</div>
               <div
-                class="text-quaternary text-weight-bolder text-center text-4xl"
+                class="text-quaternary text-weight-bolder text-center text-2xl sm:text-4xl"
               >{{ programDescription }}</div>
             </div>
           </div>
@@ -51,24 +51,30 @@
             <template v-for="(v, k) in carouselData" :key="k">
               <q-carousel-slide :name="'carousel' + k" class="column no-wrap">
                 <div class="row justify-center items-center mb-10">
-                  <div class="col-xs-12 col-sm-12 col-md-5 left q-py-xs-lg q-py-xs-lg">
+                  <div class="col-xs-6 col-sm-6 col-md-5 left q-py-xs-lg q-py-xs-lg">
                     <h3
-                      class="text-white text-weight-bold text-3xl text-center sm:text-left"
+                      class="text-white text-weight-bold text-2xl sm:text-3xl text-left"
                     >{{ v.title }}</h3>
                     <div class="mt-2">
                       <h2
-                        class="text-quaternary text-weight-bolder text-5xl pb-10 text-center sm:text-left"
+                        class="text-quaternary text-weight-bolder text-5xl sm:text-5xl pb-10 text-left"
                       >{{ v.subTitle }}</h2>
                       <p
-                        class="text-white text-sm pr-0 text-weight-thin leading-7 tracking-wide md:pr-24 lg:pr-24"
+                        class="text-white text-sm pr-0 text-weight-thin leading-7 tracking-wide md:pr-24 lg:pr-24 gt-sm"
                       >{{ v.description }}</p>
                     </div>
                     <div class="footer"></div>
                   </div>
-                  <div class="col-xs-12 col-sm-12 col-md-4 right q-py-xs-lg q-py-sm-lg">
+                  <div class="col-xs-6 col-sm-6 col-md-4 right q-py-xs-lg q-py-sm-lg">
                     <q-responsive :ratio="692 / 511">
                       <q-img class="points-img" :src="v.imgLink" loading="eager" :no-spinner="true"></q-img>
                     </q-responsive>
+                  </div>
+
+                  <div class="col-12 lt-md">
+                    <p
+                      class="text-white zoom-sm font-extralight text-sm pr-0 leading-9 tracking-wide md:pr-24 lg:pr-24"
+                    >{{ v.description }}</p>
                   </div>
                 </div>
               </q-carousel-slide>
@@ -77,10 +83,10 @@
         </div>
       </div>
     </section>
-    <section class="bg-white mb-20">
+    <section class="bg-white">
       <div class="lg:container lg:mx-auto">
-        <div class="lm-container row justify-center py-20">
-          <div class="col-9">
+        <div class="lm-container row justify-center py-10 sm:py-20">
+          <div class="col-md-9 col-xs-11">
             <description-with-img
               :info="suitableStudents"
               :darkMode="false"
@@ -93,127 +99,10 @@
         </div>
       </div>
     </section>
-    <section class="transparent">
-      <div class="lg:container lg:mx-auto">
-        <div class="lm-container row justify-center">
-          <div class="col-12">
-            <div class="header">
-              <div
-                class="incubation-title text-quaternary text-center text-weight-bolder"
-              >{{ offers.title }}</div>
-              <div
-                class="subtitle text-quaternary text-center text-text-weight-bolder"
-              >{{ offers.subTitle }}</div>
-            </div>
-            <div class="content">
-              <section class="lm-offers transparent row items-center lg:container lg:mx-auto">
-                <div class="offer-container">
-                  <q-carousel
-                    v-model="slideOffer"
-                    control-color="white"
-                    navigation
-                    padding
-                    arrows
-                    animated
-                    transition-prev="fade"
-                    transition-next="fade"
-                    class="lm-points-background transparent"
-                  >
-                    >
-                    <template v-slot:navigation-icon></template>
-
-                    <template v-for="(v, k) in offers.list" :key="k">
-                      <q-carousel-slide :name="v.name" class="flex no-wrap flex-center relative">
-                        <div class="flex items-center mr-2">
-                          <q-btn
-                            flat
-                            round
-                            color="secondary"
-                            icon="navigate_before"
-                            @click="scrollLeft(k)"
-                          />
-                        </div>
-                        <q-scroll-area
-                          class="lm-scroll"
-                          :bar-style="{ background: 'transparent' }"
-                          :ref="
-                            (el) => {
-                              if (el) itemRefs[k] = el;
-                            }
-                          "
-                        >
-                          <ul
-                            class="offer-list row fit justify-start items-center q-gutter-xs q-col-gutter no-wrap"
-                          >
-                            <li
-                              class="offer-item"
-                              v-for="(sv, sk) in v.list"
-                              :key="sk"
-                              @mouseenter="getCurrentOfferSchool(sk)"
-                            >
-                              <q-responsive class="school-logo">
-                                <div class="flex items-center justify-center">
-                                  <q-img
-                                    class="img"
-                                    :src="sv.imgLink"
-                                    fit="contain"
-                                    loading="eager"
-                                    :no-spinner="true"
-                                  ></q-img>
-                                </div>
-                              </q-responsive>
-                              <div class="school-desc">
-                                <div
-                                  class="title text-quaternary text-weight-bolder text-xl"
-                                >{{ sv.title }}</div>
-                                <div
-                                  class="subtitle text-white text-weight-bold text-lg"
-                                >{{ sv.subTitle }}</div>
-                                <q-scroll-area
-                                  class="description ellipsis-3-lines text-weight-thin text-xs leading-5"
-                                  :bar-style="{ background: 'white' }"
-                                >
-                                  <span class="scale-50 transform">
-                                    {{
-                                    sv.description
-                                    }}
-                                  </span>
-                                </q-scroll-area>
-                              </div>
-                            </li>
-                          </ul>
-                        </q-scroll-area>
-                        <div class="ml-2">
-                          <q-btn
-                            flat
-                            round
-                            color="secondary"
-                            icon="navigate_next"
-                            @click="scrollRight(sk)"
-                          />
-                        </div>
-                      </q-carousel-slide>
-                    </template>
-                  </q-carousel>
-
-                  <div class="row justify-center items-center">
-                    <div class="col-md-9 col-xs-11">
-                      <indicator
-                        :num="currentOffer.list.length"
-                        :left="offerIndicatorLeft"
-                        :index="currentOfferSchool"
-                        @show="showIndicator"
-                      ></indicator>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section>
+      <SlideOffer></SlideOffer>
     </section>
-    <section class="bg-white my-20">
+    <section class="bg-white py-0 sm:my-20">
       <div class="lg:container lg:mx-auto">
         <div class="lm-container row justify-center pb-20">
           <div class="col-xs-11">
@@ -231,26 +120,34 @@
     </section>
     <section class="transparent mb-20">
       <div class="lg:container lg:mx-auto">
-        <div class="lm-container row justify-center pb-20">
+        <div class="lm-container row justify-center pt-10 sm:pt-0 pb-20">
           <div class="col-12">
             <div class="text-quaternary text-center text-weight-bolder text-5xl">产品亮点</div>
-            <div class="highlight mt-20 sm:mt10">
-              <div class="row lm-highlight justify-center">
+            <div class="highlight mt-20 sm:mt-10">
+              <div class="row lm-highlight justify-center items-start">
                 <div
-                  :class="['col-md-4 item flex justify-center items-center col-xs-12']"
+                  :class="['col-md-4 item flex justify-center items-center col-xs-4']"
                   v-for="(v, k) in highlight"
                   :key="k"
                 >
                   <div :class="['w-full sm:w-2/4', k > 2 ? 'highlight-up' : '']">
                     <div
-                      class="title text-quaternary text-weight-bolder text-5xl sm:text-8xl text-center pb-2 sm:pb-0"
-                    >{{ v.title }}</div>
-                    <div class="description py-2">
-                      <p
-                        class="text-center text-white text-xs text-weight-thin leading-5"
+                      class="title text-quaternary text-weight-bolder text-3xl sm:text-8xl text-center sm:pb-0"
+                    >
+                    <span class="p-3">
+                       {{ v.title }}
+                    </span>
+                   </div>
+                    <div class="description py-3 sm:py-2">
+                      <div
+                        class="text-center zoom-xxs text-white text-xs text-weight-thin leading-5 font-extralight"
                         v-for="(vv, kk) in v.list"
                         :key="kk"
-                      >{{ vv }}</p>
+                      >
+                      <span>
+                        {{ vv }}
+                      </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -275,9 +172,9 @@ import { ref, computed, onBeforeUpdate } from 'vue';
 import PartHeader from '../components/PartHeader.vue';
 import DescriptionWithImg from '../components/DescriptionWithImg.vue';
 import Contact from '../components/Contact.vue';
-import Indicator from 'components/Indicator.vue';
+import SlideOffer from '../components/SlideOffer.vue';
 import CaseCarousel from 'components/carousel/CaseCarousel.vue';
-import { CarouselData, OfferData } from 'components/models';
+import { CarouselData } from 'components/models';
 import { QScrollArea, useQuasar } from 'quasar';
 
 export default {
@@ -285,8 +182,8 @@ export default {
   components: {
     PartHeader,
     DescriptionWithImg,
-    Indicator,
     Contact,
+    SlideOffer,
     CaseCarousel,
   },
   setup() {
@@ -377,141 +274,6 @@ export default {
     ];
     const currentOfferSchool = ref(0);
     const offerIndicatorLeft = ref('0rem');
-    const slideOffer = ref('america');
-    const offers = {
-      title: '录取院校',
-      subTitle: '',
-      list: [
-        {
-          title: '',
-          name: 'america',
-          list: [
-            {
-              title: '康奈尔大学',
-              subTitle: '文理学院',
-              description:
-                '康奈尔大学（英语：Cornell University）是一所位于美国纽约州伊萨卡的私立研究型大学，另有两所分校位于纽约市曼哈顿和卡塔尔教育城，是美洲大学协会的十二个创会成员之一，及NCAA体育赛事联盟常春藤盟校的成员，截止2020年10月，先后有超过61位校友、教职工和研究人员获颁诺贝尔奖（世界第十二）、1位菲尔兹奖得主、4位图灵奖得主',
-              imgLink: 'school-logo/225px-Cornell_University.png',
-              link: 'https://www.cornell.edu/',
-            },
-            {
-              title: '康奈尔大学',
-              subTitle: '酒店管理学院',
-              description:
-                '康奈尔大学（英语：Cornell University）是一所位于美国纽约州伊萨卡的私立研究型大学，另有两所分校位于纽约市曼哈顿和卡塔尔教育城，是美洲大学协会的十二个创会成员之一，及NCAA体育赛事联盟常春藤盟校的成员，截止2020年10月，先后有超过61位校友、教职工和研究人员获颁诺贝尔奖（世界第十二）、1位菲尔兹奖得主、4位图灵奖得主',
-              imgLink: 'school-logo/225px-Cornell_University.png',
-              link: 'https://www.cornell.edu/',
-            },
-            {
-              title: '约翰霍普金斯大学',
-              subTitle: '文理学院',
-              description:
-                '约翰斯·霍普金斯大学采用德国古老的海德堡大学研究所的概念，被认为是美国第一所研究型大学，是美洲大学协会的12个创始会员之一。它的成功引发了美国其它大学向研究型大学转型。美国国家科学基金会连续31年将该校列为全美科研经费开支最高的大学',
-              imgLink:
-                'https://brand.jhu.edu/assets/uploads/sites/5/2014/06/university_logo_small_vertical_blue.png',
-              link: 'https://www.jhu.edu/',
-            },
-            {
-              title: '南加利福尼亚大学',
-              subTitle: '文理学院',
-              description:
-                '南加利福尼亚大学，位于加州洛杉矶市中心，由Robert M. Widney于1880年创立，是加州最古老的私立研究型大学。南加大拥有曾被评为全美国排名第一的电影学院、全美国排名第一的老龄学院、全美国排名第三的公共政策学院、全美国排名的第十的工程学院。',
-              imgLink: 'school-logo/Usc_seal.gif',
-              link: 'https://www.usc.edu/',
-            },
-            {
-              title: '埃默里大学',
-              subTitle: '文理学院',
-              description:
-                '埃默里大学（英语：Emory University），或译艾文理大学、艾默利大学，创校于1836年，为一位于美国乔治亚州亚特兰大都市地区迪卡尔布县德鲁伊山之私立菁英大学。默里大学的学校基金会财产在美国排第16名，在全世界是第21富有的，根据《美国新闻与世界报道》2017年美国大学排行榜排第20名，综合排名第82名。',
-              imgLink: 'school-logo/Emory-University642.jpg',
-              link: 'https://www.jhu.edu/',
-            },
-            {
-              title: '密歇根大学-安娜堡分校',
-              subTitle: '文理学院',
-              description:
-                '密歇根大学（英语：University of Michigan，简称：U-M、UM、U of M、UMich 或 Michigan），简称密大，位于美国密歇根州安娜堡，是一所公立研究型大学，为美洲大学协会的创始院校之一，是美国乃至世界顶尖的大学之一。',
-              imgLink:
-                'school-logo/270px-Seal_of_the_University_of_Michigan.svg.png',
-              link: 'https://umich.edu/',
-            },
-            {
-              title: '纽约大学',
-              subTitle: '文理学院',
-              description:
-                '纽约大学（英语：New York University，缩写为NYU），于1831年成立，是一所位于纽约市曼哈顿的研究型私立大学。主要的校区位于曼哈顿格林威治村的附近区域，以华盛顿广场为中心，是全美国境内规模最大的私立非营利高等教育机构。',
-              imgLink: 'school-logo/320px-New_York_University_Seal.png',
-              link: 'https://www.nyu.edu/',
-            },
-            {
-              title: '香港大学',
-              subTitle: '专业任选',
-              description:
-                '香港大学（英语：The University of Hong Kong，缩写：HKU），简称港大，是香港的一所公立研究型大学，大学本部位于香港岛中西区龙虎山。香港大学成立于1911年，并于1912年3月11日正式办学，是香港最早建立的高等教育机构。成立之初，更是大英帝国在东亚成立的唯一一间大学，现时属于“QS世界百强大学”以及“泰晤士高等教育世界百强大学”。',
-              imgLink: 'school-logo/200px-HKU_Coat_of_Arms.png',
-              link: 'https://hku.hk/',
-            },
-            {
-              title: '香港科技大学',
-              subTitle: '专业任选',
-              description:
-                '香港科技大学（英语：The Hong Kong University of Science and Technology，缩写：HKUST），简称科大，是香港的一所公立研究型大学，位于香港新界西贡区清水湾半岛，现时属于“QS世界百强大学”以及“泰晤士高等教育世界百强大学”。',
-              imgLink: 'school-logo/HKUST.png',
-              link: 'https://hkust.edu.hk/',
-            },
-            {
-              title: '哥伦比亚大学',
-              subTitle: '商学院',
-              description:
-                '纽约市哥伦比亚大学（英语：Columbia University in the City of New York；通称：“哥伦比亚大学”；简称：“哥大”）是一所坐落于美国纽约曼哈顿上城晨边高地的私立研究型大学，是美洲大学协会的12个创始校之一，及NCAA体育赛事联盟常春藤盟校的成员。哥大是纽约州最古老的高等教育学府，也是美国历史第五悠久的高等教育机构',
-              imgLink: 'school-logo/ColumbiaSeal.png',
-              link: 'https://www.columbia.edu/',
-            },
-            {
-              title: '南加利福尼亚大学',
-              subTitle: '工学院',
-              description:
-                '南加利福尼亚大学，位于加州洛杉矶市中心，由Robert M. Widney于1880年创立，是加州最古老的私立研究型大学。南加大拥有曾被评为全美国排名第一的电影学院、全美国排名第一的老龄学院、全美国排名第三的公共政策学院、全美国排名的第十的工程学院。',
-              imgLink: 'school-logo/Usc_seal.gif',
-              link: 'https://www.usc.edu/',
-            },
-            {
-              title: '纽约大学',
-              subTitle: '工学院',
-              description:
-                '纽约大学（英语：New York University，缩写为NYU），于1831年成立，是一所位于纽约市曼哈顿的研究型私立大学。主要的校区位于曼哈顿格林威治村的附近区域，以华盛顿广场为中心，是全美国境内规模最大的私立非营利高等教育机构。',
-              imgLink: 'school-logo/320px-New_York_University_Seal.png',
-              link: 'https://www.nyu.edu/',
-            },
-            {
-              title: '香港大学',
-              subTitle: '商学院',
-              description:
-                '香港大学（英语：The University of Hong Kong，缩写：HKU），简称港大，是香港的一所公立研究型大学，大学本部位于香港岛中西区龙虎山。香港大学成立于1911年，并于1912年3月11日正式办学，是香港最早建立的高等教育机构。成立之初，更是大英帝国在东亚成立的唯一一间大学，现时属于“QS世界百强大学”以及“泰晤士高等教育世界百强大学”。',
-              imgLink: 'school-logo/200px-HKU_Coat_of_Arms.png',
-              link: 'https://hku.hk/',
-            },
-            {
-              title: '香港大学',
-              subTitle: '工学院',
-              description:
-                '香港大学（英语：The University of Hong Kong，缩写：HKU），简称港大，是香港的一所公立研究型大学，大学本部位于香港岛中西区龙虎山。香港大学成立于1911年，并于1912年3月11日正式办学，是香港最早建立的高等教育机构。成立之初，更是大英帝国在东亚成立的唯一一间大学，现时属于“QS世界百强大学”以及“泰晤士高等教育世界百强大学”。',
-              imgLink: 'school-logo/200px-HKU_Coat_of_Arms.png',
-              link: 'https://hku.hk/',
-            },
-            {
-              title: '香港科技大学',
-              subTitle: '商学院',
-              description:
-                '香港科技大学（英语：The Hong Kong University of Science and Technology，缩写：HKUST），简称科大，是香港的一所公立研究型大学，位于香港新界西贡区清水湾半岛，现时属于“QS世界百强大学”以及“泰晤士高等教育世界百强大学”。',
-              imgLink: 'school-logo/HKUST.png',
-              link: 'https://hkust.edu.hk/',
-            },
-          ],
-        },
-      ],
-    };
     const slideActive = ref(
       'background:#cc932e;width: 6.25rem;max-width:6.25vw;border-radius: 0;padding:0;'
     );
@@ -579,91 +341,16 @@ export default {
       carouselData,
       slideActive,
       slideDefault,
-      offers,
-      slideOffer,
       currentOfferSchool,
       offerIndicatorLeft,
       serviceProgress,
       highlight,
       suitableStudents,
-      currentOffer: computed((): OfferData => {
-        return <OfferData>offers.list.find((offer) => {
-          return offer.name === slideOffer.value;
-        });
-      }),
       isMobile: computed(() => {
         return <boolean>$q.platform.is.mobile;
       }),
       getClassType(k: number, firstClass: string, secondClass: string) {
         return k % 2 == 0 ? firstClass : secondClass;
-      },
-      showIndicator(index: number) {
-        const currentOfferSchoolLength =
-          offers.list[currentOfferSchoolTypeIndex.value].list.length;
-
-        offerIndicatorLeft.value = `${
-          (index * 100) / currentOfferSchoolLength
-        }%`;
-        currentOfferSchool.value = index;
-
-        if (index === 0) {
-          currentPosition.value = 0;
-        } else if (index === currentOfferSchoolLength - 1) {
-          currentPosition.value = 1;
-        } else {
-          currentPosition.value = (index + 1) / currentOfferSchoolLength;
-        }
-
-        currentScrollAreaRef.value.setScrollPercentage(
-          'horizontal',
-          currentPosition.value,
-          300
-        );
-      },
-
-      getCurrentOfferSchool(index: number) {
-        const currentOfferSchoolLength =
-          offers.list[currentOfferSchoolTypeIndex.value].list.length;
-
-        offerIndicatorLeft.value = `${
-          (index * 100) / currentOfferSchoolLength
-        }%`;
-        currentOfferSchool.value = index;
-      },
-      scrollLeft() {
-        currentPosition.value -=
-          1 / offers.list[currentOfferSchoolTypeIndex.value].list.length;
-        if (currentPosition.value < 0) {
-          currentPosition.value = 0;
-        }
-        currentScrollAreaRef.value.setScrollPercentage(
-          'horizontal',
-          currentPosition.value,
-          300
-        );
-        currentOfferSchool.value =
-          Math.floor(currentPosition.value * offers.list.length) - 1;
-        currentOfferSchool.value =
-          currentOfferSchool.value < 0 ? 0 : currentOfferSchool.value;
-        currentOfferSchool.value;
-      },
-      scrollRight() {
-        currentPosition.value +=
-          1 / offers.list[currentOfferSchoolTypeIndex.value].list.length;
-        if (currentPosition.value > 1) {
-          currentPosition.value = 1;
-        }
-        currentScrollAreaRef.value.setScrollPercentage(
-          'horizontal',
-          currentPosition.value,
-          300
-        );
-        currentOfferSchool.value =
-          Math.floor(currentPosition.value * offers.list.length) - 1;
-        currentOfferSchool.value =
-          currentOfferSchool.value > offers.list.length - 1
-            ? offers.list.length - 1
-            : currentOfferSchool.value;
       },
     };
   },
@@ -775,28 +462,30 @@ export default {
 
 .mobile {
   .lm-highlight {
-    position: relative;
-    overflow: hidden;
-    padding: 0;
-    margin: 10px;
-    // border: 1px solid $quaternary;
     &::before {
-      position: absolute;
-      content: '';
-      border: 0;
-      width: 2px;
-      background: $quaternary;
-      height: 100%;
+      border: 1px solid $quaternary;
+          height: 75%;
     }
     .item {
-      &:first-child {
-        margin-top: 0;
-      }
-      margin: 20px;
-      div.highlight-up {
-        top: 0;
+      div {
+        background: transparent;
+        span {
+          background: #0b150e;
+        }
       }
     }
+  }
+
+  .lm-points .lm-points-background .row .right .points-img {
+    box-shadow: 6px 6px $quaternary;
+  }
+
+  .q-carousel--arrows-horizontal.q-carousel--with-padding .q-carousel__slide {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .q-carousel__navigation {
+    width: 60%;
   }
 }
 </style>
