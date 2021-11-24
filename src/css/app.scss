@@ -782,6 +782,13 @@ $xl-breakpoint: 1536px;
         font-size: 3.2rem;
       }
     }
+
+    .footer {
+      position: relative;
+      top: -60px;
+      padding-top: 6px;
+      padding-right: calc(60px - 1rem);
+    }
   }
 
   .lm-case {

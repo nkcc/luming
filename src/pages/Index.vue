@@ -19,7 +19,7 @@
     <service></service>
     <section class="lm-green-background-container">
         <div class="lm-points row items-center lg:container lg:mx-auto sm:py-36">
-            <div class="points-container">
+            <div class="points-container relative">
                 <q-carousel v-model="slide" transition-prev="scale" transition-next="scale" swipeable animated control-color="secondary" navigation padding arrows class="lm-points-background" keep-alive :keep-alive-include="'carousel0, carousel1, carousel2, carousel3'">
                     <template v-slot:navigation-icon></template>
                     <template v-for="(v, k) in carouselData" :key="k">
@@ -47,7 +47,7 @@
                 </q-carousel>
             </div>
             <div class="col-12">
-                <div class="footer text-center white text-xs">
+                <div class="footer text-right sm:text-center white text-xs">
                     <router-link to="spot">了解更多></router-link>
                 </div>
             </div>

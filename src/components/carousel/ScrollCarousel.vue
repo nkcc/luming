@@ -11,7 +11,7 @@
     <template v-slot:navigation-icon></template>
     <template v-for="(v, k) in data" :key="k">
       <q-carousel-slide :name="v.name" class="flex no-wrap flex-center relative">
-        <div class="flex items-center mr-2">
+        <div class="flex items-center mr-0 sm:mr-2">
           <q-btn flat round color="secondary" icon="navigate_before" @click="scroll('left')" />
         </div>
         <q-scroll-area
@@ -168,3 +168,14 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss">
+.mobile {
+  .q-carousel__slide, .q-carousel .q-carousel--padding {
+    padding: 16px 0;
+  }
+  .lm-offers .lm-points-background .offer-list .offer-item {
+    padding: 0;
+  }
+}
+</style>
