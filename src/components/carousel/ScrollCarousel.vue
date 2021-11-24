@@ -172,10 +172,19 @@ export default defineComponent({
 <style lang="scss">
 .mobile {
   .q-carousel__slide, .q-carousel .q-carousel--padding {
-    padding: 16px 0;
+    padding: 16px 0 0 0;
   }
   .lm-offers .lm-points-background .offer-list .offer-item {
     padding: 0;
+  }
+  .lm-offers .lm-points-background .offer-list .offer-item .school-desc .title  {
+    font-weight: bold;
+  }
+  .lm-offers .lm-points-background .offer-list .offer-item .school-desc .description {
+    font-size: 0.75rem;
+    zoom: 0.75;
+    width: 16.6667rem;
+    font-weight: 100;
   }
 }
 </style>

@@ -793,7 +793,12 @@ $xl-breakpoint: 1536px;
 
   .lm-case {
     .case-item {
-      padding: 3.75rem 10px;
+      padding: 3.75rem 10px 3rem;
+      min-height: 0;
+
+      .content {
+        padding-right: 2.5rem;
+      }
 
       .content-container {
         margin-top: 10px;
@@ -801,7 +806,7 @@ $xl-breakpoint: 1536px;
       }
 
       .img-container {
-        padding: 2.5rem;
+        padding: 0 2.5rem;
       }
     }
   }
@@ -825,6 +830,8 @@ $xl-breakpoint: 1536px;
 
   .lm-professor {
     .prof-intro {
+      min-height: 0;
+
       .avatar {
         padding: 20px;
       }

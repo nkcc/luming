@@ -120,12 +120,12 @@
         <div :class="['case-item', k % 2 !== 0 ? 'reverse' : '']" v-for="(v, k) in caseData" :key="k">
             <div class="row justify-center items-center items-stretch lg:container lg:mx-auto" :class="k % 2 !== 0 ? 'reverse' : ''">
                 <div class="img-container col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5">
-                    <q-responsive :ratio="899 / 716" class="shadow-up-10">
+                    <q-responsive :ratio="isMobile ? 624 / 324 : 899 / 716" class="shadow-up-10">
                         <q-img class="img" :src="v.imgLink" fit="cover" position="center top" loading="eager" :no-spinner="true"></q-img>
                     </q-responsive>
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5 content-container">
-                    <div class="content">
+                    <div class="content relative">
                         <div class="header">
                             <div class="title">
                                 <span class="caption text-weight-bolder">录取院校：</span>
@@ -136,7 +136,7 @@
                                 <span class="value text-weight-bolder">{{ v.rank }}</span>
                             </div>
                         </div>
-                        <div class="body">
+                        <div class="body ">
                             <div class="name text-weight-bolder">{{ v.student }}</div>
                             <div class="title text-weight-bolder">背景分析：</div>
                             <div class="background">
@@ -145,11 +145,12 @@
                                     <span class="value text-weight-light">{{ vv.value }}</span>
                                 </div>
                             </div>
+
                         </div>
-                        <div class="footer">
-                            <!--                <q-icon class='dot' name='fiber_manual_record'></q-icon>-->
+                        <div class="footer gt-sm">
                             <router-link :to="v.link">了解更多 ></router-link>
                         </div>
+                        <router-link class="lt-md absolute text-lg text-weight-thin right-5 top-1/2" :to="v.link">了解更多 ></router-link>
                     </div>
                 </div>
             </div>
@@ -158,24 +159,26 @@
     <section class="lm-team lm-dark-background">
         <h1 class="header-title text-white text-center text-weight-bold">鹿名团队</h1>
         <div class="team-container row lg:container lg:mx-auto">
-            <div class="team-card col-sm-6 col-md-3 col-lg-3 col-xl-3" v-for="(v, k) in teamData" :key="k">
+            <div class="team-card col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" v-for="(v, k) in teamData" :key="k">
                 <div :class="k % 2 !== 0 ? 'bar' : 'bar-secondary'"></div>
 
                 <img :src="v.imgLink" alt="">
-                <!-- <q-img class="img"  fit="cover" loading="eager" :no-spinner="true"></q-img> -->
-
-                <div class="content">
-                    <div class="name text-weight-bolder" :class="k === teamData.length - 1 ? 'text-2xl' : 'text-3xl'">{{ v.name }}</div>
-                    <p class="description">{{ v.description }}</p>
+                <div class="content gt-sm">
+                    <div class="name text-weight-bolder" :class="k === teamData.length - 1 ? 'text-3xl' : 'text-3xl'">{{ v.name }}</div>
+                    <p class="description gt-sm">{{ v.description }}</p>
                     <div class="footer">
                         <router-link :to="v.link">了解更多 ></router-link>
                     </div>
+                </div>
+                <div class="lt-md w-full bg-white p-5 relative">
+                  <div class="text-black text-3xl text-weight-bolder" v-for="(vv, kk) in v.nameMobile" :key="kk">{{vv}}</div>
+                  <router-link class="absolute right-5 bottom-5 text-weight-bolder" :to="v.link">了解更多 ></router-link>
                 </div>
             </div>
         </div>
     </section>
     <section class="lm-professor">
-        <h1 class="header text-weight-bold text-center py-12 text-4xl sm:text-6xl">教授名校教授培养计划</h1>
+        <h1 class="header text-weight-bold text-center py-12 text-4xl sm:text-6xl">师资团队</h1>
 
         <div class="prof-intro" :class="getClassType(k, '', 'reverse')" v-for="(v, k) in professorData" :key="k">
             <div :class="[
@@ -190,8 +193,8 @@
                 <div class="col-7 col-lg-6 col-md-9 col-sm-12 col-xs-12 content">
                     <div class="header text-weight-bolder text-center sm:text-left">{{ v.name }}</div>
                     <div class="body">
-                        <div class="title text-center sm:text-left" v-for="(vv, kk) in v.title" :key="kk">{{ vv }}</div>
-                        <div class="description">{{ v.description }}</div>
+                        <div class="title text-center sm:text-left " v-for="(vv, kk) in v.title" :key="kk">{{ vv }}</div>
+                        <div class="description gt-sm">{{ v.description }}</div>
                     </div>
                     <div class="footer text-center sm:text-left">
                         <router-link :to="v.link">了解更多 ></router-link>
@@ -549,6 +552,7 @@ const caseData = ref([{
 
 const teamData = ref([{
         name: 'Patrick Shui',
+        nameMobile: ['Patrick', 'Shui'],
         imgLink: 'team1.jpeg',
         link: {
             path: 'about',
@@ -561,6 +565,7 @@ const teamData = ref([{
     },
     {
         name: 'Andy Xue',
+        nameMobile: ['Andy', 'Xue'],
         imgLink: 'team2.jpeg',
         link: {
             path: 'about',
@@ -573,6 +578,7 @@ const teamData = ref([{
     },
     {
         name: 'Alex Gu',
+        nameMobile: ['Alex', 'Gu'],
         imgLink: 'team3.jpeg',
         description: 'Alex老师认为一次真正成功的留学申请是对自己重新发现、认识、认知的旅程。和老师一起重温自己的学术历程，挖掘每一段难忘的课外经历，发现自己内心深处的渴望，追寻自己一直以来的梦想。每一次陪伴学生走入dream school的旅程都是一段为人师者的记忆。',
         visible: false,
@@ -585,6 +591,7 @@ const teamData = ref([{
     },
     {
         name: 'Danny Chueng',
+        nameMobile: ['Danny', 'Chueng'],
         imgLink: 'team4.jpeg',
         description: 'Danny老师善于从西方人的视角去发现和诠释东方学生的优点与优势，真正站在以白人为核心的西方招生官的角度，精准挖掘学生潜力，精确定位背景提升项目等一系列为成功入校做努力的方式，达到院校、申请学院及留学机构三方都满意的最佳结果。',
         visible: false,
