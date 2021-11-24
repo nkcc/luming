@@ -485,7 +485,7 @@ export default {
     padding-right: 50px;
   }
   .q-carousel__navigation {
-    width: 60%;
+    width: 60vw;
   }
 }
 </style>

@@ -1,26 +1,26 @@
 <template>
-  <div class="text-card py-20">
+  <div class="text-card py-10 sm:py-20">
     <div class="row justify-center relative">
       <div class="col-12">
         <div
-          class="background-title text-center background-title text-fade-green text-5xl text-weight-bolder pb-6 text-white"
+          class="background-title text-center background-title text-fade-green text-xl sm：text-5xl text-weight-bolder pb-6 text-white"
         >{{ title }}</div>
       </div>
       <div
-        class="col-xs-11 col-md-12 row justify-center points relative"
+        class="col-xs-12 col-md-12 row justify-center points relative"
         :class="list.length > 4 ? 'points-border' : ''"
       >
         <div :class="['mb-4 z-10', getListCol(list.length, k)]" v-for="(v, k) in list" :key="k">
           <div class="title">
             <div class="info flex justify-center" v-for="(vt, kt) in v.title" :key="kt">
               <span
-                class="text-center text-quaternary text-weight-bolder text-5xl sm:text-7xl leading-tight px-7"
+                class="text-center text-quaternary text-weight-bolder text-2xl sm:text-7xl leading-tight px-2 sm:px-7"
               >{{ vt }}</span>
             </div>
           </div>
           <div class="description pt-6">
             <div
-              class="px-4 description-text text-center text-text-weight-medium text-white"
+              class="px-4 description-text text-xs zoom-xxs leading-6 text-center text-text-weight-medium text-white"
               v-for="(vd, kd) in v.description"
               :key="kd"
             >{{ vd }}</div>
@@ -53,10 +53,6 @@ export default defineComponent({
     const $q = useQuasar();
     return {
       getListCol(length: number, key: number) {
-        if ($q.platform.is.mobile) {
-          return 'col-11';
-        }
-
         const modNum = length % 4;
         let colNum = '3';
         if (key >= length - modNum || length < 4) {
@@ -75,19 +71,26 @@ export default defineComponent({
 <style lang="scss" scoped>
 .mobile {
   .points {
-    border: 1px solid $quaternary;
     &:before {
-      width: 0;
-      height: 100%;
+      height: 1px;
+      top: 32%;
     }
 
     &.points-border {
       &:before {
-        height: 0;
-        border: none;
+        border: 1px solid $quaternary;
+        top: 40%;
       }
     }
   }
+
+  //   &.points-border {
+  //     &:before {
+  //       height: 0;
+  //       border: none;
+  //     }
+  //   }
+  // }
 }
 
 .points {

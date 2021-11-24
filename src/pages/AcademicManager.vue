@@ -1,16 +1,16 @@
 <template>
-  <div class="lm-study-abroad lm-light-dark-background">
+  <div class="lm-study-abroad lm-light-dark-background no-gradient">
     <section class="transparent">
       <div>
         <div class="lg:container lg:mx-auto">
           <part-header name="学业管家"></part-header>
           <div class="lm-container row justify-center">
-            <div class="col-9">
+            <div class="col-md-9 col-xs-11">
               <div
-                class="text-quaternary text-weight-bolder text-center text-4xl mb-4"
+                class="text-quaternary text-weight-bolder text-center text-3xl sm:text-4xl mb-4"
               >{{ programTitle }}</div>
               <div
-                class="text-quaternary text-weight-bold text-center text-2xl"
+                class="text-quaternary text-weight-bold text-center text-xs sm:text-2xl"
               >{{ programDescription }}</div>
             </div>
           </div>
@@ -51,21 +51,26 @@
             <template v-for="(v, k) in carouselData" :key="k">
               <q-carousel-slide :name="'carousel' + k" class="column no-wrap">
                 <div class="row justify-center items-center mb-10">
-                  <div class="col-xs-12 col-sm-12 col-md-5 left q-py-xs-lg q-py-xs-lg">
-                    <div class="mt-2 mb-20 sm:mb-0">
+                  <div class="col-xs-12 col-sm-12 col-md-5 left mt-10 sm:mt-0">
+                    <div class="mt-2 sm:mb-0">
                       <h2
-                        class="subtitle text-quaternary text-weight-bolder text-5xl pb-10 pr-5"
+                        class="subtitle text-quaternary text-weight-bolder text-4xl sm:text-5xl sm:pb-10 sm:pr-5"
                       >{{ v.subTitle }}</h2>
                       <p
-                        class="description text-white text-sm pr-0 sm:pr-24 text-weight-thin leading-7 tracking-wide"
+                        class="description text-white text-sm pr-0 sm:pr-24 text-weight-thin leading-7 tracking-wide gt-sm"
                       >{{ v.description }}</p>
                     </div>
                     <div class="footer"></div>
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-4 right q-py-xs-lg q-py-sm-lg">
-                    <q-responsive :ratio="692 / 511">
+                    <q-responsive :ratio="isMobile ? 470 / 255 : 692 / 511">
                       <q-img class="points-img" :src="v.imgLink" loading="eager" :no-spinner="true"></q-img>
                     </q-responsive>
+                  </div>
+                  <div class="col-12 lt-md">
+                  <p
+                        class="description text-white text-sm pr-0 sm:pr-24 text-weight-thin leading-7 tracking-wide pt-4"
+                      >{{ v.description }}</p>
                   </div>
                 </div>
               </q-carousel-slide>
@@ -76,7 +81,7 @@
     </section>
     <section class="transparent mb-20">
       <div class="lg:container lg:mx-auto">
-        <div class="lm-container row justify-center pb-20">
+        <div class="lm-container row justify-center sm:pb-20">
           <div class="col-md-9 col-xs-11">
             <description-with-img
               :info="productIntro"
@@ -92,19 +97,71 @@
     <section class="bg-white">
       <div class="lg:container lg:mx-auto">
         <div class="lm-container row justify-center">
-          <div class="col-md-9 col-xs-11">
+          <div class="col-md-9 col-xs-6">
             <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
               <div class="text-center text-weight-bolder text-2xl mb-2">{{ productPoints[0].title }}</div>
               <div
-                class="text-center text-weight-thin text-xs leading-7"
+                class="text-center zoom-sm text-weight-thin text-xs leading-7"
                 v-for="(v, k) in productPoints[0].description"
                 :key="k"
               >{{ v }}</div>
             </div>
           </div>
 
+          <div class="col-md-9 col-xs-6 lt-md">
+            <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
+              <div class="text-center text-weight-bolder text-2xl mb-2">{{ productPoints[1].title }}</div>
+              <div
+                class="text-center zoom-sm text-weight-thin text-xs leading-7"
+                v-for="(v, k) in productPoints[1].description"
+                :key="k"
+              >{{ v }}</div>
+            </div>
+          </div>
+                    <div class="col-md-9 col-xs-6 lt-md">
+            <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
+              <div class="text-center text-weight-bolder text-2xl mb-2">{{ productPoints[3].title }}</div>
+              <div
+                class="text-center zoom-sm text-weight-thin text-xs leading-7"
+                v-for="(v, k) in productPoints[3].description"
+                :key="k"
+              >{{ v }}</div>
+            </div>
+          </div>
+                              <div class="col-md-9 col-xs-6 lt-md">
+            <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
+              <div class="text-center text-weight-bolder text-2xl mb-2">{{ productPoints[2].title }}</div>
+              <div
+                class="text-center zoom-sm text-weight-thin text-xs leading-7"
+                v-for="(v, k) in productPoints[2].description"
+                :key="k"
+              >{{ v }}</div>
+            </div>
+          </div>
+                              <div class="col-md-9 col-xs-6 lt-md">
+            <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
+              <div class="text-center text-weight-bolder text-2xl mb-2">{{ productPoints[4].title }}</div>
+              <div
+                class="text-center zoom-sm text-weight-thin text-xs leading-7"
+                v-for="(v, k) in productPoints[4].description"
+                :key="k"
+              >{{ v }}</div>
+            </div>
+          </div>
+                              <div class="col-md-9 col-xs-6 lt-md">
+            <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
+              <div class="text-center text-weight-bolder text-2xl mb-2">{{ productPoints[5].title }}</div>
+              <div
+                class="text-center zoom-sm text-weight-thin text-xs leading-7"
+                v-for="(v, k) in productPoints[5].description"
+                :key="k"
+              >{{ v }}</div>
+            </div>
+          </div>
+
+
           <div class="col-12 row relative justify-center">
-            <div class="col-md-4 col-xs-11 flex flex-col justify-center">
+            <div class="col-md-4 col-xs-11 flex flex-col justify-center gt-sm">
               <div class="lm-product-points mb-10 sm:mb-20">
                 <div
                   class="text-center text-weight-bolder text-2xl mb-2"
@@ -126,7 +183,7 @@
                 >{{ v }}</div>
               </div>
             </div>
-            <div class="col-xs-11 col-md-4">
+            <div class="col-xs-8 col-md-4">
               <q-img
                 class="lm-product-img"
                 src="product-intro-black.svg"
@@ -135,13 +192,18 @@
                 :no-spinner="true"
               >
                 <div
-                  class="lm-product-container absolute-full text-weight-bolder flex flex-center transparent text-7xl"
+                  class="lm-product-container absolute-full text-weight-bolder flex flex-center transparent text-5xl sm:text-7xl"
                 >
-                  <div class="lm-product-caption text-center text-black">师资配置</div>
+                  <div class="lm-product-caption text-center text-black">
+                    <div>
+                      师资
+                    </div>
+                    <div>配置</div>
+                  </div>
                 </div>
               </q-img>
             </div>
-            <div class="col-md-4 col-xs-11 flex flex-col justify-center">
+            <div class="col-md-4 col-xs-11 flex flex-col justify-center gt-sm">
               <div class="lm-product-points mb-10 sm:mb-20">
                 <div
                   class="text-center text-weight-bolder text-2xl mb-2 mt-10 sm:mt-0"
@@ -164,9 +226,9 @@
               </div>
             </div>
           </div>
-          <div class="col-12">
+          <div class="col-12" :style="{ height: isMobile ? '20rem' : 'auto'}">
             <div class="mt-8 relative row justify-center">
-              <div class="w-full col-7 relative top-0 sm:-top-36">
+              <div class="w-full col-7 relative -top-52  sm:-top-36">
                 <q-img
                   class="w-full"
                   src="service-progress.png"
@@ -178,7 +240,7 @@
                 ></q-img>
               </div>
               <div class="col-12 absolute top-0">
-                <div class="lm-product-points">
+                <div class="lm-product-points gt-sm">
                   <div
                     class="text-center text-weight-bolder text-2xl mb-2"
                   >{{ productPoints[5].title }}</div>
@@ -189,9 +251,9 @@
                   >{{ v }}</div>
                 </div>
                 <div class="lm-source-extra mt-16">
-                  <div class="text-center text-weight-bolder text-2xl mb-2">{{ sourceInfo.title }}</div>
+                  <div class="text-center text-weight-bolder text-xl sm:text-2xl mb-2">{{ sourceInfo.title }}</div>
                   <div
-                    class="text-center text-weight-bolder text-base leading-10"
+                    class="text-center zoom-sm text-weight-bolder text-base leading-10"
                     v-for="(v, k) in sourceInfo.description"
                     :key="k"
                   >{{ v }}</div>
@@ -202,15 +264,15 @@
         </div>
       </div>
     </section>
-    <section class="transparent mt-20">
+    <section class="transparent mt-10 sm:mt-20">
       <div class="lg:container lg:mx-auto">
-        <div class="lm-container row justify-center mb-20">
+        <div class="lm-container row justify-center sm:mb-20">
           <div class="col-12">
             <div
-              class="text-quaternary text-center text-weight-bolder text-5xl mb-4"
+              class="text-quaternary text-center text-weight-bolder  text-5xl mb-4"
             >{{ serviceContent.title }}</div>
             <div
-              class="text-white text-center text-weight-medium text-base px-6"
+              class="text-white text-center font-extralight sm:font-medium zoom-sm text-xs sm:text-base px-6"
             >{{ serviceContent.subtitle }}</div>
             <text-card
               :title="v.title"
@@ -222,16 +284,16 @@
         </div>
       </div>
     </section>
-    <section class="transparent mb-20">
+    <section class="transparent  sm:mb-20">
       <div class="lg:container lg:mx-auto">
         <div class="lm-service-advantage row justify-center p-10">
           <div class="col-12">
             <div
-              class="text-quaternary text-center text-weight-bolder text-5xl mb-20"
+              class="text-quaternary text-center text-weight-bolder text-5xl mb-10 sm:mb-20"
             >{{ serviceAdvantage.title }}</div>
           </div>
           <div
-            :class="['col-12 row py-20 item', k % 2 !== 0 ? 'reverse' : '']"
+            :class="['col-12 row py-10 sm:py-20 item', k % 2 !== 0 ? 'reverse' : '']"
             v-for="(v, k) in serviceAdvantage.list"
             :key="k"
             :ref="(el) => {
@@ -242,6 +304,7 @@
               <div
                 class="text-quaternary text-weight-bolder text-6xl leading-20"
                 v-for="(vt, kt) in v.title"
+                :style="{fontSize: isMobile ? v.fontSize : ''}"
                 :key="kt"
               >{{ vt }}</div>
               <div class="text-white text-weight-bolder text-4xl mt-10 mb-5"></div>
@@ -250,7 +313,7 @@
               >{{ v.description }}</div>
             </div>
             <div class="col-xs-12 col-md-5 cover">
-              <q-responsive :ratio="4 / 3">
+              <q-responsive :ratio="isMobile ? 448 /182 : 4 / 3">
                 <q-img class="img" :src="v.cover" fit="cover" loading="eager" :no-spinner="true"></q-img>
               </q-responsive>
             </div>
@@ -263,15 +326,16 @@
 </template>
 
 <script lang="ts">
-import { ref, onMounted, onBeforeUpdate } from 'vue';
+import { ref, onMounted, onBeforeUpdate, defineComponent, computed } from 'vue';
 import PartHeader from '../components/PartHeader.vue';
 import DescriptionWithImg from '../components/DescriptionWithImg.vue';
 import TextCard from '../components/TextCard.vue';
 import Contact from '../components/Contact.vue';
 import { CarouselData } from 'components/models';
 import { useRoute } from 'vue-router';
+import { useQuasar } from 'quasar'
 
-export default {
+export default defineComponent({
   name: 'AcademicManager',
   components: {
     PartHeader,
@@ -280,6 +344,7 @@ export default {
     TextCard,
   },
   setup() {
+    const $q = useQuasar();
     const route = useRoute();
     const itemRefs = ref([]);
     onMounted(() => {
@@ -307,6 +372,7 @@ export default {
           description:
             '名校经营导师团：教授和学霸导师来自哈佛大学、耶鲁大学、麦吉尔大学、英属哥伦比亚大学、剑桥牛津大学、麻省理工大学、澳洲国立大学、悉尼大学等遍布全球300+搞校，全面覆盖不同学科和专业。学霸导师皆经过严格的考核、选拔与培训，GPA都在3.8/4.0以上。',
           cover: 'academic/6.jpg',
+          fontSize: 'calc((100vw - 6rem) / 6)',
         },
         {
           title: ['每学期选课规划'],
@@ -314,6 +380,7 @@ export default {
           description:
             '个性定制化服务,学生自由选择课程组合，由导师提供一对一的指导。导师充分结合学生的学术能力、专业需求、发展目标等因素全方位定制学习规划，并根据学生的学习情况和个人志向及时优化调整课业方案与授课内容。',
           cover: 'academic/7.jpg',
+          fontSize: 'calc((100vw - 6rem) / 7)',
         },
         {
           title: ['全方位支持与协同'],
@@ -321,6 +388,7 @@ export default {
           description:
             '不限课时，不限答疑，贯穿整个学期每周更新的每周学习时间计划表；学校上课、office   hour、作业deadline、考试时间地点、GPA辅导课安排等一目了然。每一位学员都配有专属助教，全方位实时跟进学习情况。微信群内同步教学系统，提醒学生重要事项、发布课件/笔记、跟踪平时成绩、分析评语反馈，投喂We- Education专属学习资源; 全方位帮助学生快速进入学习状态、学期中查漏补缺、期末提早复习备考。与导师、专家、家长、学生保持沟通，及时了解并处理学生家长提出的问题与反馈，协调多方之间的信息沟通，有益于家长随时了解学生近况。',
           cover: 'academic/8.jpg',
+          fontSize: 'calc((100vw - 6rem) / 8)',
         },
         {
           title: ['职业规划与就业'],
@@ -328,10 +396,12 @@ export default {
           description:
             '八节职业小班课，为国际青少年提供最优质的高端人才成长平台，通过案例分析与实战课题，提高解决实际问题的能力以及团队协作能力，多方位提升专业技能与职业素养，帮助在校大学生了解行业前沿信息，增加职场实战经验，发掘自身潜力，提升专业技能和综合素养。',
           cover: 'academic/9.jpg',
+          fontSize: 'calc((100vw - 6rem) / 7)',
         },
         {
           title: ['关注孩子身心发展'],
           subtitle: '服务优势',
+          fontSize: 'calc((100vw - 6rem) / 8)',
           description:
             '24小时身心健康对接服务，学业管家计划不仅看重学生的学业表现和提升过程，同时也关注孩子海外求学的身心健康。专业心理咨询专家提供压力舒缓、情绪管理等问题解答。搭建社会公益平台，全面关注世界公民的身心发展，培养孩子的社会公益视野及领袖能力。',
           cover: 'academic/10.jpg',
@@ -624,17 +694,22 @@ export default {
       sourceInfo,
       serviceContent,
       serviceAdvantage,
+      isMobile: computed(() => <boolean>$q.platform.is.mobile)
     };
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>
 .mobile {
   .lm-points {
     .left {
-      height: 27rem;
+      height: auto;
     }
+
+    // .description {
+    //   width: calc(100% + 1.25rem);
+    // }
   }
   .lm-service-advantage {
     .reverse {

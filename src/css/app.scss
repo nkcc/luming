@@ -28,8 +28,28 @@
   }
 
   .zoom-xxs {
-    zoom: 0.3;
+    zoom: 0.4;
   }
+
+  .lm-points .lm-points-background .row .right .points-img {
+    box-shadow: 6px 6px $quaternary;
+  }
+
+  .q-carousel--arrows-horizontal.q-carousel--with-padding .q-carousel__slide {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .q-carousel__navigation {
+    justify-content: center;
+
+    .q-carousel__navigation-inner {
+      flex: inherit;
+      width: 60vw;
+    }
+  }
+
+
 }
 
 $vw: 100vw;

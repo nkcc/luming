@@ -16,7 +16,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 mt-4">
+      <div class="col-12 mt-4 lt-md">
         <ul class="flex justify-center">
           <li class="mobile-root-link" v-for="(v,k) in [...navList, ...navListRight]" :key="k">
             <router-link :to="v.link" class="title text-weight-bold text-center">{{ v.title }}</router-link>

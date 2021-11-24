@@ -2,48 +2,48 @@
 <div class="lm-contact w-full lm-bg-background lm-light-dark-background">
     <part-header name="联系鹿名"></part-header>
     <div class="contact-container row justify-center">
-        <div class="col-9 row q-gutter-lg pb-36 justify-center">
-            <div class="col-3 col-xs-12 col-sm-5 col-md-3">
-                <q-responsive :ratio="504/360">
+        <div class="col-md-9 col-xs-12 row q-gutter-lg pb-36 justify-center">
+            <div class="col-3 col-xs-5 col-sm-5 col-md-3">
+                <q-responsive :ratio="isMobile ? 1 :504/360">
                     <div class="contact-card lm-bg-green">
-                        <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-3">
+                        <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-3 zoom-md">
                             鹿名国际教育地址：
                         </div>
                         <div class="contact-content">
-                            <div class="text-white text-weight-bold text-xl text-center w-full pb-1">
+                            <div class="text-white text-weight-bold text-xl text-center w-full pb-1 zoom-md">
                                 上海市
                             </div>
-                            <p class="text-center text-white leading-4 text-location">黄浦区</p>
-                            <p class="text-center text-white leading-4 text-location">九江路299号</p>
-                            <p class="text-center text-white leading-3 text-location">宏伊国际广场807室</p>
+                            <p class="text-center text-white leading-4 text-location zoom-sm">黄浦区</p>
+                            <p class="text-center text-white leading-4 text-location zoom-sm ">九江路299号</p>
+                            <p class="text-center text-white leading-3 text-location zoom-sm">宏伊国际广场807室</p>
                         </div>
                     </div>
                 </q-responsive>
 
             </div>
-            <div class="col-3 col-xs-12 col-sm-5 col-md-3 ">
-                <q-responsive :ratio="504/360">
+            <div class="col-3 col-xs-5 col-sm-5 col-md-3 ">
+                <q-responsive :ratio="isMobile ? 1 :504/360">
                     <div class="contact-card lm-bg-green">
-                        <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-8">
+                        <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-8 zoom-md">
                             商务合作
                         </div>
                         <div class="contact-content">
 
-                            <p class="text-center text-white leading-4 text-location"><span class="text-xl mr-3 text-weight-bold">
+                            <p class="text-center text-white leading-4 text-location zoom-sm"><span class="text-xl mr-3 text-weight-bold">
                                     XXX</span>187-8888-8888</p>
-                            <p class="text-center text-white leading-4 text-location"><span class="text-xl mr-3 text-weight-bold">
+                            <p class="text-center text-white leading-4 text-location zoom-sm"><span class="text-xl mr-3 text-weight-bold">
                                     XXX</span>187-8888-8888</p>
                         </div>
                     </div>
                 </q-responsive>
             </div>
-            <div class="col-3 col-xs-12 col-sm-5 col-md-3 ">
-                <q-responsive :ratio="504/360">
+            <div class="col-3 col-xs-5 col-sm-5 col-md-3 ">
+                <q-responsive :ratio="isMobile ? 1 :504/360">
                     <div class="contact-card lm-bg-green">
-                        <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-5">
+                        <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-5 zoom-md">
                             鹿名国际微信公众号：
                         </div>
-                        <div class="contact-content flex justify-center">
+                        <div class="contact-content flex justify-center zoom-sm">
                             <q-responsive class="h-24 w-24" :ratio="1">
                                 <q-img src="vision.jpg"></q-img>
                             </q-responsive>
@@ -53,29 +53,29 @@
                 </q-responsive>
 
             </div>
-            <div class="col-3 col-xs-12 col-sm-5 col-md-3 ">
-                <q-responsive :ratio="504/360">
+            <div class="col-3 col-xs-5 col-sm-5 col-md-3 ">
+                <q-responsive :ratio="isMobile ? 1 :504/360">
                     <div class="contact-card lm-bg-green">
-                        <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-8">
+                        <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-8 zoom-md">
                             鹿名国际教育电话：
                         </div>
                         <div class="contact-content">
 
-                            <p class="text-center text-white leading-4 text-location"><span class="text-xl mr-3 text-weight-bold">
+                            <p class="text-center text-white leading-4 text-location zoom-sm"><span class="text-xl mr-3 text-weight-bold">
                                     XXX</span>187-8888-8888</p>
-                            <p class="text-center text-white leading-4 text-location"><span class="text-xl mr-3 text-weight-bold">
+                            <p class="text-center text-white leading-4 text-location zoom-sm"><span class="text-xl mr-3 text-weight-bold">
                                     XXX</span>187-8888-8888</p>
                         </div>
                     </div>
                 </q-responsive>
             </div>
-            <div class="col-3 col-xs-12 col-sm-5 col-md-3 ">
-                <q-responsive :ratio="504/360">
+            <div class="col-3 col-xs-5 col-sm-5 col-md-3 ">
+                <q-responsive :ratio="isMobile ? 1 :504/360">
                     <div class="contact-card lm-bg-green">
-                        <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-5">
+                        <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-5 zoom-md">
                             鹿名国际客服微信：
                         </div>
-                        <div class="contact-content flex justify-center">
+                        <div class="contact-content flex justify-center zoom-sm">
                             <q-responsive class="h-24 w-24" :ratio="1">
                                 <q-img src="vision.jpg"></q-img>
                             </q-responsive>
@@ -85,17 +85,17 @@
                 </q-responsive>
 
             </div>
-            <div class="col-3 col-xs-12 col-sm-5 col-md-3 ">
-                <q-responsive :ratio="504/360">
+            <div class="col-3 col-xs-5 col-sm-5 col-md-3 ">
+                <q-responsive :ratio="isMobile ? 1 :504/360">
                     <div class="contact-card lm-bg-green">
-                        <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-10">
+                        <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-10 zoom-md">
                             鹿名国际教育邮箱：
                         </div>
                         <div class="contact-content">
-                            <div class="text-white text-weight-bold text-xl text-center w-full pb-1">
+                            <div class="text-white text-weight-bold text-xl text-center w-full pb-1 zoom-sm">
                                 ABCDEFG
                             </div>
-                            <p class=" text-center text-white leading-4 text-location text-weight-bold">@163.com</p>
+                            <p class=" text-center text-white leading-4 text-location text-weight-bold zoom-sm">@163.com</p>
 
                         </div>
                     </div>
@@ -109,8 +109,9 @@
 </div>
 </template>
 
-<script>
+<script lang="ts">
 import PartHeader from '../components/PartHeader.vue'
+import { useQuasar } from 'quasar'
 
 export default {
     name: 'Contact',
@@ -118,7 +119,10 @@ export default {
         PartHeader
     },
     setup() {
-        return {}
+      const $q = useQuasar();
+        return {
+          isMobile: <boolean>$q.platform.is.mobile
+        }
     },
 }
 </script>
