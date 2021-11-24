@@ -64,7 +64,7 @@
 </template>
 
 <script lang="ts">
-import { ref, PropType, computed, defineComponent, watch } from 'vue';
+import { ref, PropType, computed, defineComponent, watch, onBeforeUpdate } from 'vue';
 import { QScrollArea, QCarousel } from 'quasar';
 import { OfferData } from 'components/models';
 import Indicator from 'components/Indicator.vue';
@@ -96,6 +96,10 @@ export default defineComponent({
       return props.data[carouselIndex.value];
     });
 
+    onBeforeUpdate(() => {
+      itemRefs.value = [];
+    });
+
     watch(
       () => props.index,
       (val) => {
@@ -111,7 +115,7 @@ export default defineComponent({
     const currentScrollAreaRef = computed(
       (): InstanceType<typeof QScrollArea> => {
         return <InstanceType<typeof QScrollArea>>(
-          itemRefs.value[carouselIndex.value]
+          itemRefs.value[0] ?? itemRefs.value[1]
         );
       }
     );

@@ -6,17 +6,6 @@
 @import "tailwindcss/utilities";
 @import './quasar.variables.scss';
 
-@mixin read-more {
-  color: $white;
-  font-size: 1.25rem;
-  text-decoration: none;
-  transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
-
-  &:hover {
-    //   color: #000;
-  }
-}
-
 .text-quaternary {
   color: $quaternary;
 }
@@ -106,7 +95,7 @@ $xl-breakpoint: 1536px;
 .lm-background {
   position: relative;
   width: 100%;
-  height: calc(100vh - 6.2rem);
+  height: calc(100vh - 86px);
   transition: all 1s ease-in-out;
 
   .lm-introduction {
@@ -172,52 +161,6 @@ $xl-breakpoint: 1536px;
   background-color: $secondary;
 }
 
-.lm-services {
-  width: 100%;
-  background-color: #000;
-  // min-height: calc(541.891rem / 16);
-
-  .bar {
-    height: $services-bar-height;
-  }
-
-  .bar-secondary {
-    height: $services-bar-height;
-  }
-
-  .service-container {
-    .media {
-      .introduction {
-
-        .sub-title {
-          color: $white;
-          font-size: 1.125rem;
-        }
-
-        a {
-          @include read-more;
-        }
-      }
-    }
-  }
-
-  .bg-primary {
-    a {
-      &:hover {
-        color: $secondary;
-      }
-    }
-  }
-
-  .bg-secondary {
-    a {
-      &:hover {
-        color: $primary;
-      }
-    }
-  }
-}
-
 .lm-points {
   .points-container {
     width: 100%;
@@ -260,7 +203,6 @@ $xl-breakpoint: 1536px;
       }
 
       .content {
-        margin-top: 1.25rem;
 
         .title {
           color: $white;
@@ -805,14 +747,13 @@ $xl-breakpoint: 1536px;
 
   .lm-offers {
     .area {
-      justify-content: space-around;
       flex-wrap: nowrap;
 
       .label {
         margin-bottom: 0;
         font-size: 12px;
         padding: 2px;
-        margin: 0 2px;
+        margin: 0 3px;
         white-space: nowrap;
       }
     }
@@ -830,6 +771,15 @@ $xl-breakpoint: 1536px;
     .offer-container {
       .q-carousel--arrows-horizontal.q-carousel--with-padding .q-carousel__slide {
         padding: 60px 0;
+      }
+    }
+  }
+
+  .lm-points {
+    .points-container {
+      .title {
+        white-space: nowrap;
+        font-size: 3.2rem;
       }
     }
   }
