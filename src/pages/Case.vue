@@ -5,7 +5,7 @@
       <div class="lm-case-plan-container mb-24">
         <div class="lm-plans row justify-center mb-10">
           <div
-            class="lm-plans-title_container col-xs-12 col-sm-12 col-md-9 flex justify-center pb-7"
+            class="lm-plans-title_container col-xs-12 col-sm-12 col-md-9 flex justify-center sm:pb-7"
           >
             <div
               class="plan-title text-center cursor-pointer p-2"
@@ -16,7 +16,7 @@
             >{{ v.title }}</div>
           </div>
         </div>
-        <div class="lm-case-plan_slider__container row justify-center mb-14" ref="caseRef">
+        <div class="lm-case-plan_slider__container row justify-center sm:mb-14" ref="caseRef">
           <div class="row justify-center items-center w-full" v-if="caseData.length === 1">
             <div class="col-md-6 col-xs-11">
               <q-responsive :ratio="1260 / 800" class="bg-white w-full">
@@ -55,7 +55,7 @@
             </el-carousel-item>
           </el-carousel>
         </div>
-        <div class="row justify-center mb-12" v-if="caseData.length > 1">
+        <div class="row justify-center mb-6 sm:mb-12" v-if="caseData.length > 1">
           <div class="lm-plans-button_container col-md-6 col-xs-9 flex justify-center">
             <indicator
               :num="caseData.length"
@@ -64,6 +64,7 @@
             ></indicator>
           </div>
         </div>
+        <div class="mb-6 sm:mb-12" v-if="caseData.length === 1"></div>
         <div class="lm-case-plan__content row justify-center">
           <div class="lm-case-plan__content_container col-md-5 col-xs-10">
             <div class="school pb-9">
@@ -511,15 +512,14 @@ export default defineComponent({
   .lm-case-plan {
     .lm-plans {
       .lm-plans-title_container {
-        justify-content: space-evenly;
         .plan-title {
-          font-size: 1rem;
+          font-size: 1.25rem;
           color: $light-fade-green;
           font-weight: 700;
           align-self: flex-end;
 
           &.active {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             color: $quaternary;
           }
         }
@@ -572,21 +572,24 @@ export default defineComponent({
       .lm-case-plan__content_container {
         .school {
           .name {
-            font-size: 1.8125rem;
+            font-size: 1.6125rem;
           }
 
           .rank {
-            font-size: 1.8125rem;
+            font-size: 1.6125rem;
           }
         }
 
         .student {
           .name {
-            font-size: 2.125rem;
+            font-size: 1.8125rem;
           }
 
           .background {
             font-size: 1rem;
+            .case-study {
+              font-size: 0.75rem;
+            }
           }
         }
       }
