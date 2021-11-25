@@ -44,7 +44,7 @@
     <service></service>
     <section class="lm-green-background-container">
       <div class="lm-points row items-center lg:container lg:mx-auto sm:py-36">
-        <div class="points-container relative">
+        <div class="points-container relative pt-10 sm:pt-0">
           <q-carousel
             v-model="slide"
             transition-prev="scale"
@@ -249,7 +249,7 @@
               :key="kk"
             >{{vv}}</div>
             <router-link
-              class="absolute mobile-link right-5 bottom-5 text-xs text-weight-bolder"
+              class="absolute mobile-link right-0 bottom-2 text-xs text-weight-bolder"
               :to="v.link"
             >了解更多 ></router-link>
           </div>
@@ -299,7 +299,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { CarouselData, OfferData } from 'components/models';
+import { CarouselData } from 'components/models';
 import { ref, computed, onMounted } from 'vue';
 import { useQuasar } from 'quasar';
 
