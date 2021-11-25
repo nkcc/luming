@@ -201,7 +201,6 @@ import { ref, computed, onBeforeUpdate, onMounted } from 'vue';
 import PartHeader from '../components/PartHeader.vue';
 import DescriptionWithImg from '../components/DescriptionWithImg.vue';
 import Contact from '../components/Contact.vue';
-import Indicator from 'components/Indicator.vue';
 import CaseCarousel from 'components/carousel/CaseCarousel.vue';
 import SlideOffer from 'src/components/SlideOffer.vue';
 import { CarouselData, OfferData } from 'components/models';
@@ -213,7 +212,6 @@ export default {
   components: {
     PartHeader,
     DescriptionWithImg,
-    Indicator,
     Contact,
     CaseCarousel,
     SlideOffer
