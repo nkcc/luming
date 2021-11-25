@@ -73,7 +73,7 @@
 
                   <div class="col-12 lt-md">
                     <p
-                      class="text-white zoom-sm font-extralight text-sm pr-0 leading-9 tracking-wide md:pr-24 lg:pr-24"
+                      class="text-white zoom-md font-extralight text-sm pr-0 leading-6 sm:leading-9 tracking-wide md:pr-24 lg:pr-24"
                     >{{ v.description }}</p>
                   </div>
                 </div>
@@ -140,7 +140,7 @@
                    </div>
                     <div class="description py-3 sm:py-2">
                       <div
-                        class="text-center zoom-xxs text-white text-xs text-weight-thin leading-5 font-extralight"
+                        class="text-center zoom-xs text-white text-xs text-weight-thin leading-5 font-extralight"
                         v-for="(vv, kk) in v.list"
                         :key="kk"
                       >

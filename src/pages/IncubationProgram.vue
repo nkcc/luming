@@ -174,7 +174,7 @@
                   >{{ v.title }}</div>
                   <div class="description mt-2">
                     <p
-                      class="text-center text-white zoom-xs text-xs text-weight-thin leading-5"
+                      class="text-center text-white zoom-sm text-xs text-weight-thin leading-5"
                       v-for="(vv, kk) in v.list"
                       :key="kk"
                     >{{ vv }}</p>

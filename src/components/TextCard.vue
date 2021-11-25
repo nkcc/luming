@@ -18,9 +18,9 @@
               >{{ vt }}</span>
             </div>
           </div>
-          <div class="description pt-6">
+          <div class="description pt-2 sm:pt-6">
             <div
-              class="px-4 description-text text-xs zoom-xxs leading-6 text-center text-text-weight-medium text-white"
+              class="px-4 description-text text-xs zoom-xs leading-6 text-center text-text-weight-medium text-white"
               v-for="(vd, kd) in v.description"
               :key="kd"
             >{{ vd }}</div>
@@ -79,7 +79,8 @@ export default defineComponent({
     &.points-border {
       &:before {
         border: 1px solid $quaternary;
-        top: 40%;
+        top: 32%;
+        height: 45%;
       }
     }
   }

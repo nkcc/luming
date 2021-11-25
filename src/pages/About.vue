@@ -16,7 +16,7 @@
               </div>
 
               <p
-                class="description zoom-sm text-weight-light leading-7 animate__animated animate__fadeInUp"
+                class="description zoom-md text-weight-light leading-5 sm:leading-7 animate__animated animate__fadeInUp"
                 :class="'animate__delay-' + k + 's'"
                 v-for="(vd, kd) in v.content"
                 :key="kd"
@@ -45,7 +45,7 @@
                 <div class="points-container flex align-center">
                   <div class="title text-weight-bolder">{{ v.title }}</div>
                   <div
-                    class="description zoom-xs text-quaternary w-full text-xs text-weight-bolder text-center"
+                    class="description zoom-sm text-quaternary w-full text-xs text-weight-bolder text-center"
                   >{{ v.description }}</div>
                 </div>
               </q-responsive>
