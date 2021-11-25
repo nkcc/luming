@@ -94,10 +94,10 @@
         </div>
       </div>
     </section>
-    <section class="bg-white">
+    <section class="bg-white pt-20 sm:pt-0">
       <div class="lg:container lg:mx-auto">
         <div class="lm-container row justify-center">
-          <div class="col-md-9 col-xs-5">
+          <div class="col-md-9 col-xs-5 gt-sm">
             <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
               <div class="text-center text-weight-bolder zoom-md text-2xl mb-2">{{ productPoints[0].title }}</div>
               <div
@@ -108,56 +108,11 @@
             </div>
           </div>
 
-          <div class="col-md-9 col-xs-5 lt-md">
-            <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
-              <div class="text-center text-weight-bolder zoom-md text-2xl mb-2">{{ productPoints[1].title }}</div>
-              <div
-                class="text-center zoom-md text-weight-thin text-xs leading-7"
-                v-for="(v, k) in productPoints[1].description"
-                :key="k"
-              >{{ v }}</div>
-            </div>
+          <div class="col-10 lt-md mb-10">
+            <vertical-card class="my-6" v-for="(v, k) in productPoints" :key="k" :title="v.title" :list="v.description" title-align="text-right">
+            </vertical-card>
           </div>
-                    <div class="col-md-9 col-xs-5 lt-md">
-            <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
-              <div class="text-center text-weight-bolder zoom-md text-2xl mb-2">{{ productPoints[3].title }}</div>
-              <div
-                class="text-center zoom-md text-weight-thin text-xs leading-7"
-                v-for="(v, k) in productPoints[3].description"
-                :key="k"
-              >{{ v }}</div>
-            </div>
-          </div>
-                              <div class="col-md-9 col-xs-5 lt-md">
-            <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
-              <div class="text-center text-weight-bolder zoom-md text-2xl mb-2">{{ productPoints[2].title }}</div>
-              <div
-                class="text-center zoom-md text-weight-thin text-xs leading-7"
-                v-for="(v, k) in productPoints[2].description"
-                :key="k"
-              >{{ v }}</div>
-            </div>
-          </div>
-          <div class="col-md-9 col-xs-5 lt-md">
-            <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
-              <div class="text-center text-weight-bolder zoom-md text-2xl mb-2">{{ productPoints[4].title }}</div>
-              <div
-                class="text-center zoom-md text-weight-thin text-xs leading-7"
-                v-for="(v, k) in productPoints[4].description"
-                :key="k"
-              >{{ v }}</div>
-            </div>
-          </div>
-                              <div class="col-md-9 col-xs-5 lt-md">
-            <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
-              <div class="text-center text-weight-bolder zoom-md text-2xl mb-2">{{ productPoints[5].title }}</div>
-              <div
-                class="text-center zoom-md text-weight-thin text-xs leading-7"
-                v-for="(v, k) in productPoints[5].description"
-                :key="k"
-              >{{ v }}</div>
-            </div>
-          </div>
+
 
           <div class="col-12 row relative justify-center">
             <div class="col-md-4 col-xs-11 flex flex-col justify-center gt-sm">
@@ -330,6 +285,7 @@ import PartHeader from '../components/PartHeader.vue';
 import DescriptionWithImg from '../components/DescriptionWithImg.vue';
 import TextCard from '../components/TextCard.vue';
 import Contact from '../components/Contact.vue';
+import VerticalCard from 'src/components/VerticalCard.vue';
 import { CarouselData } from 'components/models';
 import { useRoute } from 'vue-router';
 import { useQuasar } from 'quasar'
@@ -341,6 +297,7 @@ export default defineComponent({
     DescriptionWithImg,
     Contact,
     TextCard,
+    VerticalCard
   },
   setup() {
     const $q = useQuasar();

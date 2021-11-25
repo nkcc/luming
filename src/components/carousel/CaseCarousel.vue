@@ -158,9 +158,6 @@ export default defineComponent({
     .lm-case-plan_slider {
       padding-top: 2.5rem;
 
-      .el-carousel__container {
-      }
-
       .el-carousel__mask {
         background-color: transparent;
       }
