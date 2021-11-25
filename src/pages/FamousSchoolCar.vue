@@ -120,11 +120,11 @@
     </section>
     <section class="transparent mb-20">
       <div class="lg:container lg:mx-auto">
-        <div class="lm-container row justify-center pt-10 sm:pt-0 pb-20">
+        <div class="lm-container row justify-center pt-20 sm:pt-10 pb-20">
           <div class="col-12">
             <div class="text-quaternary text-center text-weight-bolder text-5xl">产品亮点</div>
             <div class="highlight mt-20 sm:mt-10">
-              <div class="row lm-highlight justify-center items-start">
+              <div class="row lm-highlight justify-center items-start gt-sm">
                 <div
                   :class="['col-md-4 item flex justify-center items-center col-xs-4']"
                   v-for="(v, k) in highlight"
@@ -152,6 +152,19 @@
                   </div>
                 </div>
               </div>
+
+            <div class="col-9 mt-10 row lt-md" v-for="(v, k) in highlight" :key="k">
+              <vertical-card
+              class="my-1"
+              :title="v.title"
+              :list="v.list"
+              left="3"
+              right="9"
+              dark-mode
+              title-class="text-right text-50/10vw"
+              item-class="text-20/10vw pb-2 font-extralight"
+            ></vertical-card>
+            </div>
             </div>
           </div>
         </div>
@@ -173,6 +186,7 @@ import PartHeader from '../components/PartHeader.vue';
 import DescriptionWithImg from '../components/DescriptionWithImg.vue';
 import Contact from '../components/Contact.vue';
 import SlideOffer from '../components/SlideOffer.vue';
+import VerticalCard from 'src/components/VerticalCard.vue';
 import CaseCarousel from 'components/carousel/CaseCarousel.vue';
 import { CarouselData } from 'components/models';
 import { QScrollArea, useQuasar } from 'quasar';
@@ -185,6 +199,7 @@ export default {
     Contact,
     SlideOffer,
     CaseCarousel,
+    VerticalCard,
   },
   setup() {
     const $q = useQuasar();
@@ -248,7 +263,8 @@ export default {
 
       {
         title: '录取',
-        list: ['99%极高录取率%绝对录取率'],
+        list: ['99%极高录取率',
+        '100%绝对录取率'],
       },
       {
         title: '未来',

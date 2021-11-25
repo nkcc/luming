@@ -45,7 +45,7 @@
                 <div class="points-container flex align-center">
                   <div class="title text-weight-bolder">{{ v.title }}</div>
                   <div
-                    class="description zoom-sm text-quaternary w-full text-xs text-weight-bolder text-center"
+                    class="description zoom-sm text-quaternary w-full text-xs sm:text-base md:text-lg text-weight-bolder text-center"
                   >{{ v.description }}</div>
                 </div>
               </q-responsive>

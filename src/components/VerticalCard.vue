@@ -1,10 +1,10 @@
 <template>
   <div class="vertical-card row w-full">
     <div :class="'col-' + left">
-      <div class="title font-extrabold text-xl leading-5" :class="titleAlign">{{title}} :</div>
+      <div class="title font-extrabold leading-none" :class="[titleClass, darkMode ? 'dark-mode':'']">{{title}} :</div>
     </div>
     <div :class="'col-' + right">
-      <div class="item text-xs leading-3 pl-2" v-for="(v, k) in list" :key="k">{{v}}</div>
+      <div class="item pl-1 leading-none" :class="[itemClass, darkMode ? 'dark-mode' : '']" v-for="(v, k) in list" :key="k">{{v}}</div>
     </div>
   </div>
 </template>
@@ -18,6 +18,10 @@ export default defineComponent({
     title: {
       type: String,
       default: '',
+    },
+    darkMode: {
+      type: Boolean,
+      default: false,
     },
     list: {
       type: Array,
@@ -33,13 +37,26 @@ export default defineComponent({
       type: String,
       default: '6',
     },
-    titleAlign: {
+    titleClass: {
       type: String,
-      default: 'text-left',
+      default: 'text-left text-3xl',
+    },
+    itemClass: {
+      type: String,
+      default: 'text-xs zoom-xs',
     },
   }
 });
 </script>
 
 <style lang="scss" scoped>
+.dark-mode {
+  &.title {
+    color: $quaternary;
+  }
+
+  &.item {
+    color: $white;
+  }
+}
 </style>

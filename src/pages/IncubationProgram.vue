@@ -50,7 +50,7 @@
             </template>
             <template v-for="(v, k) in carouselData" :key="k">
               <q-carousel-slide :name="'carousel' + k" class="column no-wrap">
-                <div class="row justify-center items-start mb-10">
+                <div class="row justify-center items-start mb-10 sm:mb-20">
                   <div class="col-xs-6 col-sm-6 col-md-5 left">
                     <h3 class="text-white text-weight-bold text-2xl">{{ v.title }}</h3>
                     <div class="mt-2">
@@ -80,8 +80,8 @@
     </section>
     <section class="bg-white mb-0 sm:mb-20">
       <div class="lg:container lg:mx-auto">
-        <div class="lm-container row justify-center py-20 sm:py-20">
-          <div class="col-md-9 col-xs-12">
+        <div class="lm-container row justify-center py-20 sm:py-24">
+          <div class="col-md-9 col-lg-12 col-xs-12">
             <description-with-img
               :info="suitableStudents"
               :darkMode="!!false"
@@ -96,7 +96,7 @@
     </section>
     <section class="lm-professor transparent lg:container lg:mx-auto">
       <div class="row justify-center">
-        <div class="col-md-9 col-xs-11">
+        <div class="col-md-9 col-lg-11 col-xs-11">
           <div
             class="prof-intro"
             :class="getClassType(k, '', 'reverse')"
@@ -156,7 +156,7 @@
     <section class="transparent mb-20">
       <div class="lg:container lg:mx-auto">
         <div class="lm-container row justify-center items-center pb-0 sm:pb-20">
-          <div class="col-md-9 col-xs-11">
+          <div class="col-md-9 col-lg-12 col-xs-11">
             <div class="text-quaternary text-center text-weight-bolder text-5xl">产品亮点</div>
             <div class="highlight mt-20 sm:mt-10">
               <div class="row lm-highlight">

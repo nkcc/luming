@@ -108,8 +108,8 @@
             </div>
           </div>
 
-          <div class="col-10 lt-md mb-10">
-            <vertical-card class="my-6" v-for="(v, k) in productPoints" :key="k" :title="v.title" :list="v.description" title-align="text-right">
+          <div class="col-11 lt-md mb-10">
+            <vertical-card class="my-6" v-for="(v, k) in productPoints" :key="k" :title="v.title" :list="v.description" title-class="text-right text-2xl zoom-md " item-class="text-sm zoom-sm pb-2">
             </vertical-card>
           </div>
 
@@ -220,7 +220,7 @@
     </section>
     <section class="transparent mt-10 sm:mt-20">
       <div class="lg:container lg:mx-auto">
-        <div class="lm-container row justify-center sm:mb-20">
+        <div class="lm-container row justify-center mb-20">
           <div class="col-12">
             <div
               class="text-quaternary text-center text-weight-bolder  text-5xl mb-4"
@@ -233,8 +233,25 @@
               :list="v.list"
               v-for="(v, k) in serviceContent.list"
               :key="k"
+              class="gt-sm"
             ></text-card>
           </div>
+            <div class="col-9 lt-md mt-10" v-for="(v, k) in serviceContent.list" :key="k">
+              <div class="text-white text-center font-extrabold text-3xl py-5"> {{v.title}}</div>
+              <div v-for="(vv, kk) in v.list" :key="kk">
+                  <vertical-card
+                  class="lt-md my-4"
+                  :title="vv.title.join('')"
+                  :list="vv.description"
+                  left="4"
+                  right="8"
+                  dark-mode
+                  title-class="text-right text-54/10vw"
+                  item-class="text-10/10vw pb-2 font-extralight"
+                ></vertical-card>
+              </div>
+              <q-separator v-if="k !== serviceContent.list.length - 1" class="mt-16" color="secondary" size="1px"/>
+            </div>
         </div>
       </div>
     </section>
@@ -454,7 +471,8 @@ export default defineComponent({
             {
               title: ['邮件', '助手'],
               description: [
-                '可以提供帮助学生查收学校邮件，撰写和学习相关的邮件等服务',
+                '可以提供帮助学生查收学校邮件，',
+                '撰写和学习相关的邮件等服务',
               ],
             },
             {

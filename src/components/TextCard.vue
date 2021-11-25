@@ -3,7 +3,7 @@
     <div class="row justify-center relative">
       <div class="col-12">
         <div
-          class="background-title text-center background-title text-fade-green text-xl sm：text-5xl text-weight-bolder pb-6 text-white"
+          class="background-title text-center background-title text-fade-green text-xl sm:text-5xl text-weight-bolder pb-6 text-white"
         >{{ title }}</div>
       </div>
       <div
