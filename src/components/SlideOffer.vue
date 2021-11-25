@@ -3,7 +3,7 @@
     <section class="lm-offers row items-center lg:container lg:mx-auto pb-20 sm:py-32">
       <div class="offer-container">
         <div class="row">
-          <div class="col-12 q-pa-xs-xs sm:mb-14">
+          <div class="col-12 q-pa-xs-xs sm:mb-14 pt-10 sm:pt-0">
             <h1 class="text-center text-white text-weight-bold header-title">录取院校</h1>
             <ul class="area">
               <li
@@ -30,6 +30,7 @@ export default {
 };
 </script>
 <script lang="ts" setup>
+import { OfferData } from './models';
 import ScrollCarousel from 'components/carousel/ScrollCarousel.vue';
 import { ref } from 'vue';
 const slideOffer = ref('america');

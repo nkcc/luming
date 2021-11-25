@@ -181,10 +181,10 @@ export default defineComponent({
     font-weight: bold;
   }
   .lm-offers .lm-points-background .offer-list .offer-item .school-desc .description {
-    font-size: 0.75rem;
-    zoom: 0.75;
-    width: 16.6667rem;
-    font-weight: 100;
+    // font-size: 0.75rem;
+    // zoom: 0.75;
+    // width: 16.6667rem;
+    font-weight: 200;
   }
 }
 </style>

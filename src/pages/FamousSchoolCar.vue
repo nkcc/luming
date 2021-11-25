@@ -73,7 +73,7 @@
 
                   <div class="col-12 lt-md">
                     <p
-                      class="text-white zoom-md font-extralight text-sm pr-0 leading-6 sm:leading-9 tracking-wide md:pr-24 lg:pr-24"
+                      class="text-white zoom-md font-extralight text-sm pr-0 leading-7 sm:leading-9 tracking-wide md:pr-24 lg:pr-24"
                     >{{ v.description }}</p>
                   </div>
                 </div>
@@ -85,7 +85,7 @@
     </section>
     <section class="bg-white">
       <div class="lg:container lg:mx-auto">
-        <div class="lm-container row justify-center py-10 sm:py-20">
+        <div class="lm-container row justify-center py-20 sm:pt-20">
           <div class="col-md-9 col-xs-11">
             <description-with-img
               :info="suitableStudents"

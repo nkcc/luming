@@ -69,7 +69,7 @@
                   </div>
                   <div class="col-12 lt-md">
                   <p
-                        class="description text-white text-sm pr-0 sm:pr-24 text-weight-thin leading-7 tracking-wide pt-4"
+                        class="description zoom-md text-white text-sm pr-0 sm:pr-24 font-extralight leading-7 tracking-wide pt-4"
                       >{{ v.description }}</p>
                   </div>
                 </div>
@@ -97,74 +97,73 @@
     <section class="bg-white">
       <div class="lg:container lg:mx-auto">
         <div class="lm-container row justify-center">
-          <div class="col-md-9 col-xs-6">
+          <div class="col-md-9 col-xs-5">
             <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
-              <div class="text-center text-weight-bolder text-2xl mb-2">{{ productPoints[0].title }}</div>
+              <div class="text-center text-weight-bolder zoom-md text-2xl mb-2">{{ productPoints[0].title }}</div>
               <div
-                class="text-center zoom-sm text-weight-thin text-xs leading-7"
+                class="text-center zoom-md text-weight-thin text-xs leading-7"
                 v-for="(v, k) in productPoints[0].description"
                 :key="k"
               >{{ v }}</div>
             </div>
           </div>
 
-          <div class="col-md-9 col-xs-6 lt-md">
+          <div class="col-md-9 col-xs-5 lt-md">
             <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
-              <div class="text-center text-weight-bolder text-2xl mb-2">{{ productPoints[1].title }}</div>
+              <div class="text-center text-weight-bolder zoom-md text-2xl mb-2">{{ productPoints[1].title }}</div>
               <div
-                class="text-center zoom-sm text-weight-thin text-xs leading-7"
+                class="text-center zoom-md text-weight-thin text-xs leading-7"
                 v-for="(v, k) in productPoints[1].description"
                 :key="k"
               >{{ v }}</div>
             </div>
           </div>
-                    <div class="col-md-9 col-xs-6 lt-md">
+                    <div class="col-md-9 col-xs-5 lt-md">
             <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
-              <div class="text-center text-weight-bolder text-2xl mb-2">{{ productPoints[3].title }}</div>
+              <div class="text-center text-weight-bolder zoom-md text-2xl mb-2">{{ productPoints[3].title }}</div>
               <div
-                class="text-center zoom-sm text-weight-thin text-xs leading-7"
+                class="text-center zoom-md text-weight-thin text-xs leading-7"
                 v-for="(v, k) in productPoints[3].description"
                 :key="k"
               >{{ v }}</div>
             </div>
           </div>
-                              <div class="col-md-9 col-xs-6 lt-md">
+                              <div class="col-md-9 col-xs-5 lt-md">
             <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
-              <div class="text-center text-weight-bolder text-2xl mb-2">{{ productPoints[2].title }}</div>
+              <div class="text-center text-weight-bolder zoom-md text-2xl mb-2">{{ productPoints[2].title }}</div>
               <div
-                class="text-center zoom-sm text-weight-thin text-xs leading-7"
+                class="text-center zoom-md text-weight-thin text-xs leading-7"
                 v-for="(v, k) in productPoints[2].description"
                 :key="k"
               >{{ v }}</div>
             </div>
           </div>
-                              <div class="col-md-9 col-xs-6 lt-md">
+          <div class="col-md-9 col-xs-5 lt-md">
             <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
-              <div class="text-center text-weight-bolder text-2xl mb-2">{{ productPoints[4].title }}</div>
+              <div class="text-center text-weight-bolder zoom-md text-2xl mb-2">{{ productPoints[4].title }}</div>
               <div
-                class="text-center zoom-sm text-weight-thin text-xs leading-7"
+                class="text-center zoom-md text-weight-thin text-xs leading-7"
                 v-for="(v, k) in productPoints[4].description"
                 :key="k"
               >{{ v }}</div>
             </div>
           </div>
-                              <div class="col-md-9 col-xs-6 lt-md">
+                              <div class="col-md-9 col-xs-5 lt-md">
             <div class="lm-product-points mb-10 sm:mb-20 mt-10 sm:mt-20">
-              <div class="text-center text-weight-bolder text-2xl mb-2">{{ productPoints[5].title }}</div>
+              <div class="text-center text-weight-bolder zoom-md text-2xl mb-2">{{ productPoints[5].title }}</div>
               <div
-                class="text-center zoom-sm text-weight-thin text-xs leading-7"
+                class="text-center zoom-md text-weight-thin text-xs leading-7"
                 v-for="(v, k) in productPoints[5].description"
                 :key="k"
               >{{ v }}</div>
             </div>
           </div>
 
-
           <div class="col-12 row relative justify-center">
             <div class="col-md-4 col-xs-11 flex flex-col justify-center gt-sm">
               <div class="lm-product-points mb-10 sm:mb-20">
                 <div
-                  class="text-center text-weight-bolder text-2xl mb-2"
+                  class="text-center text-weight-bolder zoom-md text-2xl mb-2"
                 >{{ productPoints[1].title }}</div>
                 <div
                   class="text-center text-weight-thin text-xs leading-7"
@@ -174,7 +173,7 @@
               </div>
               <div class="lm-product-points mb-10 sm:mb-0">
                 <div
-                  class="text-center text-weight-bolder text-2xl mb-2"
+                  class="text-center text-weight-bolder zoom-md text-2xl mb-2"
                 >{{ productPoints[3].title }}</div>
                 <div
                   class="text-center text-weight-thin text-xs leading-7"
@@ -206,7 +205,7 @@
             <div class="col-md-4 col-xs-11 flex flex-col justify-center gt-sm">
               <div class="lm-product-points mb-10 sm:mb-20">
                 <div
-                  class="text-center text-weight-bolder text-2xl mb-2 mt-10 sm:mt-0"
+                  class="text-center text-weight-bolder zoom-md text-2xl mb-2 mt-10 sm:mt-0"
                 >{{ productPoints[2].title }}</div>
                 <div
                   class="text-center text-weight-thin text-xs leading-7"
@@ -216,7 +215,7 @@
               </div>
               <div class="lm-product-points">
                 <div
-                  class="text-center text-weight-bolder text-2xl mb-2"
+                  class="text-center text-weight-bolder zoom-md text-2xl mb-2"
                 >{{ productPoints[4].title }}</div>
                 <div
                   class="text-center text-weight-thin text-xs leading-7"
@@ -242,7 +241,7 @@
               <div class="col-12 absolute top-0">
                 <div class="lm-product-points gt-sm">
                   <div
-                    class="text-center text-weight-bolder text-2xl mb-2"
+                    class="text-center text-weight-bolder zoom-md text-2xl mb-2"
                   >{{ productPoints[5].title }}</div>
                   <div
                     class="text-center text-weight-thin text-xs leading-7"
@@ -458,7 +457,7 @@ export default defineComponent({
               ],
             },
             {
-              title: ['论文', '辅导'],
+              title: ['跟踪', '反馈'],
               description: [
                 '定期跟踪与反馈学生情况，',
                 '对面对的问题和挑战提供对应建议',
@@ -509,7 +508,7 @@ export default defineComponent({
               ],
             },
             {
-              title: ['学习资料', '整理'],
+              title: ['资料', '整理'],
               description: [
                 '拿到学生学校账号密码，帮助学生下载整理作业，',
                 '并提醒作业提交时间。',
@@ -523,7 +522,7 @@ export default defineComponent({
               ],
             },
             {
-              title: ['调研', '学校情况'],
+              title: ['学校', '调研'],
               description: [
                 '如家长有关于学生特定学校以及课程情况',
                 '给予咨询和详细解答',
@@ -541,7 +540,7 @@ export default defineComponent({
               ],
             },
             {
-              title: ['课外活动', '介绍'],
+              title: ['课外', '活动'],
               description: [
                 '各类学校内外发生的',
                 '课外活动介绍和推荐',
