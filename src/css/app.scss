@@ -21,6 +21,12 @@
 }
 
 .mobile {
+  @for $i from 1 through 10 {
+    .zd-#{$i}\/ {
+      zoom: #{$i/10};
+    }
+  }
+
   .zoom-sm {
     zoom: 0.75;
   }

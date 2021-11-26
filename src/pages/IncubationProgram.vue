@@ -159,7 +159,7 @@
           <div class="col-md-9 col-lg-12 col-xs-11">
             <div class="text-quaternary text-center text-weight-bolder text-5xl">产品亮点</div>
             <div class="highlight mt-20 sm:mt-10">
-              <div class="row lm-highlight">
+              <div class="row lm-highlight gt-sm">
                 <div
                   :class="[
                     'col-md-4 col-xs-4 mb-10 item',
@@ -181,6 +181,18 @@
                   </div>
                 </div>
               </div>
+                  <div class="col-9 mt-10 row lt-md" v-for="(v, k) in highlight" :key="k">
+                  <vertical-card
+                  class="my-1"
+                  :title="v.title"
+                  :list="v.list"
+                  left="3"
+                  right="9"
+                  dark-mode
+                  title-class="text-right text-50/10vw leading-none"
+                  item-class="text-24/10vw leading-4 font-extralight"
+                ></vertical-card>
+                </div>
             </div>
           </div>
         </div>
@@ -203,6 +215,7 @@ import DescriptionWithImg from '../components/DescriptionWithImg.vue';
 import Contact from '../components/Contact.vue';
 import CaseCarousel from 'components/carousel/CaseCarousel.vue';
 import SlideOffer from 'src/components/SlideOffer.vue';
+import VerticalCard from 'src/components/VerticalCard.vue';
 import { CarouselData, OfferData } from 'components/models';
 import { QScrollArea, useQuasar } from 'quasar';
 import { useRoute } from 'vue-router';
@@ -214,7 +227,8 @@ export default {
     DescriptionWithImg,
     Contact,
     CaseCarousel,
-    SlideOffer
+    SlideOffer,
+    VerticalCard,
   },
   setup() {
     const $q = useQuasar();
@@ -291,7 +305,8 @@ export default {
         title: '院校',
         list: [
           '长期高质量的培育流程',
-          '学生将与多名顶尖大学教授共同研究工作并且将会全程配有一位全职助理老师7*24小时为学生保驾护航',
+          '学生将与多名顶尖大学教授共同研究工作',
+          '并且将会全程配有一位全职助理老师7*24小时为学生保驾护航',
         ],
       },
       {

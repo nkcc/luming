@@ -161,8 +161,8 @@
               left="3"
               right="9"
               dark-mode
-              title-class="text-right text-50/10vw"
-              item-class="text-20/10vw pb-2 font-extralight"
+              title-class="text-right text-50/10vw leading-none"
+              item-class="text-23/10vw font-extralight"
             ></vertical-card>
             </div>
             </div>
@@ -263,8 +263,7 @@ export default {
 
       {
         title: '录取',
-        list: ['99%极高录取率',
-        '100%绝对录取率'],
+        list: ['99%极高录取率'],
       },
       {
         title: '未来',
