@@ -114,7 +114,7 @@
 </template>
 
 <script lang="ts">
-import { computed, reactive, ref, Ref, defineComponent, toRefs, watch, onMounted  } from 'vue';
+import { computed, reactive, ref, Ref, defineComponent, toRefs, watch, onMounted, onUpdated  } from 'vue';
 
 export default defineComponent({
   name: 'CaseCarousel',
@@ -230,15 +230,9 @@ const changeCurrentCaseIndex = function (index: number) {
   carousel.value?.setActiveItem(index);
 };
 
-const centerIndex = computed(() => {
-  return Math.floor(caseData.value.length / 2);
-});
-
 const changePlanType = function (index: number) {
   currentType.value = planData.value[index].type;
-  if (carousel.value) {
-    carousel.value.setActiveItem(centerIndex.value);
-  }
+  currentCaseIndex.value = 0;
 };
 </script>
 
