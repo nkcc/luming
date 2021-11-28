@@ -246,8 +246,8 @@
                   left="4"
                   right="8"
                   dark-mode
-                  title-class="text-right text-54/10vw"
-                  item-class="text-10/10vw pb-2 font-extralight"
+                  title-class="text-right text-54/10vw leading-none"
+                  item-class="text-20/10vw leading-4 font-extralight"
                 ></vertical-card>
               </div>
               <q-separator v-if="k !== serviceContent.list.length - 1" class="mt-16" color="secondary" size="1px"/>

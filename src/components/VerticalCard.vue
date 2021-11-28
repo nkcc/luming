@@ -1,10 +1,10 @@
 <template>
   <div class="vertical-card row w-full">
     <div :class="'col-' + left">
-      <div class="title font-extrabold leading-none" :class="[titleClass, darkMode ? 'dark-mode':'']">{{title}} :</div>
+      <div class="title font-extrabold" :class="[titleClass, darkMode ? 'dark-mode':'']">{{title}} :</div>
     </div>
-    <div :class="'col-' + right">
-      <div class="item pl-1 leading-none" :class="[itemClass, darkMode ? 'dark-mode' : '']" v-for="(v, k) in list" :key="k">{{v}}</div>
+    <div :class="['col-' + right, list.length === 1 ? 'items-center flex leading-none pt-1' : '']">
+      <div class="item pl-1" :class="[itemClass, darkMode ? 'dark-mode' : '']" v-for="(v, k) in list" :key="k">{{v}}</div>
     </div>
   </div>
 </template>
