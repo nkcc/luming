@@ -110,7 +110,7 @@ section {
 }
 
 .lm-light-dark-background {
-  background: radial-gradient($light-dark-green 50%, #050505 100%);
+  background: $light-dark-green;
 
   &.no-gradient {
     background: $light-dark-green;
@@ -122,7 +122,7 @@ section {
 }
 
 .lm-dark-background {
-  background: radial-gradient(closest-side circle, $light-dark-green 80%, #030604 200%);
+  background: $light-dark-green;
 }
 
 .footer {
@@ -241,7 +241,7 @@ $xl-breakpoint: 1536px;
 
 .lm-green-background-container {
   width: 100%;
-  background: $points-bg radial-gradient(closest-side circle, $light-dark-green 80%, #030604 200%);
+  background: $light-dark-green;
 }
 
 .lm-points,
@@ -398,7 +398,7 @@ $xl-breakpoint: 1536px;
 }
 
 .lm-offers {
-  background: radial-gradient(closest-side circle, $light-dark-green 80%, #030604 200%);
+  background: $light-dark-green;
   // min-height: 58.06rem;
 
   .offer-container {
