@@ -135,6 +135,16 @@ section {
       color: $secondary;
     }
   }
+
+  &.light {
+    a {
+      color: $dark;
+    }
+
+    a:hover {
+      color: $primary;
+    }
+  }
 }
 
 $xl-breakpoint: 1536px;
@@ -504,100 +514,7 @@ $xl-breakpoint: 1536px;
 
 .lm-case {
   width: 100%;
-
-  .case-item {
-    background-color: $gray;
-    padding: 3.75rem;
-    min-height: 41.04rem;
-    align-items: stretch;
-
-    &.reverse {
-      background-color: $white;
-
-      .content {
-        // padding-right: 6.25rem;
-        height: 100%;
-      }
-
-      .img-container {
-        .img {
-          box-shadow: 1.25rem 1.25rem $primary;
-        }
-      }
-    }
-
-    .img-container {
-      .img {
-        box-shadow: 1.25rem 1.25rem $secondary;
-      }
-
-      padding: 2.5rem;
-    }
-
-    .content-container {
-      padding: 2.5rem;
-      position: relative;
-      bottom: -1.25rem;
-    }
-
-    .content {
-      padding-left: 2.5rem;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      .header {
-        .title {
-          font-size: 1.875rem;
-          font-weight: 700;
-        }
-
-        .rank {
-          font-size: 1.875rem;
-          font-weight: 700;
-        }
-      }
-
-      .body {
-        margin-top: 3.75rem;
-        font-size: 1.125rem;
-        font-weight: 700;
-
-        .name {
-          font-size: 1.875rem;
-          padding-bottom: 0.875rem;
-        }
-
-        .info {
-          .label {
-            margin-right: 1.25rem;
-          }
-        }
-      }
-
-      .footer {
-        display: flex;
-        align-items: center;
-        color: $secondary;
-        font-size: 1.25rem;
-        margin-top: 1.25rem;
-        margin-left: -0.3125rem;
-
-        .dot {
-          margin-right: 0.5rem;
-        }
-
-        a {
-          color: $dark;
-
-          &:hover {
-            color: $secondary;
-          }
-        }
-      }
-    }
-  }
+  background-color: $gray;
 }
 
 .lm-team {
@@ -662,7 +579,6 @@ $xl-breakpoint: 1536px;
 
       .footer {
         background-color: $white;
-        // padding: 0 2.5rem 1.875rem;
 
         a {
           color: $dark;
@@ -853,7 +769,7 @@ $xl-breakpoint: 1536px;
 
     .footer {
       position: relative;
-      top: -60px;
+      // top: -60px;
       padding-top: 6px;
       padding-right: calc(60px - 1rem);
     }

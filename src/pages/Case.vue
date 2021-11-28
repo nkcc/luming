@@ -3,7 +3,7 @@
     <div class="lg:container lg:mx-auto">
       <part-header name="鹿名案例"></part-header>
       <div ref="caseRef"></div>
-      <case-carousel programType="famousCar" :current-index="currentCaseIndex"></case-carousel>
+      <case-carousel class="pb-10" :program-type="programType" :current-index="currentCaseIndex"></case-carousel>
 
     </div>
     <contact></contact>
@@ -29,12 +29,15 @@ export default defineComponent({
   setup() {
     const router = useRoute();
     const currentCaseIndex = ref(0)
+    const programType = ref('famousCar');
 
     const caseRef = ref<HTMLElement>();
     onMounted(() => {
       const id = router.query.id;
+      const typeData = router.query.type;
       if (typeof id !== 'undefined') {
         currentCaseIndex.value = Number(id);
+        programType.value = <string>typeData;
         setTimeout(
           () => caseRef.value?.scrollIntoView(),
           100
@@ -45,6 +48,7 @@ export default defineComponent({
     return {
       currentCaseIndex,
       caseRef,
+      programType,
     };
   },
 });

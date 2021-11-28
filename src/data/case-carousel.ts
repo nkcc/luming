@@ -6,6 +6,13 @@ const incubationCaseData = [
     rank: 'U.S. News 全美商学院第一名',
     caseName: 'incubation|0',
     student: '孟同学',
+    link: {
+      path: 'case',
+      query: {
+        id: 0,
+        type: 'incubation'
+      },
+    },
     info: [
       {
         label: 'GPA',
@@ -47,6 +54,13 @@ const famousCarData = [
     rank: 'U.S. News 全美排名第17',
     caseName: 'famousCar|0',
     student: '陆同学',
+    link: {
+      path: 'case',
+      query: {
+        id: 0,
+        type: 'famousCar'
+      },
+    },
     info: [
       {
         label: '优势',
@@ -65,13 +79,19 @@ const famousCarData = [
       '可怜天下父母心，签约之后，爱女心切的陆总频繁的与我们沟通，询问申请进度，我们一一耐心解答。官方下录取offer的时间是2021年4月7号，而我们在三月份已获知陆同学被康奈尔录取的消息。在北京时间4月7号早上7点，不出所料陆同学被康奈尔大学官方通知录取。陆总感叹：“一路走过，选择没有错，感谢我们陪伴和支持”。和同学们结伴同行在海南旅游的陆同学，也与同学们一起分享了这胜利的喜悦。我们也为圆满的结果感到欣慰。预祝陆同学在新的旅程绽放精彩人生！',
     ],
   },
-
   {
     imgLink: 'cloud-case-2.jpg',
     name: '哥伦比亚大学-商学院',
     rank: 'U.S. News 全美排名第3',
     student: '马同学',
     caseName: 'cloud|0',
+    link: {
+      path: 'case',
+      query: {
+        id: 1,
+        type: 'famousCar'
+      },
+    },
     info: [
       {
         label: '优势',
@@ -94,6 +114,13 @@ const famousCarData = [
     rank: 'QS世界排名第22',
     caseName: 'famousCar|0',
     student: '龚同学',
+    link: {
+      path: 'case',
+      query: {
+        id: 2,
+        type: 'famousCar'
+      },
+    },
     info: [
       {
         label: 'GPA',
@@ -118,6 +145,13 @@ const famousCarData = [
     rank: 'QS世界排名第22',
     student: '常同学',
     caseName: 'famousCar|1',
+    link: {
+      path: 'case',
+      query: {
+        id: 3,
+        type: 'famousCar'
+      },
+    },
     info: [
       {
         label: 'GPA',
@@ -138,6 +172,13 @@ const famousCarData = [
     rank: 'U.S. News 全美排名第6',
     student: '张同学',
     caseName: 'famousCar|2',
+    link: {
+      path: 'case',
+      query: {
+        id: 4,
+        type: 'famousCar'
+      },
+    },
     info: [
       {
         label: 'GPA',

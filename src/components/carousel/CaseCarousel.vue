@@ -1,7 +1,7 @@
 <template>
   <div class="lm-case-plan w-full">
     <div class="lg:container lg:mx-auto">
-      <div class="lm-case-plan-container mb-24">
+      <div class="lm-case-plan-container">
         <div class="lm-plans row justify-center mt-0 mb-4">
           <div
             class="lm-plans-title_container col-xs-12 col-sm-12 col-md-12 flex justify-center sm:pb-7"
@@ -69,25 +69,25 @@
         <div class="lm-case-plan__content row justify-center">
           <div class="lm-case-plan__content_container col-md-5 col-xs-10">
             <div class="school pb-9">
-              <div class="name text-quaternary text-weight-bolder">
+              <div class="name  text-weight-bolder" :class="lightMode ? 'text-black' : 'text-quaternary'">
                 录取院校：
-                <span class="text-white">
+                <span :class="lightMode ? 'light text-quaternary' : 'text-white'">
                   {{
                     currentCase.name
                   }}
                 </span>
               </div>
-              <div class="rank text-quaternary text-weight-bolder">
+              <div class="rank text-weight-bolder" :class="lightMode ? 'text-black' : 'text-quaternary'">
                 学校排名：
                 <span>{{ currentCase.rank }}</span>
               </div>
             </div>
             <div class="student">
-              <div class="name text-white text-weight-bold pb-1">{{ currentCase.student }}</div>
+              <div class="name text-weight-bold pb-1" :class="lightMode ? 'text-black' : 'text-white'">{{ currentCase.student }}</div>
               <div class="background">
-                <div class="title text-white text-weight-bolder">背景分析：</div>
+                <div class="title text-weight-bolder" :class="lightMode ? 'text-black' : 'text-white'">背景分析：</div>
                 <div
-                  class="info text-white text-weight-bolder pr-0 md:pr-10 lg:pr-10 xl:pr-10"
+                  class="info text-weight-bolder pr-0 md:pr-10 lg:pr-10 xl:pr-10" :class="lightMode ? 'text-black' : 'text-white'"
                   v-for="(v, k) in currentCase.info"
                   :key="k"
                 >
@@ -95,7 +95,7 @@
                   <span class="font-extralight">{{ v.value }}</span>
                 </div>
 
-                <div class="case-study text-white text-weight-bolder pt-9">
+                <div class="case-study text-weight-bolder pt-9" :class="lightMode ? 'text-black' : 'text-white'" v-if="!hiddenDescription">
                   <div class="title pb-1">案例解读：</div>
                   <p
                     class="font-extralight mb-7 pr-0 md:pr-10 lg:pr-10 xl:pr-10"
@@ -105,7 +105,9 @@
                 </div>
               </div>
             </div>
-            <div class="content"></div>
+            <div class="more footer light py-4 sm:text-xl" v-if="hiddenDescription">
+              <router-link :to="currentCase.link">了解更多 ></router-link>
+            </div>
           </div>
         </div>
       </div>
@@ -114,24 +116,10 @@
 </template>
 
 <script lang="ts">
-import { computed, reactive, ref, Ref, defineComponent, toRefs, watch, onMounted, onUpdated  } from 'vue';
+import { computed, reactive, ref, Ref, defineComponent, toRefs, watch, onMounted  } from 'vue';
 
 export default defineComponent({
   name: 'CaseCarousel',
-  props: {
-    programType: {
-      type: String,
-      default: 'famousCar',
-    },
-    showType: {
-      type: Boolean,
-      default: true,
-    },
-    currentIndex: {
-      type: Number,
-      default: 0,
-    },
-  },
 });
 </script>
 
@@ -157,6 +145,14 @@ const props = defineProps({
       type: Number,
       default: 0,
     },
+    lightMode: {
+      type: Boolean,
+      default: false,
+    },
+    hiddenDescription: {
+      type: Boolean,
+      default: false,
+    },
 })
 const incubationCase = reactive(<CaseData[]>incubationCaseData);
 
@@ -179,7 +175,6 @@ const isLastCarousel = ref(false);
 const carouselType = ref('card');
 const carouselHeight = ref('30rem');
 const carouselClass = ref('left:-18.2%;');
-const currentSlider = ref(0);
 
 const { programType, currentIndex } = toRefs(props);
 const currentCaseIndex = ref(currentIndex.value);
@@ -205,8 +200,6 @@ const caseData = computed((): CaseData[] => {
   return currentData.data;
 });
 
-
-
 const currentCase = computed((): CaseData => {
   return caseData.value[currentCaseIndex.value];
 });
@@ -215,10 +208,13 @@ onMounted(() => {
   currentCaseIndex.value = currentIndex.value;
 });
 
-watch(currentIndex, (newVal: number) => {
-  currentCaseIndex.value = newVal;
-  carousel.value?.setActiveItem(newVal);
+watch(programType, (newVal: string) => {
+    let currentDataIndex = planData.value.findIndex((element) => {
+    return element.type === newVal;
+  });
+  changePlanType(currentDataIndex);
 });
+
 
 const carouselChange = function (index: number) {
   isLastCarousel.value = index === caseData.value.length - 1;

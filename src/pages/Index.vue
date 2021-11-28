@@ -59,10 +59,23 @@
             keep-alive
             :keep-alive-include="'carousel0, carousel1, carousel2, carousel3'"
           >
-            <template v-slot:navigation-icon></template>
+            <template v-slot:navigation-icon="{ active, onClick, maxIndex }">
+              <div
+                v-if="active"
+                class="navigation-indicator-item active"
+                :style="{ width: (1 / maxIndex) * 100 + '%'}"
+                @click="onClick"
+              ></div>
+              <div
+                v-else
+                class="navigation-indicator-item"
+                @click="onClick"
+                :style="{ width: (1 / maxIndex) * 100 + '%'}"
+              ></div>
+            </template>
             <template v-for="(v, k) in carouselData" :key="k">
               <q-carousel-slide :name="'carousel' + k" class="column no-wrap">
-                <div class="row justify-center items-center">
+                <div class="row justify-center items-center pb-4">
                   <div class="col-xs-12 col-sm-12 col-md-5 left">
                     <h2
                       class="text-secondary text-weight-bold text-6xl pb-3 sm:pb-14 sm:text-6xl title"
@@ -97,7 +110,7 @@
             </template>
           </q-carousel>
         </div>
-        <div class="col-12">
+        <div class="col-12 pb-10">
           <div class="footer text-right sm:text-center white text-xs">
             <router-link to="spot">了解更多></router-link>
           </div>
@@ -169,57 +182,8 @@
       </div>
     </section>
     <SlideOffer></SlideOffer>
-    <section class="lm-case">
-      <div :class="['case-item', k % 2 !== 0 ? 'reverse' : '']" v-for="(v, k) in caseData" :key="k">
-        <div
-          class="row justify-center items-center items-stretch lg:container lg:mx-auto"
-          :class="k % 2 !== 0 ? 'reverse' : ''"
-        >
-          <div class="img-container col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5">
-            <q-responsive :ratio="isMobile ? 624 / 324 : 899 / 716" class="shadow-up-10">
-              <q-img
-                class="img"
-                :src="v.imgLink"
-                fit="cover"
-                position="center top"
-                loading="eager"
-                :no-spinner="true"
-              ></q-img>
-            </q-responsive>
-          </div>
-          <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 col-xl-5 content-container">
-            <div class="content relative">
-              <div class="header">
-                <div class="title">
-                  <span class="caption text-weight-bolder">录取院校：</span>
-                  <span class="value text-secondary">{{ v.name }}</span>
-                </div>
-                <div class="rank">
-                  <span class="caption text-weight-bolder">学校排名：</span>
-                  <span class="value text-weight-bolder">{{ v.rank }}</span>
-                </div>
-              </div>
-              <div class="body">
-                <div class="name text-weight-bolder">{{ v.student }}</div>
-                <div class="title text-weight-bolder">背景分析：</div>
-                <div class="background">
-                  <div class="info" v-for="(vv, kk) in v.info" :key="kk">
-                    <span class="label text-weight-bolder">{{ vv.label }}:</span>
-                    <span class="value text-weight-light">{{ vv.value }}</span>
-                  </div>
-                </div>
-              </div>
-              <div class="footer gt-sm">
-                <router-link :to="v.link">了解更多 ></router-link>
-              </div>
-              <router-link
-                class="lt-md absolute text-lg text-weight-thin right-5 top-1/2"
-                :to="v.link"
-              >了解更多 ></router-link>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section class="lm-case py-20">
+      <case-carousel :light-mode="true" :hidden-description="true"></case-carousel>
     </section>
     <section class="lm-team lm-dark-background">
       <h1 class="header-title text-white text-center text-weight-bold">鹿名团队</h1>
@@ -231,7 +195,7 @@
         >
           <div :class="k % 2 !== 0 ? 'bar' : 'bar-secondary'"></div>
 
-          <img :src="v.imgLink" alt />
+          <img :src="v.imgLink"  />
           <div class="content gt-sm">
             <div
               class="name text-weight-bolder"
@@ -312,6 +276,7 @@ export default defineComponent({
 import Contact from 'components/Contact.vue';
 import SlideOffer from 'components/SlideOffer.vue';
 import Service from 'components/Service.vue';
+import CaseCarousel from 'components/carousel/CaseCarousel.vue'
 
 const bgFilter = ref('bg-filter-none');
 
@@ -395,81 +360,6 @@ const cultureData = ref([
     ],
     visible: false,
     link: 'about',
-  },
-]);
-
-
-
-const caseData = ref([
-  {
-    imgLink: 'case1.jpg',
-    link: {
-      path: 'case',
-      query: {
-        id: 0,
-      },
-    },
-    name: '康奈尔大学',
-    rank: 'U.S. News 全美排名第17',
-    student: '陆同学',
-    info: [
-      {
-        label: '优势',
-        value: 'IB课程体系，GPA达标',
-      },
-      {
-        label: '劣势',
-        value: '综合实力不够理想，没有SAT成绩，活动背景较为薄弱',
-      },
-    ],
-  },
-  {
-    imgLink: 'case2.jpg',
-    name: '哥伦比亚大学-商学院',
-    rank: 'U.S. News 全美排名第3',
-    link: {
-      path: 'case',
-      query: {
-        id: 1,
-      },
-    },
-    student: '马同学',
-    info: [
-      {
-        label: '优势',
-        value: '美国本科学历，专业匹配度高',
-      },
-      {
-        label: '劣势',
-        value: 'GPA低，无GRE/GMAT成绩，学术背景、科研与工作经历较为薄弱',
-      },
-    ],
-  },
-  {
-    imgLink: 'case5.png',
-    name: '香港大学',
-    rank: 'QS世界排名第22',
-    student: '龚同学',
-    link: {
-      path: 'case',
-      query: {
-        id: 2,
-      },
-    },
-    info: [
-      {
-        label: 'GPA',
-        value: '2.6/4.0',
-      },
-      {
-        label: 'GRE',
-        value: 'Waived',
-      },
-      {
-        label: '本科',
-        value: '美本',
-      },
-    ],
   },
 ]);
 
