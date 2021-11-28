@@ -21,6 +21,24 @@
 }
 
 .mobile {
+  @for $i from 1 through 100 {
+    .text-m#{$i}\/10vw {
+      font-size: #{$i/10}+vw;
+    }
+  }
+
+  @for $i from 1 through 10 {
+    .zd-#{$i} {
+      zoom: #{$i/10};
+    }
+  }
+
+  @for $i from 1 through 10 {
+    .zu-#{$i} {
+      zoom: #{$i};
+    }
+  }
+
   .zoom-sm {
     zoom: 0.75;
   }
