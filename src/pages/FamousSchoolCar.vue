@@ -99,8 +99,20 @@
         </div>
       </div>
     </section>
-    <section>
-      <SlideOffer></SlideOffer>
+    <section class="transparent">
+      <div class="row">
+        <div class="col-12 py-20">
+            <div class="header pb-10">
+              <div
+                class="incubation-title text-quaternary text-center text-weight-bolder"
+              >{{ offers.title }}</div>
+              <div
+                class="subtitle text-quaternary text-center text-text-weight-bolder"
+              >{{ offers.subTitle }}</div>
+            </div>
+            <scroll-carousel :data="offers.list" :index="0"></scroll-carousel>
+        </div>
+      </div>
     </section>
     <section class="bg-white py-0 sm:my-20">
       <div class="lg:container lg:mx-auto">
@@ -155,7 +167,7 @@
 
             <div class="col-9 mt-10 row lt-md" v-for="(v, k) in highlight" :key="k">
               <vertical-card
-              class="my-1"
+              class="m-1"
               :title="v.title"
               :list="v.list"
               left="3"
@@ -170,8 +182,8 @@
         </div>
       </div>
     </section>
-    <section class="transparent">
-      <div class="lg:container lg:mx-auto">
+    <section class="transparent pb-20">
+      <div class="lg:container lg:mx-auto ">
         <div class="text-center text-quaternary text-weight-bolder text-5xl mb-10">案例解读</div>
       </div>
       <case-carousel programType="famousCar" :show-type="false"></case-carousel>
@@ -182,14 +194,15 @@
 
 <script lang="ts">
 import { ref, computed, onBeforeUpdate } from 'vue';
-import PartHeader from '../components/PartHeader.vue';
-import DescriptionWithImg from '../components/DescriptionWithImg.vue';
-import Contact from '../components/Contact.vue';
-import SlideOffer from '../components/SlideOffer.vue';
+import PartHeader from 'src/components/PartHeader.vue';
+import DescriptionWithImg from 'src/components/DescriptionWithImg.vue';
+import Contact from 'src/components/Contact.vue';
+import ScrollCarousel from 'src/components/carousel/ScrollCarousel.vue';
 import VerticalCard from 'src/components/VerticalCard.vue';
 import CaseCarousel from 'components/carousel/CaseCarousel.vue';
 import { CarouselData } from 'components/models';
 import { QScrollArea, useQuasar } from 'quasar';
+import { offers } from 'src/data/incubation';
 
 export default {
   name: 'CloudProgram',
@@ -197,9 +210,9 @@ export default {
     PartHeader,
     DescriptionWithImg,
     Contact,
-    SlideOffer,
     CaseCarousel,
     VerticalCard,
+    ScrollCarousel,
   },
   setup() {
     const $q = useQuasar();
@@ -360,6 +373,7 @@ export default {
       offerIndicatorLeft,
       serviceProgress,
       highlight,
+      offers,
       suitableStudents,
       isMobile: computed(() => {
         return <boolean>$q.platform.is.mobile;
@@ -436,7 +450,7 @@ export default {
     position: relative;
 
     div {
-      background-color: #0b150e;
+      background-color: $light-dark-green;
       height: fit-content;
 
       &.highlight-up {
@@ -485,7 +499,7 @@ export default {
       div {
         background: transparent;
         span {
-          background: #0b150e;
+          background: $light-dark-green;
         }
       }
     }

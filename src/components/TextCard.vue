@@ -119,12 +119,12 @@ export default defineComponent({
 .title {
   .info {
     span {
-      background-color: #0b150e;
+      background-color: $light-dark-green;
     }
   }
 }
 
 .description {
-  background-color: #0b150e;
+  background-color: $light-dark-green;
 }
 </style>

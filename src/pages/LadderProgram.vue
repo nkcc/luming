@@ -637,7 +637,7 @@ export default {
         position: relative;
 
         div {
-            background-color: #0b150e;
+            background-color: $light-dark-green;
             height: fit-content;
 
             &.highlight-up {

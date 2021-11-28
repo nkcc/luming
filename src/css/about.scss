@@ -125,11 +125,11 @@
 }
 
 .lm-bg-background {
-  background: #08100b;
+  background: $light-dark-green;
 }
 
 .lm-light-dark-background {
-  background: radial-gradient(#0b150e 50%, #050505 100%);
+  background: radial-gradient($light-dark-green 50%, #050505 100%);
 }
 
 .lm-comes-introduction {

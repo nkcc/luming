@@ -15,7 +15,7 @@
           <q-btn flat round color="secondary" icon="navigate_before" @click="scroll('left')" />
         </div>
         <q-scroll-area
-          class="lm-scroll"
+          class="lm-scroll w-full"
           :bar-style="{ background: 'transparent' }"
           :thumb-style="{ background: 'transparent' }"
           :ref="divs"
@@ -42,6 +42,7 @@
               </q-responsive>
               <div class="school-desc">
                 <div class="title">{{ sv.title }}</div>
+                <div class="subtitle text-white text-weight-bold text-base">{{ sv.subTitle }}</div>
                 <q-scroll-area
                   class="description ellipsis-3-lines"
                   :bar-style="{ background: 'white' }"
@@ -170,6 +171,72 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+.q-carousel {
+  background-color: transparent;
+  height: auto;
+}
+
+.lm-scroll {
+  width: 100%;
+  height: 13.25rem;
+  overflow: hidden;
+
+    .offer-list {
+      display: flex;
+      justify-content: center;
+
+      .offer-item {
+        height: 11.25rem;
+        display: flex;
+        border-right: 0.3125rem solid $secondary;
+        padding: 0 1.875rem;
+        align-items: center;
+
+
+        &:last-child {
+          border-right: none;
+        }
+
+        .school-logo {
+          height: 10rem;
+          width: 10rem;
+          background: $white;
+
+          .img {
+            height: 7rem;
+            width: 7rem;
+            background: $white;
+          }
+        }
+
+        .school-desc {
+          color: $white;
+          width: 100%;
+          padding: 0.625rem 0 0.625rem 1.875rem;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          height: 100%;
+
+          .title {
+            font-size: 1.25rem;
+          }
+
+          .description {
+            margin-top: 1.375rem;
+            width: 12.5rem;
+            height: 100%;
+          }
+
+          .footer {
+            margin-top: 1.25rem;
+            margin-left: -0.3125rem;
+          }
+        }
+      }
+    }
+}
+
 .mobile {
   .q-carousel__slide, .q-carousel .q-carousel--padding {
     padding: 16px 0 0 0;

@@ -106,14 +106,14 @@ section {
 }
 
 .lm-bg-background {
-  background: #08100b;
+  background: $light-dark-green;
 }
 
 .lm-light-dark-background {
-  background: radial-gradient(#0b150e 50%, #050505 100%);
+  background: radial-gradient($light-dark-green 50%, #050505 100%);
 
   &.no-gradient {
-    background: #0b150e;
+    background: $light-dark-green;
   }
 }
 
@@ -122,7 +122,7 @@ section {
 }
 
 .lm-dark-background {
-  background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
+  background: radial-gradient(closest-side circle, $light-dark-green 80%, #030604 200%);
 }
 
 .footer {
@@ -241,7 +241,7 @@ $xl-breakpoint: 1536px;
 
 .lm-green-background-container {
   width: 100%;
-  background: $points-bg radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
+  background: $points-bg radial-gradient(closest-side circle, $light-dark-green 80%, #030604 200%);
 }
 
 .lm-points,
@@ -398,7 +398,7 @@ $xl-breakpoint: 1536px;
 }
 
 .lm-offers {
-  background: radial-gradient(closest-side circle, #08100b 80%, #030604 200%);
+  background: radial-gradient(closest-side circle, $light-dark-green 80%, #030604 200%);
   // min-height: 58.06rem;
 
   .offer-container {
@@ -452,61 +452,6 @@ $xl-breakpoint: 1536px;
     .right {
       &.offer {
         padding: 0;
-      }
-    }
-
-    .offer-list {
-      display: flex;
-      justify-content: center;
-
-      .offer-item {
-        height: 11.25rem;
-        display: flex;
-        border-right: 0.3125rem solid $secondary;
-        padding: 0 1.875rem;
-        align-items: center;
-
-
-        &:last-child {
-          border-right: none;
-        }
-
-        .school-logo {
-          height: 10rem;
-          width: 10rem;
-          background: $white;
-
-          .img {
-            height: 7rem;
-            width: 7rem;
-            background: $white;
-          }
-        }
-
-        .school-desc {
-          color: $white;
-          width: 100%;
-          padding: 0.625rem 0 0.625rem 1.875rem;
-          display: flex;
-          justify-content: space-between;
-          flex-direction: column;
-          height: 100%;
-
-          .title {
-            font-size: 1.25rem;
-          }
-
-          .description {
-            margin-top: 1.375rem;
-            width: 12.5rem;
-            height: 100%;
-          }
-
-          .footer {
-            margin-top: 1.25rem;
-            margin-left: -0.3125rem;
-          }
-        }
       }
     }
   }
@@ -692,12 +637,6 @@ $xl-breakpoint: 1536px;
       }
     }
   }
-}
-
-.green-background {
-  background: rgba(6, 12, 7, 0.85);
-  width: 100%;
-  height: 100%;
 }
 
 .page-scroll-btn {

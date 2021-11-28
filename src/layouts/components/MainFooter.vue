@@ -28,11 +28,11 @@
           <li class="item w-full" v-for="(v, key) in navList" :key="key">
             <router-link
               :to="v.link"
-              class="title text-weight-bold text-center sm:text-left block"
+              class="title text-weight-bold text-center block"
             >{{ v.title }}</router-link>
-            <div
+            <!-- <div
               class="description text-weight-regular text-center sm:text-left block"
-            >{{ v.description }}</div>
+            >{{ v.description }}</div> -->
           </li>
         </ul>
       </div>
@@ -42,10 +42,10 @@
       <div class="col-3 col-md-3 right col-xs-12 gt-sm">
         <ul class="item-list w-full">
           <li class="item" v-for="(v, key) in navListRight" :key="key">
-            <router-link :to="v.link" class="title text-center sm:text-left block">{{ v.title }}</router-link>
-            <div
+            <router-link :to="v.link" class="title text-center  block">{{ v.title }}</router-link>
+            <!-- <div
               class="description text-weight-thin text-center sm:text-left block"
-            >{{ v.description }}</div>
+            >{{ v.description }}</div> -->
           </li>
         </ul>
       </div>
