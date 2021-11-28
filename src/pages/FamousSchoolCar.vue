@@ -100,17 +100,19 @@
       </div>
     </section>
     <section class="transparent">
-      <div class="row">
-        <div class="col-12 py-20">
-            <div class="header pb-10">
-              <div
-                class="incubation-title text-quaternary text-center text-weight-bolder"
-              >{{ offers.title }}</div>
-              <div
-                class="subtitle text-quaternary text-center text-text-weight-bolder"
-              >{{ offers.subTitle }}</div>
-            </div>
-            <scroll-carousel :data="offers.list" :index="0"></scroll-carousel>
+      <div class="lg:container lg:mx-auto">
+        <div class="row">
+          <div class="col-12 py-20">
+              <div class="header pb-10">
+                <div
+                  class="incubation-title text-quaternary text-center text-weight-bolder"
+                >{{ offers.title }}</div>
+                <div
+                  class="subtitle text-quaternary text-center text-text-weight-bolder"
+                >{{ offers.subTitle }}</div>
+              </div>
+              <scroll-carousel :data="offers.list" :index="0"></scroll-carousel>
+          </div>
         </div>
       </div>
     </section>
@@ -202,7 +204,7 @@ import VerticalCard from 'src/components/VerticalCard.vue';
 import CaseCarousel from 'components/carousel/CaseCarousel.vue';
 import { CarouselData } from 'components/models';
 import { QScrollArea, useQuasar } from 'quasar';
-import { offers } from 'src/data/incubation';
+import { offers } from 'src/data/famous-school-car';
 
 export default {
   name: 'CloudProgram',
