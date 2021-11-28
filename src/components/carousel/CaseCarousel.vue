@@ -105,7 +105,7 @@
                 </div>
               </div>
             </div>
-            <div class="more footer light py-4 sm:text-xl" v-if="hiddenDescription">
+            <div class="more light py-4 sm:text-xl " v-if="hiddenDescription">
               <router-link :to="currentCase.link">了解更多 ></router-link>
             </div>
           </div>
@@ -428,5 +428,9 @@ const changePlanType = function (index: number) {
       }
     }
   }
+}
+
+.more.footer {
+  font-size: 1rem;
 }
 </style>

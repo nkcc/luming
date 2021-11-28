@@ -75,7 +75,7 @@
             </template>
             <template v-for="(v, k) in carouselData" :key="k">
               <q-carousel-slide :name="'carousel' + k" class="column no-wrap">
-                <div class="row justify-center items-center pb-4">
+                <div class="row justify-center items-center pb-4 sm:pb-14">
                   <div class="col-xs-12 col-sm-12 col-md-5 left">
                     <h2
                       class="text-secondary text-weight-bold text-6xl pb-3 sm:pb-14 sm:text-6xl title"

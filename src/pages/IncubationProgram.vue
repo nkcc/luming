@@ -92,17 +92,19 @@
       </div>
     </section>
     <section class="transparent">
-      <div class="row">
-        <div class="col-12 pb-20">
-            <div class="header pb-10">
-              <div
-                class="incubation-title text-quaternary text-center text-weight-bolder"
-              >{{ offers.title }}</div>
-              <div
-                class="subtitle text-quaternary text-center text-text-weight-bolder"
-              >{{ offers.subTitle }}</div>
-            </div>
-            <scroll-carousel :data="offers.list" :index="0"></scroll-carousel>
+      <div class="lg:container lg:mx-auto">
+        <div class="row">
+          <div class="col-12 pb-20">
+              <div class="header pb-10">
+                <div
+                  class="incubation-title text-quaternary text-center text-weight-bolder"
+                >{{ offers.title }}</div>
+                <div
+                  class="subtitle text-quaternary text-center text-text-weight-bolder"
+                >{{ offers.subTitle }}</div>
+              </div>
+              <scroll-carousel :data="offers.list" :index="0"></scroll-carousel>
+          </div>
         </div>
       </div>
     </section>
