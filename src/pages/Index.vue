@@ -183,6 +183,9 @@
     </section>
     <SlideOffer></SlideOffer>
     <section class="lm-case py-20">
+      <div>
+        <div class="text-center pb-10 text-5xl font-extrabold"> 鹿名案例</div>
+      </div>
       <case-carousel :light-mode="true" :hidden-description="true"></case-carousel>
     </section>
     <section class="lm-team lm-dark-background">

@@ -38,7 +38,6 @@
             @change="carouselChange"
             :initial-index="currentCaseIndex"
             ref="carousel"
-            arrow="always"
           >
             <el-carousel-item
               v-for="(v, k) in caseData"
@@ -105,7 +104,7 @@
                 </div>
               </div>
             </div>
-            <div class="more light py-4 sm:text-xl " v-if="hiddenDescription">
+            <div class="more light py-4 sm:text-xl text-left sm:text-center" v-if="hiddenDescription">
               <router-link :to="currentCase.link">了解更多 ></router-link>
             </div>
           </div>
@@ -184,8 +183,7 @@ currentType.value = programType.value;
 const carousel: Ref<InstanceType<typeof ElCarousel> | null> = ref(null);
 const $q = useQuasar();
 if ($q.platform.is.mobile) {
-  carouselType.value = '';
-  carouselHeight.value = '65vw';
+  carouselHeight.value = '41vw';
 }
 
 const caseData = computed((): CaseData[] => {
@@ -243,12 +241,13 @@ const changePlanType = function (index: number) {
   .lm-plans {
     .lm-plans-title_container {
       .plan-title {
-        transition: color 1s ease;
+        transition: all 1s ease;
         color: $light-fade-green;
         font-weight: 700;
         align-self: flex-end;
 
         &.active {
+          zoom: 1.1;
           color: $quaternary;
         }
       }
@@ -383,8 +382,6 @@ const changePlanType = function (index: number) {
         scrollbar-width: none;
 
         .el-carousel__item {
-          left: 0;
-          width: 100%;
 
           .case-img {
             border: 1px solid $quaternary;
@@ -392,8 +389,6 @@ const changePlanType = function (index: number) {
           }
 
           &.is-active {
-            left: 0;
-            width: 100%;
 
             .case-img {
               border: 1px solid $quaternary;

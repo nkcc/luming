@@ -54,22 +54,11 @@
     <div
       class="row justify-center items-center information q-pa-xs-lg q-pa-lg-xs q-pa-md-xs q-pa-xl-xs lg:container lg:mx-auto gt-sm"
     >
-      <div class="col-xs-12 col-md-9 copyright row justify-center items-center">
+      <div class="col-xs-12 col-md-9 row justify-center items-center">
         <div
-          class="copyright-left text-weight-bolder col-xs-12 col-md-6 col-lg-6 col-xl-6 text-center sm:text-left block mb-4 sm:mb-0"
+          class="text-weight-bolder col-12 text-center  text-lg block mb-4 sm:mb-0"
         >
-          @2021 The President and
-          Fellows of Maxfuture
-        </div>
-        <div
-          class="copyright-right col-xs-12 col-md-6 col-lg-6 col-xl-6 text-center sm:text-left flex justify-center flex-wrap"
-        >
-          <span class="name text-weight-bolder">Wechat</span>
-          <span class="name text-weight-bolder">Facebook</span>
-          <span class="name text-weight-bolder">Twitter</span>
-
-          <span class="name text-weight-bolder">Instagram</span>
-          <span class="name text-weight-bolder">Weibo</span>
+         Copyright © 2021 MAXFUTURE.  All Rights Reserved. 鹿名国际 版权所有
         </div>
       </div>
     </div>
