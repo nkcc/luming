@@ -16,47 +16,24 @@
           </div>
         </div>
       </div>
-      <div class="col-12 mt-4 lt-md">
+      <div class="col-12 mt-4 sm:mb-4">
         <ul class="flex justify-center">
           <li class="mobile-root-link" v-for="(v,k) in [...navList, ...navListRight]" :key="k">
-            <router-link :to="v.link" class="title text-weight-bold text-center">{{ v.title }}</router-link>
-          </li>
-        </ul>
-      </div>
-      <div class="col-3 col-md-3 left col-xs-12 gt-sm">
-        <ul class="item-list w-full">
-          <li class="item w-full" v-for="(v, key) in navList" :key="key">
-            <router-link
-              :to="v.link"
-              class="title text-weight-bold text-center block"
-            >{{ v.title }}</router-link>
-            <!-- <div
-              class="description text-weight-regular text-center sm:text-left block"
-            >{{ v.description }}</div> -->
+            <router-link :to="v.link" class="title text-lg sm:text-xl text-weight-bold text-center p-0 sm:px-4">{{ v.title }}</router-link>
           </li>
         </ul>
       </div>
       <div class="col-3 col-md-3 center col-xs-4 mb-10 mt-5 sm:mb-0 sm:mt-0">
         <q-img class="logo-center" initial-ratio="1" src="logo_center.svg"></q-img>
       </div>
-      <div class="col-3 col-md-3 right col-xs-12 gt-sm">
-        <ul class="item-list w-full">
-          <li class="item" v-for="(v, key) in navListRight" :key="key">
-            <router-link :to="v.link" class="title text-center  block">{{ v.title }}</router-link>
-            <!-- <div
-              class="description text-weight-thin text-center sm:text-left block"
-            >{{ v.description }}</div> -->
-          </li>
-        </ul>
-      </div>
     </div>
 
     <div
-      class="row justify-center items-center information q-pa-xs-lg q-pa-lg-xs q-pa-md-xs q-pa-xl-xs lg:container lg:mx-auto gt-sm"
+      class="row justify-center items-center information q-pa-xs-lg q-pa-lg-xs q-pa-md-xs q-pa-xl-xs lg:container lg:mx-auto"
     >
       <div class="col-xs-12 col-md-9 row justify-center items-center">
         <div
-          class="text-weight-bolder col-12 text-center  text-lg block mb-4 sm:mb-0"
+          class="text-weight-bolder col-12 text-center text-lg block mb-4 sm:mb-0"
         >
          Copyright © 2021 MAXFUTURE.  All Rights Reserved. 鹿名国际 版权所有
         </div>
