@@ -19,7 +19,7 @@
       <div class="col-12 mt-4 sm:mb-4">
         <ul class="flex justify-center">
           <li class="mobile-root-link" v-for="(v,k) in [...navList, ...navListRight]" :key="k">
-            <router-link :to="v.link" class="title text-lg sm:text-xl text-weight-bold text-center p-0 sm:px-4">{{ v.title }}</router-link>
+            <router-link :to="v.link" class="title text-sm sm:text-xl text-weight-bold text-center p-0 sm:px-4">{{ v.title }}</router-link>
           </li>
         </ul>
       </div>
@@ -33,7 +33,7 @@
     >
       <div class="col-xs-12 col-md-9 row justify-center items-center">
         <div
-          class="text-weight-bolder col-12 text-center text-lg block mb-4 sm:mb-0"
+          class="text-weight-bolder col-md-12 col-xs-9 text-center text-sm sm:text-lg block mb-4 sm:mb-0"
         >
          Copyright © 2021 MAXFUTURE.  All Rights Reserved. 鹿名国际 版权所有
         </div>
