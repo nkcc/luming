@@ -112,6 +112,13 @@
   .mobile-root-link {
     padding: 0 5px;
     position: relative;
+    &:is(:first-child) {
+      padding-left: 0;
+    }
+
+    &:is(:last-child) {
+      padding-right: 0;
+    }
 
     &:not(:last-child) {
       &:after {
