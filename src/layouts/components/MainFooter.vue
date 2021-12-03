@@ -1,7 +1,7 @@
 <template>
   <div class="page-footer">
     <div
-      class="row justify-center information q-px-xs-sm q-px-lg-xs q-px-md-xs q-px-xl-xs lg:container lg:mx-auto"
+      class="row justify-center information lg:container lg:mx-auto"
     >
       <div class="col-12 row justify-center">
         <div class="col-md-9 col-xs-12 relative">
@@ -16,20 +16,20 @@
           </div>
         </div>
       </div>
-      <div class="col-12 mt-4 sm:mb-4">
+      <div class="col-12 mt-4 mb-10 sm:mb-10">
         <ul class="flex justify-center">
           <li class="mobile-root-link" v-for="(v,k) in [...navList, ...navListRight]" :key="k">
             <router-link :to="v.link" class="title text-sm sm:text-xl text-weight-bold text-center p-0 sm:px-4">{{ v.title }}</router-link>
           </li>
         </ul>
       </div>
-      <div class="col-3 col-md-3 center col-xs-4 mb-10 mt-5 sm:mb-0 sm:mt-0">
+      <div class="col-3 col-md-3 center col-xs-4 mb-10 mt-5 sm:mt-0">
         <q-img class="logo-center" initial-ratio="1" src="logo_center.svg"></q-img>
       </div>
     </div>
 
     <div
-      class="row justify-center items-center information q-pa-xs-lg q-pa-lg-xs q-pa-md-xs q-pa-xl-xs lg:container lg:mx-auto"
+      class="row justify-center items-center information lg:container lg:mx-auto"
     >
       <div class="col-xs-12 col-md-9 row justify-center items-center">
         <div
