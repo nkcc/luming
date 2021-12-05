@@ -38,6 +38,9 @@
          Copyright © 2021 MAXFUTURE.  All Rights Reserved. 鹿名国际 版权所有
         </div>
       </div>
+      <div class="col-xs-11 row justify-center mb-4">
+        <a href="https://beian.miit.gov.cn/" class="text-center text-sm">沪ICP备2021034781号-1</a>
+      </div>
     </div>
 
     <div class="lm-top-bar"></div>

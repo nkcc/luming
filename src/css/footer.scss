@@ -1,5 +1,16 @@
 @import './quasar.variables.scss';
 
+.lm-top-bar {
+  background-color: $secondary;
+  height: 6px;
+}
+
+.mobile {
+  .lm-top-bar {
+    height: 4px;
+  }
+}
+
 .page-footer {
   position: relative;
   color: $secondary;
@@ -112,6 +123,7 @@
   .mobile-root-link {
     padding: 0 1.35vw;
     position: relative;
+
     &:is(:first-child) {
       padding-left: 0;
     }
