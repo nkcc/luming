@@ -14,7 +14,7 @@
                                 上海市
                             </div>
                             <p class="text-center text-white leading-4 text-location zoom-sm">黄浦区</p>
-                            <p class="text-center text-white leading-4 text-location zoom-sm ">九江路299号</p>
+                            <p class="text-center text-white leading-4 text-location zoom-sm ">九江路288号</p>
                             <p class="text-center text-white leading-3 text-location zoom-sm">宏伊国际广场807室</p>
                         </div>
                     </div>
@@ -27,12 +27,9 @@
                         <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-8 zoom-md">
                             商务合作
                         </div>
-                        <div class="contact-content">
-
+                        <div class="contact-content mt-7">
                             <p class="text-center text-white leading-4 text-location zoom-sm"><span class="text-xl mr-3 text-weight-bold">
-                                    XXX</span>187-8888-8888</p>
-                            <p class="text-center text-white leading-4 text-location zoom-sm"><span class="text-xl mr-3 text-weight-bold">
-                                    XXX</span>187-8888-8888</p>
+                                    185-0177-5811</span></p>
                         </div>
                     </div>
                 </q-responsive>
@@ -59,12 +56,10 @@
                         <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-8 zoom-md">
                             鹿名国际教育电话：
                         </div>
-                        <div class="contact-content">
+                        <div class="contact-content mt-7">
 
                             <p class="text-center text-white leading-4 text-location zoom-sm"><span class="text-xl mr-3 text-weight-bold">
-                                    XXX</span>187-8888-8888</p>
-                            <p class="text-center text-white leading-4 text-location zoom-sm"><span class="text-xl mr-3 text-weight-bold">
-                                    XXX</span>187-8888-8888</p>
+                                    137-6440-4117</span></p>
                         </div>
                     </div>
                 </q-responsive>
@@ -77,7 +72,7 @@
                         </div>
                         <div class="contact-content flex justify-center zoom-sm">
                             <q-responsive class="h-24 w-24" :ratio="1">
-                                <q-img src="vision.jpg"></q-img>
+                                <q-img src="wechat_support.jpg"></q-img>
                             </q-responsive>
 
                         </div>
@@ -93,9 +88,9 @@
                         </div>
                         <div class="contact-content">
                             <div class="text-white text-weight-bold text-xl text-center w-full pb-1 zoom-sm">
-                                ABCDEFG
+                                INFO
                             </div>
-                            <p class=" text-center text-white leading-4 text-location text-weight-bold zoom-sm">@163.com</p>
+                            <p class=" text-center text-white leading-4 text-location text-weight-bold zoom-sm">@lumingguoji.com</p>
 
                         </div>
                     </div>

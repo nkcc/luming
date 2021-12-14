@@ -41,7 +41,7 @@
                 </template>
               </q-input>
               <q-btn class="submit" outline type="submit" style="color: goldenrod">
-                <q-icon class="dot" name="fiber_manual_record"></q-icon>了解更多
+                <q-icon class="dot" name="fiber_manual_record"></q-icon>提交
               </q-btn>
             </div>
           </div>
