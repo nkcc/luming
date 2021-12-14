@@ -34,22 +34,7 @@
                     </div>
                 </q-responsive>
             </div>
-            <div class="col-3 col-xs-5 col-sm-5 col-md-3 ">
-                <q-responsive :ratio="isMobile ? 1 :504/360">
-                    <div class="contact-card lm-bg-green">
-                        <div class="contact-title text-quaternary text-xl text-weight-bolder text-center pt-5 pb-5 zoom-md">
-                            鹿名国际微信公众号：
-                        </div>
-                        <div class="contact-content flex justify-center zoom-sm">
-                            <q-responsive class="h-24 w-24" :ratio="1">
-                                <q-img src="vision.jpg"></q-img>
-                            </q-responsive>
 
-                        </div>
-                    </div>
-                </q-responsive>
-
-            </div>
             <div class="col-3 col-xs-5 col-sm-5 col-md-3 ">
                 <q-responsive :ratio="isMobile ? 1 :504/360">
                     <div class="contact-card lm-bg-green">
