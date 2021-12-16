@@ -29,7 +29,7 @@
                         </div>
                         <div class="contact-content mt-7">
                             <p class="text-center text-white leading-4 text-location zoom-sm"><span class="text-xl mr-3 text-weight-bold">
-                                    185-0177-5811</span></p>
+                                    132-4805-1816</span></p>
                         </div>
                     </div>
                 </q-responsive>
