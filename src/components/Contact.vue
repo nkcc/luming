@@ -40,7 +40,13 @@
                   <q-icon color="secondary" name="wechat" />
                 </template>
               </q-input>
-              <q-btn class="submit" outline type="submit" style="color: goldenrod">
+              <q-btn
+                class="submit"
+                outline
+                type="submit"
+                style="color: goldenrod"
+                @click="submitInfo"
+              >
                 <q-icon class="dot" name="fiber_manual_record"></q-icon>提交
               </q-btn>
             </div>
@@ -52,26 +58,39 @@
 </template>
 
 <script lang="ts">
-import { ref, computed } from 'vue';
+import { ref, defineComponent } from 'vue';
+import { contact } from '../api/contact';
 import { useQuasar } from 'quasar';
 
-export default {
+export default defineComponent({
   name: 'Contact',
-  setup() {
-    const $q = useQuasar();
-    return {
-      form: ref({
-        name: '',
-        phone: '',
-        wechat: '',
-      }),
-      isMobile: computed(() => {
-        return <boolean>$q.platform.is.mobile;
-      }),
-    };
-  },
+});
+</script>
+
+<script lang="ts" setup>
+const $q = useQuasar();
+const form = ref({
+  name: '',
+  phone: '',
+  wechat: '',
+});
+
+const submitInfo = async function () {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const { data } = await contact.create(form.value);
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  if (data.code === 0) {
+    $q.notify({
+      position: 'top',
+      color: 'secondary',
+      message: '提交成功',
+      timeout: Math.random() * 1000 + 1000,
+    });
+  }
 };
 </script>
+
 
 <style lang="scss" scoped>
 .lm-contact {
