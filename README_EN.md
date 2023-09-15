@@ -1,12 +1,21 @@
+# Project Name
 
-Once you have Quasar CLI installed, you can clone the Luming repository and install its dependencies using the following commands:
+This is a brief introduction explaining what the project is and what it does.
 
-```
-git clone https://github.com/nkcc/luming.git
-cd luming
-npm install
-```
+## Features
+
+- Feature 1
+- Feature 2
+- Feature 3
+
+## Installation
+
+Explain how to install and set up the project.
 
 ## Usage
 
-To start the development server, run the following command:
+Explain how to use the project, and if possible, provide examples.
+
+## Contribution Guidelines
+
+Explain how others can contribute to the project.
