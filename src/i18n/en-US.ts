@@ -8,6 +8,7 @@ const messages = {
   login: 'Login',
   logout: 'Logout',
   // Add more translations here
-}
+  // Add translations for other strings used in the application
+};
 
 export default messages
